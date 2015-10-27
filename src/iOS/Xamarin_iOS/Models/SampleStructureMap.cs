@@ -144,9 +144,9 @@ namespace ArcGISRuntimeXamarin.Models
 
             // Set samples to the sub-categories
             var addedSamples = new List<SampleModel>();
-            foreach (var cateory in structureMap.Categories)
+            foreach (var category in structureMap.Categories)
             {
-                foreach (var subCategory in cateory.SubCategories)
+                foreach (var subCategory in category.SubCategories)
                 {
                     if (subCategory.Samples == null)
                         subCategory.Samples = new List<SampleModel>();
