@@ -108,6 +108,7 @@ namespace ArcGISRuntimeXamarin.Models
             foreach (var sampleGroupFolder in sampleGroupFolders) // ie. Samples\Layers
             {
                 // This creates samples from all folders and adds them to the samples list
+
                 // This means that sample is created even if it's not defined in the groups list
                 var sampleFolders = sampleGroupFolder.GetDirectories();
                 foreach (var sampleFolder in sampleFolders)  // ie. Samples\Layers\ArcgISTiledLayerFromUrl

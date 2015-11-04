@@ -143,7 +143,7 @@ namespace ArcGISRuntimeXamarin.Managers
         }
 
         /// <summary>
-        /// Remove samples that doesn't have a type registered i.e. cannot be shown.
+        /// Remove samples that don't have a type registered i.e. cannot be shown.
         /// </summary>
         private void RemoveEmptySamples()
         {
@@ -168,7 +168,7 @@ namespace ArcGISRuntimeXamarin.Managers
         /// Check if the sample has a type registered.
         /// </summary>
         /// <param name="sampleModel">SampleModel that is checked.</param>
-        /// <returns>Returns true if the type if found. False otherwice.</returns>
+        /// <returns>Returns true if the type if found. False otherwise.</returns>
         private bool DoesSampleTypeExists(SampleModel sampleModel)
         {
             var fullTypeAsString = string.Format("{0}.{1}", sampleModel.SampleNamespace,
