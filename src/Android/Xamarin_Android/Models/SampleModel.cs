@@ -114,7 +114,7 @@ namespace ArcGISRuntimeXamarin.Models
         public string Image { get; set; }
 
         /// <summary>
-        /// Gets or sets the url to the developers site tutorial documentation.
+        /// Gets or sets the URL to the developers site tutorial documentation.
         /// </summary>
         /// <remarks>This is only for samples that are type of Tutorial.</remarks>
         [DataMember]
@@ -136,8 +136,8 @@ namespace ArcGISRuntimeXamarin.Models
         /// <summary>
         /// Gets or sets the folder where sample is located.
         /// </summary>
-        [DataMember(Name = "Path")]
-        public string SampleFolder { get; set; } // Changed this from Directory to string. Can't use Directory stuff in Android. This required adding a new item to metadata.json file. 
+        [DataMember()]
+        public string SampleFolder { get; set; } // Changed this from Directory to string. Can't use Directory in Android. This required adding a new item to metadata.json file. 
 
         /// <summary>
         /// Gets the namespace of the sample.
@@ -201,7 +201,6 @@ namespace ArcGISRuntimeXamarin.Models
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine(ex.Message);
             }
             return sampleModel;
