@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization.Json;
 using System.Threading.Tasks;
 using ArcGISRuntimeXamarin.Models;
-using Android.Content.Res;
 using Android.App;
 
 namespace ArcGISRuntimeXamarin.Managers
@@ -41,20 +39,21 @@ namespace ArcGISRuntimeXamarin.Managers
 
             this.context = context;
 
-            // TODO: Not sure we need this anymore
-            //string filename = Path.GetFileName(GetType().Assembly.Location);
-            //_samplesAssembly = Assembly.Load(filename);
-
             await CreateAllAsync();
 
+
             // TODO - Need to implement
+            // Used for Removing samples
+            // string filename = Path.GetFileName(GetType().Assembly.Location);
+            // _samplesAssembly = Assembly.Load(filename);
+
             // RemoveEmptySamples(); 
         }
 
         #endregion // Constructor and unique instance management
 
         /// <summary>
-        /// Gets or sets seleted sample.
+        /// Gets or sets selected sample.
         /// </summary>
         public SampleModel SelectedSample { get; set; }
 
@@ -93,7 +92,9 @@ namespace ArcGISRuntimeXamarin.Managers
 
                             if (subCategory.Samples != null)
                                 foreach (var sample in subCategory.Samples)
+                                {
                                     subCategoryItem.Items.Add(sample);
+                                }
                         }
                         else
                         {
@@ -163,30 +164,30 @@ namespace ArcGISRuntimeXamarin.Managers
         /// <summary>
         /// Remove samples that doesn't have a type registered i.e. cannot be shown.
         /// </summary>
-        //private void RemoveEmptySamples()
-        //{
-        //    _sampleStructureMap.Featured.RemoveAll(x => !DoesSampleTypeExists(x.Sample));
+        private void RemoveEmptySamples()
+        {
+            _sampleStructureMap.Featured.RemoveAll(x => !DoesSampleTypeExists(x.Sample));
 
-        //    // Remove samples that are empty ie. doesn't have code files
-        //    foreach (var category in _sampleStructureMap.Categories)
-        //    {
-        //        foreach (var subCategory in category.SubCategories)
-        //        {
-        //            var notFoundSamples = subCategory.Samples.Where(x => !DoesSampleTypeExists(x.Sample)).ToList();
-        //            foreach (var sampleToRemove in notFoundSamples)
-        //            {
-        //                subCategory.Samples.Remove(sampleToRemove);
-        //                subCategory.SampleNames.Remove(sampleToRemove.SampleName);
-        //            }
-        //        }
-        //    }
-        //}
+            // Remove samples that are empty ie. doesn't have code files
+            foreach (var category in _sampleStructureMap.Categories)
+            {
+                foreach (var subCategory in category.SubCategories)
+                {
+                    var notFoundSamples = subCategory.Samples.Where(x => !DoesSampleTypeExists(x)).ToList();
+                    foreach (var sampleToRemove in notFoundSamples)
+                    {
+                        subCategory.Samples.Remove(sampleToRemove);
+                        // subCategory.SampleNames.Remove(sampleToRemove.SampleName);
+                    }
+                }
+            }
+        }
 
         /// <summary>
         /// Check if the sample has a type registered.
         /// </summary>
         /// <param name="sampleModel">SampleModel that is checked.</param>
-        /// <returns>Returns true if the type if found. False otherwice.</returns>
+        /// <returns>Returns true if the type if found. False otherwise.</returns>
         private bool DoesSampleTypeExists(SampleModel sampleModel)
         {
             var fullTypeAsString = string.Format("{0}.{1}", sampleModel.SampleNamespace,

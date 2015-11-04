@@ -10,8 +10,12 @@
 					"ShowGroup": true,
 					"SampleInfo": [
             {
-              "Sample": "ExampleSample",
-              "Path": "Samples/ExampleSample"
+              "SampleName": "ExampleSample",
+              "Path": "Samples/MapView/ExampleSample"
+            },
+            {
+              "SampleName": "ExampleSample2",
+              "Path": "Samples/MapView/ExampleSample2"
             }
           ]
 				}
@@ -27,8 +31,8 @@
 					"ShowGroup": true,
 					"SampleInfo": [
             {
-              "Sample": "ExampleSample",
-              "Path": "Samples/ExampleSample"
+              "SampleName": "ExampleSample",
+              "Path": "Samples/MapView/ExampleSample"
             }
           ]
 				},

@@ -137,7 +137,7 @@ namespace ArcGISRuntimeXamarin.Models
         /// Gets or sets the folder where sample is located.
         /// </summary>
         [DataMember(Name = "Path")]
-        public string SampleFolder { get; set; } // Changed this from Directory to string. Can't use Directory stuff in Android. Meant adding new item to metadata.json file. 
+        public string SampleFolder { get; set; } // Changed this from Directory to string. Can't use Directory stuff in Android. This required adding a new item to metadata.json file. 
 
         /// <summary>
         /// Gets the namespace of the sample.
@@ -170,9 +170,9 @@ namespace ArcGISRuntimeXamarin.Models
         /// <summary>
         /// Creates new instance of SampleModel by deserializing it from the json file provided.
         /// </summary>
-        /// <param name="metadataFilePath">Full path to the metadata JSON file</param>
+        /// <param name="samplePath">Full path to the metadata JSON file of the sample</param>
         /// <returns>Deserialized SampleModel</returns>
-        internal static SampleModel Create(string metadataFilePath, Activity context)
+        internal static SampleModel Create(string samplePath, Activity context)
         {
             Activity activityContext = context;
 
@@ -180,10 +180,8 @@ namespace ArcGISRuntimeXamarin.Models
 
             SampleModel sampleModel = null;
 
-            // The metadataFilePath is the path specified in the groups.json file for each metadata.json file
-            // Likely similar to: "Samples/ExampleSample". Don't need to add extra "/" as it does it automatically.
-            var metadataFile = metadataFilePath;
-            var assetPath = Path.Combine(metadataFile, "metadata.json");
+            // The samplePath is the path specified in the groups.json file for each metadata.json file
+            var assetPath = Path.Combine(samplePath, "metadata.json");
             try
             {
                 // TODO: Wondering if we can rework this to not have to open two different MemoryStreams.
@@ -197,11 +195,7 @@ namespace ArcGISRuntimeXamarin.Models
                         using (MemoryStream ms2 = new MemoryStream(jsonInBytes))
                         {
                             sampleModel = serializer.ReadObject(ms2) as SampleModel;
-                            // TODO - Can't set the SampleFolder as was done previously using the metadataFile. 
-                            // SampleFolder is now set manually using new property in metadata.json file. Could be
-                            // reevaluated to do something different. 
-                            // sampleModel.SampleFolder = metadataFile;
-                        }
+                         }
                     }
                 }
             }

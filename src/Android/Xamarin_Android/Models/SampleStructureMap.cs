@@ -17,6 +17,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
+using System.Text;
 
 namespace ArcGISRuntimeXamarin.Models
 {
@@ -54,26 +55,26 @@ namespace ArcGISRuntimeXamarin.Models
         /// </summary>
         /// <param name="sampleName">The name of the sample.</param>
         /// <returns>Return <see cref="SampleModel"/> for the sample if found. Null if sample not found.</returns>
-        public SampleModel GetSampleByName(string sampleName)
-        {
-            List<SampleModel> sampleList = new List<SampleModel>();
+        //public SampleModel GetSampleByName(string sampleName)
+        //{
+        //    List<SampleModel> sampleList = new List<SampleModel>();
 
-            foreach (var category in Categories)
-            {
-                foreach (var subCategory in category.SubCategories)
-                {
-                    // Changed to use the SampleInfo class, but that means you have to manually create a list of the SampleModel items.
-                    foreach (var item in subCategory.SampleInfo)
-                    {
-                        sampleList.Add(item.Sample);
-                    }
-                    var result = sampleList.FirstOrDefault(x => x.SampleName == sampleName);
-                    if (result != null)
-                        return result;
-                }
-            }
-            return null;
-        }
+        //    foreach (var category in Categories)
+        //    {
+        //        foreach (var subCategory in category.SubCategories)
+        //        {
+        //            // Changed to use the SampleInfo class, but that means you have to manually create a list of the SampleModel items.
+        //            foreach (var item in subCategory.SampleInfo)
+        //            {
+        //               // sampleList.Add(item.Sample);
+        //            }
+        //            var result = sampleList.FirstOrDefault(x => x.SampleName == sampleName);
+        //            if (result != null)
+        //                return result;
+        //        }
+        //    }
+        //    return null;
+        //}
 
         #region Factory methods
         /// <summary>
@@ -81,9 +82,9 @@ namespace ArcGISRuntimeXamarin.Models
         /// Returned instance will be fully loaded including other information that is not provided
         /// in the json file like samples.
         /// </summary>
-        /// <param name="metadataFilePath">Full path to the metadata JSON file</param>
+        /// <param name="groupsJSON">Full path to the groups JSON file</param>
         /// <returns>Deserialized <see cref="SampleStructureMap"/></returns>
-        internal static SampleStructureMap Create(string metadataFilePath, Activity context)
+        internal static SampleStructureMap Create(string groupsJSON, Activity context)
         {
 
             Activity activityContext = context;
@@ -91,9 +92,9 @@ namespace ArcGISRuntimeXamarin.Models
 
             SampleStructureMap structureMap = null;
 
-            // Create new instance of SampleStuctureMap
-            // Again, the issue of opening up two MemoryStreams. Need to investigate.
-            using (Stream stream = activityContext.Assets.Open("groups.json"))
+            // KD - Need two MemoryStreams? Need to investigate. Has to do with needing to open the json from the Android
+            // Activity which gives you a stream. Then you need to get back to bytes. 
+            using (Stream stream = activityContext.Assets.Open(groupsJSON))
             {
                 using (MemoryStream ms = new MemoryStream())
                 {
@@ -115,9 +116,6 @@ namespace ArcGISRuntimeXamarin.Models
             // Create all samples and add them to the groups since they are not part of
             // main configuration file
 
-            // Returns all the Assets at this path
-            var samplesDirectory = context.Assets.List("Samples");
-
             List<string> pathList = new List<string>();
             foreach (var category in structureMap.Categories)
             {
@@ -125,24 +123,22 @@ namespace ArcGISRuntimeXamarin.Models
                 {
                     if (subCategory.SampleInfo != null)
                     {
-                        for (int i = 0; i < subCategory.SampleInfo.Count; i++)
+                        foreach (var sample in subCategory.SampleInfo)
                         {
-                            pathList.Add(subCategory.SampleInfo[i].Path);
+                            pathList.Add(sample.Path);
                         }
                     }
                 }
             }
+
             SampleModel sampleModel = new SampleModel();
             foreach (var samplePath in pathList)
             {
                 sampleModel = SampleModel.Create(samplePath, activityContext);
                 if (sampleModel != null)
-                {
                     structureMap.Samples.Add(sampleModel);
-                }
             }
 
-            List<SampleModel> sampleInfo = new List<SampleModel>();
             var addedSamples = new List<SampleModel>();
             foreach (var category in structureMap.Categories)
             {
@@ -151,21 +147,21 @@ namespace ArcGISRuntimeXamarin.Models
                     if (subCategory.Samples == null)
                         subCategory.Samples = new List<SampleModel>();
 
-                    if (subCategory.SampleNames == null)
-                        subCategory.SampleNames = new List<string>();
+                    //if (subCategory.SampleNames == null)
+                    //    subCategory.SampleNames = new List<string>();
 
-                    foreach (var sample in subCategory.SampleInfo)
+                    foreach (var sampleName in subCategory.SampleInfo)
                     {
-                        // TODO - Investigate
-                        //var sample = structureMap.Samples.FirstOrDefault(x => x.SampleName == sampleName);
+                        var sample = structureMap.Samples.FirstOrDefault(x => x.SampleName == sampleName.SampleName);
 
                         if (sample == null) continue;
 
-                        subCategory.Samples.Add(sampleModel);
-                        addedSamples.Add(sample.Sample);
+                        subCategory.Samples.Add(sample);
+                        addedSamples.Add(sample);
                     }
                 }
             }
+
             #endregion
             // Create all samples
             //foreach (var sampleGroupFolder in sampleGroupFolders) // ie. Samples\Layers
@@ -173,7 +169,7 @@ namespace ArcGISRuntimeXamarin.Models
             //    // This creates samples from all folders and adds them to the samples list
             //    // This means that sample is created even if it's not defined in the groups list
             //    var sampleFolders = sampleGroupFolder.GetDirectories();
-            //    foreach (var sampleFolder in sampleFolders)  // ie. Samples\Layers\ArcgISTiledLayerFromUrl
+            //    foreach (var sampleFolder in sampleFolders)  // ie. Samples\Layers\ArcGISTiledLayerFromUrl
             //    {
             //        var sampleModel = SampleModel.Create(
             //            Path.Combine(sampleFolder.FullName, "metadata.json"));
@@ -257,7 +253,7 @@ namespace ArcGISRuntimeXamarin.Models
             //}
             //#endregion
 
-             return structureMap;
+            return structureMap;
         }
         #endregion
     }

@@ -52,7 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esri.ArcGISRuntime">
-      <HintPath>..\..\..\..\runtime\output\xamarin_android_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
+      <HintPath>..\..\..\..\output\xamarin_android_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
@@ -77,7 +77,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SamplesListActivity.cs" />
     <Compile Include="SamplesListAdapter.cs" />
-    <Compile Include="Samples\ExampleSample\ExampleSample.cs" />
+    <Compile Include="Samples\MapView\ExampleSample2\ExampleSample2.cs" />
+    <Compile Include="Samples\MapView\ExampleSample\ExampleSample.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\groups.json">
@@ -97,7 +98,10 @@
     <AndroidResource Include="Resources\layout\SamplesLayout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidAsset Include="Samples\ExampleSample\metadata.json">
+    <AndroidAsset Include="Samples\MapView\ExampleSample\metadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Samples\MapView\ExampleSample2\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
   </ItemGroup>

@@ -27,7 +27,7 @@ namespace ArcGISRuntimeXamarin
 
             // Get the listing of categories; Would be good to eventually be able to pass
             // this info, but Android doesn't allow passing Complex types. 
-            var sampleCategories = SampleManager.Current.GetSamplesAsTree();
+            var sampleCategories = SampleManager.Current.GetSamplesAsTree();  // TODO: Cache this in the SampleManager
             var category = sampleCategories[selectedCategory] as TreeItem;
 
             // Loop through the categories and create a list of each subcategory and the 

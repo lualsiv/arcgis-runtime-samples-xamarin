@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Example sample 2",
+  "SampleName": "ExampleSample2",
+  "Description": "This is example sample two. ",
+  "Instructions": "",
+  "Type": 0,
+  "RequiresOnlineConnection":true,
+  "RequiresOfflineData":false,
+  "RequiresLocalServer":false,
+  "Image":"ExampleSample.jpg",
+  "Link":"",
+  "TypeLink": [
+  ],
+  "Path": "ExampleSample2"
+}
