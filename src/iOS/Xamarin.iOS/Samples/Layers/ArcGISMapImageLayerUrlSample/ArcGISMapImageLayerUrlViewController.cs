@@ -21,35 +21,35 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrlSample
         {
             base.ViewDidLoad();
 
-            //First we create a new ArcGISMapImageLayer and pass a Url
+            //First we create a new ArcGISMapImageLayer instance and pass a Url to the service
             var baseLayer = new ArcGISMapImageLayer(new Uri("http://sampleserver5.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer"));
 
-            //We need to await the load call for the layer. This is required for layer to initialize. If the layer is added without this load call, 
+            //We need to await the load call for the layer. This is required for layer to initialize all the metadata. If the layer is added without this load call, 
             //then it will not get initialized and no data will be visible on map.    
             await baseLayer.LoadAsync();
 
             //Create a basemap where we can add this baselayer
             var basemap = new Basemap();
 
-            //Add the tiled layer to the basemap. 
+            //Add the ArcGISMapImageLayer that we created above to the basemap. 
             basemap.BaseLayers.Add(baseLayer);
 
             //Now lets create our UI.
 
-            //Create a variable to hold the Y coordinate of the control
+            //Create a variable to hold the Y coordinate of the map view control. We dont need XOffset since we are going to place the mapview at x=0
             var yOffset = 70;
 
-            //Create a new mapview control and provide its location coordinates on the frame
+            //Create a new mapview control and provide its location coordinates on the frame.
             MapView myMapView = new MapView()
             {
                 Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - yOffset)
             };
 
-            //Create a new map instance and set its basemap
+            //Create a new map instance which holds basemap that was created
             Map myMap = new Map(basemap);
 
 
-            //Assign this map as the Map of the mapview that was created above.
+            //Assign this map to the mapview that was created above.
             myMapView.Map = myMap;
 
             //Finally add the mapview to the Subview
