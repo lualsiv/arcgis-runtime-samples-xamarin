@@ -60,6 +60,7 @@
           "SubCategoryName": "ArcGISMapImageLayer",
           "ShowGroup": true,
           "Samples": [
+            "ArcGISMapImageLayerUrlViewController"
           ]
         },
         {

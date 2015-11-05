@@ -1,7 +1,7 @@
 {
   "Name": "ArcGISTiledLayer from a Url",
   "SampleName": "ArcGISTiledLayerUrlViewController",
-  "Description": "This sample is here as an example how samples should be implemented. Please refere issues for details for each sample that needs to be implemented.",
+  "Description": "The Tiled Layer from URL sample is one of the most basic .Net SDK samples. This example covers using ArcGISTiledLayer as a Basemap, as well as adding the required map and MapView elements. By default, this map supports basic zooming and panning operations.",
   "Instructions": "",
   "Type": 0,
   "RequiresOnlineConnection":true,
