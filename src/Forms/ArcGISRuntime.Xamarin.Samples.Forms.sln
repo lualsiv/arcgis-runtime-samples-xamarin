@@ -12,6 +12,8 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Xamarin.Forms\Shared\Forms.projitems*{05baeb1e-03dd-4bdc-b0eb-07b2679d9db8}*SharedItemsImports = 13
+Xamarin.Forms\Shared\Forms.projitems*{DB2FC14A-7608-44F9-BCF4-88EC7C1AA949}*SharedItemsImports = 4
+Xamarin.Forms\Shared\Forms.projitems*{5DA4DCDA-0167-4EDA-B6CF-5711458CA9BF}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
