@@ -43,16 +43,33 @@ namespace ArcGISRuntimeXamarin.Models
         [DataMember]
         public bool ShowGroup { get; set; }
 
+        // <summary>
+        // Gets all sample names that are part of this group.
+        // </summary>
+        //[DataMember(Name = "SampleName")]
+        //public List<string> SampleNames { get; set; }
+
         /// <summary>
-        /// Gets all sample names that are part of this group.
+        /// Gets all sample infos that are part of this group.
         /// </summary>
-        [DataMember(Name = "Samples")]
-        public List<string> SampleNames { get; set; }
+        [DataMember]
+        public List<SampleInfo> SampleInfo { get; set; }
 
         /// <summary>
         /// Gets all the samples.
         /// </summary>
         [IgnoreDataMember]
         public List<SampleModel> Samples { get; set; }
+    }
+
+
+    [DataContract(Name = "SampleInfo")]
+    public class SampleInfo
+    {
+        [DataMember()]
+        public string Path { get; set; }
+
+        [DataMember()]
+        public string SampleName { get; set; }
     }
 }

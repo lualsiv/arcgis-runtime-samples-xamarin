@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("ArcGISRuntimeXamarin.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("ArcGISRuntimeXamarin.Resource", IsApplication=true)]
 
-namespace ArcGISRuntimeXamarin.Droid
+namespace ArcGISRuntimeXamarin
 {
 	
 	

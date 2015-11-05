@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization.Json;
 using System.Threading.Tasks;
 using ArcGISRuntimeXamarin.Models;
-using Xamarin.Forms;
 
 namespace ArcGISRuntimeXamarin.Managers
 {   /// <summary>
@@ -32,17 +30,25 @@ namespace ArcGISRuntimeXamarin.Managers
 
         public async Task InitializeAsync()
         {
-            string filename = Path.GetFileName(GetType().Assembly.Location);
-            _samplesAssembly = Assembly.Load(filename);
+            // We now pass the Activity context so that we can open the groups.json
+            // file using context.Assets.Open. Otherwise this functionality is only
+            // available on an Activity.
 
             await CreateAllAsync();
-            RemoveEmptySamples();
+
+
+            // TODO - Need to implement
+            // Used for Removing samples
+            // string filename = Path.GetFileName(GetType().Assembly.Location);
+            // _samplesAssembly = Assembly.Load(filename);
+
+            // RemoveEmptySamples(); 
         }
 
         #endregion // Constructor and unique instance management
 
         /// <summary>
-        /// Gets or sets seleted sample.
+        /// Gets or sets selected sample.
         /// </summary>
         public SampleModel SelectedSample { get; set; }
 
@@ -62,8 +68,10 @@ namespace ArcGISRuntimeXamarin.Managers
         public List<TreeItem> GetSamplesAsTree()
         {
             var categories = new List<TreeItem>();
+
             try
             {
+                List<SampleModel> sampleList = new List<SampleModel>();
 
                 foreach (var category in _sampleStructureMap.Categories)
                 {
@@ -79,15 +87,16 @@ namespace ArcGISRuntimeXamarin.Managers
 
                             if (subCategory.Samples != null)
                                 foreach (var sample in subCategory.Samples)
+                                {
                                     subCategoryItem.Items.Add(sample);
+                                }
                         }
                         else
                         {
-                            foreach (var sample in subCategory.Samples)
+                            foreach (var sample in sampleList)
                                 categoryItem.Items.Add(sample);
                         }
                     }
-
                     categories.Add(categoryItem);
                 }
             }
@@ -103,30 +112,43 @@ namespace ArcGISRuntimeXamarin.Managers
         /// </summary>
         /// <param name="sampleModel">Sample that is transformed into a control</param>
         /// <returns>Sample as a control.</returns>
-        public ContentPage SampleToControl(SampleModel sampleModel)
+        //public Activity SampleToControl(SampleModel sampleModel)
+        //{
+        //	var fullTypeAsString = string.Format("{0}.{1}", sampleModel.SampleNamespace,
+        //		sampleModel.GetSampleName());
+        //	var sampleType = _samplesAssembly.GetType(fullTypeAsString);
+        //	var item = Activator.CreateInstance(sampleType);
+        //	return (UIViewController)item;
+        //}
+
+        public Stream GetMetadataManifest(string path)
         {
-            var fullTypeAsString = string.Format("{0}.{1}", sampleModel.SampleNamespace,
-                sampleModel.GetSampleName());
-            var sampleType = _samplesAssembly.GetType(fullTypeAsString);
-            var item = Activator.CreateInstance(sampleType);
-            return (ContentPage)item;
+            //ArcGISRuntimeXamarin.Samples.MapView.ExampleSample.metadata.json
+
+            var metadataPath = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json");
+
+            return metadataPath;
         }
+
 
         /// <summary>
         /// Creates whole sample structure.
         /// </summary>
         private async Task CreateAllAsync()
         {
+            // You can no longer check to see if groups.json exists on disk here. You have to 
+            // open it and verify that it isn't null.           
+            Stream groupsJson = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin.groups.json");
             try
             {
                 await Task.Run(() =>
                 {
-                    if (!File.Exists("groups.json"))
-                        throw new NotImplementedException("groups.json file is missing");
-                    _sampleStructureMap = SampleStructureMap.Create("groups.json");
+                    if (groupsJson == null)
+                        throw new NotImplementedException("groups.json file cannot be opened");
+                    _sampleStructureMap = SampleStructureMap.Create(groupsJson);
                 });
             }
-            // This is thrown if even one of the files requires permissions greater 
+            //// This is thrown if even one of the files requires permissions greater 
             // than the application provides. 
             catch (UnauthorizedAccessException e)
             {
@@ -143,7 +165,7 @@ namespace ArcGISRuntimeXamarin.Managers
         }
 
         /// <summary>
-        /// Remove samples that don't have a type registered i.e. cannot be shown.
+        /// Remove samples that doesn't have a type registered i.e. cannot be shown.
         /// </summary>
         private void RemoveEmptySamples()
         {
@@ -158,7 +180,7 @@ namespace ArcGISRuntimeXamarin.Managers
                     foreach (var sampleToRemove in notFoundSamples)
                     {
                         subCategory.Samples.Remove(sampleToRemove);
-                        subCategory.SampleNames.Remove(sampleToRemove.SampleName);
+                        // subCategory.SampleNames.Remove(sampleToRemove.SampleName);
                     }
                 }
             }

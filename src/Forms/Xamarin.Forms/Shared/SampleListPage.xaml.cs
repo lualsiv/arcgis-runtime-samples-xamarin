@@ -52,7 +52,7 @@ namespace ArcGISRuntimeXamarin
 
             Type t = Type.GetType(sampleNamespace + "." + sampleName);
 
-            await Navigation.PushAsync((Page)Activator.CreateInstance(t));
+            await Navigation.PushAsync((ContentPage)Activator.CreateInstance(t));
         }
     }
 }

@@ -52,25 +52,25 @@ namespace ArcGISRuntimeXamarin.Models
         /// <remarks>
         /// This assumes that output folder is 3 levels from the repository root folder ie. repositoryRoot\output\desktop\debug
         /// </remarks>
-        public static string GetSampleFolderInRelativeSolution(this SampleModel model)
-        {
-            switch (model.Type)
-            {
-                case SampleModel.SampleType.API:
-                    return string.Format(
-                        "..\\..\\..\\src\\desktop\\ArcGISRuntime.Desktop.Samples\\{0}\\{1}\\{2}",
-                            model.SampleFolder.Parent.Parent.Name,
-                            model.SampleFolder.Parent.Name,
-                            model.SampleFolder.Name);
-                case SampleModel.SampleType.Workflow:
-                case SampleModel.SampleType.Tutorial:
-                    return string.Format(
-                        "..\\..\\..\\src\\desktop\\ArcGISRuntime.Desktop.Samples\\{0}\\{1}",
-                            model.SampleFolder.Parent.Name,
-                            model.SampleFolder.Name);
-                default:
-                    throw new NotSupportedException("Sample type isn't supported.");
-            }
-        }
+        //public static string GetSampleFolderInRelativeSolution(this SampleModel model)
+        //{
+        //    switch (model.Type)
+        //    {
+        //        case SampleModel.SampleType.API:
+        //            return string.Format(
+        //                "..\\..\\..\\src\\desktop\\ArcGISRuntime.Desktop.Samples\\{0}\\{1}\\{2}",
+        //                    model.SampleFolder.Parent.Parent.Name,
+        //                    model.SampleFolder.Parent.Name,
+        //                    model.SampleFolder.Name);
+        //        case SampleModel.SampleType.Workflow:
+        //        case SampleModel.SampleType.Tutorial:
+        //            return string.Format(
+        //                "..\\..\\..\\src\\desktop\\ArcGISRuntime.Desktop.Samples\\{0}\\{1}",
+        //                    model.SampleFolder.Parent.Name,
+        //                    model.SampleFolder.Name);
+        //        default:
+        //            throw new NotSupportedException("Sample type isn't supported.");
+        //    }
+        //}
     }
 }

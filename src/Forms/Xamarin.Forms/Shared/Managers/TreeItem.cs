@@ -34,5 +34,6 @@ namespace ArcGISRuntimeXamarin.Managers
         /// Gets or sets the sub items of the node.
         /// </summary>
         public List<object> Items { get; set; }
+
     }
 }

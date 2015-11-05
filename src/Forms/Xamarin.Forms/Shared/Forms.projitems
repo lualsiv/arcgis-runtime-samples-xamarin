@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CategoryListPage.xaml.cs">
+      <DependentUpon>CategoryListPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Managers\SampleManager.cs" />
@@ -22,16 +23,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\SampleStructureMap.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SubCategoryModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SampleListPage.xaml.cs">
+      <DependentUpon>SampleListPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\ExampleSample.xaml.cs">
+      <DependentUpon>ExampleSample.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)groups.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)groups.json" />
     <Content Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\ExampleSample.jpg" />
-    <Content Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\metadata.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\ExampleSample.xaml">

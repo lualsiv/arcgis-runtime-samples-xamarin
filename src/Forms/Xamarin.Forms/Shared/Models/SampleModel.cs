@@ -11,6 +11,8 @@
 //WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //See the License for the specific language governing permissions and
 //limitations under the License.
+
+using ArcGISRuntimeXamarin.Managers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -113,7 +115,7 @@ namespace ArcGISRuntimeXamarin.Models
         public string Image { get; set; }
 
         /// <summary>
-        /// Gets or sets the url to the developers site tutorial documentation.
+        /// Gets or sets the URL to the developers site tutorial documentation.
         /// </summary>
         /// <remarks>This is only for samples that are type of Tutorial.</remarks>
         [DataMember]
@@ -135,8 +137,8 @@ namespace ArcGISRuntimeXamarin.Models
         /// <summary>
         /// Gets or sets the folder where sample is located.
         /// </summary>
-        [IgnoreDataMember]
-        public DirectoryInfo SampleFolder { get; set; }
+        [DataMember()]
+        public string SampleFolder { get; set; } // Changed this from Directory to string. Can't use Directory in Android. This required adding a new item to metadata.json file. 
 
         /// <summary>
         /// Gets the namespace of the sample.
@@ -146,7 +148,7 @@ namespace ArcGISRuntimeXamarin.Models
         {
             get
             {
-                var fullNamespace = string.Format("ArcGISRuntimeXamarin.Samples.{0}", SampleFolder.Name);
+                var fullNamespace = string.Format("ArcGISRuntimeXamarin.Samples.{0}", SampleFolder);
                 return fullNamespace;
             }
         }
@@ -159,40 +161,49 @@ namespace ArcGISRuntimeXamarin.Models
         {
             get
             {
-                var fullPath = Path.Combine(SampleFolder.FullName, Image);
+                // TODO: Not sure if this is going to work without Directory. Might need the Assets.Open again. 
+                var fullPath = Path.Combine(SampleFolder, Image);
                 return fullPath;
             }
         }
 
         #region Factory methods
         /// <summary>
-        /// Creates new instance of SampleModel by de-serializing it from the json file provided.
+        /// Creates new instance of SampleModel by deserializing it from the json file provided.
         /// </summary>
-        /// <param name="metadataFilePath">Full path to the metadata JSON file</param>
+        /// <param name="samplePath">Full path to the metadata JSON file of the sample</param>
         /// <returns>Deserialized SampleModel</returns>
-        internal static SampleModel Create(string metadataFilePath)
+        internal static SampleModel Create(string samplePath)
         {
-            if (!File.Exists(metadataFilePath))
-                return null;
+            var metadataStream = SampleManager.Current.GetMetadataManifest(samplePath);
 
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(SampleModel));
 
             SampleModel sampleModel = null;
-
-            // Create sample model from the metadata file and set needed properties to 
-            // the created model
-            var metadataFile = new FileInfo(metadataFilePath);
-
-            var json = File.ReadAllText(metadataFilePath);
-
-            var jsonInBytes = Encoding.UTF8.GetBytes(json);
-            using (MemoryStream stream = new MemoryStream(jsonInBytes))
+            
+            // The samplePath is the path specified in the groups.json file for each metadata.json file
+           // var assetPath = Path.Combine(samplePath, "metadata.json");
+            try
             {
-                // De-serialize sample model
-                sampleModel = serializer.ReadObject(stream) as SampleModel;
-                sampleModel.SampleFolder = metadataFile.Directory;
-            }
+                // TODO: Wondering if we can rework this to not have to open two different MemoryStreams.
+                using (Stream stream = metadataStream)
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        stream.CopyTo(ms);
+                        var jsonInBytes = ms.ToArray();
 
+                        using (MemoryStream ms2 = new MemoryStream(jsonInBytes))
+                        {
+                            sampleModel = serializer.ReadObject(ms2) as SampleModel;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             return sampleModel;
         }
         #endregion // Factory methods

@@ -8,8 +8,11 @@
 					"Name": "General",
 					"SubCategoryName": "GeneralTutorials",
 					"ShowGroup": true,
-					"Samples": [
-						"ExampleSample"
+					"SampleInfo": [
+            {
+              "SampleName": "ExampleSample",
+              "Path": "Samples/MapView/ExampleSample"
+            }
 					]
 				}
 			]
@@ -22,22 +25,24 @@
 					"Name": "MapView",
 					"SubCategoryName": "MapView",
 					"ShowGroup": true,
-					"Samples": [
-						"ExampleSample"
-					]
+					"SampleInfo": [
+            {
+              "SampleName": "ExampleSample",
+              "Path": "Samples/MapView/ExampleSample"
+            }]
 				},
 				{
 					"Name": "Map",
 					"SubCategoryName": "Map",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				},
 				{
 					"Name": "Basic license",
-					"SubCategoryName": "BasicLicence",
+					"SubCategoryName": "BasicLicense",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -50,28 +55,28 @@
 					"Name": "Tiled Layers",
 					"SubCategoryName": "ArcGISTiledLayer",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				},
 				{
 					"Name": "Map Image Layers",
 					"SubCategoryName": "ArcGISMapImageLayer",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				},
 				{
 					"Name": "KML Layers",
 					"SubCategoryName": "KMLLayers",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				},
 				{
 					"Name": "Raster Layers",
 					"SubCategoryName": "RasterLayers",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -84,7 +89,7 @@
 					"Name": "Feature Layers",
 					"SubCategoryName": "FeatureLayers",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -97,14 +102,14 @@
 					"Name": "Graphics Overlay",
 					"SubCategoryName": "GraphicOverlay",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				},
 				{
 					"Name": "Symbology",
 					"SubCategoryName": "Symbology",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -117,14 +122,14 @@
 					"Name": "Query",
 					"SubCategoryName": "Query",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				},
 				{
 					"Name": "Geocoding",
 					"SubCategoryName": "Geocoding",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -137,7 +142,7 @@
 					"Name": "Editing",
 					"SubCategoryName": "Editing",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -150,7 +155,7 @@
 					"Name": "Geometry",
 					"SubCategoryName": "Geometry",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -163,7 +168,7 @@
 					"Name": "Network Analysis",
 					"SubCategoryName": "NetworkAnalysis",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -176,14 +181,14 @@
 					"Name": "Analysis",
 					"SubCategoryName": "Analysis",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				},
 				{
 					"Name": "Geoprocessing",
 					"SubCategoryName": "Geoprocessing",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -196,14 +201,14 @@
 					"Name": "Portal",
 					"SubCategoryName": "Portal",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				},
 				{
 					"Name": "Security",
 					"SubCategoryName": "Security",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
@@ -216,14 +221,14 @@
 					"Name": "SceneView",
 					"SubCategoryName": "SceneView",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				},
 				{
 					"Name": "Scene",
 					"SubCategoryName": "Scene",
 					"ShowGroup": true,
-					"Samples": [
+					"SampleInfo": [
 					]
 				}
 			]
