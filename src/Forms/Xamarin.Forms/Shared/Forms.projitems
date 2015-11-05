@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>05baeb1e-03dd-4bdc-b0eb-07b2679d9db8</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Forms</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CategoryListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\SampleManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\TreeItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CategoryModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FeaturedModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SampleModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SampleModelExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SampleStructureMap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SubCategoryModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SampleListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\ExampleSample.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)groups.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\ExampleSample.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\metadata.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\ExampleSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CategoryListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SampleListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <None Include="$(MSBuildThisFileDirectory)Samples\MapView\ExampleSample\README.md" />
+  </ItemGroup>
+</Project>
