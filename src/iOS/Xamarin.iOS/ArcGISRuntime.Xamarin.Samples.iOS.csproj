@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esri.ArcGISRuntime">
-      <HintPath>..\..\..\..\runtime\output\xamarin_ios_anycpu_debug\bin\Esri.ArcGISRuntime.dll</HintPath>
+      <HintPath>..\..\..\..\..\applications\output\xamarin_ios_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Runtime.Serialization" />
@@ -109,8 +109,9 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <BundleResource Include="Samples\Layers\ExampleSample\metadata.json" />
+    <BundleResource Include="Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
+    <BundleResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <None Include="Samples\Layers\ExampleSample\README.md" />
-    <BundleResource Include="Samples\Layers\TestSample23\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -123,7 +124,8 @@
     <Compile Include="Models\SampleModelExtensions.cs" />
     <Compile Include="Models\SampleStructureMap.cs" />
     <Compile Include="Models\SubCategoryModel.cs" />
-    <Compile Include="Samples\Layers\TestSample23\UIViewController1.cs" />
+    <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
+    <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
     <Compile Include="Samples\Layers\ExampleSample\ExampleSample.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.cs" />
@@ -137,5 +139,11 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Samples\Layers\ExampleSample\ExampleSample.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrl.jpg" />
   </ItemGroup>
 </Project>

@@ -48,8 +48,8 @@ namespace ArcGISRuntimeXamarin.Samples.ExampleSample
 
             var m = new Map(SpatialReferences.WebMercator) { Basemap = basemap };
             m.OperationalLayers.Add(transportationLayer);
+            m.InitialViewpoint = new Viewpoint(new Envelope(-13076602.0511157, 4012916.33889948, -13066818.1129767, 4018744.00823465, SpatialReferences.WebMercator));
 
-            await m.LoadAsync();
 
             MyMapView = new MapView();
             MyMapView.Map = m;
@@ -60,9 +60,10 @@ namespace ArcGISRuntimeXamarin.Samples.ExampleSample
 
         }
 
-        private void ZoomInButton_Click(object sender, EventArgs e)
+        private async void ZoomInButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await MyMapView.SetViewpointAsync(new Viewpoint(new Envelope(-13076602.0511157, 4012916.33889948, -13066818.1129767, 4018744.00823465, SpatialReferences.WebMercator)));
+
         }
 
         private void zoomOutButton_Click(object sender, EventArgs e)
