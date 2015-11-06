@@ -8,12 +8,13 @@ using Esri.ArcGISRuntime.Layers;
 using Esri.ArcGISRuntime.Controls;
 using Esri.ArcGISRuntime;
 
-namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrlSample
+namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerUrl
 {
-    [Register("ArcGISMapImageLayerUrlViewController")]
-    public class ArcGISMapImageLayerUrlViewController : UIViewController
+   
+    [Register("ArcGISTiledLayerUrlViewController")]
+    public class ArcGISTiledLayerUrlViewController : UIViewController
     {
-        public ArcGISMapImageLayerUrlViewController()
+        public ArcGISTiledLayerUrlViewController()
         {
         }
 
@@ -21,8 +22,8 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrlSample
         {
             base.ViewDidLoad();
 
-            //First we create a new ArcGISMapImageLayer instance and pass a Url to the service
-            var baseLayer = new ArcGISMapImageLayer(new Uri("http://sampleserver5.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer"));
+            //First we create a new tiled layer and pass a Url to the service
+            var baseLayer = new ArcGISTiledLayer(new Uri("http://services.arcgisonline.com/arcgis/rest/services/NatGeo_World_Map/MapServer"));
 
             //We need to await the load call for the layer. This is required for layer to initialize all the metadata. If the layer is added without this load call, 
             //then it will not get initialized and no data will be visible on map.    
@@ -31,7 +32,7 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrlSample
             //Create a basemap where we can add this baselayer
             var basemap = new Basemap();
 
-            //Add the ArcGISMapImageLayer that we created above to the basemap. 
+            //Add the ArcGISTiledLayer that we created above to the basemap. 
             basemap.BaseLayers.Add(baseLayer);
 
             //Now lets create our UI.
@@ -47,7 +48,6 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrlSample
 
             //Create a new map instance which holds basemap that was created
             Map myMap = new Map(basemap);
-
 
             //Assign this map to the mapview that was created above.
             myMapView.Map = myMap;

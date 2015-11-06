@@ -109,8 +109,8 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <BundleResource Include="Samples\Layers\ExampleSample\metadata.json" />
-    <BundleResource Include="Samples\Layers\ArcGISTiledLayerUrlSample\metadata.json" />
-    <BundleResource Include="Samples\Layers\ArcGISMapImageLayerUrlSample\metadata.json" />
+    <BundleResource Include="Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
+    <BundleResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <None Include="Samples\Layers\ExampleSample\README.md" />
     <BundleResource Include="Samples\Layers\TestSample23\metadata.json" />
   </ItemGroup>
@@ -125,8 +125,8 @@
     <Compile Include="Models\SampleModelExtensions.cs" />
     <Compile Include="Models\SampleStructureMap.cs" />
     <Compile Include="Models\SubCategoryModel.cs" />
-    <Compile Include="Samples\Layers\ArcGISMapImageLayerUrlSample\ArcGISMapImageLayerUrlViewController.cs" />
-    <Compile Include="Samples\Layers\ArcGISTiledLayerUrlSample\ArcGISTiledLayerUrlViewController.cs" />
+    <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
+    <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
     <Compile Include="Samples\Layers\TestSample23\UIViewController1.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
     <Compile Include="Samples\Layers\ExampleSample\ExampleSample.cs" />
@@ -143,9 +143,9 @@
     <BundleResource Include="Samples\Layers\ExampleSample\ExampleSample.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Samples\Layers\ArcGISTiledLayerUrlSample\ExampleSample.jpg" />
+    <BundleResource Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrl.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Samples\Layers\ArcGISMapImageLayerUrlSample\ExampleSample.jpg" />
+    <BundleResource Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrl.jpg" />
   </ItemGroup>
 </Project>
