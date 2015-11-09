@@ -10,7 +10,7 @@ using ArcGISRuntimeXamarin.Models;
 
 namespace ArcGISRuntimeXamarin
 {
-    [Activity(Label = "SamplesListActivity")]
+    [Activity(Label = "Samples")]
     public class SamplesListActivity : Activity
     {
         List<SampleModel> _listSampleItems;

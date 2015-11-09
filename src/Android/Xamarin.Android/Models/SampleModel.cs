@@ -12,6 +12,7 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 using Android.App;
+using ArcGISRuntimeXamarin.Managers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -172,20 +173,18 @@ namespace ArcGISRuntimeXamarin.Models
         /// </summary>
         /// <param name="samplePath">Full path to the metadata JSON file of the sample</param>
         /// <returns>Deserialized SampleModel</returns>
-        internal static SampleModel Create(string samplePath, Activity context)
+        internal static SampleModel Create(string samplePath)
         {
-            Activity activityContext = context;
+            var metadataStream = SampleManager.Current.GetMetadataManifest(samplePath);
 
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(SampleModel));
 
             SampleModel sampleModel = null;
 
-            // The samplePath is the path specified in the groups.json file for each metadata.json file
-            var assetPath = Path.Combine(samplePath, "metadata.json");
             try
             {
                 // TODO: Wondering if we can rework this to not have to open two different MemoryStreams.
-                using (Stream stream = activityContext.Assets.Open(assetPath))
+                using (Stream stream = metadataStream)
                 {
                     using (MemoryStream ms = new MemoryStream())
                     {
@@ -195,7 +194,7 @@ namespace ArcGISRuntimeXamarin.Models
                         using (MemoryStream ms2 = new MemoryStream(jsonInBytes))
                         {
                             sampleModel = serializer.ReadObject(ms2) as SampleModel;
-                         }
+                        }
                     }
                 }
             }

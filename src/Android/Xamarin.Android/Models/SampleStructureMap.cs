@@ -12,6 +12,7 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 using Android.App;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -84,29 +85,33 @@ namespace ArcGISRuntimeXamarin.Models
         /// </summary>
         /// <param name="groupsJSON">Full path to the groups JSON file</param>
         /// <returns>Deserialized <see cref="SampleStructureMap"/></returns>
-        internal static SampleStructureMap Create(string groupsJSON, Activity context)
+        internal static SampleStructureMap Create(Stream groupsJSON)
         {
-
-            Activity activityContext = context;
             var serializer = new DataContractJsonSerializer(typeof(SampleStructureMap));
 
             SampleStructureMap structureMap = null;
 
-            // KD - Need two MemoryStreams? Need to investigate. Has to do with needing to open the json from the Android
-            // Activity which gives you a stream. Then you need to get back to bytes. 
-            using (Stream stream = activityContext.Assets.Open(groupsJSON))
+            try
             {
-                using (MemoryStream ms = new MemoryStream())
+                // KD - Need two MemoryStreams? Need to investigate. 
+                using (groupsJSON)
                 {
-                    stream.CopyTo(ms);
-                    var jsonInBytes = ms.ToArray();
-
-                    using (MemoryStream ms2 = new MemoryStream(jsonInBytes))
+                    using (MemoryStream ms = new MemoryStream())
                     {
-                        structureMap = serializer.ReadObject(ms2) as SampleStructureMap;
-                        structureMap.Samples = new List<SampleModel>();
+                        groupsJSON.CopyTo(ms);
+                        var jsonInBytes = ms.ToArray();
+
+                        using (MemoryStream ms2 = new MemoryStream(jsonInBytes))
+                        {
+                            structureMap = serializer.ReadObject(ms2) as SampleStructureMap;
+                            structureMap.Samples = new List<SampleModel>();
+                        }
                     }
                 }
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
             #region CreateSamples
@@ -125,7 +130,7 @@ namespace ArcGISRuntimeXamarin.Models
                     {
                         foreach (var sample in subCategory.SampleInfo)
                         {
-                            pathList.Add(sample.Path);
+                            pathList.Add(sample.Path.Replace("/","."));
                         }
                     }
                 }
@@ -134,7 +139,7 @@ namespace ArcGISRuntimeXamarin.Models
             SampleModel sampleModel = new SampleModel();
             foreach (var samplePath in pathList)
             {
-                sampleModel = SampleModel.Create(samplePath, activityContext);
+                sampleModel = SampleModel.Create(samplePath);
                 if (sampleModel != null)
                     structureMap.Samples.Add(sampleModel);
             }

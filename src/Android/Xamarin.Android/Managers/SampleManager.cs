@@ -127,6 +127,18 @@ namespace ArcGISRuntimeXamarin.Managers
         //}
 
         /// <summary>
+        /// Returns a Stream based on the individual sample metadata.json file. 
+        /// </summary>
+        /// <param name="path">String path to the metadata file.</param>
+        /// <returns>Metadata.json stream</returns>
+        public Stream GetMetadataManifest(string path)
+        {
+            var metadataPath = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json");
+
+            return metadataPath;
+        }
+
+        /// <summary>
         /// Creates whole sample structure.
         /// </summary>
         private async Task CreateAllAsync()
@@ -134,15 +146,14 @@ namespace ArcGISRuntimeXamarin.Managers
             // You can no longer check to see if groups.json exists on disk here. You have to 
             // open it and verify that it isn't null. 
 
-            var groups = context.Assets.Open("groups.json");
-
+            Stream groupsJson = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin.groups.json");
             try
             {
                 await Task.Run(() =>
                 {
-                    if (groups == null)
+                    if (groupsJson == null)
                         throw new NotImplementedException("groups.json file cannot be opened");
-                    _sampleStructureMap = SampleStructureMap.Create("groups.json", context); // Passing the Activity context here again
+                    _sampleStructureMap = SampleStructureMap.Create(groupsJson); // Passing the Activity context here again
                 });
             }
             // This is thrown if even one of the files requires permissions greater 

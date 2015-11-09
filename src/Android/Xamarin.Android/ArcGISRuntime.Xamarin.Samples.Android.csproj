@@ -81,9 +81,9 @@
     <Compile Include="Samples\MapView\ExampleSample\ExampleSample.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\groups.json">
+    <EmbeddedResource Include="groups.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
+    </EmbeddedResource>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\CategoriesList.axml">
@@ -98,12 +98,12 @@
     <AndroidResource Include="Resources\layout\SamplesLayout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidAsset Include="Samples\MapView\ExampleSample\metadata.json">
+    <EmbeddedResource Include="Samples\MapView\ExampleSample\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Samples\MapView\ExampleSample2\metadata.json">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\MapView\ExampleSample2\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
