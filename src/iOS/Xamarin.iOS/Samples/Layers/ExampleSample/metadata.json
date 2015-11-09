@@ -10,5 +10,6 @@
   "Image":"ExampleSample.jpg",
   "Link":"",
   "TypeLink": [
-  ]
+  ], 
+  "SampleFolder":  "ExampleSample"
 }

@@ -1,241 +1,252 @@
 {
-  "Categories": [
-    {
-      "Name": "Tutorials",
-      "CategoryName": "Tutorials",
-      "SubCategories": [
+    "Categories": [
         {
-          "Name": "General",
-          "SubCategoryName": "GeneralTutorials",
-          "ShowGroup": true,
-          "Samples": [
-            "ExampleSample"
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Maps",
-      "CategoryName": "Maps",
-      "SubCategories": [
-        {
-          "Name": "MapView",
-          "SubCategoryName": "MapView",
-          "ShowGroup": true,
-          "Samples": [
-            "UIViewController1",
-            "ExampleSample"
-          ]
+            "Name": "Tutorials",
+            "CategoryName": "Tutorials",
+            "SubCategories": [
+                {
+                    "Name": "General",
+                    "SubCategoryName": "GeneralTutorials",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                        {
+                            "SampleName": "ExampleSample",
+                            "Path": "Samples/Layers/ExampleSample"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "Name": "Map",
-          "SubCategoryName": "Map",
-          "ShowGroup": true,
-          "Samples": [
-          ]
+            "Name": "Maps",
+            "CategoryName": "Maps",
+            "SubCategories": [
+                {
+                    "Name": "MapView",
+                    "SubCategoryName": "MapView",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                        {
+                            "SampleName": "ExampleSample",
+                            "Path": "Samples/Layers/ExampleSample"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Map",
+                    "SubCategoryName": "Map",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                },
+                {
+                    "Name": "Basic license",
+                    "SubCategoryName": "BasicLicence",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         },
         {
-          "Name": "Basic license",
-          "SubCategoryName": "BasicLicence",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Layers",
-      "CategoryName": "Layers",
-      "SubCategories": [
-        {
-          "Name": "Tiled Layers",
-          "SubCategoryName": "ArcGISTiledLayer",
-          "ShowGroup": true,
-          "Samples": [
-            "ArcGISTiledLayerUrlViewController"
-          ]
+            "Name": "Layers",
+            "CategoryName": "Layers",
+            "SubCategories": [
+                {
+                    "Name": "Tiled Layers",
+                    "SubCategoryName": "ArcGISTiledLayer",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                        {
+                            "SampleName": "ArcGISTiledLayerUrlViewController",
+                            "Path": "Samples/Layers/ArcGISTiledLayerUrl"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Map Image Layers",
+                    "SubCategoryName": "ArcGISMapImageLayer",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                        {
+                            "SampleName": "ArcGISMapImageLayerUrlViewController",
+                            "Path": "Samples/Layers/ArcGISMapImageLayerUrl"
+                        }
+                    ]
+                },
+                {
+                    "Name": "KML Layers",
+                    "SubCategoryName": "KMLLayers",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                },
+                {
+                    "Name": "Raster Layers",
+                    "SubCategoryName": "RasterLayers",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         },
         {
-          "Name": "Map Image Layers",
-          "SubCategoryName": "ArcGISMapImageLayer",
-          "ShowGroup": true,
-          "Samples": [
-            "ArcGISMapImageLayerUrlViewController"
-          ]
+            "Name": "Features",
+            "CategoryName": "Features",
+            "SubCategories": [
+                {
+                    "Name": "Feature Layers",
+                    "SubCategoryName": "FeatureLayers",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         },
         {
-          "Name": "KML Layers",
-          "SubCategoryName": "KMLLayers",
-          "ShowGroup": true,
-          "Samples": [
-          ]
+            "Name": "Display Information",
+            "CategoryName": "DisplayInformation",
+            "SubCategories": [
+                {
+                    "Name": "Graphics Overlay",
+                    "SubCategoryName": "GraphicOverlay",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                },
+                {
+                    "Name": "Symbology",
+                    "SubCategoryName": "Symbology",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         },
         {
-          "Name": "Raster Layers",
-          "SubCategoryName": "RasterLayers",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Features",
-      "CategoryName": "Features",
-      "SubCategories": [
-        {
-          "Name": "Feature Layers",
-          "SubCategoryName": "FeatureLayers",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Display Information",
-      "CategoryName": "DisplayInformation",
-      "SubCategories": [
-        {
-          "Name": "Graphics Overlay",
-          "SubCategoryName": "GraphicOverlay",
-          "ShowGroup": true,
-          "Samples": [
-          ]
+            "Name": "Search",
+            "CategoryName": "Search",
+            "SubCategories": [
+                {
+                    "Name": "Query",
+                    "SubCategoryName": "Query",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                },
+                {
+                    "Name": "Geocoding",
+                    "SubCategoryName": "Geocoding",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         },
         {
-          "Name": "Symbology",
-          "SubCategoryName": "Symbology",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Search",
-      "CategoryName": "Search",
-      "SubCategories": [
-        {
-          "Name": "Query",
-          "SubCategoryName": "Query",
-          "ShowGroup": true,
-          "Samples": [
-          ]
+            "Name": "Edit Data",
+            "CategoryName": "EditData",
+            "SubCategories": [
+                {
+                    "Name": "Editing",
+                    "SubCategoryName": "Editing",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         },
         {
-          "Name": "Geocoding",
-          "SubCategoryName": "Geocoding",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Edit Data",
-      "CategoryName": "EditData",
-      "SubCategories": [
-        {
-          "Name": "Editing",
-          "SubCategoryName": "Editing",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Geometry",
-      "CategoryName": "Geometry",
-      "SubCategories": [
-        {
-          "Name": "Geometry",
-          "SubCategoryName": "Geometry",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Routing & Navigation",
-      "CategoryName": "RoutingNavigation",
-      "SubCategories": [
-        {
-          "Name": "Network Analysis",
-          "SubCategoryName": "NetworkAnalysis",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Analysis",
-      "CategoryName": "Analysis",
-      "SubCategories": [
-        {
-          "Name": "Analysis",
-          "SubCategoryName": "Analysis",
-          "ShowGroup": true,
-          "Samples": [
-          ]
+            "Name": "Geometry",
+            "CategoryName": "Geometry",
+            "SubCategories": [
+                {
+                    "Name": "Geometry",
+                    "SubCategoryName": "Geometry",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         },
         {
-          "Name": "Geoprocessing",
-          "SubCategoryName": "Geoprocessing",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Cloud & Portal",
-      "CategoryName": "CloudPortal",
-      "SubCategories": [
-        {
-          "Name": "Portal",
-          "SubCategoryName": "Portal",
-          "ShowGroup": true,
-          "Samples": [
-          ]
+            "Name": "Routing & Navigation",
+            "CategoryName": "RoutingNavigation",
+            "SubCategories": [
+                {
+                    "Name": "Network Analysis",
+                    "SubCategoryName": "NetworkAnalysis",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         },
         {
-          "Name": "Security",
-          "SubCategoryName": "Security",
-          "ShowGroup": true,
-          "Samples": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "3D",
-      "CategoryName": "3D",
-      "SubCategories": [
-        {
-          "Name": "SceneView",
-          "SubCategoryName": "SceneView",
-          "ShowGroup": true,
-          "Samples": [
-          ]
+            "Name": "Analysis",
+            "CategoryName": "Analysis",
+            "SubCategories": [
+                {
+                    "Name": "Analysis",
+                    "SubCategoryName": "Analysis",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                },
+                {
+                    "Name": "Geoprocessing",
+                    "SubCategoryName": "Geoprocessing",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         },
         {
-          "Name": "Scene",
-          "SubCategoryName": "Scene",
-          "ShowGroup": true,
-          "Samples": [
-          ]
+            "Name": "Cloud & Portal",
+            "CategoryName": "CloudPortal",
+            "SubCategories": [
+                {
+                    "Name": "Portal",
+                    "SubCategoryName": "Portal",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                },
+                {
+                    "Name": "Security",
+                    "SubCategoryName": "Security",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "3D",
+            "CategoryName": "3D",
+            "SubCategories": [
+                {
+                    "Name": "SceneView",
+                    "SubCategoryName": "SceneView",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                },
+                {
+                    "Name": "Scene",
+                    "SubCategoryName": "Scene",
+                    "ShowGroup": true,
+                    "SampleInfo": [
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "Featured": [
-	{
-	  "SampleName": "ExampleSample",
-	  "Reason": 1
-	}
-  ]
+    ],
+    "Featured": [
+        {
+            "SampleName": "ExampleSample",
+            "Reason": 1
+        }
+    ]
 }

@@ -10,5 +10,6 @@
   "Image":"ArcGISMapImageLayerUrl.jpg",
   "Link":"",
   "TypeLink": [
-  ]
+  ],
+ "SampleFolder":  "ArcGISMapImageLayerUrl"
 }

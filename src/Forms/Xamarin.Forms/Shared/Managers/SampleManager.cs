@@ -123,8 +123,6 @@ namespace ArcGISRuntimeXamarin.Managers
 
         public Stream GetMetadataManifest(string path)
         {
-            //ArcGISRuntimeXamarin.Samples.MapView.ExampleSample.metadata.json
-
             var metadataPath = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json");
 
             return metadataPath;
@@ -148,7 +146,7 @@ namespace ArcGISRuntimeXamarin.Managers
                     _sampleStructureMap = SampleStructureMap.Create(groupsJson);
                 });
             }
-            //// This is thrown if even one of the files requires permissions greater 
+            // This is thrown if even one of the files requires permissions greater 
             // than the application provides. 
             catch (UnauthorizedAccessException e)
             {

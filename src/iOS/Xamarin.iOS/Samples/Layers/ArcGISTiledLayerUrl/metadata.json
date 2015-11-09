@@ -10,5 +10,6 @@
   "Image":"ArcGISTiledLayerUrl.jpg",
   "Link":"",
   "TypeLink": [
-  ]
+  ],
+  "SampleFolder":  "ArcGISTiledLayerUrl"
 }

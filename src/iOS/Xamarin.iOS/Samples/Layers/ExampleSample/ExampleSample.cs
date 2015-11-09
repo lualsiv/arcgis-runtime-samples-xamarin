@@ -24,7 +24,7 @@ namespace ArcGISRuntimeXamarin.Samples.ExampleSample
     {
         public ExampleSample()
         {
-            Title = "Example Sample";
+            Title = "Example Sample - No Map";
         }
 
         public override void DidReceiveMemoryWarning()

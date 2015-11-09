@@ -9,10 +9,10 @@
 					"SubCategoryName": "GeneralTutorials",
 					"ShowGroup": true,
 					"SampleInfo": [
-            {
-              "SampleName": "ExampleSample",
-              "Path": "Samples/MapView/ExampleSample"
-            }
+						{
+							"SampleName": "ExampleSample",
+							"Path": "Samples/MapView/ExampleSample"
+						}
 					]
 				}
 			]
@@ -26,10 +26,11 @@
 					"SubCategoryName": "MapView",
 					"ShowGroup": true,
 					"SampleInfo": [
-            {
-              "SampleName": "ExampleSample",
-              "Path": "Samples/MapView/ExampleSample"
-            }]
+						{
+							"SampleName": "ExampleSample",
+							"Path": "Samples/MapView/ExampleSample"
+						}
+					]
 				},
 				{
 					"Name": "Map",
@@ -234,10 +235,10 @@
 			]
 		}
 	],
-  "Featured": [
-	{
-	  "SampleName": "ExampleSample",
-	  "Reason": 1
-	}
-  ]
+	"Featured": [
+		{
+			"SampleName": "ExampleSample",
+			"Reason": 1
+		}
+	]
 }
