@@ -8,7 +8,7 @@ using Android.Content;
 
 namespace ArcGISRuntimeXamarin
 {
-    [Activity(Label = "Sample Categories", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "ArcGIS Runtime SDK for Xamarin Android", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         List<TreeItem> _sampleCategories;
