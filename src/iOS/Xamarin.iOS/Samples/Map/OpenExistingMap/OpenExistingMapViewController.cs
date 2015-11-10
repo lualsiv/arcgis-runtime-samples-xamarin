@@ -66,25 +66,27 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
                 //Add actions to ActionSheet. Selecting an option re-initializes the Map with selected web map url and assign it to MapView
                 actionSheetAlert.AddAction(UIAlertAction.Create(titles[0], UIAlertActionStyle.Default, (action) =>
                   {
-                      myMap = new Map(new Uri(itemURLs[0]));
-                      myMapView.Map = myMap;
+                          myMap = new Map(new Uri(itemURLs[0]));
+                          myMapView.Map = myMap;
+
                   }));
                 actionSheetAlert.AddAction(UIAlertAction.Create(titles[1], UIAlertActionStyle.Default, (action) =>
                 {
-                    myMap = new Map(new Uri(itemURLs[1]));
-                    myMapView.Map = myMap;
+                        myMap = new Map(new Uri(itemURLs[1]));
+                        myMapView.Map = myMap;
+
                 }));
                 actionSheetAlert.AddAction(UIAlertAction.Create(titles[2], UIAlertActionStyle.Default, (action) =>
-                {
-                    myMap = new Map(new Uri(itemURLs[2]));
-                    myMapView.Map = myMap;
+                {                   
+                        myMap = new Map(new Uri(itemURLs[2]));
+                        myMapView.Map = myMap;
+
                 }));
                 this.PresentViewController(actionSheetAlert, true, null);
             };
 
             //Finally add the MapView to the Subview
             View.AddSubviews(myMapView, mapsButton);
-
         }
 
     }
