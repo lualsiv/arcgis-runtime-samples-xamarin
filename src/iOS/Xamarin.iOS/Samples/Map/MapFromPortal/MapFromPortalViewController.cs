@@ -59,7 +59,7 @@ namespace ArcGISRuntimeXamarin.Samples.MapFromPortal
             mapsButton.SetTitle("Maps", UIControlState.Normal);
             mapsButton.SetTitleColor(UIColor.Blue, UIControlState.Normal);
 
-            //Add event for button click. Clicking this button opens an action sheet with all the web maps in itemUrls above being presented as options. Users can selecy a webmap to open it.
+            //Add event for button click. Clicking this button opens an action sheet with all the web maps in itemUrls above being presented as options. Users can select a webmap to open it.
             mapsButton.TouchUpInside += (s, e) => {
                 //Initialize an UIAlertController with a title and style of an actionsheet
                 UIAlertController actionSheetAlert = UIAlertController.Create("Select a map to open", "", UIAlertControllerStyle.ActionSheet);
