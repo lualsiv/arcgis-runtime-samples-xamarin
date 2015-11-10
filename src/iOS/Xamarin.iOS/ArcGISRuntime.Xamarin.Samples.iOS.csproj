@@ -133,7 +133,7 @@
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <None Include="Samples\Layers\ExampleSample\README.md" />
-    <EmbeddedResource Include="Samples\Map\MapFromPortal\metadata.json" />
+    <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -148,7 +148,7 @@
     <Compile Include="Models\SubCategoryModel.cs" />
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
-    <Compile Include="Samples\Map\MapFromPortal\MapFromPortalViewController.cs" />
+    <Compile Include="Samples\Map\OpenExistingMap\OpenExisingMapViewController.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
     <Compile Include="Samples\Layers\ExampleSample\ExampleSample.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.cs" />
@@ -170,6 +170,6 @@
     <BundleResource Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrl.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Samples\Map\MapFromPortal\MapFromPortal.jpg" />
+    <EmbeddedResource Include="Samples\Map\OpenExistingMap\OpenExistingMap.jpg" />
   </ItemGroup>
 </Project>

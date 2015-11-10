@@ -35,8 +35,8 @@
           "ShowGroup": true,
           "SampleInfo": [
             {
-               "SampleName": "MapFromPortalViewController",
-              "Path": "Samples/Map/MapFromPortal"
+               "SampleName": "OpenExistingMapViewController",
+              "Path": "Samples/Map/OpenExistingMap"
             }
           ]
         },
