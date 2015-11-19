@@ -31,62 +31,71 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
 
         public override void ViewDidLoad()
         {
-           
             base.ViewDidLoad();
-
-            //Create a variable to hold the height of the button that we will be adding later on in the UI.
-            var height = 45;
-
-            //Create a new MapView control and provide its location coordinates on the frame.
-            MapView myMapView = new MapView()
+            try
             {
-                Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height- height)
-            };
+                //Create a variable to hold the height of the button that we will be adding later on in the UI.
+                var height = 45;
 
-            //Create a new Map instance with url of the web map that is displayed by default
-            myMap = new Map(new Uri(itemURLs[0]));
-
-            //Assign this map to the MapView that was created above.
-            myMapView.Map = myMap;
-
-            //Now we add a button at the bottom that will present users different webmaps that they can select to open.
-            UIButton mapsButton = new UIButton(UIButtonType.Custom)
-            {
-                Frame=new CoreGraphics.CGRect(0,myMapView.Bounds.Height,View.Bounds.Width,height),
-                BackgroundColor=UIColor.White               
-            };
-
-            mapsButton.SetTitle("Maps", UIControlState.Normal);
-            mapsButton.SetTitleColor(UIColor.Blue, UIControlState.Normal);
-
-            //Add event for button click. Clicking this button opens an action sheet with all the web maps in itemUrls above being presented as options. Users can select a webmap to open it.
-            mapsButton.TouchUpInside += (s, e) => {
-                //Initialize an UIAlertController with a title and style of an ActionSheet
-                UIAlertController actionSheetAlert = UIAlertController.Create("Select a map to open", "", UIAlertControllerStyle.ActionSheet);
-                //Add actions to ActionSheet. Selecting an option re-initializes the Map with selected web map url and assign it to MapView
-                actionSheetAlert.AddAction(UIAlertAction.Create(titles[0], UIAlertActionStyle.Default, (action) =>
-                  {
-                          myMap = new Map(new Uri(itemURLs[0]));
-                          myMapView.Map = myMap;
-
-                  }));
-                actionSheetAlert.AddAction(UIAlertAction.Create(titles[1], UIAlertActionStyle.Default, (action) =>
+                //Create a new MapView control and provide its location coordinates on the frame.
+                MapView myMapView = new MapView()
                 {
+                    Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height - height)
+                };
+
+                //Create a new Map instance with url of the web map that is displayed by default
+                myMap = new Map(new Uri(itemURLs[0]));
+
+                //Assign this map to the MapView that was created above.
+                myMapView.Map = myMap;
+
+                //Now we add a button at the bottom that will present users different webmaps that they can select to open.
+                UIButton mapsButton = new UIButton(UIButtonType.Custom)
+                {
+                    Frame = new CoreGraphics.CGRect(0, myMapView.Bounds.Height, View.Bounds.Width, height),
+                    BackgroundColor = UIColor.White
+                };
+
+                mapsButton.SetTitle("Maps", UIControlState.Normal);
+                mapsButton.SetTitleColor(UIColor.Blue, UIControlState.Normal);
+
+                //Add event for button click. Clicking this button opens an action sheet with all the web maps in itemUrls above being presented as options. Users can select a webmap to open it.
+                mapsButton.TouchUpInside += (s, e) => {
+                    //Initialize an UIAlertController with a title and style of an ActionSheet
+                    UIAlertController actionSheetAlert = UIAlertController.Create("Select a map to open", "", UIAlertControllerStyle.ActionSheet);
+                    //Add actions to ActionSheet. Selecting an option re-initializes the Map with selected web map url and assign it to MapView
+                    actionSheetAlert.AddAction(UIAlertAction.Create(titles[0], UIAlertActionStyle.Default, (action) =>
+                    {
+                        myMap = new Map(new Uri(itemURLs[0]));
+                        myMapView.Map = myMap;
+
+                    }));
+                    actionSheetAlert.AddAction(UIAlertAction.Create(titles[1], UIAlertActionStyle.Default, (action) =>
+                    {
                         myMap = new Map(new Uri(itemURLs[1]));
                         myMapView.Map = myMap;
 
-                }));
-                actionSheetAlert.AddAction(UIAlertAction.Create(titles[2], UIAlertActionStyle.Default, (action) =>
-                {                   
+                    }));
+                    actionSheetAlert.AddAction(UIAlertAction.Create(titles[2], UIAlertActionStyle.Default, (action) =>
+                    {
                         myMap = new Map(new Uri(itemURLs[2]));
                         myMapView.Map = myMap;
 
-                }));
-                this.PresentViewController(actionSheetAlert, true, null);
-            };
+                    }));
+                    this.PresentViewController(actionSheetAlert, true, null);
+                };
 
-            //Finally add the MapView to the Subview
-            View.AddSubviews(myMapView, mapsButton);
+                //Finally add the MapView to the Subview
+                View.AddSubviews(myMapView, mapsButton);
+            }
+            catch (Exception ex)
+            {
+
+                UIAlertController errorAlert = UIAlertController.Create("error", ex.Message, UIAlertControllerStyle.Alert);
+            }
+            
+
+           
         }
 
     }
