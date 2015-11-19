@@ -35,8 +35,12 @@
           "ShowGroup": true,
           "SampleInfo": [
             {
-               "SampleName": "OpenExistingMapViewController",
+              "SampleName": "OpenExistingMapViewController",
               "Path": "Samples/Map/OpenExistingMap"
+            },
+             {
+               "SampleName": "ChangeViewpointViewController",
+              "Path": "Samples/Map/ChangeViewpoint"
             }
           ]
         },
