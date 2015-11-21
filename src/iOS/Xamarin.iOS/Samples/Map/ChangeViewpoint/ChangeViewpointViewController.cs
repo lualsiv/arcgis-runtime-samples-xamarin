@@ -36,14 +36,6 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
         {
         }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            // Releases the view if it doesn't have a superview.
-            base.DidReceiveMemoryWarning();
-
-            // Release any cached data, images, etc that aren't in use.
-        }
-
         public async override void ViewDidLoad()
         {          
             base.ViewDidLoad();
@@ -75,14 +67,13 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                     
                 };
 
-                //Create a new Map instance with url of the web map that is displayed by default
-                
+                //Create a new Map instance with the basemap that we created                
                 Map myMap = new Map(basemap);
 
                 //Assign this map to the MapView that was created above.
                 myMapView.Map = myMap;
 
-              
+                //Create a segmented control to display buttons
                 UISegmentedControl segmentControl = new UISegmentedControl() { BackgroundColor = UIColor.White };
                 segmentControl.Frame = new CoreGraphics.CGRect(0, myMapView.Bounds.Height, View.Bounds.Width, height);
                 segmentControl.InsertSegment("Geometry", 0, false);
@@ -91,18 +82,23 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
 
                 segmentControl.ValueChanged += async(sender, e) => {
                     var selectedSegmentId = (sender as UISegmentedControl).SelectedSegment;
-                    // do something with selectedSegmentId
+                    //Do something with selectedSegmentId
                     switch(selectedSegmentId)
                     {
                         case 0:
+                            //Set viewpoint using Rendlands envelope defined above and a padding of 20
                             await myMapView.SetViewpointGeometryAsync(RedlandsEnvelope,20);
                             break;
                         case 1:
+                            //Set Viewpoint such that it is centered on the London coordinates defined above
                             await myMapView.SetViewpointCenterAsync(LondonCoords);
+                            //Set Viewpoint's scale to match the specified scale 
                             await myMapView.SetViewpointScaleAsync(LondonScale);
                             break;
                         case 2:
+                            //create a new Viewpoint using the specified geometry
                             var viewpoint = new Esri.ArcGISRuntime.Viewpoint(EdinburghEnvelope);
+                            //Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
                             await myMapView.SetViewpointAsync(viewpoint, System.TimeSpan.FromSeconds(5));
                             break;
                     }
@@ -110,13 +106,9 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
 
                 //Finally add the MapView to the Subview
                 View.AddSubviews(myMapView, segmentControl);
-
-                
-                //await myMapView.SetViewpointAsync(viewpoint, System.TimeSpan.FromSeconds(5));
             }
             catch (Exception ex)
             {
-
                 UIAlertController errorAlert = UIAlertController.Create("error", ex.Message, UIAlertControllerStyle.Alert);
             }
         }
