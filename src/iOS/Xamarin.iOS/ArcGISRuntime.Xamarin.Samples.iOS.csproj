@@ -134,6 +134,7 @@
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <None Include="Samples\Layers\ExampleSample\README.md" />
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
+    <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMapViewController.cs" />
+    <Compile Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbolViewController.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
     <Compile Include="Samples\Layers\ExampleSample\ExampleSample.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.cs" />
@@ -171,5 +173,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\OpenExistingMap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
   </ItemGroup>
 </Project>
