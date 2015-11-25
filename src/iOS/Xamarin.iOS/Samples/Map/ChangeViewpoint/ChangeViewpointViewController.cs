@@ -56,8 +56,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 basemap.BaseLayers.Add(baseLayer);
 
                 //Lets now create the UI
-
-                //Create a variable to hold the height of the button that we will be adding later on in the UI.
+                //Create a variable to hold the height of the segmented control that we will be adding later on in the UI.
                 var height = 45;
 
                 //Create a new MapView control and provide its location coordinates on the frame.
@@ -70,7 +69,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 //Create a new Map instance with the basemap that we created                
                 Map myMap = new Map(basemap);
 
-                //Assign this map to the MapView that was created above.
+                //Assign this Map to the MapView that was created above.
                 myMapView.Map = myMap;
 
                 //Create a segmented control to display buttons
