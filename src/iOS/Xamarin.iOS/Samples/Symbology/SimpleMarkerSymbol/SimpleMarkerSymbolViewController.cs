@@ -64,7 +64,9 @@ namespace ArcGISRuntimeXamarin.Samples.SimpleMarkerSymbol
             var circleSymbol = new Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol()
             {
                 Style= SimpleMarkerSymbolStyle.Circle,
-                Size=14
+                Size=14,
+                Color=UIColor.Red
+                
             };
 
             // Create a new graphic using the map point and the symbol
