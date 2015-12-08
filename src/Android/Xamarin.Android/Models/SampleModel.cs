@@ -175,27 +175,16 @@ namespace ArcGISRuntimeXamarin.Models
         /// <returns>Deserialized SampleModel</returns>
         internal static SampleModel Create(string samplePath)
         {
-            var metadataStream = SampleManager.Current.GetMetadataManifest(samplePath);
+            var metadataBytes = SampleManager.Current.GetMetadataManifestAsBytes(samplePath);
 
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(SampleModel));
-
             SampleModel sampleModel = null;
 
             try
             {
-                // TODO: Wondering if we can rework this to not have to open two different MemoryStreams.
-                using (Stream stream = metadataStream)
+                using (MemoryStream ms = new MemoryStream(metadataBytes)) 
                 {
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        stream.CopyTo(ms);
-                        var jsonInBytes = ms.ToArray();
-
-                        using (MemoryStream ms2 = new MemoryStream(jsonInBytes))
-                        {
-                            sampleModel = serializer.ReadObject(ms2) as SampleModel;
-                        }
-                    }
+                    sampleModel = serializer.ReadObject(ms) as SampleModel;
                 }
             }
             catch (Exception ex)
