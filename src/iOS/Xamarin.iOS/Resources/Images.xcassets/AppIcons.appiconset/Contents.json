@@ -5,101 +5,74 @@
   "images": [
     {
       "idiom": "iphone",
-      "scale": "1x",
-      "size": "29x29"
-    },
-    {
-      "idiom": "iphone",
       "scale": "2x",
+      "filename": "iOS_58.png",
       "size": "29x29"
     },
     {
       "idiom": "iphone",
       "scale": "3x",
+      "filename": "iOS_87.png",
       "size": "29x29"
     },
     {
       "idiom": "iphone",
       "scale": "2x",
+      "filename": "iOS_80.png",
       "size": "40x40"
     },
     {
       "idiom": "iphone",
       "scale": "3x",
-      "filename": "ArcGISLogo_120.png",
+      "filename": "iOS_120.png",
       "size": "40x40"
     },
     {
       "idiom": "iphone",
-      "scale": "1x",
-      "size": "57x57"
-    },
-    {
-      "idiom": "iphone",
       "scale": "2x",
-      "size": "57x57"
-    },
-    {
-      "idiom": "iphone",
-      "scale": "2x",
-      "filename": "ArcGISLogo_120.png",
+      "filename": "iOS_120.png",
       "size": "60x60"
     },
     {
       "idiom": "iphone",
       "scale": "3x",
+      "filename": "iOS_180.png",
       "size": "60x60"
     },
     {
       "idiom": "ipad",
       "scale": "1x",
+      "filename": "iOS_29.png",
       "size": "29x29"
     },
     {
       "idiom": "ipad",
       "scale": "2x",
+      "filename": "iOS_58.png",
       "size": "29x29"
     },
     {
       "idiom": "ipad",
       "scale": "1x",
+      "filename": "iOS_40.png",
       "size": "40x40"
     },
     {
       "idiom": "ipad",
       "scale": "2x",
+      "filename": "iOS_80.png",
       "size": "40x40"
     },
     {
       "idiom": "ipad",
       "scale": "1x",
-      "size": "50x50"
-    },
-    {
-      "idiom": "ipad",
-      "scale": "2x",
-      "size": "50x50"
-    },
-    {
-      "idiom": "ipad",
-      "scale": "1x",
-      "size": "72x72"
-    },
-    {
-      "idiom": "ipad",
-      "scale": "2x",
-      "size": "72x72"
-    },
-    {
-      "idiom": "ipad",
-      "scale": "1x",
-      "filename": "Icon-76.png",
+      "filename": "iOS_76.png",
       "size": "76x76"
     },
     {
       "idiom": "ipad",
       "scale": "2x",
-      "filename": "Icon-76@2x.png",
+      "filename": "iOS_152.png",
       "size": "76x76"
     }
   ],
