@@ -1,0 +1,15 @@
+{
+  "Name": "Unique value renderer",
+  "SampleName": "RenderUniqueValues",
+  "Description": "This sample demonstrates how to use a unique value renderer to style different features in a feature layer with different symbols. The unique value renderer allows for separate symbols to be used for features that have specific attribute values in a defined field.",
+  "Instructions": "",
+  "Type": 0,
+  "RequiresOnlineConnection":true,
+  "RequiresOfflineData":false,
+  "RequiresLocalServer":false,
+  "Image":"RenderUniqueValues.jpg",
+  "Link":"",
+  "TypeLink": [
+  ],
+  "SampleFolder": "RenderUniqueValues"
+}
