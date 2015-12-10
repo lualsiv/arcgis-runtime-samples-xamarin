@@ -79,6 +79,7 @@
     <Compile Include="SamplesListAdapter.cs" />
     <Compile Include="Samples\MapView\ExampleSample2\ExampleSample2.cs" />
     <Compile Include="Samples\MapView\ExampleSample\ExampleSample.cs" />
+    <Compile Include="Samples\Map\MapRotation\MapRotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="groups.json">
@@ -104,6 +105,9 @@
     <EmbeddedResource Include="Samples\MapView\ExampleSample2\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Map\MapRotation\metadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -120,6 +124,9 @@
     <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
     <Content Include="Samples\MapView\ExampleSample\ExampleSample.jpg" />
+    <Content Include="Samples\Map\MapRotation\MapRotation.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
