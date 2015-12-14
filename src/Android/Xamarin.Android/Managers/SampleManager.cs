@@ -138,6 +138,17 @@ namespace ArcGISRuntimeXamarin.Managers
             return metadataPath;
         }
 
+        public byte[] GetMetadataManifestAsBytes(string path)
+        {
+            using (var stream = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json"))
+            {
+                using (var textStream = new System.IO.StreamReader(stream))
+                {
+                    var metadataString = textStream.ReadToEnd();
+                    return System.Text.Encoding.UTF8.GetBytes(metadataString);
+                }
+            }
+        }
         /// <summary>
         /// Creates whole sample structure.
         /// </summary>
