@@ -80,7 +80,6 @@
     <Compile Include="Samples\MapView\ExampleSample2\ExampleSample2.cs" />
     <Compile Include="Samples\MapView\ExampleSample\ExampleSample.cs" />
     <Compile Include="Samples\Symbols\RenderUniqueValues\RenderUniqueValues.cs" />
-    <Compile Include="Samples\Symbols\test\test.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="groups.json">
@@ -109,9 +108,6 @@
     <EmbeddedResource Include="Samples\Symbols\RenderUniqueValues\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Samples\Symbols\test\metadata.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -129,9 +125,6 @@
     <AndroidResource Include="Resources\drawable\Icon.png" />
     <Content Include="Samples\MapView\ExampleSample\ExampleSample.jpg" />
     <Content Include="Samples\Symbols\RenderUniqueValues\RenderUniqueValues.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Samples\Symbols\test\test.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

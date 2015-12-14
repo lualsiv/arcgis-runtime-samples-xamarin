@@ -66,11 +66,11 @@ namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
         private async void AddStatesLayer(object sender, EventArgs e)
         {
             // create a US states layer to symbolize with unique values
-            var statesUri = new Uri("http://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer/2");
+            var statesUri = new Uri("http://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3"); // WorldTimeZones/MapServer/2");
             // create a service feature table using the service URI
             var statesFeatureTable = new ServiceFeatureTable(statesUri);
             // Add the "SUB_REGION" field to the outfields, will be used to render polygons in the layer
-            statesFeatureTable.OutFields.Add("REGION");
+            statesFeatureTable.OutFields.Add("SUB_REGION");
 
             // Create a new feature layer using the service feature table
             var statesLayer = new FeatureLayer(statesFeatureTable);
@@ -78,7 +78,7 @@ namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
             // Create a new unique value renderer
             var regionRenderer = new UniqueValueRenderer();
             // Add the "SUB_REGION" field to the renderer
-            regionRenderer.FieldNames.Add("REGION");
+            regionRenderer.FieldNames.Add("SUB_REGION");
 
             // Define a line symbol to use for the region fill symbols
             var stateOutlineSymbol = new SimpleLineSymbol(SimpleLineSymbolStyle.Solid, Color.White, 0.7);
@@ -88,9 +88,9 @@ namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
             var westSouthCentralFillSymbol = new SimpleFillSymbol(SimpleFillSymbolStyle.Solid, Color.SandyBrown, stateOutlineSymbol);
 
             // Add values to the renderer: define the label, description, symbol, and attribute value for each
-            regionRenderer.UniqueValues.Add(new UniqueValue("Pacific", "Pacific Region", pacificFillSymbol, "Central Asia"));
-            regionRenderer.UniqueValues.Add(new UniqueValue("Mountain", "Rocky Mountain Region", mountainFillSymbol, "Western Europe"));
-            regionRenderer.UniqueValues.Add(new UniqueValue("West South Central", "West South Central Region", westSouthCentralFillSymbol, "South America"));
+            regionRenderer.UniqueValues.Add(new UniqueValue("Pacific", "Pacific Region", pacificFillSymbol, "Pacific"));
+            regionRenderer.UniqueValues.Add(new UniqueValue("Mountain", "Rocky Mountain Region", mountainFillSymbol, "Mountain"));
+            regionRenderer.UniqueValues.Add(new UniqueValue("West South Central", "West South Central Region", westSouthCentralFillSymbol, "West South Central"));
 
             // Set the default region fill symbol (transparent with no outline) for regions not explicitly defined in the renderer
             var defaultFillSymbol = new SimpleFillSymbol(SimpleFillSymbolStyle.Null, Color.Transparent, null);
@@ -99,12 +99,29 @@ namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
 
             // Apply the unique value renderer to the states layer
             statesLayer.Renderer = regionRenderer;
-            // Add the new layer to the map
-            //MyMapView.Map.OperationalLayers.Add(statesLayer);
-            await statesLayer.LoadAsync();
-            MyMapView.Map.Basemap.BaseLayers.Add(statesLayer);
-            // await map.LoadAsync();
 
+            //TEST - load the layer/table and check for exceptions
+            try
+            {
+                await statesFeatureTable.LoadAsync();
+            }            
+            catch(Exception ex)
+            {
+                var loadStat = statesFeatureTable.LoadStatus;
+                var loadEx = statesFeatureTable.LoadError;
+            }
+
+            try
+            {
+                await statesLayer.LoadAsync();
+            }
+            catch(Exception ex)
+            {
+                var loadStat = statesLayer.LoadStatus;
+                var loadEx = statesLayer.LoadError;
+            }
+            // Add the new layer to the map
+            MyMapView.Map.OperationalLayers.Add(statesLayer);
         }
     }
 }
