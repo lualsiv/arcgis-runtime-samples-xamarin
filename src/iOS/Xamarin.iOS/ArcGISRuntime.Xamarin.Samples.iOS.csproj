@@ -156,10 +156,8 @@
     </EmbeddedResource>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <EmbeddedResource Include="Samples\Layers\ExampleSample\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
-    <None Include="Samples\Layers\ExampleSample\README.md" />
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
   </ItemGroup>
   <ItemGroup>
@@ -177,7 +175,6 @@
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMapViewController.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
-    <Compile Include="Samples\Layers\ExampleSample\ExampleSample.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.designer.cs">
       <DependentUpon>CategoriesViewController.cs</DependentUpon>
@@ -186,9 +183,6 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Samples\Layers\ExampleSample\ExampleSample.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrl.jpg" />
