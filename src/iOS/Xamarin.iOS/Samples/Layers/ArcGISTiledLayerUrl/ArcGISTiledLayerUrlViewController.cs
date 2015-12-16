@@ -36,7 +36,7 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerUrl
             var baseLayer = new ArcGISTiledLayer(new Uri("http://services.arcgisonline.com/arcgis/rest/services/NatGeo_World_Map/MapServer"));
 
             //We need to await the load call for the layer.    
-          //  await baseLayer.LoadAsync();
+            await baseLayer.LoadAsync();
 
             //Create a basemap where we can add this baselayer
             var myBasemap = new Basemap();
