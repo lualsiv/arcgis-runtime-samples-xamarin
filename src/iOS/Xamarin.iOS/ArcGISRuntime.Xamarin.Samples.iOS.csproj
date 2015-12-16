@@ -97,7 +97,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esri.ArcGISRuntime">
-      <HintPath>..\..\..\..\..\applications\output\xamarin_ios_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
+      <HintPath>..\..\..\..\output\xamarin_ios_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
     </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="System" />
@@ -116,6 +116,33 @@
     <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/Icon-76@2x.png">
       <InProject>false</InProject>
     </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/iOS_120.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/iOS_152.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/iOS_180.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/iOS_29.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/iOS_40.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/iOS_58.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/iOS_76.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/iOS_80.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/iOS_87.png">
+      <InProject>false</InProject>
+    </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
@@ -129,10 +156,8 @@
     </EmbeddedResource>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <EmbeddedResource Include="Samples\Layers\ExampleSample\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
-    <None Include="Samples\Layers\ExampleSample\README.md" />
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
     <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\metadata.json" />
   </ItemGroup>
@@ -152,7 +177,6 @@
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMapViewController.cs" />
     <Compile Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbolViewController.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
-    <Compile Include="Samples\Layers\ExampleSample\ExampleSample.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.designer.cs">
       <DependentUpon>CategoriesViewController.cs</DependentUpon>
@@ -161,9 +185,6 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Samples\Layers\ExampleSample\ExampleSample.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrl.jpg" />
