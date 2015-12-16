@@ -27,13 +27,13 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
     {
         private readonly MapPoint LondonCoords = new MapPoint(-13881.7678417696, 6710726.57374296, SpatialReferences.WebMercator);
         private readonly Double LondonScale = 8762.7156655228955;
-        private readonly Polygon EdinburghEnvelope = new Polygon(new List<MapPoint> {
+        private readonly Polygon RedlandsEnvelope = new Polygon(new List<MapPoint> {
             (new MapPoint(-13049785.1566222, 4032064.6003424)),
             (new MapPoint(-13049785.1566222, 4040202.42595729)),
             (new MapPoint(-13037033.5780234, 4032064.6003424)),
             (new MapPoint(-13037033.5780234, 4040202.42595729))},
           SpatialReferences.WebMercator);
-        private readonly Polygon RedlandsEnvelope = new Polygon(new List<MapPoint> {
+        private readonly Polygon EdinburghEnvelope = new Polygon(new List<MapPoint> {
             (new MapPoint(-354262.156621384, 7548092.94093301)),
             (new MapPoint(-354262.156621384, 7548901.50684376)),
             (new MapPoint(-353039.164455303, 7548092.94093301)),
@@ -102,6 +102,8 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                             await myMapView.SetViewpointScaleAsync(LondonScale);
                             break;
                         case 2:
+                            //Navigate to full extent of the first baselayer before animating to specified geometry
+                            await myMapView.SetViewpointAsync(new Viewpoint(baseLayer.FullExtent));
                             //Create a new Viewpoint using the specified geometry
                             var viewpoint = new Esri.ArcGISRuntime.Viewpoint(EdinburghEnvelope);
                             //Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
