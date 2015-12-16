@@ -159,6 +159,7 @@
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
+    <EmbeddedResource Include="Samples\Map\ChangeViewpoint\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Models\SubCategoryModel.cs" />
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
+    <Compile Include="Samples\Map\ChangeViewpoint\ChangeViewpointViewController.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMapViewController.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.cs" />
@@ -192,5 +194,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\OpenExistingMap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Samples\Map\ChangeViewpoint\ChangeViewpoint.jpg" />
   </ItemGroup>
 </Project>
