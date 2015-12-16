@@ -17,7 +17,6 @@ using Android.OS;
 using Android.Widget;
 using Esri.ArcGISRuntime;
 using Esri.ArcGISRuntime.Controls;
-using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Layers;
 using System;
 
@@ -27,7 +26,7 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
     public class MapRotation : Activity
     {
         MapView MyMapView;
-        int SliderValue = 0;
+        int SliderValue = 0; // map rotation angle (degrees)
 
         protected override void OnCreate(Bundle bundle)
         {
