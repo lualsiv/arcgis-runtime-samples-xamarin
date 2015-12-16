@@ -1,7 +1,17 @@
+// Copyright 2015 Esri.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 using System;
-using System.Drawing;
-
-using CoreFoundation;
 using UIKit;
 using Foundation;
 using Esri.ArcGISRuntime.Geometry;
@@ -12,7 +22,6 @@ using Esri.ArcGISRuntime.Layers;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
 {
-  
     [Register("ChangeViewpointViewController")]
     public class ChangeViewpointViewController : UIViewController
     {
@@ -37,7 +46,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
         }
 
         public async override void ViewDidLoad()
-        {          
+        {
             base.ViewDidLoad();
 
             try
@@ -45,8 +54,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 //First we create a new tiled layer and pass a Url to the service
                 var baseLayer = new ArcGISTiledLayer(new Uri("http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer"));
 
-                //We need to await the load call for the layer. This is required for layer to initialize all the metadata. If the layer is added without this load call, 
-                //then it will not get initialized and no data will be visible on map.    
+                //We need to await the load call for the layer. This is required for layer to initialize all the metadata.
                 await baseLayer.LoadAsync();
 
                 //Create a basemap where we can add this baselayer
@@ -55,7 +63,6 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 //Add the ArcGISTiledLayer that we created above to the basemap. 
                 basemap.BaseLayers.Add(baseLayer);
 
-                //Lets now create the UI
                 //Create a variable to hold the height of the segmented control that we will be adding later on in the UI.
                 var height = 45;
 
@@ -63,11 +70,10 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 myMapView = new MapView()
                 {
                     Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height - height)
-                    
                 };
 
                 //Create a new Map instance with the basemap that we created                
-                Map myMap = new Map(basemap);
+                Map myMap = new Map(SpatialReferences.WebMercator) { Basemap = basemap };
 
                 //Assign this Map to the MapView that was created above.
                 myMapView.Map = myMap;
@@ -79,14 +85,15 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 segmentControl.InsertSegment("Center & Scale", 1, false);
                 segmentControl.InsertSegment("Animate", 2, false);
 
-                segmentControl.ValueChanged += async(sender, e) => {
+                segmentControl.ValueChanged += async (sender, e) =>
+                {
                     var selectedSegmentId = (sender as UISegmentedControl).SelectedSegment;
-                    //Do something with selectedSegmentId
-                    switch(selectedSegmentId)
+
+                    switch (selectedSegmentId)
                     {
                         case 0:
-                            //Set viewpoint using Rendlands envelope defined above and a padding of 20
-                            await myMapView.SetViewpointGeometryAsync(RedlandsEnvelope,20);
+                            //Set viewpoint using Redlands envelope defined above and a padding of 20
+                            await myMapView.SetViewpointGeometryAsync(RedlandsEnvelope, 20);
                             break;
                         case 1:
                             //Set Viewpoint such that it is centered on the London coordinates defined above
@@ -95,7 +102,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                             await myMapView.SetViewpointScaleAsync(LondonScale);
                             break;
                         case 2:
-                            //create a new Viewpoint using the specified geometry
+                            //Create a new Viewpoint using the specified geometry
                             var viewpoint = new Esri.ArcGISRuntime.Viewpoint(EdinburghEnvelope);
                             //Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
                             await myMapView.SetViewpointAsync(viewpoint, System.TimeSpan.FromSeconds(5));
@@ -103,7 +110,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                     }
                 };
 
-                //Finally add the MapView to the Subview
+                //Add the MapView to the Subview
                 View.AddSubviews(myMapView, segmentControl);
             }
             catch (Exception ex)
