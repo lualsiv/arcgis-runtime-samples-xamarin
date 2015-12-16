@@ -100,6 +100,7 @@
       <HintPath>..\..\..\..\output\xamarin_ios_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
     </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="OpenTK-1.0" />
     <Reference Include="System" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />

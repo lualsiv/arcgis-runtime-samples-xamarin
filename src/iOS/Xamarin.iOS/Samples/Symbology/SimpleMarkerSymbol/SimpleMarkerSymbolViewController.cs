@@ -1,7 +1,5 @@
 using System;
 using System.Drawing;
-
-using CoreFoundation;
 using UIKit;
 using Foundation;
 using Esri.ArcGISRuntime.Layers;
@@ -21,34 +19,28 @@ namespace ArcGISRuntimeXamarin.Samples.SimpleMarkerSymbol
 
         public async override void ViewDidLoad()
         {
-
             base.ViewDidLoad();
 
-            //First we create a new tiled layer and pass a Url to the service
+            //Create a new tiled layer and pass a Uri to the service
             var baseLayer = new ArcGISTiledLayer(new Uri("http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer"));
 
-            //We need to await the load call for the layer. This is required for layer to initialize all the metadata. If the layer is added without this load call, 
-            //then it will not get initialized and no data will be visible on map.    
+            //Load the base layer 
             await baseLayer.LoadAsync();
 
-            //Create a basemap where we can add this baselayer
-            var basemap = new Basemap();
+            //Create a basemap and add the base layer
+            var myBasemap = new Basemap();
+            myBasemap.BaseLayers.Add(baseLayer);
 
-            //Add the ArcGISTiledLayer that we created above to the basemap. 
-            basemap.BaseLayers.Add(baseLayer);
-
-
-            //Now lets create our UI.
-            //Create a new mapview control and provide its location coordinates on the frame.
+            //Create a new MapView control and provide its location coordinates on the frame
             MapView myMapView = new MapView()
             {
                 Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height)
             };
 
-            //Create a new map instance which holds basemap that was created
-            Map myMap = new Map(basemap);
+            //Create a new map instance and add the basemap
+            Map myMap = new Map(myBasemap);
 
-            //Assign this map to the mapview that was created above.
+            //Assign this Map to the MapView
             myMapView.Map = myMap;
 
             //Create a new instance of GraphicsOverlay where we can create graphics with simple marker symbol 
@@ -57,31 +49,30 @@ namespace ArcGISRuntimeXamarin.Samples.SimpleMarkerSymbol
                 RenderingMode = GraphicsRenderingMode.Static
             };
 
-            //Create a new MapPoint where new Graphic will be located
+            //Create a MapPoint where the Graphic will be located
             var mapPoint = new MapPoint(-117.195646, 34.056397, SpatialReferences.Wgs84);
 
-            // Create a new red circle marker symbol
+            //Create a new red circle marker symbol
             var circleSymbol = new Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol()
             {
                 Style= SimpleMarkerSymbolStyle.Circle,
                 Size=14,
-                Color=UIColor.Red
-                
+                Color = Color.Red              
             };
 
             // Create a new graphic using the map point and the symbol
             var pointGraphic = new Graphic(mapPoint, circleSymbol);
 
-            // Add the graphic to the map
+            // Add the graphic to the graphicsOverlay
             graphicsOverlay.Graphics.Add(pointGraphic);
 
-            //Add graphicsOverlay to MapView's GraphicsOverlay collection
+            //Add the graphicsOverlay to MapView's GraphicsOverlays collection
             myMapView.GraphicsOverlays.Add(graphicsOverlay);
 
             // Center the map view extent on the point graphic          
             myMapView.SetViewpoint(new Viewpoint(mapPoint, 24000));
 
-            //Finally add the mapview to the Subview
+            //Add the MapView to the Subview
             View.AddSubview(myMapView);
         }
     }
