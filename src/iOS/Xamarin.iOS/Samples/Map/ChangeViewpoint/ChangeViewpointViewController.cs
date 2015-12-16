@@ -54,14 +54,14 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 //First we create a new tiled layer and pass a Url to the service
                 var baseLayer = new ArcGISTiledLayer(new Uri("http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer"));
 
-                //We need to await the load call for the layer. This is required for layer to initialize all the metadata.
+                //TODO - Remove this once #2915 is fixed
                 await baseLayer.LoadAsync();
 
                 //Create a basemap where we can add this baselayer
-                var basemap = new Basemap();
+                var myBasemap = new Basemap();
 
                 //Add the ArcGISTiledLayer that we created above to the basemap. 
-                basemap.BaseLayers.Add(baseLayer);
+                myBasemap.BaseLayers.Add(baseLayer);
 
                 //Create a variable to hold the height of the segmented control that we will be adding later on in the UI.
                 var height = 45;
@@ -73,7 +73,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 };
 
                 //Create a new Map instance with the basemap that we created                
-                Map myMap = new Map(SpatialReferences.WebMercator) { Basemap = basemap };
+                Map myMap = new Map(SpatialReferences.WebMercator) { Basemap = myBasemap };
 
                 //Assign this Map to the MapView that was created above.
                 myMapView.Map = myMap;
