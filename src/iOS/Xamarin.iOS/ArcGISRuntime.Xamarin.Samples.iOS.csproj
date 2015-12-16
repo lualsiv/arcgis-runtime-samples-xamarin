@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -160,6 +160,7 @@
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
+    <EmbeddedResource Include="Samples\Map\ChangeViewpoint\metadata.json" />
     <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\metadata.json" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +176,7 @@
     <Compile Include="Models\SubCategoryModel.cs" />
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
+    <Compile Include="Samples\Map\ChangeViewpoint\ChangeViewpointViewController.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMapViewController.cs" />
     <Compile Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbolViewController.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
@@ -198,5 +200,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Samples\Map\ChangeViewpoint\ChangeViewpoint.jpg" />
   </ItemGroup>
 </Project>

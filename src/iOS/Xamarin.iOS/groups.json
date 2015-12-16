@@ -37,6 +37,10 @@
             {
               "SampleName": "OpenExistingMapViewController",
               "Path": "Samples/Map/OpenExistingMap"
+            },
+             {
+               "SampleName": "ChangeViewpointViewController",
+              "Path": "Samples/Map/ChangeViewpoint"
             }
           ]
         },
