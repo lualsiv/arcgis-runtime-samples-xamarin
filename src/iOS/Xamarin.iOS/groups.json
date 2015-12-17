@@ -35,8 +35,12 @@
           "ShowGroup": true,
           "SampleInfo": [
             {
-               "SampleName": "OpenExistingMapViewController",
+              "SampleName": "OpenExistingMapViewController",
               "Path": "Samples/Map/OpenExistingMap"
+            },
+             {
+               "SampleName": "ChangeViewpointViewController",
+              "Path": "Samples/Map/ChangeViewpoint"
             }
           ]
         },
@@ -120,6 +124,10 @@
           "SubCategoryName": "Symbology",
           "ShowGroup": true,
           "SampleInfo": [
+              {
+              "SampleName": "SimpleMarkerSymbolViewController",
+              "Path": "Samples/Symbology/SimpleMarkerSymbol"
+            }
           ]
         }
       ]

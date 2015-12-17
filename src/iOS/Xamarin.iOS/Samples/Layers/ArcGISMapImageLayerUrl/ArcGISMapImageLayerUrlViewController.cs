@@ -12,14 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 using System;
-using System.Drawing;
-
-using CoreFoundation;
 using UIKit;
 using Foundation;
 using Esri.ArcGISRuntime.Layers;
 using Esri.ArcGISRuntime.Controls;
 using Esri.ArcGISRuntime;
+using Esri.ArcGISRuntime.Geometry;
 
 namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrl
 {
@@ -30,42 +28,38 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrl
         {
         }
 
-
         public async override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
-            //First we create a new ArcGISMapImageLayer instance and pass a Url to the service
+            // Create a new ArcGISMapImageLayer instance and pass a Url to the service
             var baseLayer = new ArcGISMapImageLayer(new Uri("http://sampleserver5.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer"));
 
-            //We need to await the load call for the layer. This is required for layer to initialize all the metadata. If the layer is added without this load call, 
-            //then it will not get initialized and no data will be visible on map.    
+            // Await the load call for the layer.
             await baseLayer.LoadAsync();
 
-            //Create a basemap where we can add this baselayer
-            var basemap = new Basemap();
+            // Create a basemap to hold the base layer
+            var myBasemap = new Basemap();
 
-            //Add the ArcGISMapImageLayer that we created above to the basemap. 
-            basemap.BaseLayers.Add(baseLayer);
+            // Add the base layer to the basemap. 
+            myBasemap.BaseLayers.Add(baseLayer);
 
-            //Now lets create our UI.
-
-            //Create a variable to hold the Y coordinate of the map view control. We dont need XOffset since we are going to place the mapview at x=0
+            // Create a variable to hold the Y coordinate of the MapView control (adds spacing at the top).
             var yOffset = 70;
 
-            //Create a new mapview control and provide its location coordinates on the frame.
+            // Create a new MapView control and provide its location coordinates on the frame.
             MapView myMapView = new MapView()
             {
                 Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - yOffset)
             };
 
-            //Create a new map instance which holds basemap that was created
-            Map myMap = new Map(basemap);
+            // Create a new Map instance
+            Map myMap = new Map(SpatialReferences.WebMercator) { Basemap = myBasemap };
 
-            //Assign this map to the mapview that was created above.
+            // Assign the Map to the MapView
             myMapView.Map = myMap;
 
-            //Finally add the mapview to the Subview
+            // Add the MapView to the Subview
             View.AddSubview(myMapView);
         }
     }

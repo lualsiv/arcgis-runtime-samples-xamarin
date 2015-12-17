@@ -40,8 +40,12 @@
 					"Name": "Map",
 					"SubCategoryName": "Map",
 					"ShowGroup": true,
-					"SampleInfo": [
-					]
+          "SampleInfo": [
+            {
+              "SampleName": "MapRotation",
+              "Path": "Samples/Map/MapRotation"
+            }
+          ]
 				},
 				{
 					"Name": "Basic license",
