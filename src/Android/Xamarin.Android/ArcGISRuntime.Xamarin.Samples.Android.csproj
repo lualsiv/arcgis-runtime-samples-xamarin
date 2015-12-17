@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -77,13 +77,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SamplesListActivity.cs" />
     <Compile Include="SamplesListAdapter.cs" />
-    <Compile Include="Samples\MapView\ExampleSample2\ExampleSample2.cs" />
-    <Compile Include="Samples\MapView\ExampleSample\ExampleSample.cs" />
+    <Compile Include="Samples\Map\MapRotation\MapRotation.cs" />
+    <Compile Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="groups.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Map\MapRotation\metadata.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\CategoriesList.axml">
@@ -98,12 +99,7 @@
     <AndroidResource Include="Resources\layout\SamplesLayout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <EmbeddedResource Include="Samples\MapView\ExampleSample\metadata.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Samples\MapView\ExampleSample2\metadata.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <None Include="Samples\Symbols\SimpleMarkerSymbol\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -119,7 +115,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
-    <Content Include="Samples\MapView\ExampleSample\ExampleSample.jpg" />
+    <Content Include="Samples\Map\MapRotation\MapRotation.jpg" />
+    <Content Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Samples\MapView\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
