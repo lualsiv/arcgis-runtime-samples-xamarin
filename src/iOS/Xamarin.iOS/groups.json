@@ -124,6 +124,10 @@
           "SubCategoryName": "Symbology",
           "ShowGroup": true,
           "SampleInfo": [
+              {
+              "SampleName": "SimpleMarkerSymbolViewController",
+              "Path": "Samples/Symbology/SimpleMarkerSymbol"
+            }
           ]
         }
       ]
