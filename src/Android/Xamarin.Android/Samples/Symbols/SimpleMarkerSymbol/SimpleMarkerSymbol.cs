@@ -38,42 +38,42 @@ namespace ArcGISRuntimeXamarin.Samples.SimpleMarkerSymbol
 
         void Initialize()
         {
-            // create a new vertical layout for the app
+            // Create a new vertical layout for the app
             var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
 
-            // create a new MapView
+            // Create a new map view control to display a map
             MyMapView = new MapView();
 
-            // create a new Map with an imagery base map
+            // Create a new map with an imagery base map
             var myBasemap = Basemap.CreateImagery();
             var myMap = new Map(myBasemap);
 
-            // create a map point to use for graphic geometry
+            // Create a map point to use for graphic geometry
             var graphicPoint = new MapPoint(-226773, 6550477, SpatialReferences.WebMercator);
 
-            // set an initial viewpoint that centers the map on the graphic
+            // Set an initial viewpoint that centers the map on the graphic
             var graphicViewpoint = new Viewpoint(graphicPoint, 7500);
             myMap.InitialViewpoint = graphicViewpoint;
 
-            // add the map to a new MapView
+            // Add the map to the map view
             MyMapView.Map = myMap;
 
-            // create a new graphics overlay and add it to the map view
+            // Create a new graphics overlay and add it to the map view
             var graphicsOverlay = new GraphicsOverlay();
             MyMapView.GraphicsOverlays.Add(graphicsOverlay);
 
-            // create a new simple marker symbol: red circle
+            // Create a new simple marker symbol: red circle
             var colorRed = System.Drawing.Color.Red;
             var markerSymbol = new Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol(Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbolStyle.Circle, colorRed, 12); 
             
-            // add a new point graphic 
+            // Create a new point graphic and add it to the overlay
             var myGraphic = new Graphic(graphicPoint, markerSymbol);
             graphicsOverlay.Graphics.Add(myGraphic);
            
-            // add the map view to the layout
+            // Add the map view to the layout
             layout.AddView(MyMapView);
 
-            // show the layout in the app
+            // Show the layout in the app
             SetContentView(layout);
         }
     }

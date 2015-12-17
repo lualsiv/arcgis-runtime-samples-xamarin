@@ -84,6 +84,7 @@
     <EmbeddedResource Include="groups.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Symbols\SimpleMarkerSymbol\metadata.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\CategoriesList.axml">
@@ -98,9 +99,6 @@
     <AndroidResource Include="Resources\layout\SamplesLayout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <EmbeddedResource Include="Samples\Symbols\SimpleMarkerSymbol\metadata.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -112,12 +110,10 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="Samples\MapView\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Samples\MapView\" />
+    <Content Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
