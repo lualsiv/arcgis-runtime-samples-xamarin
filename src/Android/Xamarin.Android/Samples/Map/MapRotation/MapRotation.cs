@@ -18,7 +18,6 @@ using Android.Widget;
 using Esri.ArcGISRuntime;
 using Esri.ArcGISRuntime.Controls;
 using Esri.ArcGISRuntime.Layers;
-using System;
 
 namespace ArcGISRuntimeXamarin.Samples.MapRotation
 {
@@ -26,7 +25,6 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
     public class MapRotation : Activity
     {
         MapView MyMapView;
-        int SliderValue = 0; // map rotation angle (degrees)
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -37,49 +35,45 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             Title = "Map rotation";
         }
 
-
         void Initialize()
         {
             var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
 
-            // create a button to rotate the map
-            var rotateMapButton = new Button(this);
-            rotateMapButton.Click += RotateMap;
+            // Create a slider (SeekBar) control for selecting an angle
+            var angleSlider = new SeekBar(this);
 
-            // create a slider (SeekBar) control for selecting an angle between 0-180
-            var angleSlider = new SeekBar(this);       
-            // when the slider value ("Progress") changes, store the value   
-            angleSlider.ProgressChanged += (object s, SeekBar.ProgressChangedEventArgs e) => 
-            {
-                SliderValue = e.Progress;
-                rotateMapButton.Text = "Rotate " + SliderValue.ToString() + " degrees";
-            };
-            // set a maximum slider value of 180 and a current value of 90
+            // Set a maximum slider value of 180 and a current value of 90 (minimum is always 0)
             angleSlider.Max = 180;
             angleSlider.Progress = 90;
 
-            // create a new map with a World Imagery basemap
-            var basemap = Basemap.CreateImagery();
-            var map = new Map(basemap);
+            // When the slider value (Progress) changes, rotate the map   
+            angleSlider.ProgressChanged += (object s, SeekBar.ProgressChangedEventArgs e) => 
+            {
+                if (e.FromUser)
+                {
+                    // set rotation asynchronously (no need to await the result)
+                    MyMapView.SetViewpointRotationAsync(e.Progress);
+                }
+            };
 
-            // create a new map view control to show the map
+            // Create a new map with a World Imagery base map
+            var myBasemap = Basemap.CreateImagery();
+            var myMap = new Map(myBasemap);
+
+            // Create a new map view control to display the map
             MyMapView = new MapView();
-            MyMapView.Map = map;
+            MyMapView.Map = myMap;
 
-            // add controls and the map view to the layout
+            // Set the current map rotation to match the default slider value
+            // (no need to await the asynchronous call)
+            MyMapView.SetViewpointRotationAsync(angleSlider.Progress);
+
+            // Add the slider and map view to the layout
             layout.AddView(angleSlider);
-            layout.AddView(rotateMapButton);
             layout.AddView(MyMapView);
 
-            // apply the layout to the app
+            // Apply the layout to the app
             SetContentView(layout);
         }
-
-        private void RotateMap(object sender, EventArgs e)
-        {
-            // rotate the current map view viewpoint using the current slider value
-            MyMapView.SetViewpointRotationAsync(SliderValue);
-        }
-
     }
 }
