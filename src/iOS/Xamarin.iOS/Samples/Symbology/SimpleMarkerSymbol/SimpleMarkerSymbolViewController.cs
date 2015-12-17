@@ -40,6 +40,7 @@ namespace ArcGISRuntimeXamarin.Samples.SimpleMarkerSymbol
             // Create a new map instance and add the basemap
             Map myMap = new Map(myBasemap);
 
+
             // Assign this Map to the MapView
             myMapView.Map = myMap;
 
@@ -52,12 +53,16 @@ namespace ArcGISRuntimeXamarin.Samples.SimpleMarkerSymbol
             // Create a MapPoint where the Graphic will be located
             var mapPoint = new MapPoint(-117.195646, 34.056397, SpatialReferences.Wgs84);
 
+            // TODO: #2914
+            // Center the map view extent on the point graphic
+            // myMap.InitialViewpoint = new Viewpoint(mapPoint, 24000);
+
             // Create a new red circle marker symbol
             var circleSymbol = new Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol()
             {
-                Style= SimpleMarkerSymbolStyle.Circle,
-                Size=14,
-                Color = Color.Red              
+                Style = SimpleMarkerSymbolStyle.Circle,
+                Size = 14,
+                Color = Color.Red
             };
 
             // Create a new graphic using the map point and the symbol
@@ -74,6 +79,8 @@ namespace ArcGISRuntimeXamarin.Samples.SimpleMarkerSymbol
 
             // Add the MapView to the Subview
             View.AddSubview(myMapView);
+
+
         }
     }
 }
