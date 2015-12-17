@@ -51,34 +51,34 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
 
             try
             {
-                //First we create a new tiled layer and pass a Url to the service
+                // Create a new tiled layer and pass a Url to the service
                 var baseLayer = new ArcGISTiledLayer(new Uri("http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer"));
 
-                //TODO - Remove this once #2915 is fixed
+                // TODO - Remove this once #2915 is fixed
                 await baseLayer.LoadAsync();
 
-                //Create a basemap where we can add this baselayer
+                // Create a basemap to add the baselayer
                 var myBasemap = new Basemap();
 
-                //Add the ArcGISTiledLayer that we created above to the basemap. 
+                // Add the ArcGISTiledLayer created above to the basemap. 
                 myBasemap.BaseLayers.Add(baseLayer);
 
-                //Create a variable to hold the height of the segmented control that we will be adding later on in the UI.
+                // Create a variable to hold the height of the segmented control.
                 var height = 45;
 
-                //Create a new MapView control and provide its location coordinates on the frame.
+                // Create a new MapView control and provide its location coordinates on the frame.
                 myMapView = new MapView()
                 {
                     Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height - height)
                 };
 
-                //Create a new Map instance with the basemap that we created                
+                // Create a new Map instance with the basemap               
                 Map myMap = new Map(SpatialReferences.WebMercator) { Basemap = myBasemap };
 
-                //Assign this Map to the MapView that was created above.
+                // Assign the Map to the MapView
                 myMapView.Map = myMap;
 
-                //Create a segmented control to display buttons
+                // Create a segmented control to display buttons
                 UISegmentedControl segmentControl = new UISegmentedControl() { BackgroundColor = UIColor.White };
                 segmentControl.Frame = new CoreGraphics.CGRect(0, myMapView.Bounds.Height, View.Bounds.Width, height);
                 segmentControl.InsertSegment("Geometry", 0, false);
@@ -92,27 +92,27 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                     switch (selectedSegmentId)
                     {
                         case 0:
-                            //Set viewpoint using Redlands envelope defined above and a padding of 20
+                            // Set Viewpoint using Redlands envelope defined above and a padding of 20
                             await myMapView.SetViewpointGeometryAsync(RedlandsEnvelope, 20);
                             break;
                         case 1:
-                            //Set Viewpoint such that it is centered on the London coordinates defined above
+                            // Set Viewpoint so that it is centered on the London coordinates defined above
                             await myMapView.SetViewpointCenterAsync(LondonCoords);
-                            //Set Viewpoint's scale to match the specified scale 
+                            // Set the Viewpoint scale to match the specified scale 
                             await myMapView.SetViewpointScaleAsync(LondonScale);
                             break;
                         case 2:
-                            //Navigate to full extent of the first baselayer before animating to specified geometry
+                            // Navigate to full extent of the first baselayer before animating to specified geometry
                             await myMapView.SetViewpointAsync(new Viewpoint(baseLayer.FullExtent));
-                            //Create a new Viewpoint using the specified geometry
+                            // Create a new Viewpoint using the specified geometry
                             var viewpoint = new Esri.ArcGISRuntime.Viewpoint(EdinburghEnvelope);
-                            //Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
+                            // Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
                             await myMapView.SetViewpointAsync(viewpoint, System.TimeSpan.FromSeconds(5));
                             break;
                     }
                 };
 
-                //Add the MapView to the Subview
+                // Add the MapView to the Subview
                 View.AddSubviews(myMapView, segmentControl);
             }
             catch (Exception ex)
