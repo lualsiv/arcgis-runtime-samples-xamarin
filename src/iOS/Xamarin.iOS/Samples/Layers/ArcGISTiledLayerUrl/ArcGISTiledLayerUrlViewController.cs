@@ -27,39 +27,38 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerUrl
         public ArcGISTiledLayerUrlViewController()
         {
         }
-
         public async override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
-            //Create a new tiled layer and pass a Uri to the service
+            // Create a new tiled layer and pass a Uri to the service
             var baseLayer = new ArcGISTiledLayer(new Uri("http://services.arcgisonline.com/arcgis/rest/services/NatGeo_World_Map/MapServer"));
 
-            //Await the load call for the layer.
+            // Await the load call for the layer
             await baseLayer.LoadAsync();
 
-            //Create a basemap where we can add this base layer
+            // Create a basemap for the base layer
             var myBasemap = new Basemap();
 
-            //Add the base layer to the basemap. 
+            // Add the base layer to the basemap 
             myBasemap.BaseLayers.Add(baseLayer);
 
-            //Create a variable to hold the Y coordinate of the MapView control (adds spacing at the top).
+            // Create a variable to hold the Y coordinate of the MapView control (adds spacing at the top)
             var yOffset = 70;
 
-            //Create a new MapView control and provide its location coordinates on the frame.
+            // Create a new MapView control and provide its location coordinates on the frame
             MapView myMapView = new MapView()
             {
                 Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - yOffset)
             };
 
-            //Create a new Map instance
+            // Create a new Map instance
             Map myMap = new Map(SpatialReferences.WebMercator) { Basemap = myBasemap };
 
-            //Assign the Map to the MapView
+            // Assign the Map to the MapView
             myMapView.Map = myMap;
 
-            //Finally add the MapView to the Subview
+            // Add the MapView to the Subview
             View.AddSubview(myMapView);
         }
     }
