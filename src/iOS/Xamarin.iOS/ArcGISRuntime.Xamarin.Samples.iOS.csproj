@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -162,6 +162,9 @@
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
     <EmbeddedResource Include="Samples\Map\ChangeViewpoint\metadata.json" />
     <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\metadata.json" />
+    <EmbeddedResource Include="Samples\Map\ChangeBasemap\metadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -176,6 +179,7 @@
     <Compile Include="Models\SubCategoryModel.cs" />
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
+    <Compile Include="Samples\Map\ChangeBasemap\ChangeBasemapViewController.cs" />
     <Compile Include="Samples\Map\ChangeViewpoint\ChangeViewpointViewController.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMapViewController.cs" />
     <Compile Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbolViewController.cs" />
@@ -203,5 +207,10 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Samples\Map\ChangeViewpoint\ChangeViewpoint.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Samples\Map\ChangeBasemap\ChangeBasemap.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
