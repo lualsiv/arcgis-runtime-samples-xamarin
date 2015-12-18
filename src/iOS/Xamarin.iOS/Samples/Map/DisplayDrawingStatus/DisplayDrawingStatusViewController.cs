@@ -13,18 +13,20 @@
 //limitations under the License.
 
 using System;
-using System.Drawing;
-
-using CoreFoundation;
 using UIKit;
 using Foundation;
 using Esri.ArcGISRuntime.Layers;
+using Esri.ArcGISRuntime.Controls;
+using Esri.ArcGISRuntime.Data;
+using Esri.ArcGISRuntime;
 
 namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
 {
     [Register("DisplayDrawingStatusViewController")]
     public class DisplayDrawingStatusViewController : UIViewController
     {
+        UIActivityIndicatorView _activityIndicator;
+
         public DisplayDrawingStatusViewController()
         {
             Title = "Display drawing status";
@@ -38,43 +40,67 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
             // Release any cached data, images, etc that aren't in use.
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
-
             base.ViewDidLoad();
 
+            // Create a variable to hold the Y coordinate of the map view control.
+            var yOffset = 60;
 
-            //Create a new tiled layer and pass a Uri to the service
-            var baseLayer = new ArcGISTiledLayer(new Uri("http://services.arcgisonline.com/arcgis/rest/services/NatGeo_World_Map/MapServer"));
+            // Create a new MapView control and provide its location coordinates on the frame.
+            MapView myMapView = new MapView();
+            myMapView.Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - 30);
 
-            //We need to await the load call for the layer.    
-            await baseLayer.LoadAsync();
+            // Create a toolbar on the bottom of the display 
+            UIToolbar toolbar = new UIToolbar();
+            toolbar.Frame = new CoreGraphics.CGRect(0, myMapView.Bounds.Height, View.Bounds.Width, 30);
 
-            //Create a basemap where we can add this baselayer
-            var myBasemap = new Basemap();
+            // Create an activity indicator
+            _activityIndicator = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.Gray);
+            _activityIndicator.Frame = new CoreGraphics.CGRect(0, 0, toolbar.Bounds.Width, toolbar.Bounds.Height);
 
-            //Add the ArcGISTiledLayer that we created above to the basemap. 
-            myBasemap.BaseLayers.Add(baseLayer);
+            // Create a UIBarButtonItem to show the activity indicator
+            UIBarButtonItem indicatorButton = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace);
+            indicatorButton.CustomView = _activityIndicator;
 
-            //Now lets create our UI.
+            // Add the indicatorButton to an array of UIBarButtonItems
+            var barButtonItems = new UIBarButtonItem[] { indicatorButton };
 
-            //Create a variable to hold the Y coordinate of the map view control.
-            var yOffset = 70;
+            // Add the UIBarButtonItems to the toolbar
+            toolbar.SetItems(barButtonItems, true);
 
-            //Create a new mapview control and provide its location coordinates on the frame.
-            MapView myMapView = new MapView()
-            {
-                Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - yOffset)
-            };
+            // Create a new map instance
+            Map myMap = new Map(BasemapType.Topographic, 34.056, -117.196, 4);
 
-            //Create a new map instance which holds basemap that was created
-            Map myMap = new Map(myBasemap);
+            //Map myMap = new Map(Basemap.CreateTopographic());
+            var featureTable = new ServiceFeatureTable(new Uri("http://sampleserver6.arcgisonline.com/arcgis/rest/services/DamageAssessment/FeatureServer/0"));
+            var featureLayer = new FeatureLayer(featureTable);
 
-            //Assign this map to the mapview that was created above.
+            // TODO: Remove #2915
+            await featureLayer.LoadAsync();
+
+            // Add the feature layer to the Map
+            myMap.OperationalLayers.Add(featureLayer);
+
+            // Assign the map to the MapView that was created above.
             myMapView.Map = myMap;
 
-            //Finally add the mapview to the Subview
-            View.AddSubview(myMapView);
+            // Hook up the DrawStatusChanged event
+            myMapView.DrawStatusChanged += MyMapView_DrawStatusChanged;
+
+            // Add the MapView to the Subview
+            View.AddSubviews(myMapView, toolbar);
+
+            // Animate the activity spinner
+            _activityIndicator.StartAnimating();
+        }
+
+        private void MyMapView_DrawStatusChanged(object sender, DrawStatus e)
+        {
+            if (e == DrawStatus.InProgress)
+                _activityIndicator.Hidden = false;
+            else
+                _activityIndicator.Hidden = true;
         }
     }
 }
