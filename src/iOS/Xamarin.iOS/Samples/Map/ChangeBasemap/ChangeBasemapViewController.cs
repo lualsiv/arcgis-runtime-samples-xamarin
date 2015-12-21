@@ -12,10 +12,6 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-using System.Drawing;
-
-using CoreFoundation;
 using UIKit;
 using Foundation;
 using Esri.ArcGISRuntime.Controls;
@@ -45,11 +41,13 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
         {
             base.ViewDidLoad();
 
-            // Create a variable to hold the height of the segmented control.
+            // Create a variable to hold the yOffset where the MapView control should start
             var yOffset = 60;
 
-            var height = 40;
-            // Create a new MapView control and provide its location coordinates on the frame.
+            // Create a variable to hold the height of the segmented control
+            var height = 44;
+
+            // Create a new MapView control and provide its location coordinates on the frame
             MapView myMapView = new MapView();
             myMapView.Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - height);
 
@@ -60,13 +58,9 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
             // Assign the Map to the MapView
             myMapView.Map = myMap;
 
-            // Create a toolbar on the bottom of the display 
-            UIToolbar toolbar = new UIToolbar();
-            toolbar.Frame = new CoreGraphics.CGRect(0, myMapView.Bounds.Height, View.Bounds.Width, height);
-
             // Create a segmented control to display buttons
             UISegmentedControl segmentControl = new UISegmentedControl();
-            segmentControl.Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height);
+            segmentControl.Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, height);
             segmentControl.InsertSegment("Topographic", 0, false);
             segmentControl.InsertSegment("Streets", 1, false);
             segmentControl.InsertSegment("Imagery", 2, false);
@@ -97,13 +91,18 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
                 }
             };
 
-            // Create a UIBarButtonItem to show the SegmentControl
+            // Create a UIBarButtonItem where its view is the SegmentControl
             UIBarButtonItem barButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace);
             barButtonItem.CustomView = segmentControl;
 
+            // Create a toolbar on the bottom of the display 
+            UIToolbar toolbar = new UIToolbar();
+            toolbar.Frame = new CoreGraphics.CGRect(0, myMapView.Bounds.Height, View.Bounds.Width, View.Bounds.Height);
+            toolbar.AutosizesSubviews = true;
+
             // Add the bar button item to an array of UIBarButtonItems
             var barButtonItems = new UIBarButtonItem[] { barButtonItem };
-            
+
             // Add the UIBarButtonItems array to the toolbar
             toolbar.SetItems(barButtonItems, true);
 
