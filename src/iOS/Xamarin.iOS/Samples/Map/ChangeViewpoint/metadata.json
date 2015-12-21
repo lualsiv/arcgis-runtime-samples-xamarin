@@ -1,7 +1,7 @@
 {
-  "Name": "Change Viewpoint",
+  "Name": "Change viewpoint",
   "SampleName": "ChangeViewpointViewController",
-  "Description": "The Tiled Layer from URL sample demonstrates using ArcGISTiledLayer as a Basemap and adding the required Map and MapView elements. By default, this map supports basic zooming and panning operations.",
+  "Description": "This sample demonstrates different ways in which you can change the viewpoint or visible area of the map.",
   "Instructions": "",
   "Type": 0,
   "RequiresOnlineConnection":true,
