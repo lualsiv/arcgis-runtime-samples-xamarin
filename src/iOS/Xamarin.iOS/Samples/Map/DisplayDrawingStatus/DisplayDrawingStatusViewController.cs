@@ -34,11 +34,9 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
 
         public override void DidReceiveMemoryWarning()
         {
-            // Releases the view if it doesn't have a superview.
+            // Releases the view if it doesn't have a superview
             base.DidReceiveMemoryWarning();
-
-            // Release any cached data, images, etc that aren't in use.
-        }
+      }
 
         public override async void ViewDidLoad()
         {
@@ -47,7 +45,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
             // Create a variable to hold the Y coordinate of the map view control.
             var yOffset = 60;
 
-            // Create a new MapView control and provide its location coordinates on the frame.
+            // Create a new MapView control and provide its location coordinates on the frame
             MapView myMapView = new MapView();
             myMapView.Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - 30);
 
@@ -72,17 +70,15 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
             // Create a new map instance
             Map myMap = new Map(BasemapType.Topographic, 34.056, -117.196, 4);
 
-            //Map myMap = new Map(Basemap.CreateTopographic());
             var featureTable = new ServiceFeatureTable(new Uri("http://sampleserver6.arcgisonline.com/arcgis/rest/services/DamageAssessment/FeatureServer/0"));
             var featureLayer = new FeatureLayer(featureTable);
 
-            // TODO: Remove #2915
             await featureLayer.LoadAsync();
 
             // Add the feature layer to the Map
             myMap.OperationalLayers.Add(featureLayer);
 
-            // Assign the map to the MapView that was created above.
+            // Assign the map to the MapView that was created above
             myMapView.Map = myMap;
 
             // Hook up the DrawStatusChanged event
@@ -97,6 +93,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
 
         private void MyMapView_DrawStatusChanged(object sender, DrawStatus e)
         {
+            // Show the activity indicator if the map is drawing
             if (e == DrawStatus.InProgress)
                 _activityIndicator.Hidden = false;
             else
