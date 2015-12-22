@@ -9,14 +9,7 @@
 					"SubCategoryName": "GeneralTutorials",
 					"ShowGroup": true,
 					"SampleInfo": [
-            {
-              "SampleName": "ExampleSample",
-              "Path": "Samples/MapView/ExampleSample"
-            },
-            {
-              "SampleName": "ExampleSample2",
-              "Path": "Samples/MapView/ExampleSample2"
-            }
+
           ]
 				}
 			]
@@ -30,10 +23,7 @@
 					"SubCategoryName": "MapView",
 					"ShowGroup": true,
 					"SampleInfo": [
-            {
-              "SampleName": "ExampleSample",
-              "Path": "Samples/MapView/ExampleSample"
-            }
+
           ]
 				},
 				{

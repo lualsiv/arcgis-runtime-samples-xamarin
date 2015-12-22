@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -52,7 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esri.ArcGISRuntime">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\ArcGIS SDKs\xamarin_android_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
+      <HintPath>..\..\..\..\output\xamarin_android_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
@@ -99,7 +99,7 @@
     <AndroidResource Include="Resources\layout\SamplesLayout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <None Include="Samples\Symbols\SimpleMarkerSymbol\metadata.json" />
+    <EmbeddedResource Include="Samples\Symbols\SimpleMarkerSymbol\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
