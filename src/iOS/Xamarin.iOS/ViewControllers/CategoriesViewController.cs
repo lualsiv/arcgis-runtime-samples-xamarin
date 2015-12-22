@@ -2,14 +2,12 @@ using ArcGISRuntimeXamarin.Managers;
 using CoreGraphics;
 using Foundation;
 using System;
-using System.CodeDom.Compiler;
 using UIKit;
 using System.Collections.Generic;
-using ArcGISRuntimeXamarin.Samples;
 
 namespace ArcGISRuntimeXamarin
 {
-	partial class CategoriesViewController : UITableViewController
+    partial class CategoriesViewController : UITableViewController
 	{
 		public CategoriesViewController(IntPtr handle)
 			: base(handle)
@@ -17,9 +15,11 @@ namespace ArcGISRuntimeXamarin
 
 		}
 
-		public async override void ViewDidAppear(bool animated)
+        public UISearchController SearchController { get; set; }
+
+        public async override void ViewDidLoad()
 		{
-			base.ViewDidAppear(animated);
+			base.ViewDidLoad();
 
 			await SampleManager.Current.InitializeAsync();
 			var data = SampleManager.Current.GetSamplesAsTree();
@@ -27,9 +27,24 @@ namespace ArcGISRuntimeXamarin
 
 			this.TableView.ReloadData();
 
-		}
+            var searchResultsController = new SearchResultsViewController(this, data);
 
-		public class CategoryDataSource : UITableViewSource
+            // Create search updater and wire it up
+            var searchUpdater = new SearchResultsUpdater();
+            searchUpdater.UpdateSearchResults += searchResultsController.Search;
+
+            // Create a new search controller
+            SearchController = new UISearchController(searchResultsController);
+            SearchController.SearchResultsUpdater = searchUpdater;
+
+            // Display the search controller
+            SearchController.SearchBar.Frame = new CGRect(SearchController.SearchBar.Frame.X, SearchController.SearchBar.Frame.Y, SearchController.SearchBar.Frame.Width, 44f);
+            TableView.TableHeaderView = SearchController.SearchBar;
+            DefinesPresentationContext = true;
+
+        }
+
+        public class CategoryDataSource : UITableViewSource
 		{
 			private UITableViewController controller;
 			private List<TreeItem> data;
