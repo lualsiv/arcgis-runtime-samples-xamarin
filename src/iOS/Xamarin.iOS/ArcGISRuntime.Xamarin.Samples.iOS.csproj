@@ -162,6 +162,9 @@
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
     <EmbeddedResource Include="Samples\Map\ChangeViewpoint\metadata.json" />
     <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\metadata.json" />
+    <EmbeddedResource Include="Samples\Map\DisplayDrawingStatus\metadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -177,6 +180,7 @@
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
     <Compile Include="Samples\Map\ChangeViewpoint\ChangeViewpointViewController.cs" />
+    <Compile Include="Samples\Map\DisplayDrawingStatus\DisplayDrawingStatusViewController.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMapViewController.cs" />
     <Compile Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbolViewController.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
@@ -205,5 +209,10 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Samples\Map\ChangeViewpoint\ChangeViewpoint.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Samples\Map\DisplayDrawingStatus\DisplayDrawingStatus.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

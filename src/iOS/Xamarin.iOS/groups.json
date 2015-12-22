@@ -41,12 +41,16 @@
              {
                "SampleName": "ChangeViewpointViewController",
               "Path": "Samples/Map/ChangeViewpoint"
+            },
+             {
+               "SampleName": "DisplayDrawingStatusViewController",
+              "Path": "Samples/Map/DisplayDrawingStatus"
             }
           ]
         },
         {
           "Name": "Basic license",
-          "SubCategoryName": "BasicLicence",
+          "SubCategoryName": "BasicLicense",
           "ShowGroup": true,
           "SampleInfo": [
           ]
