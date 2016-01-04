@@ -165,6 +165,7 @@
     <EmbeddedResource Include="Samples\Map\DisplayDrawingStatus\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Map\ChangeBasemap\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="Models\SubCategoryModel.cs" />
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
+    <Compile Include="Samples\Map\ChangeBasemap\ChangeBasemapViewController.cs" />
     <Compile Include="Samples\Map\ChangeViewpoint\ChangeViewpointViewController.cs" />
     <Compile Include="Samples\Map\DisplayDrawingStatus\DisplayDrawingStatusViewController.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMapViewController.cs" />
@@ -211,6 +213,7 @@
     <BundleResource Include="Samples\Map\ChangeViewpoint\ChangeViewpoint.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Samples\Map\ChangeBasemap\ChangeBasemap.jpg" />
     <Content Include="Samples\Map\DisplayDrawingStatus\DisplayDrawingStatus.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

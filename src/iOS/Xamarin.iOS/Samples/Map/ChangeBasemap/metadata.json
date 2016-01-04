@@ -1,0 +1,15 @@
+{
+  "Name": "Change basemap",
+  "SampleName": "ChangeBasemapViewController",
+  "Description": "This sample demonstrates how to dynamically change the basemap displayed in a Map.",
+  "Instructions": "",
+  "Type": 0,
+  "RequiresOnlineConnection":true,
+  "RequiresOfflineData":false,
+  "RequiresLocalServer":false,
+  "Image":"ChangeBasemap.jpg",
+  "Link":"",
+  "TypeLink": [
+  ],
+  "SampleFolder": "ChangeBasemap"
+}
