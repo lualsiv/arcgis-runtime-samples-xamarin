@@ -42,9 +42,13 @@
                "SampleName": "ChangeViewpointViewController",
               "Path": "Samples/Map/ChangeViewpoint"
             },
-             {
-               "SampleName": "DisplayDrawingStatusViewController",
+            {
+              "SampleName": "DisplayDrawingStatusViewController",
               "Path": "Samples/Map/DisplayDrawingStatus"
+            },
+            {
+              "SampleName": "ChangeBasemapViewController",
+              "Path": "Samples/Map/ChangeBasemap"
             }
           ]
         },
