@@ -55,7 +55,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
 
             // Create a segmented control to display buttons
             UISegmentedControl segmentControl = new UISegmentedControl();
-            segmentControl.Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, 44);
+            segmentControl.Frame = new CoreGraphics.CGRect(10, 8, View.Bounds.Width - 20, 24);
             segmentControl.InsertSegment("Topo", 0, false);
             segmentControl.InsertSegment("Streets", 1, false);
             segmentControl.InsertSegment("Imagery", 2, false);
