@@ -42,9 +42,6 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
             // Create a variable to hold the yOffset where the MapView control should start
             var yOffset = 60;
 
-            // Create a variable to hold the height of the segmented control
-            var height = 44;
-
             // Create a new MapView control and provide its location coordinates on the frame
             MapView myMapView = new MapView();
             myMapView.Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - yOffset);
@@ -58,11 +55,13 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
 
             // Create a segmented control to display buttons
             UISegmentedControl segmentControl = new UISegmentedControl();
-            segmentControl.Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, height);
-            segmentControl.InsertSegment("Topographic", 0, false);
+            segmentControl.Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, 44);
+            segmentControl.InsertSegment("Topo", 0, false);
             segmentControl.InsertSegment("Streets", 1, false);
             segmentControl.InsertSegment("Imagery", 2, false);
             segmentControl.InsertSegment("Ocean", 3, false);
+
+            segmentControl.SelectedSegment = 0;
 
             segmentControl.ValueChanged += (sender, e) =>
             {
@@ -99,7 +98,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
             toolbar.AutosizesSubviews = true;
 
             // Add the bar button item to an array of UIBarButtonItems
-            var barButtonItems = new UIBarButtonItem[] { barButtonItem };
+            UIBarButtonItem[] barButtonItems = new UIBarButtonItem[] { barButtonItem };
 
             // Add the UIBarButtonItems array to the toolbar
             toolbar.SetItems(barButtonItems, true);

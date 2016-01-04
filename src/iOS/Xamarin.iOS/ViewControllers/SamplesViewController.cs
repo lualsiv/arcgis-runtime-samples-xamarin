@@ -16,9 +16,9 @@ namespace ArcGISRuntimeXamarin
             this.category = category;
         }
 
-        public override void ViewDidAppear(bool animated)
+        public override void ViewDidLoad()
         {
-            base.ViewDidAppear(animated);
+            base.ViewDidLoad();
 
             this.Title = "Samples";
 
@@ -42,12 +42,10 @@ namespace ArcGISRuntimeXamarin
             this.TableView.ReloadData();
         }
 
-
-
         public class SamplesDataSource : UITableViewSource
         {
             private UITableViewController controller;
-            private List<Object> data;
+            private List<object> data;
 
             public SamplesDataSource(UITableViewController controller, List<Object> data)
             {
