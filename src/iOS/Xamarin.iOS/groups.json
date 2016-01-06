@@ -38,8 +38,8 @@
               "SampleName": "OpenExistingMapViewController",
               "Path": "Samples/Map/OpenExistingMap"
             },
-             {
-               "SampleName": "ChangeViewpointViewController",
+            {
+              "SampleName": "ChangeViewpointViewController",
               "Path": "Samples/Map/ChangeViewpoint"
             },
             {
@@ -84,6 +84,10 @@
             {
               "SampleName": "ArcGISMapImageLayerUrlViewController",
               "Path": "Samples/Layers/ArcGISMapImageLayerUrl"
+            },
+            {
+              "SampleName": "ChangeSublayerVisibilityViewController",
+              "Path": "Samples/Layers/ChangeSublayerVisibility"
             }
           ]
         },
@@ -132,7 +136,7 @@
           "SubCategoryName": "Symbology",
           "ShowGroup": true,
           "SampleInfo": [
-              {
+            {
               "SampleName": "SimpleMarkerSymbolViewController",
               "Path": "Samples/Symbology/SimpleMarkerSymbol"
             }
@@ -260,10 +264,10 @@
       ]
     }
   ],
-    "Featured": [
-        {
-            "SampleName": "ExampleSample",
-            "Reason": 1
-        }
-    ]
+  "Featured": [
+    {
+      "SampleName": "ExampleSample",
+      "Reason": 1
+    }
+  ]
 }
