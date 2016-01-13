@@ -34,13 +34,10 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
         {
             // Releases the view if it doesn't have a superview.
             base.DidReceiveMemoryWarning();
-
-            // Release any cached data, images, etc that aren't in use.
-        }
+       }
 
         public override void ViewDidLoad()
         {
-
             base.ViewDidLoad();
 
             // Create a variable to hold the yOffset where the MapView control should start
@@ -60,20 +57,20 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             // Create a label to display the MapView rotation value
             UILabel rotationLabel = new UILabel();
             rotationLabel.Frame = new CoreGraphics.CGRect(View.Bounds.Width - 60, 8, View.Bounds.Width, 24);
-            rotationLabel.Text = string.Format("{0:0}°", myMapView.Rotation);
+            rotationLabel.Text = string.Format("{0:0}°", myMapView.MapRotation);
 
             // Create a slider to control the MapView rotation
             UISlider rotationSlider = new UISlider()
             {
                 MinValue = 0,
                 MaxValue = 360,
-                Value = (float)myMapView.Rotation
+                Value = (float)myMapView.MapRotation
             };
             rotationSlider.Frame = new CoreGraphics.CGRect(10, 8, View.Bounds.Width - 100, 24);
             rotationSlider.ValueChanged += (Object s, EventArgs e) =>
             {
                 myMapView.SetViewpointRotationAsync(rotationSlider.Value);
-                rotationLabel.Text = string.Format("{0:0}°", myMapView.Rotation);
+                rotationLabel.Text = string.Format("{0:0}°", myMapView.MapRotation);
             };
 
             // Create a UIBarButtonItem where its view is the rotation slider
