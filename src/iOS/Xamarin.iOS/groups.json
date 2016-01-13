@@ -47,6 +47,10 @@
               "Path": "Samples/Map/DisplayDrawingStatus"
             },
             {
+              "SampleName": "MapRotationViewController",
+              "Path": "Samples/Map/MapRotation"
+            },
+            {
               "SampleName": "ChangeBasemapViewController",
               "Path": "Samples/Map/ChangeBasemap"
             }
