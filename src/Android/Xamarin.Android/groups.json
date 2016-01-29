@@ -54,8 +54,12 @@
 					"Name": "Tiled Layers",
 					"SubCategoryName": "ArcGISTiledLayer",
 					"ShowGroup": true,
-					"SampleInfo": [
-					]
+          "SampleInfo": [
+            {
+              "SampleName": "ArcGISTiledLayerLocalTPK",
+              "Path": "Samples/Layers/ArcGISTiledLayerLocalTPK"
+            }
+          ]
 				},
 				{
 					"Name": "Map Image Layers",
