@@ -77,6 +77,10 @@
             {
               "SampleName": "ArcGISTiledLayerUrlViewController",
               "Path": "Samples/Layers/ArcGISTiledLayerUrl"
+            },
+            {
+              "SampleName": "ArcGISTiledLayerLocalViewController",
+              "Path": "Samples/Layers/ArcGISTiledLayerLocal"
             }
           ]
         },
