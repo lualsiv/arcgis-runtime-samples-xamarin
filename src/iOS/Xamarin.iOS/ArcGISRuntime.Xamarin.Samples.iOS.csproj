@@ -57,7 +57,7 @@
     <MtouchProfiling>True</MtouchProfiling>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
-    <MtouchSdkVersion>9.1</MtouchSdkVersion>
+    <MtouchSdkVersion>9.2</MtouchSdkVersion>
     <MtouchLink>None</MtouchLink>
     <MtouchFastDev>False</MtouchFastDev>
     <MtouchUseLlvm>False</MtouchUseLlvm>
@@ -68,6 +68,8 @@
     <MtouchI18n />
     <BuildIpa>True</BuildIpa>
     <IpaIncludeArtwork>False</IpaIncludeArtwork>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lArcGIS"</MtouchExtraArgs>
+    <DeviceSpecificBuild>False</DeviceSpecificBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -184,6 +186,10 @@
     <None Include="libArcGIS.a">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerLocal\metadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <BundleResource Include="Resources\campus.tpk" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -197,6 +203,7 @@
     <Compile Include="Models\SampleStructureMap.cs" />
     <Compile Include="Models\SubCategoryModel.cs" />
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrlViewController.cs" />
+    <Compile Include="Samples\Layers\ArcGISTiledLayerLocal\ArcGISTiledLayerLocalViewController.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrlViewController.cs" />
     <Compile Include="Samples\Layers\ChangeSublayerVisibility\SublayersTableViewController.cs" />
     <Compile Include="Samples\Map\ChangeBasemap\ChangeBasemapViewController.cs" />
@@ -218,9 +225,7 @@
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <BundleResource Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrl.jpg" />
@@ -239,6 +244,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Samples\Map\ChangeBasemap\ChangeBasemap.jpg" />
+    <Content Include="Samples\Layers\ArcGISTiledLayerLocal\ArcGISTiledLayerLocal.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Samples\Layers\ChangeSublayerVisibility\ChangeSublayerVisibility.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

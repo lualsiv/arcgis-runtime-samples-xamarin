@@ -1,0 +1,15 @@
+{
+  "Name": "ArcGIS tiled layer (local tpk)",
+  "SampleName": "ArcGISTiledLayerLocalTPK",
+  "Description": "",
+  "Instructions": "",
+  "Type": 0,
+  "RequiresOnlineConnection":true,
+  "RequiresOfflineData":false,
+  "RequiresLocalServer":false,
+  "Image":"ArcGISTiledLayerLocalTPK.jpg",
+  "Link":"",
+  "TypeLink": [
+  ],
+  "SampleFolder": "ArcGISTiledLayerLocalTPK"
+}

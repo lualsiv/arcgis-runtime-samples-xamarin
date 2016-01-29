@@ -63,8 +63,12 @@
 					"Name": "Map Image Layers",
 					"SubCategoryName": "ArcGISMapImageLayer",
 					"ShowGroup": true,
-					"SampleInfo": [
-					]
+          "SampleInfo": [
+            {
+              "SampleName": "ArcGISTiledLayerLocal",
+              "Path": "Samples/Layers/ArcGISTiledLayerLocal"
+            }
+          ]
 				},
 				{
 					"Name": "KML Layers",

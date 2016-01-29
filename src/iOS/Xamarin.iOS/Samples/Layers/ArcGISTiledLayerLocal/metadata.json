@@ -1,0 +1,15 @@
+{
+  "Name": "ArcGIS tiled layer (local TPK)",
+  "SampleName": "ArcGISTiledLayerLocalViewController",
+  "Description": "",
+  "Instructions": "",
+  "Type": 0,
+  "RequiresOnlineConnection":true,
+  "RequiresOfflineData":false,
+  "RequiresLocalServer":false,
+  "Image":"ArcGISTiledLayerLocal.jpg",
+  "Link":"",
+  "TypeLink": [
+  ],
+  "SampleFolder": "ArcGISTiledLayerLocal"
+}
