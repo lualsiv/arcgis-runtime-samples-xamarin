@@ -9,10 +9,6 @@
           "SubCategoryName": "GeneralTutorials",
           "ShowGroup": true,
           "SampleInfo": [
-            {
-              "SampleName": "ExampleSample",
-              "Path": "Samples/MapView/ExampleSample"
-            }
           ]
         }
       ]
@@ -26,10 +22,6 @@
           "SubCategoryName": "MapView",
           "ShowGroup": true,
           "SampleInfo": [
-            {
-              "SampleName": "ExampleSample",
-              "Path": "Samples/MapView/ExampleSample"
-            }
           ]
         },
         {
@@ -60,8 +52,11 @@
             {
               "SampleName": "ArcGISTiledLayerLocal",
               "Path": "Samples/Layers/ArcGISTiledLayerLocal"
+            },
+            {
+              "SampleName": "ArcGISTiledLayerUrl",
+              "Path": "Samples/Layers/ArcGISTiledLayerUrl"
             }
-
           ]
         },
         {

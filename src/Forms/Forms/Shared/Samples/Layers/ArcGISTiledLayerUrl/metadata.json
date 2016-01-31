@@ -1,15 +1,15 @@
 {
-  "Name": "ArcGIS map image layer (URL)",
-  "SampleName": "ArcGISMapImageLayerUrl",
+  "Name": "ArcGIS tiled layer (URL)",
+  "SampleName": "ArcGISTiledLayerUrl",
   "Description": "",
   "Instructions": "",
   "Type": 0,
   "RequiresOnlineConnection":true,
   "RequiresOfflineData":false,
   "RequiresLocalServer":false,
-  "Image":"ArcGISMapImageLayerUrl.jpg",
+  "Image":"ArcGISTiledLayerUrl.jpg",
   "Link":"",
   "TypeLink": [
   ],
-  "SampleFolder": "ArcGISMapImageLayerUrl"
+  "SampleFolder": "ArcGISTiledLayerUrl"
 }
