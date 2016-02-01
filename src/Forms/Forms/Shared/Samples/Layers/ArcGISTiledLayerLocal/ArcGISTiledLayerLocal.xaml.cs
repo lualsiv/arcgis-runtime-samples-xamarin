@@ -21,18 +21,11 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerLocal
 {
     public partial class ArcGISTiledLayerLocal : ContentPage
     {
-        // MapView MyMapView;
-        // Map MyMap;
-
         public ArcGISTiledLayerLocal()
         {
             InitializeComponent();
 
             Title = "ArcGIS tiled layer (local TPK)";
-
-            // MyMap = new Map();
-            // MyMapView = new MapView();
-            //  MyMapView.Map = new Map();
 
             LoadTPKLayer();
         }
