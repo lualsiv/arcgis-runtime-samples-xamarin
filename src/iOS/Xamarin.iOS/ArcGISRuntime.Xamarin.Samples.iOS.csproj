@@ -9,6 +9,8 @@
     <RootNamespace>ArcGISRuntimeXamarin</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>ArcGISRuntimeXamarin_iOS</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,7 +70,6 @@
     <MtouchI18n />
     <BuildIpa>True</BuildIpa>
     <IpaIncludeArtwork>False</IpaIncludeArtwork>
-    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lArcGIS"</MtouchExtraArgs>
     <DeviceSpecificBuild>False</DeviceSpecificBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -107,8 +108,9 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Esri.ArcGISRuntime">
-      <HintPath>..\..\..\..\output\xamarin_ios_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
+    <Reference Include="Esri.ArcGISRuntime, Version=100.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1229-beta\lib\Xamarin.iOS10\Esri.ArcGISRuntime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="OpenTK-1.0" />
@@ -183,13 +185,11 @@
     <EmbeddedResource Include="Samples\Map\MapRotation\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="libArcGIS.a">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerLocal\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <BundleResource Include="Resources\campus.tpk" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -257,4 +257,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <Import Project="..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1229-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets" Condition="Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1229-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1229-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1229-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets'))" />
+  </Target>
 </Project>

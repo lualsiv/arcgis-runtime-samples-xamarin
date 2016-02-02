@@ -51,8 +51,9 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Esri.ArcGISRuntime">
-      <HintPath>..\..\..\..\output\xamarin_android_anycpu_release\bin\Esri.ArcGISRuntime.dll</HintPath>
+    <Reference Include="Esri.ArcGISRuntime, Version=100.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1229-beta\lib\MonoAndroid10\Esri.ArcGISRuntime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
@@ -86,6 +87,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Samples\Map\MapRotation\metadata.json" />
+    <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\CategoriesList.axml">
