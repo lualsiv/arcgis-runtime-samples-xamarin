@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Esri.ArcGISRuntime.Layers;
+using Esri.ArcGISRuntime.Mapping;
 using Xamarin.Forms;
 
 namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrl

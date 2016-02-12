@@ -4,7 +4,7 @@ using System.Drawing;
 using CoreFoundation;
 using UIKit;
 using Foundation;
-using Esri.ArcGISRuntime.Controls;
+using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime;
 
 namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap

@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:esri="clr-namespace:Esri.ArcGISRuntime;assembly=Esri.ArcGISRuntime"
-             xmlns:controls="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms.Controls;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
+             xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.UI;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
              x:Class="ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerLocal.ArcGISTiledLayerLocal">
   <Grid>
-    <controls:MapView x:Name="MyMapView">
+    <esriUI:MapView x:Name="MyMapView">
       <esri:Map></esri:Map>
-    </controls:MapView>
+    </esriUI:MapView>
   </Grid>
 </ContentPage>

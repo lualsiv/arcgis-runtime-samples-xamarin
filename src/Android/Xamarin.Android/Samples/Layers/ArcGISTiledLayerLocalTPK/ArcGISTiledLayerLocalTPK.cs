@@ -1,5 +1,5 @@
 //Copyright 2015 Esri.
-//
+//Esri.ArcGISRuntime.Mapping
 //Licensed under the Apache License, Version 2.0 (the "License");
 //you may not use this file except in compliance with the License.
 //You may obtain a copy of the License at
@@ -16,9 +16,9 @@ using Android.App;
 using Android.OS;
 using Android.Widget;
 using Esri.ArcGISRuntime;
-using Esri.ArcGISRuntime.Controls;
+using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.Geometry;
-using Esri.ArcGISRuntime.Layers;
+using Esri.ArcGISRuntime.Mapping;
 using System;
 using System.IO;
 

@@ -16,9 +16,9 @@ using UIKit;
 using Foundation;
 using Esri.ArcGISRuntime.Geometry;
 using System.Collections.Generic;
-using Esri.ArcGISRuntime.Controls;
+using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime;
-using Esri.ArcGISRuntime.Layers;
+using Esri.ArcGISRuntime.Mapping;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
 {

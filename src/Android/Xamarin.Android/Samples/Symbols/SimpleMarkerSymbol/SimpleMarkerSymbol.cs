@@ -16,9 +16,9 @@ using Android.App;
 using Android.OS;
 using Android.Widget;
 using Esri.ArcGISRuntime;
-using Esri.ArcGISRuntime.Controls;
+using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.Geometry;
-using Esri.ArcGISRuntime.Layers;
+using Esri.ArcGISRuntime.Mapping;
 
 namespace ArcGISRuntimeXamarin.Samples.SimpleMarkerSymbol
 {

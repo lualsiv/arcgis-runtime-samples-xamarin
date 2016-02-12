@@ -1,7 +1,7 @@
 using System;
 using UIKit;
 using Foundation;
-using Esri.ArcGISRuntime.Layers;
+using Esri.ArcGISRuntime.Mapping;
 using System.Collections.Generic;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeSublayerVisibility

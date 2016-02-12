@@ -18,11 +18,11 @@ using System.Drawing;
 using CoreFoundation;
 using UIKit;
 using Foundation;
-using Esri.ArcGISRuntime.Controls;
+using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime;
 using System.IO;
-using Esri.ArcGISRuntime.Layers;
+using Esri.ArcGISRuntime.Mapping;
 
 namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerLocal
 {
