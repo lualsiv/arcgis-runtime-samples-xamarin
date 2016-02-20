@@ -49,11 +49,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esri.ArcGISRuntime, Version=100.0.0.0, Culture=neutral, PublicKeyToken=29c6dd6e8553d944, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1242-beta\lib\MonoAndroid10\Esri.ArcGISRuntime.dll</HintPath>
+      <HintPath>..\..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1251-beta\lib\MonoAndroid10\Esri.ArcGISRuntime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Esri.ArcGISRuntime.Xamarin.Forms">
-      <HintPath>..\..\..\..\..\output\xamarinforms_android_anycpu_release\bin\Esri.ArcGISRuntime.Xamarin.Forms.dll</HintPath>
+    <Reference Include="Esri.ArcGISRuntime.Xamarin.Forms, Version=100.0.0.0, Culture=neutral, PublicKeyToken=29c6dd6e8553d944, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Esri.ArcGISRuntime.Xamarin.Forms.100.0.0.1251-beta\lib\MonoAndroid10\Esri.ArcGISRuntime.Xamarin.Forms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.0.1.6505\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
