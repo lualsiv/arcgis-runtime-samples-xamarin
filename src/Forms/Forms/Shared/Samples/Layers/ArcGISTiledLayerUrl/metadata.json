@@ -1,7 +1,7 @@
 {
   "Name": "ArcGIS tiled layer (URL)",
   "SampleName": "ArcGISTiledLayerUrl",
-  "Description": "",
+  "Description": "This code example shows adding an ArcGISTiledLayer as a base layer in a map. The ArcGISTiledLayer comes from an ArcGIS Server sample web service.",
   "Instructions": "",
   "Type": 0,
   "RequiresOnlineConnection":true,
@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ArcGISTiledLayerUrl.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.ArcGISTiledLayer"
   ],
   "SampleFolder": "ArcGISTiledLayerUrl"
 }

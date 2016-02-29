@@ -23,6 +23,8 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrl
         {
             InitializeComponent();
 
+            Title = "ArcGIS map image layer (URL)";
+
             ArcGISMapImageLayer mapImageLayer = new ArcGISMapImageLayer(
                 new System.Uri("http://sampleserver5.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer"));
 

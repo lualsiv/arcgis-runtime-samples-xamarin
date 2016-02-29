@@ -22,6 +22,9 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerUrl
 		public ArcGISTiledLayerUrl ()
 		{
             InitializeComponent ();
-		}
-	}
+
+            Title = "ArcGIS tiled layer (URL)";
+
+        }
+    }
 }

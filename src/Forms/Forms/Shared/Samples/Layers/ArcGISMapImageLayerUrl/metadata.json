@@ -1,7 +1,7 @@
 {
   "Name": "ArcGIS map image layer (URL)",
   "SampleName": "ArcGISMapImageLayerUrl",
-  "Description": "",
+  "Description": "This code example shows adding an ArcGISMapImageLayer as a base layer in a map.  The ArcGISMapImageLayer comes from an ArcGIS Server sample web service.",
   "Instructions": "",
   "Type": 0,
   "RequiresOnlineConnection":true,
@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ArcGISMapImageLayerUrl.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.ArcGISMapImageLayer"
   ],
   "SampleFolder": "ArcGISMapImageLayerUrl"
 }

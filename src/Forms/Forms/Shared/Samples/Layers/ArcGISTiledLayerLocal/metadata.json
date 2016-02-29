@@ -1,7 +1,7 @@
 {
   "Name": "ArcGIS tiled layer (local TPK)",
   "SampleName": "ArcGISTiledLayerLocal",
-  "Description": "",
+  "Description": "This code example shows adding an ArcGISTiledLayer as an operational layer in a map. The ArcGISTileLayer is located as a file on the disc of the device.",
   "Instructions": "",
   "Type": 0,
   "RequiresOnlineConnection":true,
@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ArcGISTiledLayerLocal.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.ArcGISTiledLayer"
   ],
   "SampleFolder": "ArcGISTiledLayerLocal"
 }
