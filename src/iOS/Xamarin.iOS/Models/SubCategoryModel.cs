@@ -53,7 +53,7 @@ namespace ArcGISRuntimeXamarin.Models
 		/// Gets all sample infos that are part of this group
 		/// </summary>
 		[DataMember]
-		public List<SampleInfo> SampleInfo { get; set; }
+		public List<SampleInfo> SampleInfos { get; set; }
 		/// <summary>
 		/// Gets all the samples.
 		/// </summary>
