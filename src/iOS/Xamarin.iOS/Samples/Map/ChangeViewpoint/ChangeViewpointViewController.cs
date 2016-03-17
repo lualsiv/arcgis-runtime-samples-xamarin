@@ -105,7 +105,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                             // Navigate to full extent of the first baselayer before animating to specified geometry
                             await myMapView.SetViewpointAsync(new Viewpoint(baseLayer.FullExtent));
                             // Create a new Viewpoint using the specified geometry
-                            var viewpoint = new Esri.ArcGISRuntime.Viewpoint(EdinburghEnvelope);
+                            var viewpoint = new Viewpoint(EdinburghEnvelope);
                             // Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
                             await myMapView.SetViewpointAsync(viewpoint, System.TimeSpan.FromSeconds(5));
                             break;

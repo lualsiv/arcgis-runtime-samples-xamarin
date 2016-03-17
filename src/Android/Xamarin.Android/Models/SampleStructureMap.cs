@@ -126,9 +126,9 @@ namespace ArcGISRuntimeXamarin.Models
             {
                 foreach (var subCategory in category.SubCategories)
                 {
-                    if (subCategory.SampleInfo != null)
+                    if (subCategory.SampleInfos != null)
                     {
-                        foreach (var sample in subCategory.SampleInfo)
+                        foreach (var sample in subCategory.SampleInfos)
                         {
                             pathList.Add(sample.Path.Replace("/","."));
                         }
@@ -155,7 +155,7 @@ namespace ArcGISRuntimeXamarin.Models
                     //if (subCategory.SampleNames == null)
                     //    subCategory.SampleNames = new List<string>();
 
-                    foreach (var sampleName in subCategory.SampleInfo)
+                    foreach (var sampleName in subCategory.SampleInfos)
                     {
                         var sample = structureMap.Samples.FirstOrDefault(x => x.SampleName == sampleName.SampleName);
 

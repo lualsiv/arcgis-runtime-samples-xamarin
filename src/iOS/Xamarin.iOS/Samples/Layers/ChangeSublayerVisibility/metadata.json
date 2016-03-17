@@ -1,6 +1,6 @@
 {
   "Name": "Change sublayer visibility",
-  "SampleName": "ChangeSublayerVisibilityViewController",
+  "SampleName": "ChangeSublayerVisibility",
   "Description": "This sample demonstrates how to show or hide sublayers of a map image layer.",
   "Instructions": "",
   "Type": 0,
