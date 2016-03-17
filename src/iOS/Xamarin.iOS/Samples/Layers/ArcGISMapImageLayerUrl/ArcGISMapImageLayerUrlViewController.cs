@@ -14,8 +14,8 @@
 using System;
 using UIKit;
 using Foundation;
-using Esri.ArcGISRuntime.Layers;
-using Esri.ArcGISRuntime.Controls;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime;
 using Esri.ArcGISRuntime.Geometry;
 

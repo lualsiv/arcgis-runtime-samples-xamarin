@@ -71,7 +71,7 @@ namespace ArcGISRuntimeXamarin
                 try
                 {
                     var item = data[indexPath.Row];
-                    var sampleName = (item as SampleModel).SampleName;
+                    var sampleName = (item as SampleModel).SampleName + "ViewController";
                     var sampleNamespace = (item as SampleModel).SampleNamespace;
 
                     Type t = Type.GetType(sampleNamespace + "." + sampleName);

@@ -1,6 +1,6 @@
 {
   "Name": "Display drawing status",
-  "SampleName": "DisplayDrawingStatusViewController",
+  "SampleName": "DisplayDrawingStatus",
   "Description": "This sample demonstrates how to use the DrawStatus value of the MapView to notify user that the MapView is drawing.",
   "Instructions": "",
   "Type": 0,

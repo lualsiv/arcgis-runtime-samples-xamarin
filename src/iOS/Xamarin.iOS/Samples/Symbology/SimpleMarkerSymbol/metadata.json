@@ -1,6 +1,6 @@
 {
   "Name": "Simple marker symbol",
-  "SampleName": "SimpleMarkerSymbolViewController",
+  "SampleName": "SimpleMarkerSymbol",
   "Description": "This sample adds a point graphic to a graphics overlay symbolized with a red circle specified via a SimpleMarkerSymbol.",
   "Instructions": "",
   "Type": 0,

@@ -187,7 +187,7 @@ namespace ArcGISRuntimeXamarin.Managers
 		/// <returns>Returns true if the type if found. False otherwise.</returns>
 		private bool DoesSampleTypeExists(SampleModel sampleModel)
 		{
-			var fullTypeAsString = string.Format("{0}.{1}", sampleModel.SampleNamespace,
+			var fullTypeAsString = string.Format("{0}.{1}{ViewController}", sampleModel.SampleNamespace,
 			   sampleModel.GetSampleName());
 			var sampleType = _samplesAssembly.GetType(fullTypeAsString);
 			if (sampleType == null)

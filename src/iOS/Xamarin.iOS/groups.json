@@ -35,23 +35,23 @@
           "ShowGroup": true,
           "SampleInfos": [
             {
-              "SampleName": "OpenExistingMapViewController",
+              "SampleName": "OpenExistingMap",
               "Path": "Samples/Map/OpenExistingMap"
             },
             {
-              "SampleName": "ChangeViewpointViewController",
+              "SampleName": "ChangeViewpoint",
               "Path": "Samples/Map/ChangeViewpoint"
             },
             {
-              "SampleName": "DisplayDrawingStatusViewController",
+              "SampleName": "DisplayDrawingStatus",
               "Path": "Samples/Map/DisplayDrawingStatus"
             },
             {
-              "SampleName": "MapRotationViewController",
+              "SampleName": "MapRotation",
               "Path": "Samples/Map/MapRotation"
             },
             {
-              "SampleName": "ChangeBasemapViewController",
+              "SampleName": "ChangeBasemap",
               "Path": "Samples/Map/ChangeBasemap"
             }
           ]
@@ -75,11 +75,11 @@
           "ShowGroup": true,
           "SampleInfos": [
             {
-              "SampleName": "ArcGISTiledLayerUrlViewController",
+              "SampleName": "ArcGISTiledLayerUrl",
               "Path": "Samples/Layers/ArcGISTiledLayerUrl"
             },
             {
-              "SampleName": "ArcGISTiledLayerLocalViewController",
+              "SampleName": "ArcGISTiledLayerLocal",
               "Path": "Samples/Layers/ArcGISTiledLayerLocal"
             }
           ]
@@ -90,11 +90,11 @@
           "ShowGroup": true,
           "SampleInfos": [
             {
-              "SampleName": "ArcGISMapImageLayerUrlViewController",
+              "SampleName": "ArcGISMapImageLayerUrl",
               "Path": "Samples/Layers/ArcGISMapImageLayerUrl"
             },
             {
-              "SampleName": "ChangeSublayerVisibilityViewController",
+              "SampleName": "ChangeSublayerVisibility",
               "Path": "Samples/Layers/ChangeSublayerVisibility"
             }
           ]
@@ -145,7 +145,7 @@
           "ShowGroup": true,
           "SampleInfos": [
             {
-              "SampleName": "SimpleMarkerSymbolViewController",
+              "SampleName": "SimpleMarkerSymbol",
               "Path": "Samples/Symbology/SimpleMarkerSymbol"
             }
           ]
