@@ -5,7 +5,7 @@ This project contains samples for the ArcGIS Runtime SDK for Xamarin (Xamarin.An
 ## Instructions 
 
 1. Fork and then clone the repo or download the .zip file. 
-2. Confirm the supported system configuration for the API of interest in the ArcGIS Runtime SDK for Xamarin:
+2. Confirm your system configuration meets the requirements for the API:
   * [Xamarin.Android](https://developers.arcgis.com/xamarin/quartz/android/guide/system-requirements.htm)
   * [Xamarin.iOS](https://developers.arcgis.com/xamarin/quartz/ios/guide/system-requirements.htm)
   * [Xamarin.Forms](https://developers.arcgis.com/xamarin/quartz/forms/guide/system-requirements.htm) 
@@ -17,11 +17,11 @@ This project contains samples for the ArcGIS Runtime SDK for Xamarin (Xamarin.An
   * Xamarin.iOS: src\iOS\ArcGISRuntime.Xamarin.Samples.iOS.sln
 	   - Clean, build, and run the application.
   * Windows Store: src\Store\ArcGISRuntime.Samples.Store.sln  
-    - Clean, build, and run the application.
+	   - Clean, build, and run the application.
 
 ## Resources
 
-* [ArcGIS Runtime SDK for .NET](https://developers.arcgis.com/xamarin/quartz/)
+* [ArcGIS Runtime SDK for Xamarin](https://developers.arcgis.com/xamarin/quartz/)
 
 ## Issues
 
