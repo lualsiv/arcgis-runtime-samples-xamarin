@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"OpenExistingMap.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["M:Esri.ArcGISRuntime.Mapping.Map.#ctor(System.Uri)"
   ],
  "SampleFolder":  "OpenExistingMap"
 }

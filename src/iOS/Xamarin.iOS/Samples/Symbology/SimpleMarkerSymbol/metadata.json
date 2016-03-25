@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"SimpleMarkerSymbol.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol"
   ],
  "SampleFolder":  "SimpleMarkerSymbol"
 }

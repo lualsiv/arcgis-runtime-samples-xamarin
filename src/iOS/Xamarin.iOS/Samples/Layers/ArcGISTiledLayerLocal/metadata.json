@@ -1,7 +1,7 @@
 {
   "Name": "ArcGIS tiled layer (local TPK)",
   "SampleName": "ArcGISTiledLayerLocal",
-  "Description": "",
+  "Description": "Demonstrates loading an ArcGISTiledLayer from a local data source (on disk) using a .TPK file.",
   "Instructions": "",
   "Type": 0,
   "RequiresOnlineConnection":true,
@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ArcGISTiledLayerLocal.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.ArcGISTiledLayer"
   ],
   "SampleFolder": "ArcGISTiledLayerLocal"
 }

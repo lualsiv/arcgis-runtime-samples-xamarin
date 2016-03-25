@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ChangeSublayerVisibility.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.ArcGISMapImageSublayer"
   ],
   "SampleFolder": "ChangeSublayerVisibility"
 }

@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ArcGISTiledLayerUrl.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.Basemap"
   ],
   "SampleFolder":  "ArcGISTiledLayerUrl"
 }

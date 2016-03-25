@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ChangeViewpoint.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.Viewpoint"
   ],
   "SampleFolder":  "ChangeViewpoint"
 }
