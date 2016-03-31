@@ -34,6 +34,10 @@
             {
               "SampleName": "MapRotation",
               "Path": "Samples/Map/MapRotation"
+            },
+            {
+              "SampleName": "SetMinMaxScale",
+              "Path": "Samples/Map/SetMinMaxScale"
             }
           ]
 				},

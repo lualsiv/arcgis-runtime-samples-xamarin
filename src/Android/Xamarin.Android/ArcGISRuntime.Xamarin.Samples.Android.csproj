@@ -79,6 +79,7 @@
     <Compile Include="SamplesListAdapter.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerLocalTPK\ArcGISTiledLayerLocalTPK.cs" />
     <Compile Include="Samples\Map\MapRotation\MapRotation.cs" />
+    <Compile Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.cs" />
     <Compile Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +106,7 @@
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerLocalTPK\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Map\SetMinMaxScale\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -124,6 +126,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Samples\Map\MapRotation\MapRotation.jpg" />
+    <Content Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.jpg" />
     <Content Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
   </ItemGroup>
   <ItemGroup>
