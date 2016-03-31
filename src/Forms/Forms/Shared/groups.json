@@ -29,6 +29,10 @@
           "SubCategoryName": "Map",
           "ShowGroup": true,
           "SampleInfos": [
+            {
+              "SampleName": "SetMinMaxScale",
+              "Path": "Samples/Map/SetMinMaxScale"
+            }
           ]
         },
         {

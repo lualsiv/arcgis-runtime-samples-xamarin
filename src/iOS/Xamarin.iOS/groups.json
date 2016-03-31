@@ -9,10 +9,6 @@
           "SubCategoryName": "GeneralTutorials",
           "ShowGroup": true,
           "SampleInfos": [
-            {
-              "SampleName": "ExampleSample",
-              "Path": "Samples/Layers/ExampleSample"
-            }
           ]
         }
       ]
@@ -26,7 +22,6 @@
           "SubCategoryName": "MapView",
           "ShowGroup": true,
           "SampleInfos": [
-
           ]
         },
         {
@@ -53,6 +48,10 @@
             {
               "SampleName": "ChangeBasemap",
               "Path": "Samples/Map/ChangeBasemap"
+            },
+            {
+              "SampleName": "SetMinMaxScale",
+              "Path": "Samples/Map/SetMinMaxScale"
             }
           ]
         },
