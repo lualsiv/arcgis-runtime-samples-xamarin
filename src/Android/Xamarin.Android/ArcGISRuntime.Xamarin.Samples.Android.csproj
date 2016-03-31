@@ -52,8 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esri.ArcGISRuntime, Version=100.0.0.0, Culture=neutral, PublicKeyToken=29c6dd6e8553d944, processorArchitecture=MSIL">
-      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1278-beta\lib\MonoAndroid10\Esri.ArcGISRuntime.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\lib\MonoAndroid10\Esri.ArcGISRuntime.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
