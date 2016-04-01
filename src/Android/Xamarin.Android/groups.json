@@ -38,6 +38,10 @@
             {
               "SampleName": "SetMinMaxScale",
               "Path": "Samples/Map/SetMinMaxScale"
+            },
+            {
+              "SampleName": "AccessLoadStatus",
+              "Path": "Samples/Map/AccessLoadStatus"
             }
           ]
 				},
