@@ -38,6 +38,10 @@
       <DependentUpon>ArcGISTiledLayerUrl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Samples\Map\AccessLoadStatus\AccessLoadStatus.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AccessLoadStatus.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Samples\Map\SetMinMaxScale\SetMinMaxScale.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>SetMinMaxScale.xaml</DependentUpon>
@@ -55,6 +59,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\ArcGISTiledLayerLocal\metadata.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)groups.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\AccessLoadStatus\metadata.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\AccessLoadStatus\AccessLoadStatus.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\AccessLoadStatus\AccessLoadStatus.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\SetMinMaxScale\SetMinMaxScale.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
