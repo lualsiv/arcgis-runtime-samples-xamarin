@@ -24,6 +24,10 @@ namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
     [Activity(Label = "Access load status")]
     public class AccessLoadStatus : Activity
     {
+        // Create and hold reference to the used MapView
+        private MapView _myMapView = new MapView();
+
+        // Control to show the Maps' load status
         private TextView _loadStatusTextView;
 
         protected override void OnCreate(Bundle bundle)
@@ -31,33 +35,21 @@ namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
             base.OnCreate(bundle);
 
             Title = "Access load status";
-            InitializeView();        
+            // Create the UI, setup the control references and execute initialization 
+            CreateLayout();
+            Initialize();
         }
 
-        private void InitializeView()
+        private void Initialize()
         {
-            // Create layout and other controls into the layout
-            //var layout = CreateLayout();
-
-            var myMapView = CreateLayout();
-
-            // Create a new map view control to display the map
-        //    var myMapView = new MapView();
-           
             // Create new Map with basemap
             var myMap = new Map(Basemap.CreateImagery());
-           
+
             // Register to handle loading status changes
             myMap.LoadStatusChanged += OnMapsLoadStatusChanged;
-            
+
             // Provide used Map to the MapView
-            myMapView.Map = myMap;
-
-            //// Add the map view to the layout
-            //layout.AddView(myMapView);
-
-            //// Show the layout in the app
-            //SetContentView(layout);
+            _myMapView.Map = myMap;
         }
 
         private void OnMapsLoadStatusChanged(object sender, LoadStatusEventArgs e)
@@ -72,7 +64,7 @@ namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
             });
         }
 
-        private MapView CreateLayout()
+        private void CreateLayout()
         {
             // Create a new vertical layout for the app
             var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
@@ -81,16 +73,11 @@ namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
             _loadStatusTextView = new TextView(this);
             layout.AddView(_loadStatusTextView);
 
-            // Create a new map view control to display the map
-            var myMapView = new MapView();
-
             // Add the map view to the layout
-            layout.AddView(myMapView);
+            layout.AddView(_myMapView);
 
             // Show the layout in the app
             SetContentView(layout);
-
-            return myMapView;
         }
     }
 }
