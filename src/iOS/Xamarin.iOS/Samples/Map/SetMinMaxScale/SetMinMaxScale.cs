@@ -20,13 +20,13 @@ using UIKit;
 
 namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
 {
-    [Register("SetMinMaxScaleViewController")]
-    public class SetMinMaxScaleViewController : UIViewController
+    [Register("SetMinMaxScale")]
+    public class SetMinMaxScale : UIViewController
     {
         // Constant holding offset where the MapView control should start
         private const int yPageOffset = 60;
 
-        public SetMinMaxScaleViewController()
+        public SetMinMaxScale()
         {
             Title = "Set Min & Max Scale";
         }

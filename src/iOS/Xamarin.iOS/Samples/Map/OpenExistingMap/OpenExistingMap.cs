@@ -10,8 +10,8 @@ using Esri.ArcGISRuntime;
 
 namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
 {
-    [Register("MapFromPortalViewController")]
-    public class OpenExistingMapViewController : UIViewController
+    [Register("OpenExistingMap")]
+    public class OpenExistingMap : UIViewController
     {
         // String array to hold urls to publicly available web maps
         private string[] itemURLs = new string[] { "http://www.arcgis.com/home/item.html?id=2d6fa24b357d427f9c737774e7b0f977"
@@ -24,7 +24,7 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
         // Variable to hold Map instance
         private Map myMap;
         
-        public OpenExistingMapViewController()
+        public OpenExistingMap()
         {
           
         }     
