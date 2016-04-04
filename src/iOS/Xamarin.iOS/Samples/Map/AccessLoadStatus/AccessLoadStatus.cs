@@ -20,8 +20,8 @@ using UIKit;
 
 namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
 {
-    [Register("AccessLoadStatusViewController")]
-    public class AccessLoadStatusViewController : UIViewController
+    [Register("AccessLoadStatus")]
+    public class AccessLoadStatus : UIViewController
     {
         // Constant holding offset where the MapView control should start
         private const int yPageOffset = 60;
@@ -32,7 +32,7 @@ namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
         // Control to show the Maps' load status
         private UITextView _loadStatusTextView;
 
-        public AccessLoadStatusViewController()
+        public AccessLoadStatus()
         {
             Title = "Access load status";
         }
