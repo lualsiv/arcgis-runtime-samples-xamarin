@@ -25,7 +25,11 @@
             {
               "SampleName": "ShowMagnifier",
               "Path": "Samples/MapView/ShowMagnifier"
-           }
+            },
+            {
+              "SampleName": "ChangeViewpoint",
+              "Path": "Samples/MapView/ChangeViewpoint"
+            }
           ]
         },
         {
@@ -41,10 +45,7 @@
               "SampleName": "OpenExistingMap",
               "Path": "Samples/Map/OpenExistingMap"
             },
-            {
-              "SampleName": "ChangeViewpoint",
-              "Path": "Samples/Map/ChangeViewpoint"
-            },
+
             {
               "SampleName": "DisplayDrawingStatus",
               "Path": "Samples/Map/DisplayDrawingStatus"
