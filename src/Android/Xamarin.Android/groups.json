@@ -32,6 +32,10 @@
 					"ShowGroup": true,
           "SampleInfos": [
             {
+              "SampleName": "DisplayMap",
+              "Path": "Samples/Map/DisplayMap"
+            },
+            {
               "SampleName": "MapRotation",
               "Path": "Samples/Map/MapRotation"
             },

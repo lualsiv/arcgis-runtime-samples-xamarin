@@ -30,6 +30,10 @@
           "ShowGroup": true,
           "SampleInfos": [
             {
+              "SampleName": "DisplayMap",
+              "Path": "Samples/Map/DisplayMap"
+            },
+            {
               "SampleName": "SetMinMaxScale",
               "Path": "Samples/Map/SetMinMaxScale"
             },

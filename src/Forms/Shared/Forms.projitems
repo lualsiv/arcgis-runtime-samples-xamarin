@@ -42,6 +42,10 @@
       <SubType>Code</SubType>
       <DependentUpon>AccessLoadStatus.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Samples\Map\DisplayMap\DisplayMap.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DisplayMap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapArea\SetInitialMapArea.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>SetInitialMapArea.xaml</DependentUpon>
@@ -76,6 +80,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\AccessLoadStatus\AccessLoadStatus.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\DisplayMap\metadata.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\DisplayMap\DisplayMap.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\DisplayMap\DisplayMap.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapArea\metadata.json" />

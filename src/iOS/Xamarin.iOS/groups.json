@@ -29,6 +29,10 @@
           "SubCategoryName": "Map",
           "ShowGroup": true,
           "SampleInfos": [
+             {
+              "SampleName": "DisplayMap",
+              "Path": "Samples/Map/DisplayMap"
+            },
             {
               "SampleName": "OpenExistingMap",
               "Path": "Samples/Map/OpenExistingMap"
