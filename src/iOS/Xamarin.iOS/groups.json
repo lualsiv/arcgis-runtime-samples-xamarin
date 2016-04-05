@@ -22,6 +22,10 @@
           "SubCategoryName": "MapView",
           "ShowGroup": true,
           "SampleInfos": [
+            {
+              "SampleName": "ShowMagnifier",
+              "Path": "Samples/MapView/ShowMagnifier"
+           }
           ]
         },
         {
