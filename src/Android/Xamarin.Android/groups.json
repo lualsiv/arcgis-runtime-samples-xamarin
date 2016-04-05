@@ -36,6 +36,10 @@
               "Path": "Samples/Map/DisplayMap"
             },
             {
+              "SampleName": "OpenExistingMap",
+              "Path": "Samples/Map/OpenExistingMap"
+            },
+            {
               "SampleName": "MapRotation",
               "Path": "Samples/Map/MapRotation"
             },
