@@ -42,6 +42,14 @@
       <SubType>Code</SubType>
       <DependentUpon>AccessLoadStatus.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapArea\SetInitialMapArea.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>SetInitialMapArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapLocation\SetInitialMapLocation.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>SetInitialMapLocation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Samples\Map\SetMinMaxScale\SetMinMaxScale.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>SetMinMaxScale.xaml</DependentUpon>
@@ -64,6 +72,20 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\AccessLoadStatus\AccessLoadStatus.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapArea\metadata.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapArea\SetInitialMapArea.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapArea\SetInitialMapArea.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapLocation\metadata.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapLocation\SetInitialMapLocation.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\SetInitialMapLocation\SetInitialMapLocation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\SetMinMaxScale\SetMinMaxScale.jpg">
