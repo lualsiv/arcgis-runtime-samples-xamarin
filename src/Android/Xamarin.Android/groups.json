@@ -48,6 +48,10 @@
               "Path": "Samples/Map/SetInitialMapArea"
             },
             {
+              "SampleName": "SetMapSpatialReference",
+              "Path": "Samples/Map/SetMapSpatialReference"
+            },
+            {
               "SampleName": "AccessLoadStatus",
               "Path": "Samples/Map/AccessLoadStatus"
             }
