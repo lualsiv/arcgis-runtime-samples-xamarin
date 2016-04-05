@@ -133,7 +133,7 @@
     </Content>
     <Content Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.jpg" />
     <Content Include="Samples\Map\MapRotation\MapRotation.jpg" />
-    <Content Include="Samples\Map\SetInitialMapArea\SetInitialMapLocationArea.jpg" />
+    <Content Include="Samples\Map\SetInitialMapArea\SetInitialMapArea.jpg" />
     <Content Include="Samples\Map\SetInitialMapLocation\SetInitialMapLocation.jpg" />
     <Content Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.jpg" />
     <Content Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
