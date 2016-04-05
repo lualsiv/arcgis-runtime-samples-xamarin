@@ -80,6 +80,8 @@
     <Compile Include="Samples\Layers\ArcGISTiledLayerLocalTPK\ArcGISTiledLayerLocalTPK.cs" />
     <Compile Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.cs" />
     <Compile Include="Samples\Map\MapRotation\MapRotation.cs" />
+    <Compile Include="Samples\Map\SetInitialMapArea\SetInitialMapArea.cs" />
+    <Compile Include="Samples\Map\SetInitialMapLocation\SetInitialMapLocation.cs" />
     <Compile Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.cs" />
     <Compile Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.cs" />
   </ItemGroup>
@@ -109,6 +111,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Samples\Map\SetMinMaxScale\metadata.json" />
     <EmbeddedResource Include="Samples\Map\AccessLoadStatus\metadata.json" />
+    <EmbeddedResource Include="Samples\Map\SetInitialMapLocation\metadata.json" />
+    <EmbeddedResource Include="Samples\Map\SetInitialMapArea\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -129,6 +133,8 @@
     </Content>
     <Content Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.jpg" />
     <Content Include="Samples\Map\MapRotation\MapRotation.jpg" />
+    <Content Include="Samples\Map\SetInitialMapArea\SetInitialMapLocationArea.jpg" />
+    <Content Include="Samples\Map\SetInitialMapLocation\SetInitialMapLocation.jpg" />
     <Content Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.jpg" />
     <Content Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
   </ItemGroup>

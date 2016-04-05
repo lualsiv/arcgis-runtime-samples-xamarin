@@ -12,16 +12,16 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using Esri.ArcGISRuntime;
+using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.UI;
 using Foundation;
 using UIKit;
 
-namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
+namespace ArcGISRuntimeXamarin.Samples.SetInitialMapLocation
 {
-    [Register("AccessLoadStatus")]
-    public class AccessLoadStatus : UIViewController
+    [Register("SetInitialMapLocation")]
+    public class SetInitialMapLocation : UIViewController
     {
         // Constant holding offset where the MapView control should start
         private const int yPageOffset = 60;
@@ -29,12 +29,9 @@ namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
         // Create and hold reference to the used MapView
         private MapView _myMapView = new MapView();
 
-        // Control to show the Maps' load status
-        private UITextView _loadStatusTextView;
-
-        public AccessLoadStatus()
+        public SetInitialMapLocation()
         {
-            Title = "Access load status";
+            Title = "Set initial map area";
         }
 
         public override void ViewDidLoad()
@@ -47,43 +44,21 @@ namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
 
         private void Initialize()
         {
-            // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateImagery());
-
-            // Register to handle loading status changes
-            myMap.LoadStatusChanged += OnMapsLoadStatusChanged;
+            // Create a map with 'Imagery with Labels' basemap and an initial location
+            var myMap = new Map(BasemapType.ImageryWithLabels, -33.867886, -63.985, 16);
 
             // Provide used Map to the MapView
             _myMapView.Map = myMap;
         }
 
-        private void OnMapsLoadStatusChanged(object sender, LoadStatusEventArgs e)
-        {
-            // Make sure that the UI changes are done in the UI thread
-            InvokeOnMainThread(() =>
-            {
-                // Update the load status information
-                _loadStatusTextView.Text = string.Format(
-                    "Maps' load status : {0}", 
-                    e.Status.ToString());
-            });
-        }
-
         private void CreateLayout()
         {
-            // Create control to show the maps' loading status
-            _loadStatusTextView = new UITextView()
-            {
-                Frame = new CoreGraphics.CGRect(
-                    0, yPageOffset, View.Bounds.Width, 40)
-            };
-
             // Setup the visual frame for the MapView
             _myMapView.Frame = new CoreGraphics.CGRect(
-                0, yPageOffset + 40, View.Bounds.Width, View.Bounds.Height - yPageOffset - 40);
-          
+                0, yPageOffset, View.Bounds.Width, View.Bounds.Height - yPageOffset);
+
             // Add MapView to the page
-            View.AddSubviews(_myMapView, _loadStatusTextView);
+            View.AddSubviews(_myMapView);
         }
     }
 }

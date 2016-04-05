@@ -54,6 +54,14 @@
               "Path": "Samples/Map/SetMinMaxScale"
             },
             {
+              "SampleName": "SetInitialMapLocation",
+              "Path": "Samples/Map/SetInitialMapLocation"
+            },
+            {
+              "SampleName": "SetInitialMapArea",
+              "Path": "Samples/Map/SetInitialMapArea"
+            },
+            {
               "SampleName": "AccessLoadStatus",
               "Path": "Samples/Map/AccessLoadStatus"
             }
