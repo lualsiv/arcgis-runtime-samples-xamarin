@@ -88,7 +88,10 @@
           "SubCategoryName":"ArcGISMapImageLayer",
           "ShowGroup":true,
           "SampleInfos":[
-
+            {
+              "SampleName":"ArcGISMapImageLayerUrl",
+              "Path":"Samples/Layers/ArcGISMapImageLayerUrl"
+            }
           ]
         }
       ]

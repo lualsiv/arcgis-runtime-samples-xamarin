@@ -11,56 +11,64 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using System;
 using UIKit;
 using Foundation;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime;
-using Esri.ArcGISRuntime.Geometry;
 
 namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrl
 {
     [Register("ArcGISMapImageLayerUrl")]
     public class ArcGISMapImageLayerUrl : UIViewController
     {
+        // Constant holding offset where the MapView control should start
+        private const int yPageOffset = 60;
+
+        // Create and hold reference to the used MapView
+        private MapView _myMapView = new MapView();
+
         public ArcGISMapImageLayerUrl()
         {
+            Title = "ArcGIS map image layer (URL)";
         }
 
-        public async override void ViewDidLoad()
+        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            // Create the UI, setup the control references and execute initialization 
+            CreateLayout();
+            Initialize();
+        }
 
-            // Create a new ArcGISMapImageLayer instance and pass a Url to the service
-            var baseLayer = new ArcGISMapImageLayer(new Uri("http://sampleserver5.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer"));
+        private void Initialize()
+        {
+            // Create new Map
+            var myMap = new Map();
 
-            // Await the load call for the layer.
-            await baseLayer.LoadAsync();
+            // Create uri to the map image layer
+            var serviceUrl = new Uri(
+               "http://sampleserver5.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer");
 
-            // Create a basemap to hold the base layer
-            var myBasemap = new Basemap();
+            // Create new image layer from the url
+            var imageLayer = new ArcGISMapImageLayer(serviceUrl);
 
-            // Add the base layer to the basemap. 
-            myBasemap.BaseLayers.Add(baseLayer);
+            // Add created layer to the basemaps collection
+            myMap.Basemap.BaseLayers.Add(imageLayer);
 
-            // Create a variable to hold the Y coordinate of the MapView control (adds spacing at the top).
-            var yOffset = 70;
+            // Assign the map to the MapView
+            _myMapView.Map = myMap;
+        }
 
-            // Create a new MapView control and provide its location coordinates on the frame.
-            MapView myMapView = new MapView()
-            {
-                Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - yOffset)
-            };
+        private void CreateLayout()
+        {
+            // Setup the visual frame for the MapView
+            _myMapView.Frame = new CoreGraphics.CGRect(
+                0, yPageOffset, View.Bounds.Width, View.Bounds.Height - yPageOffset);
 
-            // Create a new Map instance
-            Map myMap = new Map(SpatialReferences.WebMercator) { Basemap = myBasemap };
-
-            // Assign the Map to the MapView
-            myMapView.Map = myMap;
-
-            // Add the MapView to the Subview
-            View.AddSubview(myMapView);
+            // Add MapView to the page
+            View.AddSubviews(_myMapView);
         }
     }
 }

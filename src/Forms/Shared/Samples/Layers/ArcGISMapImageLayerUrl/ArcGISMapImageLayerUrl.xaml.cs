@@ -13,6 +13,8 @@
 // limitations under the License.
 
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
+using System;
 using Xamarin.Forms;
 
 namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrl
@@ -24,13 +26,28 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrl
             InitializeComponent();
 
             Title = "ArcGIS map image layer (URL)";
+            // Create the UI, setup the control references and execute initialization 
+            Initialize();
+            
+        }
 
-            ArcGISMapImageLayer mapImageLayer = new ArcGISMapImageLayer(
-                new System.Uri("http://sampleserver5.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer"));
+        private void Initialize()
+        {
+            // Create new Map
+            var myMap = new Map();
 
-            MyMapView.Map.Basemap.BaseLayers.Add(mapImageLayer);
+            // Create uri to the map image layer
+            var serviceUrl = new Uri(
+               "http://sampleserver5.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer");
 
-            MyMapView.Map.RetryLoadAsync();
+            // Create new image layer from the url
+            var imageLayer = new ArcGISMapImageLayer(serviceUrl);
+
+            // Add created layer to the basemaps collection
+            myMap.Basemap.BaseLayers.Add(imageLayer);
+
+            // Assign the map to the MapView
+            MyMapView.Map = myMap;
         }
     }
 }
