@@ -5,16 +5,6 @@
              xmlns:mapping="clr-namespace:Esri.ArcGISRuntime.Mapping;assembly=Esri.ArcGISRuntime" 
              x:Class="ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerUrl.ArcGISTiledLayerUrl">
   <Grid>
-    <esriUI:MapView x:Name="MyMapView">
-      <mapping:Map>
-        <mapping:Map.Basemap>
-          <mapping:Basemap>
-            <mapping:Basemap.BaseLayers>
-              <mapping:ArcGISTiledLayer ServiceUri="http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer" />
-            </mapping:Basemap.BaseLayers>
-          </mapping:Basemap>
-        </mapping:Map.Basemap>
-      </mapping:Map>
-    </esriUI:MapView>
+    <esriUI:MapView x:Name="MyMapView"/>
   </Grid>
 </ContentPage>

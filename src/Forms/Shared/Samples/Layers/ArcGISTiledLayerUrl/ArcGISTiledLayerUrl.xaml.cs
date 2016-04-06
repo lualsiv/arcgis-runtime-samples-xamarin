@@ -12,7 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
+using Esri.ArcGISRuntime.Mapping;
+using System;
 using Xamarin.Forms;
 
 namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerUrl
@@ -24,7 +25,27 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerUrl
             InitializeComponent ();
 
             Title = "ArcGIS tiled layer (URL)";
+            // Create the UI, setup the control references and execute initialization 
+            Initialize();
+        }
 
+        private void Initialize()
+        {
+            // Create new Map
+            var myMap = new Map();
+
+            // Create uri to the tiled service
+            var serviceUrl = new Uri(
+               "http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer");
+
+            // Create new tiled layer from the url
+            var imageLayer = new ArcGISTiledLayer(serviceUrl);
+
+            // Add created layer to the basemaps collection
+            myMap.Basemap.BaseLayers.Add(imageLayer);
+
+            // Assign the map to the MapView
+            MyMapView.Map = myMap;
         }
     }
 }
