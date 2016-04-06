@@ -80,6 +80,7 @@
     <Compile Include="Samples\Data\ServiceFeatureTableManualCache\ServiceFeatureTableManualCache.cs" />
     <Compile Include="Samples\Data\ServiceFeatureTableNoCache\ServiceFeatureTableNoCache.cs" />
     <Compile Include="Samples\Data\ServiceFeatureTableCache\ServiceFeatureTableCache.cs" />
+    <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrl.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerLocalTPK\ArcGISTiledLayerLocalTPK.cs" />
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrl.cs" />
     <Compile Include="Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.cs" />
@@ -133,6 +134,7 @@
     <EmbeddedResource Include="Samples\Data\ServiceFeatureTableNoCache\metadata.json" />
     <EmbeddedResource Include="Samples\Data\ServiceFeatureTableManualCache\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
+    <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -151,6 +153,7 @@
     <Content Include="Samples\Data\ServiceFeatureTableManualCache\ServiceFeatureTableManualCache.jpg" />
     <Content Include="Samples\Data\ServiceFeatureTableNoCache\ServiceFeatureTableNoCache.jpg" />
     <Content Include="Samples\Data\ServiceFeatureTableCache\ServiceFeatureTableCache.jpg" />
+    <Content Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrl.jpg" />
     <Content Include="Samples\Layers\ArcGISTiledLayerLocalTPK\ArcGISTiledLayerLocalTPK.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

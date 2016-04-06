@@ -76,10 +76,14 @@
           "Name":"Tiled Layers",
           "SubCategoryName":"ArcGISTiledLayer",
           "ShowGroup":true,
-          "SampleInfos":[
+          "SampleInfos": [
             {
-              "SampleName":"ArcGISTiledLayerLocalTPK",
-              "Path":"Samples/Layers/ArcGISTiledLayerLocalTPK"
+              "SampleName":"ArcGISTiledLayerUrl",
+              "Path":"Samples/Layers/ArcGISTiledLayerUrl"
+            },
+            {
+              "SampleName": "ArcGISTiledLayerLocalTPK",
+              "Path": "Samples/Layers/ArcGISTiledLayerLocalTPK"
             }
           ]
         },
