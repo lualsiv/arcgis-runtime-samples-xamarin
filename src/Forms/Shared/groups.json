@@ -1,288 +1,137 @@
 {
-  "Categories": [
+  "Categories":[
     {
-      "Name": "Tutorials",
-      "CategoryName": "Tutorials",
-      "SubCategories": [
+      "Name":"Maps",
+      "CategoryName":"Maps",
+      "SubCategories":[
         {
-          "Name": "General",
-          "SubCategoryName": "GeneralTutorials",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Maps",
-      "CategoryName": "Maps",
-      "SubCategories": [
-        {
-          "Name": "MapView",
-          "SubCategoryName": "MapView",
-          "ShowGroup": true,
-          "SampleInfos": [
+          "Name":"MapView",
+          "SubCategoryName":"MapView",
+          "ShowGroup":true,
+          "SampleInfos":[
             {
-              "SampleName": "ShowMagnifier",
-              "Path": "Samples/MapView/ShowMagnifier"
+              "SampleName":"ShowMagnifier",
+              "Path":"Samples/MapView/ShowMagnifier"
             },
             {
-              "SampleName": "ChangeViewpoint",
-              "Path": "Samples/MapView/ChangeViewpoint"
-           }
-          ]
-        },
-        {
-          "Name": "Map",
-          "SubCategoryName": "Map",
-          "ShowGroup": true,
-          "SampleInfos": [
-            {
-              "SampleName": "DisplayMap",
-              "Path": "Samples/Map/DisplayMap"
-            },
-            {
-              "SampleName": "OpenExistingMap",
-              "Path": "Samples/Map/OpenExistingMap"
-            },
-            {
-              "SampleName": "SetMinMaxScale",
-              "Path": "Samples/Map/SetMinMaxScale"
-            },
-            {
-              "SampleName": "AccessLoadStatus",
-              "Path": "Samples/Map/AccessLoadStatus"
-            },
-            {
-              "SampleName": "SetInitialMapLocation",
-              "Path": "Samples/Map/SetInitialMapLocation"
-            },
-            {
-              "SampleName": "SetInitialMapArea",
-              "Path": "Samples/Map/SetInitialMapArea"
-            },
-            {
-              "SampleName": "SetMapSpatialReference",
-              "Path": "Samples/Map/SetMapSpatialReference"
+              "SampleName":"ChangeViewpoint",
+              "Path":"Samples/MapView/ChangeViewpoint"
             }
           ]
         },
         {
-          "Name": "Basic license",
-          "SubCategoryName": "BasicLicense",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Layers",
-      "CategoryName": "Layers",
-      "SubCategories": [
-        {
-          "Name": "Tiled Layers",
-          "SubCategoryName": "ArcGISTiledLayer",
-          "ShowGroup": true,
-          "SampleInfos": [
+          "Name":"Map",
+          "SubCategoryName":"Map",
+          "ShowGroup":true,
+          "SampleInfos":[
             {
-              "SampleName": "ArcGISTiledLayerLocal",
-              "Path": "Samples/Layers/ArcGISTiledLayerLocal"
+              "SampleName":"DisplayMap",
+              "Path":"Samples/Map/DisplayMap"
             },
             {
-              "SampleName": "ArcGISTiledLayerUrl",
-              "Path": "Samples/Layers/ArcGISTiledLayerUrl"
-            }
-          ]
-        },
-        {
-          "Name": "Map Image Layers",
-          "SubCategoryName": "ArcGISMapImageLayer",
-          "ShowGroup": true,
-          "SampleInfos": [
+              "SampleName":"OpenExistingMap",
+              "Path":"Samples/Map/OpenExistingMap"
+            },
             {
-              "SampleName": "ArcGISMapImageLayerUrl",
-              "Path": "Samples/Layers/ArcGISMapImageLayerUrl"
-            }
-          ]
-        },
-        {
-          "Name": "KML Layers",
-          "SubCategoryName": "KMLLayers",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        },
-        {
-          "Name": "Raster Layers",
-          "SubCategoryName": "RasterLayers",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Features",
-      "CategoryName": "Features",
-      "SubCategories": [
-        {
-          "Name": "Feature Layers",
-          "SubCategoryName": "FeatureLayers",
-          "ShowGroup": true,
-          "SampleInfos": [
+              "SampleName":"SetMinMaxScale",
+              "Path":"Samples/Map/SetMinMaxScale"
+            },
             {
-              "SampleName": "FeatureLayerUrl",
-              "Path": "Samples/Layers/FeatureLayerUrl"
+              "SampleName":"AccessLoadStatus",
+              "Path":"Samples/Map/AccessLoadStatus"
+            },
+            {
+              "SampleName":"SetInitialMapLocation",
+              "Path":"Samples/Map/SetInitialMapLocation"
+            },
+            {
+              "SampleName":"SetInitialMapArea",
+              "Path":"Samples/Map/SetInitialMapArea"
+            },
+            {
+              "SampleName":"SetMapSpatialReference",
+              "Path":"Samples/Map/SetMapSpatialReference"
             }
           ]
         }
       ]
     },
     {
-      "Name": "Display Information",
-      "CategoryName": "DisplayInformation",
-      "SubCategories": [
+      "Name":"Layers",
+      "CategoryName":"Layers",
+      "SubCategories":[
         {
-          "Name": "Graphics Overlay",
-          "SubCategoryName": "GraphicOverlay",
-          "ShowGroup": true,
-          "SampleInfos": [
+          "Name":"Tiled Layers",
+          "SubCategoryName":"ArcGISTiledLayer",
+          "ShowGroup":true,
+          "SampleInfos":[
+            {
+              "SampleName":"ArcGISTiledLayerLocal",
+              "Path":"Samples/Layers/ArcGISTiledLayerLocal"
+            },
+            {
+              "SampleName":"ArcGISTiledLayerUrl",
+              "Path":"Samples/Layers/ArcGISTiledLayerUrl"
+            }
           ]
         },
         {
-          "Name": "Symbology",
-          "SubCategoryName": "Symbology",
-          "ShowGroup": true,
-          "SampleInfos": [
+          "Name":"Map Image Layers",
+          "SubCategoryName":"ArcGISMapImageLayer",
+          "ShowGroup":true,
+          "SampleInfos":[
+            {
+              "SampleName":"ArcGISMapImageLayerUrl",
+              "Path":"Samples/Layers/ArcGISMapImageLayerUrl"
+            }
           ]
         }
       ]
     },
     {
-      "Name": "Search",
-      "CategoryName": "Search",
-      "SubCategories": [
+      "Name":"Features",
+      "CategoryName":"Features",
+      "SubCategories":[
         {
-          "Name": "Query",
-          "SubCategoryName": "Query",
-          "ShowGroup": true,
-          "SampleInfos": [
+          "Name":"Feature Layers",
+          "SubCategoryName":"FeatureLayers",
+          "ShowGroup":true,
+          "SampleInfos":[
+            {
+              "SampleName":"FeatureLayerUrl",
+              "Path":"Samples/Layers/FeatureLayerUrl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name":"Display Information",
+      "CategoryName":"DisplayInformation",
+      "SubCategories":[
+        {
+          "Name":"Graphics Overlay",
+          "SubCategoryName":"GraphicOverlay",
+          "ShowGroup":true,
+          "SampleInfos":[
+
           ]
         },
         {
-          "Name": "Geocoding",
-          "SubCategoryName": "Geocoding",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Edit Data",
-      "CategoryName": "EditData",
-      "SubCategories": [
-        {
-          "Name": "Editing",
-          "SubCategoryName": "Editing",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Geometry",
-      "CategoryName": "Geometry",
-      "SubCategories": [
-        {
-          "Name": "Geometry",
-          "SubCategoryName": "Geometry",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Routing & Navigation",
-      "CategoryName": "RoutingNavigation",
-      "SubCategories": [
-        {
-          "Name": "Network Analysis",
-          "SubCategoryName": "NetworkAnalysis",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Analysis",
-      "CategoryName": "Analysis",
-      "SubCategories": [
-        {
-          "Name": "Analysis",
-          "SubCategoryName": "Analysis",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        },
-        {
-          "Name": "Geoprocessing",
-          "SubCategoryName": "Geoprocessing",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Cloud & Portal",
-      "CategoryName": "CloudPortal",
-      "SubCategories": [
-        {
-          "Name": "Portal",
-          "SubCategoryName": "Portal",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        },
-        {
-          "Name": "Security",
-          "SubCategoryName": "Security",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "3D",
-      "CategoryName": "3D",
-      "SubCategories": [
-        {
-          "Name": "SceneView",
-          "SubCategoryName": "SceneView",
-          "ShowGroup": true,
-          "SampleInfos": [
-          ]
-        },
-        {
-          "Name": "Scene",
-          "SubCategoryName": "Scene",
-          "ShowGroup": true,
-          "SampleInfos": [
+          "Name":"Symbology",
+          "SubCategoryName":"Symbology",
+          "ShowGroup":true,
+          "SampleInfos":[
+
           ]
         }
       ]
     }
   ],
-  "Featured": [
+  "Featured":[
     {
-      "SampleName": "ExampleSample",
-      "Reason": 1
+      "SampleName":"ExampleSample",
+      "Reason":1
     }
   ]
 }
