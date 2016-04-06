@@ -13,7 +13,6 @@
 // limitations under the License.
 
 using Esri.ArcGISRuntime.Mapping;
-using Esri.ArcGISRuntime.UI;
 using System;
 using Xamarin.Forms;
 
@@ -28,7 +27,6 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrl
             Title = "ArcGIS map image layer (URL)";
             // Create the UI, setup the control references and execute initialization 
             Initialize();
-            
         }
 
         private void Initialize()
