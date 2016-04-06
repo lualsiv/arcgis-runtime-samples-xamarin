@@ -57,14 +57,6 @@
               "Path":"Samples/Map/AccessLoadStatus"
             }
           ]
-        },
-        {
-          "Name":"Basic license",
-          "SubCategoryName":"BasicLicence",
-          "ShowGroup":true,
-          "SampleInfos":[
-
-          ]
         }
       ]
     },
@@ -76,14 +68,18 @@
           "Name":"Tiled Layers",
           "SubCategoryName":"ArcGISTiledLayer",
           "ShowGroup":true,
-          "SampleInfos": [
+          "SampleInfos":[
             {
               "SampleName":"ArcGISTiledLayerUrl",
               "Path":"Samples/Layers/ArcGISTiledLayerUrl"
             },
             {
-              "SampleName": "ArcGISTiledLayerLocalTPK",
-              "Path": "Samples/Layers/ArcGISTiledLayerLocalTPK"
+              "SampleName":"ArcGISTiledLayerLocalTPK",
+              "Path":"Samples/Layers/ArcGISTiledLayerLocalTPK"
+            },
+            {
+              "SampleName":"ArcGISVectorTiledLayerUrl",
+              "Path":"Samples/Layers/ArcGISVectorTiledLayerUrl"
             }
           ]
         },
@@ -105,13 +101,13 @@
       "CategoryName":"Features",
       "SubCategories":[
         {
-          "Name": "Feature Layers",
-          "SubCategoryName": "FeatureLayers",
-          "ShowGroup": true,
-          "SampleInfos": [
+          "Name":"Feature Layers",
+          "SubCategoryName":"FeatureLayers",
+          "ShowGroup":true,
+          "SampleInfos":[
             {
-              "SampleName": "FeatureLayerUrl",
-              "Path": "Samples/Layers/FeatureLayerUrl"
+              "SampleName":"FeatureLayerUrl",
+              "Path":"Samples/Layers/FeatureLayerUrl"
             }
           ]
         },
@@ -119,18 +115,18 @@
           "Name":"Feature Tables",
           "SubCategoryName":"FeatureTables",
           "ShowGroup":true,
-          "SampleInfos": [
-             {
+          "SampleInfos":[
+            {
               "SampleName":"ServiceFeatureTableCache",
               "Path":"Samples/Data/ServiceFeatureTableCache"
             },
             {
-              "SampleName": "ServiceFeatureTableNoCache",
-              "Path": "Samples/Data/ServiceFeatureTableNoCache"
+              "SampleName":"ServiceFeatureTableNoCache",
+              "Path":"Samples/Data/ServiceFeatureTableNoCache"
             },
             {
-              "SampleName": "ServiceFeatureTableManualCache",
-              "Path": "Samples/Data/ServiceFeatureTableManualCache"
+              "SampleName":"ServiceFeatureTableManualCache",
+              "Path":"Samples/Data/ServiceFeatureTableManualCache"
             }
           ]
         }

@@ -82,8 +82,12 @@
               "Path":"Samples/Layers/ArcGISTiledLayerUrl"
             },
             {
-              "SampleName":"ArcGISTiledLayerLocal",
-              "Path":"Samples/Layers/ArcGISTiledLayerLocal"
+              "SampleName": "ArcGISTiledLayerLocal",
+              "Path": "Samples/Layers/ArcGISTiledLayerLocal"
+            },
+            {
+              "SampleName":"ArcGISVectorTiledLayerUrl",
+              "Path":"Samples/Layers/ArcGISVectorTiledLayerUrl"
             }
           ]
         },
