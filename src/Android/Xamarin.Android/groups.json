@@ -96,13 +96,13 @@
             }
           ]
 				},
-				{
-					"Name": "Map Image Layers",
-					"SubCategoryName": "ArcGISMapImageLayer",
-					"ShowGroup": true,
-					"SampleInfos": [
-					]
-				},
+        {
+          "Name": "Map Image Layers",
+          "SubCategoryName": "ArcGISMapImageLayer",
+          "ShowGroup": true,
+          "SampleInfos": [
+          ]
+        },
 				{
 					"Name": "KML Layers",
 					"SubCategoryName": "KMLLayers",
@@ -127,8 +127,12 @@
 					"Name": "Feature Layers",
 					"SubCategoryName": "FeatureLayers",
 					"ShowGroup": true,
-					"SampleInfos": [
-					]
+          "SampleInfos": [
+            {
+              "SampleName": "FeatureLayerUrl",
+              "Path": "Samples/Layers/FeatureLayerUrl"
+            }
+          ]
 				}
 			]
 		},

@@ -210,6 +210,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <BundleResource Include="Samples\Map\MapRotation\metadata.json" />
+    <EmbeddedResource Include="Samples\Layers\FeatureLayerUrl\metadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -225,6 +228,7 @@
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrl.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerLocal\ArcGISTiledLayerLocal.cs" />
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrl.cs" />
+    <Compile Include="Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.cs" />
     <Compile Include="Samples\MapView\ShowMagnifier\ShowMagnifier.cs" />
     <Compile Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.cs" />
     <Compile Include="Samples\Map\ChangeBasemap\ChangeBasemap.cs" />
@@ -274,6 +278,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Samples\Layers\ChangeSublayerVisibility\ChangeSublayerVisibility.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Samples\MapView\ShowMagnifier\ShowMagnifier.jpg">

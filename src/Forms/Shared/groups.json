@@ -131,6 +131,10 @@
           "SubCategoryName": "FeatureLayers",
           "ShowGroup": true,
           "SampleInfos": [
+            {
+              "SampleName": "FeatureLayerUrl",
+              "Path": "Samples/Layers/FeatureLayerUrl"
+            }
           ]
         }
       ]

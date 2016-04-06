@@ -38,6 +38,10 @@
       <DependentUpon>ArcGISTiledLayerUrl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>FeatureLayerUrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Samples\MapView\ChangeViewpoint\ChangeViewpoint.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>ChangeViewpoint.xaml</DependentUpon>
@@ -87,6 +91,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\ArcGISTiledLayerLocal\metadata.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)groups.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\FeatureLayerUrl\metadata.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\MapView\ChangeViewpoint\metadata.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\MapView\ChangeViewpoint\ChangeViewpoint.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

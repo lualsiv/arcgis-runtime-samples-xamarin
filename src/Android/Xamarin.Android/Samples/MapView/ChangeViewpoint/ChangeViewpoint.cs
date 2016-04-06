@@ -14,14 +14,14 @@
 
 using Android.App;
 using Android.OS;
-using Android.Widget;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Mapping;
-using System;
 using Android.Views;
-using System.Linq;
+using Android.Widget;
 using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
 {
