@@ -93,13 +93,32 @@
       "CategoryName":"Features",
       "SubCategories":[
         {
-          "Name":"Feature Layers",
-          "SubCategoryName":"FeatureLayers",
-          "ShowGroup":true,
-          "SampleInfos":[
+          "Name": "Feature Layers",
+          "SubCategoryName": "FeatureLayers",
+          "ShowGroup": true,
+          "SampleInfos": [
             {
-              "SampleName":"FeatureLayerUrl",
-              "Path":"Samples/Layers/FeatureLayerUrl"
+              "SampleName": "FeatureLayerUrl",
+              "Path": "Samples/Layers/FeatureLayerUrl"
+            }
+          ]
+        },
+        {
+          "Name":"Feature Tables",
+          "SubCategoryName":"FeatureTables",
+          "ShowGroup":true,
+          "SampleInfos": [
+             {
+              "SampleName":"ServiceFeatureTableCache",
+              "Path":"Samples/Data/ServiceFeatureTableCache"
+            },
+            {
+              "SampleName": "ServiceFeatureTableNoCache",
+              "Path": "Samples/Data/ServiceFeatureTableNoCache"
+            },
+            {
+              "SampleName": "ServiceFeatureTableManualCache",
+              "Path": "Samples/Data/ServiceFeatureTableManualCache"
             }
           ]
         }
