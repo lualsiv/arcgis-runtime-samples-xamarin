@@ -158,8 +158,12 @@
           "ShowGroup":true,
           "SampleInfos":[
             {
-              "SampleName":"SimpleMarkerSymbol",
-              "Path":"Samples/Symbology/SimpleMarkerSymbol"
+              "SampleName": "SimpleMarkerSymbol",
+              "Path": "Samples/Symbology/SimpleMarkerSymbol"
+            },
+            {
+              "SampleName": "RenderUniqueValues",
+              "Path": "Samples/Symbology/RenderUniqueValues"
             }
           ]
         }

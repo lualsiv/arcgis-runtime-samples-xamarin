@@ -94,7 +94,8 @@
     <Compile Include="Samples\Map\SetInitialMapArea\SetInitialMapArea.cs" />
     <Compile Include="Samples\Map\SetInitialMapLocation\SetInitialMapLocation.cs" />
     <Compile Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.cs" />
-    <Compile Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.cs" />
+    <Compile Include="Samples\Symbology\RenderUniqueValues\RenderUniqueValues.cs" />
+    <Compile Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbol.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="groups.json">
@@ -116,7 +117,7 @@
     <AndroidResource Include="Resources\layout\SamplesLayout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <EmbeddedResource Include="Samples\Symbols\SimpleMarkerSymbol\metadata.json" />
+    <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerLocalTPK\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -135,6 +136,7 @@
     <EmbeddedResource Include="Samples\Data\ServiceFeatureTableManualCache\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
+    <EmbeddedResource Include="Samples\Symbology\RenderUniqueValues\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -169,7 +171,8 @@
     <Content Include="Samples\Map\SetInitialMapArea\SetInitialMapArea.jpg" />
     <Content Include="Samples\Map\SetInitialMapLocation\SetInitialMapLocation.jpg" />
     <Content Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.jpg" />
-    <Content Include="Samples\Symbols\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
+    <Content Include="Samples\Symbology\RenderUniqueValues\RenderUniqueValues.jpg" />
+    <Content Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

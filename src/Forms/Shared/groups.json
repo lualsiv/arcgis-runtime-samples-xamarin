@@ -141,7 +141,10 @@
           "SubCategoryName":"Symbology",
           "ShowGroup":true,
           "SampleInfos":[
-
+            {
+              "SampleName": "RenderUniqueValues",
+              "Path": "Samples/Symbology/RenderUniqueValues"
+            }
           ]
         }
       ]
