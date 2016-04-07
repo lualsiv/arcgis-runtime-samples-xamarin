@@ -173,7 +173,7 @@
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
     <EmbeddedResource Include="Samples\MapView\ChangeViewpoint\metadata.json" />
-    <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\metadata.json" />
+    <EmbeddedResource Include="Samples\Symbology\RenderSimpleMarkers\metadata.json" />
     <EmbeddedResource Include="Samples\Map\DisplayDrawingStatus\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -261,7 +261,7 @@
     <Compile Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.cs" />
     <Compile Include="Samples\Symbology\RenderPictureMarkers\RenderPictureMarkers.cs" />
     <Compile Include="Samples\Symbology\RenderUniqueValues\RenderUniqueValues.cs" />
-    <Compile Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbol.cs" />
+    <Compile Include="Samples\Symbology\RenderSimpleMarkers\RenderSimpleMarkers.cs" />
     <Compile Include="ViewControllers\SamplesViewController.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.cs" />
     <Compile Include="ViewControllers\CategoriesViewController.designer.cs">
@@ -287,7 +287,7 @@
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\OpenExistingMap.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
+    <EmbeddedResource Include="Samples\Symbology\RenderSimpleMarkers\RenderSimpleMarkers.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Samples\MapView\ChangeViewpoint\ChangeViewpoint.jpg" />

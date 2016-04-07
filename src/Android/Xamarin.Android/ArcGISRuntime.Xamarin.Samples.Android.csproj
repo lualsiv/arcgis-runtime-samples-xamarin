@@ -96,7 +96,7 @@
     <Compile Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.cs" />
     <Compile Include="Samples\Symbology\RenderPictureMarkers\RenderPictureMarkers.cs" />
     <Compile Include="Samples\Symbology\RenderUniqueValues\RenderUniqueValues.cs" />
-    <Compile Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbol.cs" />
+    <Compile Include="Samples\Symbology\RenderSimpleMarkers\RenderSimpleMarkers.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="groups.json">
@@ -118,7 +118,7 @@
     <AndroidResource Include="Resources\layout\SamplesLayout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <EmbeddedResource Include="Samples\Symbology\SimpleMarkerSymbol\metadata.json" />
+    <EmbeddedResource Include="Samples\Symbology\RenderSimpleMarkers\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\ArcGISTiledLayerLocalTPK\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -176,7 +176,7 @@
     <Content Include="Samples\Map\SetMinMaxScale\SetMinMaxScale.jpg" />
     <Content Include="Samples\Symbology\RenderPictureMarkers\RenderPictureMarkers.jpg" />
     <Content Include="Samples\Symbology\RenderUniqueValues\RenderUniqueValues.jpg" />
-    <Content Include="Samples\Symbology\SimpleMarkerSymbol\SimpleMarkerSymbol.jpg" />
+    <Content Include="Samples\Symbology\RenderSimpleMarkers\RenderSimpleMarkers.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

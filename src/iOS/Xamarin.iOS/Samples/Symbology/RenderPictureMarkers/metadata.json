@@ -1,7 +1,7 @@
 {
   "Name": "Render picture markers",
   "SampleName": "RenderPictureMarkers",
-  "Description": "This sample shows how to create picture marker symbols from a URL and embedded resources.",
+  "Description": "This sample demonstrates how to create picture marker symbols from a URL and embedded resources.",
   "Instructions": "",
   "Type": 0,
   "RequiresOnlineConnection":true,

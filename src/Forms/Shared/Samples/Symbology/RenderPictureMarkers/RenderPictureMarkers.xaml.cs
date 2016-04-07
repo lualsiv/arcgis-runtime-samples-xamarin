@@ -12,13 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Esri.ArcGISRuntime.Data;
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
 using System;
-using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -89,6 +87,7 @@ namespace ArcGISRuntimeXamarin.Samples.RenderPictureMarkers
             var currentAssembly = Assembly.GetExecutingAssembly();
 
             // Get image as a stream from the resources
+            // Picture is defined as EmbeddedResource and DoNotCopy
             var resourceStream = currentAssembly.GetManifestResourceStream(
                 "ArcGISRuntimeXamarin.Resources.PictureMarkerSymbols.pin_star_blue.png");
 

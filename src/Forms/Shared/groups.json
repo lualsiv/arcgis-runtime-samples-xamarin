@@ -142,12 +142,16 @@
           "ShowGroup":true,
           "SampleInfos":[
             {
-              "SampleName": "RenderUniqueValues",
-              "Path": "Samples/Symbology/RenderUniqueValues"
+              "SampleName": "RenderSimpleMarkers",
+              "Path": "Samples/Symbology/RenderSimpleMarkers"
             },
             {
               "SampleName": "RenderPictureMarkers",
               "Path": "Samples/Symbology/RenderPictureMarkers"
+            }
+            {
+              "SampleName": "RenderUniqueValues",
+              "Path": "Samples/Symbology/RenderUniqueValues"
             }
           ]
         }
