@@ -108,8 +108,9 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Esri.ArcGISRuntime">
-      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\lib\Xamarin.iOS10\Esri.ArcGISRuntime.dll</HintPath>
+    <Reference Include="Esri.ArcGISRuntime, Version=100.0.0.0, Culture=neutral, PublicKeyToken=29c6dd6e8553d944, processorArchitecture=MSIL">
+      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\lib\Xamarin.iOS10\Esri.ArcGISRuntime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="OpenTK-1.0" />
@@ -185,9 +186,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <BundleResource Include="Resources\campus.tpk" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
     <EmbeddedResource Include="Samples\Map\SetMinMaxScale\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -228,6 +226,7 @@
     <EmbeddedResource Include="Samples\Symbology\RenderPictureMarkers\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -345,11 +344,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <Import Project="..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets" Condition="Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets'))" />
+    <Error Condition="!Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets'))" />
   </Target>
-  <Import Project="..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets" Condition="Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" />
 </Project>
