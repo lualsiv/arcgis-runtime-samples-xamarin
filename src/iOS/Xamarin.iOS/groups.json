@@ -164,6 +164,10 @@
             {
               "SampleName": "RenderUniqueValues",
               "Path": "Samples/Symbology/RenderUniqueValues"
+            },
+            {
+              "SampleName": "RenderPictureMarkers",
+              "Path": "Samples/Symbology/RenderPictureMarkers"
             }
           ]
         }
