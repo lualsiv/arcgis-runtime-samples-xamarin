@@ -148,7 +148,7 @@
             {
               "SampleName": "RenderPictureMarkers",
               "Path": "Samples/Symbology/RenderPictureMarkers"
-            }
+            },
             {
               "SampleName": "RenderUniqueValues",
               "Path": "Samples/Symbology/RenderUniqueValues"
