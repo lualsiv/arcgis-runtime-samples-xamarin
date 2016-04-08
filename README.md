@@ -5,8 +5,8 @@ This project contains samples for the ArcGIS Runtime SDK for Xamarin (Xamarin.An
 ## Contents
 
 See Table of Contents under different platforms
-  * [Table of Contents on Xamarin.Android](src\Xamarin.Android)
-  * [Table of Contents on Xamarin.iOS](src\Xamarin.iOS)
+  * [Table of Contents on Xamarin.Android](src\Android)
+  * [Table of Contents on Xamarin.iOS](src\iOS)
   * [Table of Contents on Xamarin.Forms](src\Forms) 
 
 ## Instructions 
