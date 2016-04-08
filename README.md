@@ -2,6 +2,13 @@
 
 This project contains samples for the ArcGIS Runtime SDK for Xamarin (Xamarin.Android, Xamarin.iOS, and Xamarin.Forms (Android and iOS). Samples for each API are hosted in a simple application framework.
 
+## Contents
+
+See Table of Contents under different platforms
+  * [Table of Contents on Xamarin.Android](src\Xamarin.Android)
+  * [Table of Contents on Xamarin.iOS](src\Xamarin.iOS)
+  * [Table of Contents on Xamarin.Forms](src\Forms) 
+
 ## Instructions 
 
 1. Fork and then clone the repo or download the .zip file. 
