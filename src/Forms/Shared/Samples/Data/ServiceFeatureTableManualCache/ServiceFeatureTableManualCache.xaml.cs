@@ -33,7 +33,7 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableManualCache
             Initialize();
         }
 
-        private async void Initialize()
+        private void Initialize()
         {
             // Create new Map with basemap
             var myMap = new Map(Basemap.CreateTopographic());

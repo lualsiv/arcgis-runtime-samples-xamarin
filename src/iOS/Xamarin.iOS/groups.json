@@ -146,10 +146,13 @@
       "SubCategories":[
         {
           "Name":"Graphics Overlay",
-          "SubCategoryName":"GraphicOverlay",
+          "SubCategoryName":"GraphicsOverlay",
           "ShowGroup":true,
           "SampleInfos":[
-
+            {
+              "SampleName": "AddGraphicsRenderer",
+              "Path": "Samples/GraphicsOverlay/AddGraphicsRenderer"
+            }
           ]
         },
         {
