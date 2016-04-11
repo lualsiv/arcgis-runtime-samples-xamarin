@@ -32,10 +32,14 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>CFBundleIconFiles</key>
-	<array/>
+	<array>
+		<string>Default-568h@2x.png</string>
+	</array>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array/>
+	<key>UIPrerenderedIcon</key>
+	<false/>
 </dict>
 </plist>
