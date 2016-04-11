@@ -13,7 +13,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>8.1</string>
+	<string>9.2</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -28,8 +28,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>CFBundleIconFiles</key>
 	<array>
@@ -41,5 +39,7 @@
 	<array/>
 	<key>UIPrerenderedIcon</key>
 	<false/>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>MainStoryboard</string>
 </dict>
 </plist>
