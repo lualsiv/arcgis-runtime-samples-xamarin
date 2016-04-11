@@ -74,6 +74,10 @@
       <SubType>Code</SubType>
       <DependentUpon>DisplayMap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Samples\Map\MapRotation\MapRotation.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MapRotation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Samples\Map\OpenExistingMap\OpenExistingMap.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>OpenExistingMap.xaml</DependentUpon>
@@ -179,6 +183,13 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\DisplayMap\DisplayMap.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\MapRotation\MapRotation.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\MapRotation\MapRotation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\MapRotation\metadata.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\OpenExistingMap\metadata.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Map\OpenExistingMap\OpenExistingMap.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
