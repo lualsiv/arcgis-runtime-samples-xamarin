@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"AccessLoadStatus.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.LoadStatus","E:Esri.ArcGISRuntime.Mapping.Map.LoadStatusChanged","P:Esri.ArcGISRuntime.LoadStatusEventArgs.Status"
   ],
   "SampleFolder": "AccessLoadStatus"
 }

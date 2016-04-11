@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"DisplayMap.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.Map","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateImagery"
   ],
   "SampleFolder": "DisplayMap"
 }

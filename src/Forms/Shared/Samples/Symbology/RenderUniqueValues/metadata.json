@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"RenderUniqueValues.jpg",
   "Link":"",
-  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.UniqueValueRenderer"
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.UniqueValueRenderer","T:Esri.ArcGISRuntime.Symbology.UniqueValueCollection","P:Esri.ArcGISRuntime.Symbology.UniqueValueRenderer.UniqueValues","P:Esri.ArcGISRuntime.Symbology.UniqueValueRenderer.FieldNames"
   ],
   "SampleFolder": "RenderUniqueValues"
 }
