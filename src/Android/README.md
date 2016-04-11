@@ -100,6 +100,10 @@
 
     This sample demonstrates how you add graphics and set a renderer on a graphic overlays.
 
+    * [Identify graphics](Xamarin.Android/Samples/GraphicsOverlay/IdentifyGraphics)
+
+    This sample demonstrates how to identify graphics in a graphics overlay. When you tap on a graphic on the map, you will see an alert message displayed.
+
 
 - **Symbology**
 
