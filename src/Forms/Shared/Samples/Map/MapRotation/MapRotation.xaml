@@ -9,7 +9,10 @@
     <RowDefinition Height="auto" />
     <RowDefinition Height="*" />
   </Grid.RowDefinitions>
-    <Slider x:Name="MySlider" Minimum="-180" Maximum="180" Value="0" ValueChanged="MySlider_ValueChanged"/>
+    <StackLayout x:Name="MyStackLayout" Orientation="Horizontal" Grid.Row="0">
+    <Slider x:Name="MySlider" Minimum="0" Maximum="180" Value="0" ValueChanged="MySlider_ValueChanged" WidthRequest="300"/>
+    <Label x:Name="MyLabel" />
+    </StackLayout>
     <esriUI:MapView x:Name="MyMapView" Grid.Row="1"/>
   </Grid>
 </ContentPage>

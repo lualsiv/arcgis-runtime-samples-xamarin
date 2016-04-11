@@ -32,8 +32,9 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
 
         private void Initialize()
         {
-			// Create new Map with basemap
-			var myMap = new Map(Basemap.CreateStreets());
+			// Create a new Map instance with the basemap  
+			var myBasemap = Basemap.CreateStreets();
+			var myMap = new Map(myBasemap);
 
 			// Assign the map to the MapView
 			MyMapView.Map = myMap;
@@ -43,6 +44,9 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
 		{
 			// Set the MapView rotation to that of the Slider.
 			MyMapView.SetViewpointRotationAsync(e.NewValue);
+
+			// Display the rotation value in the Label formatted nicely with degree symbol.
+			MyLabel.Text = string.Format("{0:0}°", MyMapView.MapRotation);
 		}
 	}
 }

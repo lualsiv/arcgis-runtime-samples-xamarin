@@ -25,8 +25,9 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
     public class MapRotation : Activity
     {
         MapView MyMapView;
+		private TextView _loadStatusTextView;
 
-        protected override void OnCreate(Bundle bundle)
+		protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
@@ -44,7 +45,7 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
 
             // Set a maximum slider value of 180 and a current value of 90 (minimum is always 0)
             angleSlider.Max = 180;
-            angleSlider.Progress = 90;
+            angleSlider.Progress = 0;
 
             // When the slider value (Progress) changes, rotate the map   
             angleSlider.ProgressChanged += (object s, SeekBar.ProgressChangedEventArgs e) => 
@@ -53,11 +54,14 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
                 {
                     // set rotation asynchronously (no need to await the result)
                     MyMapView.SetViewpointRotationAsync(e.Progress);
-                }
+
+					// Display the MapView's rotation.
+					_loadStatusTextView.Text = string.Format("{0:0}°", MyMapView.MapRotation);
+				}
             };
 
-            // Create a new map with a World Imagery base map
-            var myBasemap = Basemap.CreateImagery();
+			// Create a new Map instance with the basemap  
+			var myBasemap = Basemap.CreateStreets();
             var myMap = new Map(myBasemap);
 
             // Create a new map view control to display the map
@@ -68,8 +72,12 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             // (no need to await the asynchronous call)
             MyMapView.SetViewpointRotationAsync(angleSlider.Progress);
 
-            // Add the slider and map view to the layout
-            layout.AddView(angleSlider);
+			// Add a label to display the MapView's rotation.
+			_loadStatusTextView = new TextView(this);
+			layout.AddView(_loadStatusTextView);
+
+			// Add the slider and map view to the layout
+			layout.AddView(angleSlider);
             layout.AddView(MyMapView);
 
             // Apply the layout to the app
