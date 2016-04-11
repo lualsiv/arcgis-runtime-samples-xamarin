@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"RenderSimpleMarkers.jpg",
   "Link":"",
-  "TypeLink": ["T:Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol"
+  "TypeLink": ["T:Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol","T:Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbolStyle","P:Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol.Color"
   ],
  "SampleFolder":  "RenderSimpleMarkers"
 }
