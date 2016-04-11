@@ -12,7 +12,6 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.UI;
 using Foundation;
@@ -31,7 +30,7 @@ namespace ArcGISRuntimeXamarin.Samples.SetInitialMapLocation
 
         public SetInitialMapLocation()
         {
-            Title = "Set initial map area";
+            Title = "Set initial map location";
         }
 
         public override void ViewDidLoad()

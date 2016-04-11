@@ -38,7 +38,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeSublayerVisibility
 
             // Create a new MapView control and provide its location coordinates on the frame.
             MapView myMapView = new MapView();
-            myMapView.Frame = new CoreGraphics.CGRect(0, 70, View.Bounds.Width, View.Bounds.Height - 40);
+            myMapView.Frame = new CoreGraphics.CGRect(0, 60, View.Bounds.Width, View.Bounds.Height - 40);
 
             // Assign the Map to the MapView
             myMapView.Map = myMap;

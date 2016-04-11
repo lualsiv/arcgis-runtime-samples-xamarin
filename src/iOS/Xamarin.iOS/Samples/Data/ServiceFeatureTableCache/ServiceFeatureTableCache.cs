@@ -33,7 +33,7 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableCache
 
         public ServiceFeatureTableCache()
         {
-            Title = "Feature layer (feature service)";
+            Title = "Service feature table (cache)";
         }
 
         public override void ViewDidLoad()
@@ -73,6 +73,10 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableCache
 
             // Assign the map to the MapView
             _myMapView.Map = myMap;
+
+            // TODO : Remove this workaround 
+            // Workaround for feature table initialization issue
+            poolsFeatureTable.RetryLoadAsync();
         }
 
         private void CreateLayout()

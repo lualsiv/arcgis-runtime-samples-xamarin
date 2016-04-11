@@ -73,6 +73,10 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableNoCache
 
             // Assign the map to the MapView
             _myMapView.Map = myMap;
+
+            // TODO : Remove this workaround 
+            // Workaround for feature table initialization issue
+            poolsFeatureTable.RetryLoadAsync();
         }
 
         private void CreateLayout()
