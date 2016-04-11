@@ -47,12 +47,12 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             MapView myMapView = new MapView();
             myMapView.Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - yOffset);
 
-            // Create a new Map instance with the basemap               
-            Map myMap = new Map(SpatialReferences.WebMercator);
-            myMap.Basemap = Basemap.CreateStreets();
+			// Create a new Map instance with the basemap  
+			var myBasemap = Basemap.CreateStreets();
+			var myMap = new Map(myBasemap);
 
-            // Assign the Map to the MapView
-            myMapView.Map = myMap;
+			// Assign the Map to the MapView
+			myMapView.Map = myMap;
 
             // Create a label to display the MapView rotation value
             UILabel rotationLabel = new UILabel();
