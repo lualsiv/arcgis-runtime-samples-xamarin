@@ -25,8 +25,14 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
     [Register("DisplayDrawingStatus")]
     public class DisplayDrawingStatus : UIViewController
     {
+        // Constant holding offset where the MapView control should start
+        private const int yPageOffset = 60;
+
+        // Control to show the drawing status
         UIActivityIndicatorView _activityIndicator;
 
+        // Create and hold reference to the used MapView
+        private MapView _myMapView;
         public DisplayDrawingStatus()
         {
             Title = "Display drawing status";
@@ -36,22 +42,50 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
         {
             // Releases the view if it doesn't have a superview
             base.DidReceiveMemoryWarning();
-      }
-
-        public override async void ViewDidLoad()
+        }
+        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            CreateLayout();
+            Initialize();
+        }
+        private async void Initialize()
+        {
+            // Create new Map with basemap
+            Map myMap = new Map(BasemapType.Topographic, 34.056, -117.196, 4);
 
-            // Create a variable to hold the Y coordinate of the map view control.
-            var yOffset = 60;
+            // Create uri to the used feature service
+            var serviceUrl = new Uri(
+                "http://sampleserver6.arcgisonline.com/arcgis/rest/services/DamageAssessment/FeatureServer/0");
 
+            //initialize a new feature layer
+            var myFeatureTable = new ServiceFeatureTable(serviceUrl);
+            var myFeatureLayer = new FeatureLayer(myFeatureTable);
+
+            await myFeatureLayer.LoadAsync();
+
+            // Add the feature layer to the Map
+            myMap.OperationalLayers.Add(myFeatureLayer);
+
+            // Provide used Map to the MapView
+            _myMapView.Map = myMap;
+
+            // Hook up the DrawStatusChanged event
+            _myMapView.DrawStatusChanged += MyMapView_DrawStatusChanged;
+
+            // Animate the activity spinner
+            _activityIndicator.StartAnimating();
+
+        }
+        private void CreateLayout()
+        {
             // Create a new MapView control and provide its location coordinates on the frame
-            MapView myMapView = new MapView();
-            myMapView.Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - 30);
+            _myMapView = new MapView();
+            _myMapView.Frame = new CoreGraphics.CGRect(0, yPageOffset, View.Bounds.Width, View.Bounds.Height - 30);
 
             // Create a toolbar on the bottom of the display 
             UIToolbar toolbar = new UIToolbar();
-            toolbar.Frame = new CoreGraphics.CGRect(0, myMapView.Bounds.Height, View.Bounds.Width, 30);
+            toolbar.Frame = new CoreGraphics.CGRect(0, _myMapView.Bounds.Height, View.Bounds.Width, 30);
 
             // Create an activity indicator
             _activityIndicator = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.Gray);
@@ -67,30 +101,9 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
             // Add the UIBarButtonItems to the toolbar
             toolbar.SetItems(barButtonItems, true);
 
-            // Create a new map instance
-            Map myMap = new Map(BasemapType.Topographic, 34.056, -117.196, 4);
-
-            var featureTable = new ServiceFeatureTable(new Uri("http://sampleserver6.arcgisonline.com/arcgis/rest/services/DamageAssessment/FeatureServer/0"));
-            var featureLayer = new FeatureLayer(featureTable);
-
-            await featureLayer.LoadAsync();
-
-            // Add the feature layer to the Map
-            myMap.OperationalLayers.Add(featureLayer);
-
-            // Assign the map to the MapView that was created above
-            myMapView.Map = myMap;
-
-            // Hook up the DrawStatusChanged event
-            myMapView.DrawStatusChanged += MyMapView_DrawStatusChanged;
-
             // Add the MapView to the Subview
-            View.AddSubviews(myMapView, toolbar);
-
-            // Animate the activity spinner
-            _activityIndicator.StartAnimating();
+            View.AddSubviews(_myMapView, toolbar);
         }
-
         private void MyMapView_DrawStatusChanged(object sender, DrawStatus e)
         {
             // Show the activity indicator if the map is drawing
