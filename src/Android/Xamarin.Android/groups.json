@@ -57,14 +57,6 @@
               "Path":"Samples/Map/AccessLoadStatus"
             }
           ]
-        },
-        {
-          "Name":"Basic license",
-          "SubCategoryName":"BasicLicence",
-          "ShowGroup":true,
-          "SampleInfos":[
-
-          ]
         }
       ]
     },
@@ -148,6 +140,10 @@
             {
               "SampleName": "AddGraphicsRenderer",
               "Path": "Samples/GraphicsOverlay/AddGraphicsRenderer"
+            },
+            {
+              "SampleName": "IdentifyGraphics",
+              "Path": "Samples/GraphicsOverlay/IdentifyGraphics"
             }
           ]
         },
