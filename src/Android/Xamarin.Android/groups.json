@@ -106,8 +106,12 @@
               "Path": "Samples/Layers/FeatureLayerUrl"
             },
             {
-              "SampleName":"FeatureLayerQuery",
-              "Path":"Samples/Data/FeatureLayerQuery"
+              "SampleName": "FeatureLayerQuery",
+              "Path": "Samples/Data/FeatureLayerQuery"
+            },
+            {
+              "SampleName": "ChangeFeatureLayerRenderer",
+              "Path": "Samples/Layers/ChangeFeatureLayerRenderer"
             }
           ]
         },

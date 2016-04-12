@@ -86,6 +86,7 @@
     <Compile Include="Samples\Layers\ArcGISTiledLayerUrl\ArcGISTiledLayerUrl.cs" />
     <Compile Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrl.cs" />
     <Compile Include="Samples\Data\FeatureLayerQuery\FeatureLayerQuery.cs" />
+    <Compile Include="Samples\Layers\ChangeFeatureLayerRenderer\ChangeFeatureLayerRenderer.cs" />
     <Compile Include="Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.cs" />
     <Compile Include="Samples\MapView\ChangeViewpoint\ChangeViewpoint.cs" />
     <Compile Include="Samples\MapView\ShowMagnifier\ShowMagnifier.cs" />
@@ -144,6 +145,7 @@
     <EmbeddedResource Include="Samples\Data\FeatureLayerQuery\metadata.json" />
     <EmbeddedResource Include="Samples\GraphicsOverlay\IdentifyGraphics\metadata.json" />
     <EmbeddedResource Include="Samples\MapView\DisplayDrawStatus\metadata.json" />
+    <EmbeddedResource Include="Samples\Layers\ChangeFeatureLayerRenderer\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -169,6 +171,7 @@
     <Content Include="Samples\Layers\ArcGISMapImageLayerUrl\ArcGISMapImageLayerUrl.jpg" />
     <Content Include="Samples\Data\FeatureLayerQuery\FeatureLayerQuery.jpg" />
     <Content Include="Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.jpg" />
+    <Content Include="Samples\Layers\ChangeFeatureLayerRenderer\ChangeFeatureLayerRenderer.jpg" />
     <Content Include="Samples\MapView\ChangeViewpoint\ChangeViewpoint.jpg" />
     <Content Include="Samples\MapView\ShowMagnifier\ShowMagnifier.jpg" />
     <Content Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.jpg" />
