@@ -23,22 +23,24 @@ using Esri.ArcGISRuntime.UI;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
 {
     [Activity]
     public class FeatureLayerQuery : Activity
     {
-
-
-        //Create an hold reference to variables that will be required through the app life cycle
-        private string _statesUrl = "http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2"; 
-        private MapView _myMapView = new MapView();      
-        private EditText _queryTextBox;
+        // Create reference to service of US States  
+        private string _statesUrl = "http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2";
+        // Create and hold reference to the used MapView
+        private MapView _myMapView = new MapView();
+        // Create globally available text box for easy referencing 
+        private EditText _queryTextBox;      
+        // Create globally available feature table for easy referencing 
         private ServiceFeatureTable _featureTable;
+        // Create globally available feature layer for easy referencing 
         private FeatureLayer _featureLayer;
         
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -50,10 +52,8 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
             Initialize();
         }
 
-
         private void Initialize()
         {
-
             // Create new Map with basemap
             var myMap = new Map(Basemap.CreateTopographic());
 
@@ -85,13 +85,63 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
 
             // Assign the map to the MapView
             _myMapView.Map = myMap;
-
         }
 
+        private async void OnQueryClicked(object sender, EventArgs e)
+        {
+            // Remove any previous feature selections that may have been made 
+            _featureLayer.ClearSelection();
+
+            // Begin query process 
+            await QueryStateFeature(_queryTextBox.Text);
+        }
+
+        private async Task QueryStateFeature(string stateName)
+        {
+            // Create dialog to display alert information
+            var alert = new AlertDialog.Builder(this);
+
+            // Create a query param that will be used to Query the feature table  
+            var queryParams = new QueryParameters();
+
+            // Construct and assign the where clause that will be used to query the feature table 
+            queryParams.WhereClause = "upper(STATE_NAME) LIKE '%" + (_queryTextBox.Text.ToUpper()) + "%'";
+
+            try {
+                // Query the feature table 
+                FeatureQueryResult queryResult = await _featureTable.QueryFeaturesAsync(queryParams);
+
+                // Cast the QueryResult to a List so the results can be interrogated
+                var features = queryResult.ToList();
+
+                if (features.Any())
+                {
+                    // Get the first feature returned in the Query result 
+                    Feature feature = features[0];
+
+                    // Add the returned feature to the collection of currently selected features
+                    _featureLayer.SelectFeature(feature);
+
+                    // Zoom to the extent of the newly selected feature
+                    await _myMapView.SetViewpointGeometryAsync(feature.Geometry.Extent);
+                }
+                else
+                {
+                    alert.SetTitle("Alert");
+                    alert.SetMessage("State Not Found! Add a valid state name");
+                    alert.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                alert.SetTitle("Sample Error");
+                alert.SetMessage(ex.Message);
+                alert.Show();
+            }                   
+        }
 
         private void CreateLayout()
         {
-
             // Create a new vertical layout for the app
             var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
 
@@ -114,70 +164,6 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
 
             // Show the layout in the app
             SetContentView(layout);
-
         }
-
-
-        private void OnQueryClicked(object sender, EventArgs e)
-        {
-
-            // Remove any previous feature selections that may have been made 
-            _featureLayer.ClearSelection();
-
-            //Begin query process 
-            QueryStateFeature(_queryTextBox.Text);
-
-        }
-
-
-        private async void QueryStateFeature(string stateName)
-        {
-
-            // create dialog to display alert information
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
-            // Create a query param that will be used to Query the feature table  
-            QueryParameters queryParams = new QueryParameters();
-
-            // Construct and assign the where clause that will be used to query the feature table 
-            queryParams.WhereClause = "upper(STATE_NAME) LIKE '%" + (_queryTextBox.Text.ToUpper()) + "%'";
-
-            try {
-
-                // Query the feature table 
-                FeatureQueryResult queryResult = await _featureTable.QueryFeaturesAsync(queryParams);
-
-                // Cast the QueryResult to a List so the results can be interrogated
-                var features = queryResult.ToList();
-
-                if (features.Any())
-                {
-
-                    // Get the first feature returned in the Query result 
-                    Feature feature = features[0];
-
-                    // Add the returned feature to the collection of currently selected features
-                    _featureLayer.SelectFeature(feature);
-
-                    // Zoom to the extent of the newly selected feature
-                    await _myMapView.SetViewpointGeometryAsync(feature.Geometry.Extent);
-
-                }
-                else
-                {
-                    alert.SetTitle("Alert");
-                    alert.SetMessage("State Not Found! Add a valid state name");
-                    alert.Show();
-                }
-            }
-            catch (Exception ex)
-            {
-                alert.SetTitle("Sample Error");
-                alert.SetMessage(ex.Message);
-                alert.Show();
-            }                   
-        }
-
-
     }
 }
