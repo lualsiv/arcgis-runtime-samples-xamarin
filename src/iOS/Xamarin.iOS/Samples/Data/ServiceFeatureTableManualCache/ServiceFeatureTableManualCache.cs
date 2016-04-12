@@ -46,13 +46,13 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableManualCache
             Initialize();
         }
 
-        private async void Initialize()
+        private void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateTopographic());
+            Map myMap = new Map(Basemap.CreateTopographic());
 
             // Create and set initial map location
-            var initialLocation = new MapPoint(
+            MapPoint initialLocation = new MapPoint(
                 -13630484, 4545415, SpatialReferences.WebMercator);
             myMap.InitialViewpoint = new Viewpoint(initialLocation, 500000);
 
@@ -70,7 +70,7 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableManualCache
             _incidentsFeatureTable.LoadStatusChanged += OnLoadedPopulateData;
 
             // Create FeatureLayer that uses the created table
-            var incidentsFeatureLayer = new FeatureLayer(_incidentsFeatureTable);
+            FeatureLayer incidentsFeatureLayer = new FeatureLayer(_incidentsFeatureTable);
 
             // Add created layer to the map
             myMap.OperationalLayers.Add(incidentsFeatureLayer);
@@ -86,7 +86,7 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableManualCache
                 return;
 
             // Create new query object that contains parameters to query specific request types
-            var queryParameters = new QueryParameters()
+            QueryParameters queryParameters = new QueryParameters()
             {
                 WhereClause = "req_Type = 'Tree Maintenance or Damage'"
             };

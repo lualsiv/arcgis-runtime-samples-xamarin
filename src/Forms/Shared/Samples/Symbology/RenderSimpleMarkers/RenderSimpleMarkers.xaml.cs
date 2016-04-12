@@ -34,11 +34,11 @@ namespace ArcGISRuntimeXamarin.Samples.RenderSimpleMarkers
         private void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateImagery());
+            Map myMap = new Map(Basemap.CreateImagery());
 
             // Create initial map location and reuse the location for graphic
-            var centralLocation = new MapPoint(-226773, 6550477, SpatialReferences.WebMercator);
-            var initialViewpoint = new Viewpoint(centralLocation, 7500);
+            MapPoint centralLocation = new MapPoint(-226773, 6550477, SpatialReferences.WebMercator);
+            Viewpoint initialViewpoint = new Viewpoint(centralLocation, 7500);
 
             // Set initial viewpoint
             myMap.InitialViewpoint = initialViewpoint;
@@ -47,13 +47,13 @@ namespace ArcGISRuntimeXamarin.Samples.RenderSimpleMarkers
             MyMapView.Map = myMap;
 
             // Create overlay to where graphics are shown
-            var overlay = new GraphicsOverlay();
+            GraphicsOverlay overlay = new GraphicsOverlay();
 
             // Add created overlay to the MapView
             MyMapView.GraphicsOverlays.Add(overlay);
 
             // Create a simple marker symbol
-            var simpleSymbol = new SimpleMarkerSymbol()
+            SimpleMarkerSymbol simpleSymbol = new SimpleMarkerSymbol()
             {
                 Color = System.Drawing.Color.Red,
                 Size = 10,
@@ -61,7 +61,7 @@ namespace ArcGISRuntimeXamarin.Samples.RenderSimpleMarkers
             };
 
             // Add a new graphic with a central point that was created earlier
-            var graphicWithSymbol = new Graphic(centralLocation, simpleSymbol);
+            Graphic graphicWithSymbol = new Graphic(centralLocation, simpleSymbol);
             overlay.Graphics.Add(graphicWithSymbol);
         }
     }

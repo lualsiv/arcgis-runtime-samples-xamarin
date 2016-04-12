@@ -45,14 +45,14 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerUrl
         private void Initialize()
         {
             // Create new Map
-            var myMap = new Map();
+            Map myMap = new Map();
 
             // Create uri to the tiled service
             var serviceUri = new Uri(
                "http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer");
 
             // Create new tiled layer from the url
-            var imageLayer = new ArcGISTiledLayer(serviceUri);
+            ArcGISTiledLayer imageLayer = new ArcGISTiledLayer(serviceUri);
 
             // Add created layer to the basemaps collection
             myMap.Basemap.BaseLayers.Add(imageLayer);

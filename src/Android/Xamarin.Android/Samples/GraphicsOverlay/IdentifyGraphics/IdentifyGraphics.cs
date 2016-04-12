@@ -19,6 +19,7 @@ using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
+using System.Collections.Generic;
 
 namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
 {
@@ -28,7 +29,7 @@ namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
         // Create and hold reference to the used MapView
         private MapView _myMapView = new MapView();
 
-        // Grahics overlay to host graphics
+        // Graphics overlay to host graphics
         private GraphicsOverlay _polygonOverlay;
 
         protected override void OnCreate(Bundle bundle)
@@ -44,9 +45,11 @@ namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
         private void Initialize()
         {
             // Create a map with 'Imagery with Labels' basemap and an initial location
-            var myMap = new Map(Basemap.CreateTopographic());
+            Map myMap = new Map(Basemap.CreateTopographic());
 
+            // Create graphics overlay with graphics
             CreateOverlay();
+
             _myMapView.GeoViewTapped += OnMapViewTapped;
 
             // Assign the map to the MapView
@@ -56,23 +59,23 @@ namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
         private void CreateOverlay()
         {
             // Create polygon builder and add polygon corners into it
-            var builder = new PolygonBuilder(SpatialReferences.WebMercator);
+            PolygonBuilder builder = new PolygonBuilder(SpatialReferences.WebMercator);
             builder.AddPoint(new MapPoint(-20e5, 20e5));
             builder.AddPoint(new MapPoint(20e5, 20e5));
             builder.AddPoint(new MapPoint(20e5, -20e5));
             builder.AddPoint(new MapPoint(-20e5, -20e5));
 
             // Get geometry from the builder
-            var polygonGeometry = builder.ToGeometry();
+            Polygon polygonGeometry = builder.ToGeometry();
 
             // Create symbol for the polygon
-            var polygonSymbol = new SimpleFillSymbol(
+            SimpleFillSymbol polygonSymbol = new SimpleFillSymbol(
                 SimpleFillSymbolStyle.Solid,
                 System.Drawing.Color.Yellow,
                 null);
 
             // Create new graphic
-            var polygonGraphic = new Graphic(polygonGeometry, polygonSymbol);
+            Graphic polygonGraphic = new Graphic(polygonGeometry, polygonSymbol);
 
             // Create overlay to where graphics are shown
             _polygonOverlay = new GraphicsOverlay();
@@ -88,7 +91,11 @@ namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
             var maximumResults = 1; // Only return one graphic  
 
             // Use the following method to identify graphics in a specific graphics overlay
-            var identifyResults = await _myMapView.IdentifyGraphicsOverlayAsync(_polygonOverlay, e.Position, tolerance, maximumResults);
+            IReadOnlyList<Graphic> identifyResults = await _myMapView.IdentifyGraphicsOverlayAsync
+                (_polygonOverlay, 
+                e.Position, 
+                tolerance, 
+                maximumResults);
 
             // Check if we got results
             if (identifyResults.Count > 0)

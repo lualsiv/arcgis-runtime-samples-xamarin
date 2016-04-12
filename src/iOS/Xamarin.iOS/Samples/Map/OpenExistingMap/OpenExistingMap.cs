@@ -61,33 +61,10 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
         private void Initialize()
         {
             // Create a new Map instance with url of the webmap that is displayed by default
-            var myMap = new Map(new Uri(itemURLs[0]));
+            Map myMap = new Map(new Uri(itemURLs[0]));
 
             // Provide used Map to the MapView
             _myMapView.Map = myMap;
-        }
-
-        private void CreateLayout()
-        {
-            // Setup the visual frame for the MapView
-            _myMapView.Frame = new CoreGraphics.CGRect(
-                0, yPageOffset, View.Bounds.Width, View.Bounds.Height - yPageOffset);
-
-            // Add a button at the bottom to show webmap choices
-            UIButton mapsButton = new UIButton(UIButtonType.Custom)
-            {
-                Frame = new CoreGraphics.CGRect(
-                    0, View.Bounds.Height - 40, View.Bounds.Width, 40),
-                BackgroundColor = UIColor.White
-            };
-
-            // Create button to show map options
-            mapsButton.SetTitle("Maps", UIControlState.Normal);
-            mapsButton.SetTitleColor(UIColor.Blue, UIControlState.Normal);
-            mapsButton.TouchUpInside += OnMapsButtonTouch;
-
-            // Add MapView to the page
-            View.AddSubviews(_myMapView, mapsButton);
         }
 
         private void OnMapsButtonTouch(object sender, EventArgs e)
@@ -111,6 +88,29 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
                 _myMapView.Map = new Map(new Uri(itemURLs[2]));
             }));
             PresentViewController(actionSheetAlert, true, null);
+        }
+
+        private void CreateLayout()
+        {
+            // Setup the visual frame for the MapView
+            _myMapView.Frame = new CoreGraphics.CGRect(
+                0, yPageOffset, View.Bounds.Width, View.Bounds.Height - yPageOffset);
+
+            // Add a button at the bottom to show webmap choices
+            UIButton mapsButton = new UIButton(UIButtonType.Custom)
+            {
+                Frame = new CoreGraphics.CGRect(
+                    0, View.Bounds.Height - 40, View.Bounds.Width, 40),
+                BackgroundColor = UIColor.White
+            };
+
+            // Create button to show map options
+            mapsButton.SetTitle("Maps", UIControlState.Normal);
+            mapsButton.SetTitleColor(UIColor.Blue, UIControlState.Normal);
+            mapsButton.TouchUpInside += OnMapsButtonTouch;
+
+            // Add MapView to the page
+            View.AddSubviews(_myMapView, mapsButton);
         }
     }
 }

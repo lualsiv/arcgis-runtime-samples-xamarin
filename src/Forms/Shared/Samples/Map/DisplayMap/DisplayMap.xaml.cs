@@ -31,7 +31,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayMap
         private void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateImagery());
+            Map myMap = new Map(Basemap.CreateImagery());
 
             // Assign the map to the MapView
             MyMapView.Map = myMap;

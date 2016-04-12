@@ -37,10 +37,10 @@ namespace ArcGISRuntimeXamarin.Samples.RenderPictureMarkers
         private async void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateTopographic());
+            Map myMap = new Map(Basemap.CreateTopographic());
 
             // Create and set initial map area
-            var initialLocation = new Envelope(
+            Envelope initialLocation = new Envelope(
                 -229835, 6550763, -222560, 6552021,
                 SpatialReferences.WebMercator);
             myMap.InitialViewpoint = new Viewpoint(initialLocation);
@@ -49,7 +49,7 @@ namespace ArcGISRuntimeXamarin.Samples.RenderPictureMarkers
             MyMapView.Map = myMap;
 
             // Create overlay to where graphics are shown
-            var overlay = new GraphicsOverlay();
+            GraphicsOverlay overlay = new GraphicsOverlay();
 
             // Add created overlay to the MapView
             MyMapView.GraphicsOverlays.Add(overlay);
@@ -66,16 +66,16 @@ namespace ArcGISRuntimeXamarin.Samples.RenderPictureMarkers
                 "http://sampleserver6.arcgisonline.com/arcgis/rest/services/Recreation/FeatureServer/0/images/e82f744ebb069bb35b234b3fea46deae");
 
             // Create new symbol using asynchronous factory method from uri
-            var campsiteSymbol = await PictureMarkerSymbol.CreateAsync(symbolUri);
+            PictureMarkerSymbol campsiteSymbol = await PictureMarkerSymbol.CreateAsync(symbolUri);
             // Optionally set the size (if not set, the size in pixels of the image will be used)
             campsiteSymbol.Height = 18;
             campsiteSymbol.Width = 18;
 
             // Create location for the campsite
-            var campsitePoint = new MapPoint(-223560, 6552021, SpatialReferences.WebMercator);
+            MapPoint campsitePoint = new MapPoint(-223560, 6552021, SpatialReferences.WebMercator);
 
             // Create graphic with the location and symbol
-            var campsiteGraphic = new Graphic(campsitePoint, campsiteSymbol);
+            Graphic campsiteGraphic = new Graphic(campsitePoint, campsiteSymbol);
 
             // Add graphic to the graphics overlay
             overlay.Graphics.Add(campsiteGraphic);
@@ -92,13 +92,13 @@ namespace ArcGISRuntimeXamarin.Samples.RenderPictureMarkers
                 "ArcGISRuntimeXamarin.Resources.PictureMarkerSymbols.pin_star_blue.png");
 
             // Create new symbol using asynchronous factory method from stream
-            var pinSymbol = await PictureMarkerSymbol.CreateAsync(resourceStream);
+            PictureMarkerSymbol pinSymbol = await PictureMarkerSymbol.CreateAsync(resourceStream);
 
             // Create location for the pint
-            var pinPoint = new MapPoint(-226773, 6550477, SpatialReferences.WebMercator);
+            MapPoint pinPoint = new MapPoint(-226773, 6550477, SpatialReferences.WebMercator);
 
             // Create graphic with the location and symbol
-            var pinGraphic = new Graphic(pinPoint, pinSymbol);
+            Graphic pinGraphic = new Graphic(pinPoint, pinSymbol);
 
             // Add graphic to the graphics overlay
             overlay.Graphics.Add(pinGraphic);

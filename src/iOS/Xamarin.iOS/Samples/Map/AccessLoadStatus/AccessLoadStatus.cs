@@ -48,7 +48,7 @@ namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
         private void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateImagery());
+            Map myMap = new Map(Basemap.CreateImagery());
 
             // Register to handle loading status changes
             myMap.LoadStatusChanged += OnMapsLoadStatusChanged;

@@ -55,10 +55,10 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
         private void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateTopographic());
+            Map myMap = new Map(Basemap.CreateTopographic());
 
             // Create and set initial map location
-            var initialLocation = new MapPoint(
+            MapPoint initialLocation = new MapPoint(
                 -11000000, 5000000, SpatialReferences.WebMercator);
                 myMap.InitialViewpoint = new Viewpoint(initialLocation, 100000000);
 
@@ -101,8 +101,8 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
             // Create dialog to display alert information
             var alert = new AlertDialog.Builder(this);
 
-            // Create a query param that will be used to Query the feature table  
-            var queryParams = new QueryParameters();
+            // Create a query parameters that will be used to Query the feature table  
+            QueryParameters queryParams = new QueryParameters();
 
             // Construct and assign the where clause that will be used to query the feature table 
             queryParams.WhereClause = "upper(STATE_NAME) LIKE '%" + (_queryTextBox.Text.ToUpper()) + "%'";

@@ -30,12 +30,6 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             Title = "Map rotation";
         }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            // Releases the view if it doesn't have a superview.
-            base.DidReceiveMemoryWarning();
-       }
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -49,7 +43,7 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
 
 			// Create a new Map instance with the basemap  
 			var myBasemap = Basemap.CreateStreets();
-			var myMap = new Map(myBasemap);
+			Map myMap = new Map(myBasemap);
 
 			// Assign the Map to the MapView
 			myMapView.Map = myMap;

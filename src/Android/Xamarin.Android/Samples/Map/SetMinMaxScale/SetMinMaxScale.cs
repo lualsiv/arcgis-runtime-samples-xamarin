@@ -31,7 +31,7 @@ namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
             Title = "Set Min & Max Scale";
 
             // Create new Map with Streets basemap 
-            var myMap = new Map(Basemap.CreateStreets());
+            Map myMap = new Map(Basemap.CreateStreets());
 
             // Set the scale at which this layer can be viewed
             // MinScale defines how far 'out' you can zoom where
@@ -40,13 +40,13 @@ namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
             myMap.MaxScale = 2000;
 
             // Create a new map view control to display the map
-            var myMapView = new MapView();
+            Map myMapView = new MapView();
             myMapView.Map = myMap;
 
             // Create central point where map is centered
-            var centralPoint = new MapPoint(-355453, 7548720, SpatialReferences.WebMercator);
+            MapPoint centralPoint = new MapPoint(-355453, 7548720, SpatialReferences.WebMercator);
             // Create starting viewpoint
-            var startingViewpoint = new Viewpoint(
+            Viewpoint startingViewpoint = new Viewpoint(
                 centralPoint,
                 3000);
             // Set starting viewpoint

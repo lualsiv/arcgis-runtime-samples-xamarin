@@ -47,10 +47,10 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableNoCache
         private void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateTopographic());
+            Map myMap = new Map(Basemap.CreateTopographic());
 
             // Create and set initial map area
-            var initialLocation = new Envelope(
+            Envelope initialLocation = new Envelope(
                 -1.30758164047166E7, 4014771.46954516, -1.30730056797177E7, 4016869.78617381,
                 SpatialReferences.WebMercator);
             myMap.InitialViewpoint = new Viewpoint(initialLocation);
@@ -60,13 +60,13 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableNoCache
                "http://sampleserver6.arcgisonline.com/arcgis/rest/services/PoolPermits/FeatureServer/0");
 
             // Create feature table for the pools feature service
-            var poolsFeatureTable = new ServiceFeatureTable(serviceUri);
+            ServiceFeatureTable poolsFeatureTable = new ServiceFeatureTable(serviceUri);
 
             // Define the request mode
             poolsFeatureTable.FeatureRequestMode = FeatureRequestMode.OnInteractionNoCache;
 
             // Create FeatureLayer that uses the created table
-            var poolsFeatureLayer = new FeatureLayer(poolsFeatureTable);
+            FeatureLayer poolsFeatureLayer = new FeatureLayer(poolsFeatureTable);
 
             // Add created layer to the map
             myMap.OperationalLayers.Add(poolsFeatureLayer);

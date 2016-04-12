@@ -13,8 +13,6 @@
 // limitations under the License.
 
 using Esri.ArcGISRuntime.Mapping;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Xamarin.Forms.UI;
 using Xamarin.Forms;
 
 namespace ArcGISRuntimeXamarin.Samples.MapRotation
@@ -26,15 +24,14 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             InitializeComponent();
 
             Title = "Map rotation";
-
             Initialize();
         }
 
         private void Initialize()
         {
 			// Create a new Map instance with the basemap  
-			var myBasemap = Basemap.CreateStreets();
-			var myMap = new Map(myBasemap);
+			Basemap myBasemap = Basemap.CreateStreets();
+			Map myMap = new Map(myBasemap);
 
 			// Assign the map to the MapView
 			MyMapView.Map = myMap;

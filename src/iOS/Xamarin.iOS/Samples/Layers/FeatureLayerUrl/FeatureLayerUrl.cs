@@ -46,10 +46,10 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerUrl
         private void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateTerrainWithLabels());
+            Map myMap = new Map(Basemap.CreateTerrainWithLabels());
 
             // Create and set initial map location
-            var initialLocation = new MapPoint(
+            MapPoint initialLocation = new MapPoint(
                 -13176752, 4090404, SpatialReferences.WebMercator);
             myMap.InitialViewpoint = new Viewpoint(initialLocation, 300000);
 
@@ -58,7 +58,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerUrl
                 "http://sampleserver6.arcgisonline.com/arcgis/rest/services/Energy/Geology/FeatureServer/9");
 
             // Create new FeatureLayer from service uri and
-            var geologyLayer = new FeatureLayer(serviceUri);
+            FeatureLayer geologyLayer = new FeatureLayer(serviceUri);
 
             // Add created layer to the map
             myMap.OperationalLayers.Add(geologyLayer);

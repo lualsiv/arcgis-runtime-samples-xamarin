@@ -49,10 +49,10 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
         private async void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateTopographic());
+            Map myMap = new Map(Basemap.CreateTopographic());
 
             // Create and set initial map area
-            var initialLocation = new Envelope(
+            Envelope initialLocation = new Envelope(
                 -1.30758164047166E7, 4014771.46954516, -1.30730056797177E7, 4016869.78617381,
                 SpatialReferences.WebMercator);
 
@@ -67,7 +67,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
                "http://sampleserver6.arcgisonline.com/arcgis/rest/services/PoolPermits/FeatureServer/0");
 
             // Initialize feature table using a url to feature server url
-            var featureTable = new ServiceFeatureTable(serviceUri);
+            ServiceFeatureTable featureTable = new ServiceFeatureTable(serviceUri);
 
             // Initialize a new feature layer based on the feature table
             _featureLayer = new FeatureLayer(featureTable);
@@ -88,7 +88,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
         private void OnOverrideButtonClicked(object sender, EventArgs e)
         {
             // Create a symbol to be used in the renderer
-            var symbol = new SimpleLineSymbol()
+            SimpleLineSymbol symbol = new SimpleLineSymbol()
             {
                 Color = Color.Blue,
                 Width = 2,
@@ -96,7 +96,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
             };
 
             // Create a new renderer using the symbol just created
-            var renderer = new SimpleRenderer(symbol);
+            SimpleRenderer renderer = new SimpleRenderer(symbol);
             
             // Assign the new renderer to the feature layer
             _featureLayer.Renderer = renderer;

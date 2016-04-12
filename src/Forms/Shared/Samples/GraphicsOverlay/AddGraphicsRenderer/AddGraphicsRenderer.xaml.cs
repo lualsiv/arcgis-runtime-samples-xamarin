@@ -35,7 +35,7 @@ namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
         private void Initialize()
         {
             // Create a map with 'Imagery with Labels' basemap and an initial location
-            var myMap = new Map(BasemapType.ImageryWithLabels, 34.056295, -117.195800, 14);
+            Map myMap = new Map(BasemapType.ImageryWithLabels, 34.056295, -117.195800, 14);
 
             // Create graphics when MapView's viewpoint is initialized
             MyMapView.ViewpointChanged += OnViewpointChanged; 
@@ -50,18 +50,18 @@ namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
             MyMapView.ViewpointChanged -= OnViewpointChanged;
 
             // Get area that is shown in a MapView
-            var visibleArea = MyMapView.VisibleArea;
+            Polygon visibleArea = MyMapView.VisibleArea;
             // Get extent of that area
-            var extent = visibleArea.Extent;
+            Envelope extent = visibleArea.Extent;
             // Get central point of the extent
-            var centerPoint = extent.GetCenter();
+            MapPoint centerPoint = extent.GetCenter();
 
             // Create values inside the visible extent for creating graphic
             var extentWidth = extent.Width / 5;
             var extentHeight = extent.Height / 10;
 
             // Create point collection
-            var points = new PointCollection(SpatialReferences.WebMercator)
+            PointCollection points = new PointCollection(SpatialReferences.WebMercator)
                 {
                     new MapPoint(centerPoint.X - extentWidth * 2, centerPoint.Y - extentHeight * 2),
                     new MapPoint(centerPoint.X - extentWidth * 2, centerPoint.Y + extentHeight * 2),
@@ -70,7 +70,7 @@ namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
                 };
 
             // Create overlay to where graphics are shown
-            var overlay = new GraphicsOverlay();
+            GraphicsOverlay overlay = new GraphicsOverlay();
 
             // Add points to the graphics overlay
             foreach (var point in points)
@@ -80,7 +80,7 @@ namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
             }
 
             // Create symbol for points
-            var pointSymbol = new SimpleMarkerSymbol()
+            SimpleMarkerSymbol pointSymbol = new SimpleMarkerSymbol()
             {
                 Color = System.Drawing.Color.Yellow,
                 Size = 30,
@@ -88,7 +88,7 @@ namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
             };
 
             // Create simple renderer with symbol
-            var renderer = new SimpleRenderer(pointSymbol);
+            SimpleRenderer renderer = new SimpleRenderer(pointSymbol);
 
             // Set renderer to graphics overlay
             overlay.Renderer = renderer;

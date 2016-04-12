@@ -48,34 +48,34 @@ namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
         private void Initialize()
         {
             // Create new Map with basemap
-            var myMap = new Map(Basemap.CreateTopographic());
+            Map myMap = new Map(Basemap.CreateTopographic());
 
             // Create uri to the used feature service
             var serviceUri = new Uri(
                 "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3");
 
             // Create service feature table
-            var statesFeatureTable = new ServiceFeatureTable(serviceUri);
+            ServiceFeatureTable statesFeatureTable = new ServiceFeatureTable(serviceUri);
 
             // Create a new feature layer using the service feature table
-            var statesLayer = new FeatureLayer(statesFeatureTable);
+            FeatureLayer statesLayer = new FeatureLayer(statesFeatureTable);
 
             // Create a new unique value renderer
-            var regionRenderer = new UniqueValueRenderer();
+            UniqueValueRenderer regionRenderer = new UniqueValueRenderer();
 
             // Add the "SUB_REGION" field to the renderer
             regionRenderer.FieldNames.Add("SUB_REGION");
 
             // Define a line symbol to use for the region fill symbols
-            var stateOutlineSymbol = new SimpleLineSymbol(
+            SimpleLineSymbol stateOutlineSymbol = new SimpleLineSymbol(
                 SimpleLineSymbolStyle.Solid, System.Drawing.Color.White, 0.7);
 
             // Define distinct fill symbols for a few regions (use the same outline symbol)
-            var pacificFillSymbol = new SimpleFillSymbol(
+            SimpleFillSymbol pacificFillSymbol = new SimpleFillSymbol(
                 SimpleFillSymbolStyle.Solid, System.Drawing.Color.Blue, stateOutlineSymbol);
-            var mountainFillSymbol = new SimpleFillSymbol(
+            SimpleFillSymbol mountainFillSymbol = new SimpleFillSymbol(
                 SimpleFillSymbolStyle.Solid, System.Drawing.Color.LawnGreen, stateOutlineSymbol);
-            var westSouthCentralFillSymbol = new SimpleFillSymbol(
+            SimpleFillSymbol westSouthCentralFillSymbol = new SimpleFillSymbol(
                 SimpleFillSymbolStyle.Solid, System.Drawing.Color.SandyBrown, stateOutlineSymbol);
 
             // Add values to the renderer: define the label, description, symbol, and attribute value for each
@@ -87,7 +87,7 @@ namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
                 new UniqueValue("West South Central", "West South Central Region", westSouthCentralFillSymbol, "West South Central"));
 
             // Set the default region fill symbol (transparent with no outline) for regions not explicitly defined in the renderer
-            var defaultFillSymbol = new SimpleFillSymbol(
+            SimpleFillSymbol defaultFillSymbol = new SimpleFillSymbol(
                 SimpleFillSymbolStyle.Null, System.Drawing.Color.Transparent, null);
             regionRenderer.DefaultSymbol = defaultFillSymbol;
             regionRenderer.DefaultLabel = "Other";

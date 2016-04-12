@@ -49,7 +49,7 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
         private void Initialize()
         {
             // Create a new Map instance with url of the webmap that is displayed by default
-            var myMap = new Map(new Uri(itemURLs[0]));
+            Map myMap = new Map(new Uri(itemURLs[0]));
 
             // Provide used Map to the MapView
             MyMapView.Map = myMap;

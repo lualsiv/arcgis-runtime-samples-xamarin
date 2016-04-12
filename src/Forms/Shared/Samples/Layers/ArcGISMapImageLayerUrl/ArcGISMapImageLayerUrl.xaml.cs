@@ -32,14 +32,14 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISMapImageLayerUrl
         private void Initialize()
         {
             // Create new Map
-            var myMap = new Map();
+            Map myMap = new Map();
 
             // Create uri to the map image layer
             var serviceUri = new Uri(
                "http://sampleserver5.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer");
 
             // Create new image layer from the url
-            var imageLayer = new ArcGISMapImageLayer(serviceUri);
+            ArcGISMapImageLayer imageLayer = new ArcGISMapImageLayer(serviceUri);
 
             // Add created layer to the basemaps collection
             myMap.Basemap.BaseLayers.Add(imageLayer);

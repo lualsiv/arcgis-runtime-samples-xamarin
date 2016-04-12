@@ -69,7 +69,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
         private void Initialize()
         {
             // Create new Map with basemap and initial location
-            var myMap = new Map(Basemap.CreateTopographic());
+            Map myMap = new Map(Basemap.CreateTopographic());
 
             // Assign the map to the MapView
             MyMapView.Map = myMap;

@@ -46,12 +46,12 @@ namespace ArcGISRuntimeXamarin.Samples.SetMapSpatialReference
         private void Initialize()
         {
             // Create new Map using spatial reference as world bonne (54024)
-            var myMap = new Map(SpatialReference.Create(54024));
+            Map myMap = new Map(SpatialReference.Create(54024));
 
             // Adding a map image layer which can reproject itself to the map's spatial reference
             // Note: Some layer such as tiled layer cannot reproject and will fail to draw if their spatial 
             // reference is not the same as the map's spatial reference
-            var operationalLayer = new ArcGISMapImageLayer(new Uri(
+            ArcGISMapImageLayer operationalLayer = new ArcGISMapImageLayer(new Uri(
                 "http://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer"));
 
             // Add operational layer to the Map

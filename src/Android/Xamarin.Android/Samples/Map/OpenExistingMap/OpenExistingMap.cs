@@ -58,30 +58,10 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
         private void Initialize()
         {
             // Create a new Map instance with url of the webmap that is displayed by default
-            var myMap = new Map(new Uri(itemURLs[0]));
+            Map myMap = new Map(new Uri(itemURLs[0]));
 
             // Provide used Map to the MapView
             _myMapView.Map = myMap;
-        }
-
-        private void CreateLayout()
-        {
-            // Create a new vertical layout for the app
-            var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
-
-            // Create button to show possible map options
-            var mapsButton = new Button(this);
-            mapsButton.Text = "Maps";
-            mapsButton.Click += OnMapsClicked;
-
-            // Add maps button to the layout
-            layout.AddView(mapsButton);
-
-            // Add the map view to the layout
-            layout.AddView(_myMapView);
-
-            // Show the layout in the app
-            SetContentView(layout);
         }
 
         private void OnMapsClicked(object sender, EventArgs e)
@@ -110,6 +90,26 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
 
             // Create a new Map instance with url of the webmap that selected
             _myMapView.Map = new Map(new Uri(itemURLs[selectedIndex]));
+        }
+
+        private void CreateLayout()
+        {
+            // Create a new vertical layout for the app
+            var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
+
+            // Create button to show possible map options
+            var mapsButton = new Button(this);
+            mapsButton.Text = "Maps";
+            mapsButton.Click += OnMapsClicked;
+
+            // Add maps button to the layout
+            layout.AddView(mapsButton);
+
+            // Add the map view to the layout
+            layout.AddView(_myMapView);
+
+            // Show the layout in the app
+            SetContentView(layout);
         }
     }
 }

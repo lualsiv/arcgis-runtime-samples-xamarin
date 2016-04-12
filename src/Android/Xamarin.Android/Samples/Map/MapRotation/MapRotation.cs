@@ -24,8 +24,10 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
     [Activity(Label = "MapRotation")]
     public class MapRotation : Activity
     {
-        MapView MyMapView;
-		private TextView _loadStatusTextView;
+        // Create and hold reference to the used MapView
+        private MapView _myMapView = new MapView();
+
+        private TextView _loadStatusTextView;
 
 		protected override void OnCreate(Bundle bundle)
         {
@@ -61,8 +63,8 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             };
 
 			// Create a new Map instance with the basemap  
-			var myBasemap = Basemap.CreateStreets();
-            var myMap = new Map(myBasemap);
+			Basemap myBasemap = Basemap.CreateStreets();
+            Map myMap = new Map(myBasemap);
 
             // Create a new map view control to display the map
             MyMapView = new MapView();

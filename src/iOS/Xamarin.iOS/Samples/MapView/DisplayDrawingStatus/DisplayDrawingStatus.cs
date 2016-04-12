@@ -56,8 +56,8 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
                 "http://sampleserver6.arcgisonline.com/arcgis/rest/services/DamageAssessment/FeatureServer/0");
 
             // Initialize a new feature layer
-            var myFeatureTable = new ServiceFeatureTable(serviceUri);
-            var myFeatureLayer = new FeatureLayer(myFeatureTable);
+            ServiceFeatureTable myFeatureTable = new ServiceFeatureTable(serviceUri);
+            FeatureLayer myFeatureLayer = new FeatureLayer(myFeatureTable);
 
             // TODO: Remove this workaround
             // Workaround for feature table initialization issue

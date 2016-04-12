@@ -78,30 +78,10 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
         private void Initialize()
         {
             // Create new Map with basemap and initial location
-            var myMap = new Map(Basemap.CreateTopographic());
+            Map myMap = new Map(Basemap.CreateTopographic());
 
             // Assign the map to the MapView
             _myMapView.Map = myMap;
-        }
-
-        private void CreateLayout()
-        {
-            // Create a new vertical layout for the app
-            var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
-
-            // Create button to show possible map options
-            var mapsButton = new Button(this);
-            mapsButton.Text = "Viewpoints";
-            mapsButton.Click += OnMapsClicked;
-
-            // Add maps button to the layout
-            layout.AddView(mapsButton);
-
-            // Add the map view to the layout
-            layout.AddView(_myMapView);
-
-            // Show the layout in the app
-            SetContentView(layout);
         }
 
         private void OnMapsClicked(object sender, EventArgs e)
@@ -149,6 +129,26 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 default:
                     break;
             }
+        }
+
+        private void CreateLayout()
+        {
+            // Create a new vertical layout for the app
+            var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
+
+            // Create button to show possible map options
+            var mapsButton = new Button(this);
+            mapsButton.Text = "Viewpoints";
+            mapsButton.Click += OnMapsClicked;
+
+            // Add maps button to the layout
+            layout.AddView(mapsButton);
+
+            // Add the map view to the layout
+            layout.AddView(_myMapView);
+
+            // Show the layout in the app
+            SetContentView(layout);
         }
     }
 }
