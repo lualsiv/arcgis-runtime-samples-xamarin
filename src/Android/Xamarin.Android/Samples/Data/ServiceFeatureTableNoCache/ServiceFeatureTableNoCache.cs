@@ -52,11 +52,11 @@ namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableNoCache
             myMap.InitialViewpoint = new Viewpoint(initialLocation);
 
             // Create uri to the used feature service
-            var serviceUrl = new Uri(
+            var serviceUri = new Uri(
                "http://sampleserver6.arcgisonline.com/arcgis/rest/services/PoolPermits/FeatureServer/0");
 
             // Create feature table for the pools feature service
-            var poolsFeatureTable = new ServiceFeatureTable(serviceUrl);
+            var poolsFeatureTable = new ServiceFeatureTable(serviceUri);
 
             // Define the request mode
             poolsFeatureTable.FeatureRequestMode = FeatureRequestMode.OnInteractionNoCache;
