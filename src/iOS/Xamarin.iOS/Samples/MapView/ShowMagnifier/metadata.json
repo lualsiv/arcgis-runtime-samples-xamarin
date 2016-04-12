@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ShowMagnifier.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["P:Esri.ArcGISRuntime.UI.MapView.IsMagnifierEnabled"
   ],
   "SampleFolder": "ShowMagnifier"
 }

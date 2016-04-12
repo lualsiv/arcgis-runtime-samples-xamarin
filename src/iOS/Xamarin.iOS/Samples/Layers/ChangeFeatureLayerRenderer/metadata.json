@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ChangeFeatureLayerRenderer.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["P:Esri.ArcGISRuntime.Mapping.FeatureLayer.Renderer","T:Esri.ArcGISRuntime.Symbology.Renderer","M:Esri.ArcGISRuntime.Mapping.FeatureLayer.ResetRenderer","T:Esri.ArcGISRuntime.Symbology.SimpleLineSymbol"
   ],
   "SampleFolder": "ChangeFeatureLayerRenderer"
 }

@@ -35,7 +35,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
 
         public ChangeFeatureLayerRenderer()
         {
-            Title = "Change Renderer";
+            Title = "Change feature layer renderer";
         }
 
         public override void ViewDidLoad()

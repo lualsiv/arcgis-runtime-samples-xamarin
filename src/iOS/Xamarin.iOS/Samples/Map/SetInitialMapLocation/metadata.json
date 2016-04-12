@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"SetInitialMapLocation.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.Map"
   ],
   "SampleFolder": "SetInitialMapLocation"
 }
