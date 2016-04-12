@@ -104,6 +104,10 @@
             {
               "SampleName": "FeatureLayerUrl",
               "Path": "Samples/Layers/FeatureLayerUrl"
+            },
+            {
+              "SampleName":"FeatureLayerQuery",
+              "Path":"Samples/Data/FeatureLayerQuery"
             }
           ]
         },
