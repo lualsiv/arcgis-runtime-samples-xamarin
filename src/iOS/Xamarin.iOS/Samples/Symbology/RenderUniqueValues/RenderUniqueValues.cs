@@ -51,11 +51,11 @@ namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
             var myMap = new Map(Basemap.CreateTopographic());
 
             // Create uri to the used feature service
-            var serviceUrl = new Uri(
+            var serviceUri = new Uri(
                 "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3");
 
             // Create service feature table
-            var statesFeatureTable = new ServiceFeatureTable(serviceUrl);
+            var statesFeatureTable = new ServiceFeatureTable(serviceUri);
 
             // Create a new feature layer using the service feature table
             var statesLayer = new FeatureLayer(statesFeatureTable);

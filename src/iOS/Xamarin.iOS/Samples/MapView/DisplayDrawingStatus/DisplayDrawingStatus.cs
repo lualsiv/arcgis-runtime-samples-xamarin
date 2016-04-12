@@ -18,7 +18,6 @@ using Foundation;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.Data;
-using Esri.ArcGISRuntime;
 
 namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
 {
@@ -28,40 +27,41 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
         // Constant holding offset where the MapView control should start
         private const int yPageOffset = 60;
 
+        // Create and hold reference to the used MapView
+        private MapView _myMapView;
+
         // Control to show the drawing status
         UIActivityIndicatorView _activityIndicator;
 
-        // Create and hold reference to the used MapView
-        private MapView _myMapView;
         public DisplayDrawingStatus()
         {
             Title = "Display drawing status";
         }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            // Releases the view if it doesn't have a superview
-            base.DidReceiveMemoryWarning();
-        }
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            // Create the UI, setup the control references and execute initialization 
             CreateLayout();
             Initialize();
         }
+
         private async void Initialize()
         {
             // Create new Map with basemap
             Map myMap = new Map(BasemapType.Topographic, 34.056, -117.196, 4);
 
             // Create uri to the used feature service
-            var serviceUrl = new Uri(
+            var serviceUri = new Uri(
                 "http://sampleserver6.arcgisonline.com/arcgis/rest/services/DamageAssessment/FeatureServer/0");
 
-            //initialize a new feature layer
-            var myFeatureTable = new ServiceFeatureTable(serviceUrl);
+            // Initialize a new feature layer
+            var myFeatureTable = new ServiceFeatureTable(serviceUri);
             var myFeatureLayer = new FeatureLayer(myFeatureTable);
 
+            // TODO: Remove this workaround
+            // Workaround for feature table initialization issue
+            // Make sure that the feature layer gets loaded
             await myFeatureLayer.LoadAsync();
 
             // Add the feature layer to the Map
@@ -75,8 +75,21 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
 
             // Animate the activity spinner
             _activityIndicator.StartAnimating();
-
         }
+
+        private void MyMapView_DrawStatusChanged(object sender, DrawStatus e)
+        {
+            // Make sure that the UI changes are done in the UI thread
+            BeginInvokeOnMainThread(() =>
+            {
+                // Show the activity indicator if the map is drawing
+                if (e == DrawStatus.InProgress)
+                    _activityIndicator.Hidden = false;
+                else
+                    _activityIndicator.Hidden = true;
+            });
+        }
+
         private void CreateLayout()
         {
             // Create a new MapView control and provide its location coordinates on the frame
@@ -103,14 +116,6 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
 
             // Add the MapView to the Subview
             View.AddSubviews(_myMapView, toolbar);
-        }
-        private void MyMapView_DrawStatusChanged(object sender, DrawStatus e)
-        {
-            // Show the activity indicator if the map is drawing
-            if (e == DrawStatus.InProgress)
-                _activityIndicator.Hidden = false;
-            else
-                _activityIndicator.Hidden = true;
         }
     }
 }
