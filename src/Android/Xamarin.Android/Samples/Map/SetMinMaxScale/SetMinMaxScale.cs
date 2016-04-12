@@ -40,7 +40,7 @@ namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
             myMap.MaxScale = 2000;
 
             // Create a new map view control to display the map
-            Map myMapView = new MapView();
+            MapView myMapView = new MapView();
             myMapView.Map = myMap;
 
             // Create central point where map is centered

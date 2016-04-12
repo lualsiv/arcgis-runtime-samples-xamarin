@@ -55,10 +55,10 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
                 if (e.FromUser)
                 {
                     // set rotation asynchronously (no need to await the result)
-                    MyMapView.SetViewpointRotationAsync(e.Progress);
+                    _myMapView.SetViewpointRotationAsync(e.Progress);
 
 					// Display the MapView's rotation.
-					_loadStatusTextView.Text = string.Format("{0:0}°", MyMapView.MapRotation);
+					_loadStatusTextView.Text = string.Format("{0:0}°", _myMapView.MapRotation);
 				}
             };
 
@@ -67,12 +67,12 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             Map myMap = new Map(myBasemap);
 
             // Create a new map view control to display the map
-            MyMapView = new MapView();
-            MyMapView.Map = myMap;
+            _myMapView = new MapView();
+            _myMapView.Map = myMap;
 
             // Set the current map rotation to match the default slider value
             // (no need to await the asynchronous call)
-            MyMapView.SetViewpointRotationAsync(angleSlider.Progress);
+            _myMapView.SetViewpointRotationAsync(angleSlider.Progress);
 
 			// Add a label to display the MapView's rotation.
 			_loadStatusTextView = new TextView(this);
@@ -80,7 +80,7 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
 
 			// Add the slider and map view to the layout
 			layout.AddView(angleSlider);
-            layout.AddView(MyMapView);
+            layout.AddView(_myMapView);
 
             // Apply the layout to the app
             SetContentView(layout);

@@ -23,7 +23,7 @@ namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
 {
     public partial class IdentifyGraphics : ContentPage
 	{
-        // Grahics overlay to host graphics
+        // Graphics overlay to host graphics
         private GraphicsOverlay _polygonOverlay;
 
 		public IdentifyGraphics()

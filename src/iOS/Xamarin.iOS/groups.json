@@ -21,7 +21,10 @@
               "SampleName":"DisplayDrawingStatus",
               "Path":"Samples/MapView/DisplayDrawingStatus"
             },
-
+            {
+              "SampleName":"MapRotation",
+              "Path":"Samples/MapView/MapRotation"
+            }
           ]
         },
         {
@@ -36,10 +39,6 @@
             {
               "SampleName":"OpenExistingMap",
               "Path":"Samples/Map/OpenExistingMap"
-            },
-            {
-              "SampleName":"MapRotation",
-              "Path":"Samples/Map/MapRotation"
             },
             {
               "SampleName":"ChangeBasemap",
@@ -116,7 +115,7 @@
             },
             {
               "SampleName": "ChangeFeatureLayerRenderer",
-              "Path": "Samples/Features/ChangeFeatureLayerRenderer"
+              "Path": "Samples/Layers/ChangeFeatureLayerRenderer"
             }
           ]
         },

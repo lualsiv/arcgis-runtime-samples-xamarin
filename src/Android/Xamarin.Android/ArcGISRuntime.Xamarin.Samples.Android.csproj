@@ -91,7 +91,7 @@
     <Compile Include="Samples\MapView\ShowMagnifier\ShowMagnifier.cs" />
     <Compile Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.cs" />
     <Compile Include="Samples\MapView\DisplayDrawStatus\DisplayDrawStatus.cs" />
-    <Compile Include="Samples\Map\MapRotation\MapRotation.cs" />
+    <Compile Include="Samples\MapView\MapRotation\MapRotation.cs" />
     <Compile Include="Samples\Map\DisplayMap\DisplayMap.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMap.cs" />
     <Compile Include="Samples\Map\SetMapSpatialReference\SetMapSpatialReference.cs" />
@@ -106,7 +106,7 @@
     <EmbeddedResource Include="groups.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Samples\Map\MapRotation\metadata.json" />
+    <EmbeddedResource Include="Samples\MapView\MapRotation\metadata.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -173,7 +173,7 @@
     <Content Include="Samples\MapView\ShowMagnifier\ShowMagnifier.jpg" />
     <Content Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.jpg" />
     <Content Include="Samples\MapView\DisplayDrawStatus\DisplayDrawStatus.jpg" />
-    <Content Include="Samples\Map\MapRotation\MapRotation.jpg" />
+    <Content Include="Samples\MapView\MapRotation\MapRotation.jpg" />
     <Content Include="Samples\Map\DisplayMap\DisplayMap.jpg" />
     <Content Include="Samples\Map\OpenExistingMap\OpenExistingMap.jpg" />
     <Content Include="Samples\Map\SetMapSpatialReference\SetMapSpatialReference.jpg" />

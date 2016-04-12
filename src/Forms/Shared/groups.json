@@ -14,9 +14,13 @@
               "Path":"Samples/MapView/ShowMagnifier"
             },
             {
-              "SampleName":"ChangeViewpoint",
-              "Path":"Samples/MapView/ChangeViewpoint"
-            }
+              "SampleName": "ChangeViewpoint",
+              "Path": "Samples/MapView/ChangeViewpoint"
+            },
+            {
+              "SampleName":"MapRotation",
+              "Path":"Samples/Map/MapRotation"
+            },
           ]
         },
         {
@@ -31,10 +35,6 @@
             {
               "SampleName": "OpenExistingMap",
               "Path": "Samples/Map/OpenExistingMap"
-            },
-            {
-              "SampleName":"MapRotation",
-              "Path":"Samples/Map/MapRotation"
             },
             {
               "SampleName":"SetMinMaxScale",

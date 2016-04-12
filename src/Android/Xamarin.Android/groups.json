@@ -18,8 +18,12 @@
               "Path":"Samples/MapView/ChangeViewpoint"
             },
             {
-              "SampleName":"DisplayDrawStatus",
-              "Path":"Samples/MapView/DisplayDrawStatus"
+              "SampleName": "DisplayDrawStatus",
+              "Path": "Samples/MapView/DisplayDrawStatus"
+            },
+            {
+              "SampleName":"MapRotation",
+              "Path":"Samples/MapView/MapRotation"
             }
           ]
         },
@@ -35,10 +39,6 @@
             {
               "SampleName":"OpenExistingMap",
               "Path":"Samples/Map/OpenExistingMap"
-            },
-            {
-              "SampleName":"MapRotation",
-              "Path":"Samples/Map/MapRotation"
             },
             {
               "SampleName":"SetMinMaxScale",
