@@ -58,8 +58,6 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawStatus
             ServiceFeatureTable myFeatureTable = new ServiceFeatureTable(serviceUri);
             FeatureLayer myFeatureLayer = new FeatureLayer(myFeatureTable);
 
-            await myFeatureLayer.LoadAsync();
-
             // Add the feature layer to the Map
             myMap.OperationalLayers.Add(myFeatureLayer);
 
@@ -72,7 +70,6 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawStatus
             // Make sure that the UI changes are done in the UI thread
             RunOnUiThread(() =>
             {
-
                 // Show the activity indicator if the map is drawing
                 if (e == DrawStatus.InProgress)
                 {
