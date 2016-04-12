@@ -41,11 +41,11 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerUrl
             myMap.InitialViewpoint = new Viewpoint(initialLocation, 300000);
 
             // Create uri to the used feature service
-            var serviceUrl = new Uri(
+            var serviceUri = new Uri(
                 "http://sampleserver6.arcgisonline.com/arcgis/rest/services/Energy/Geology/FeatureServer/9");
 
             // Create new FeatureLayer from service uri and
-            var geologyLayer = new FeatureLayer(serviceUrl);
+            var geologyLayer = new FeatureLayer(serviceUri);
 
             // Add created layer to the map
             myMap.OperationalLayers.Add(geologyLayer);

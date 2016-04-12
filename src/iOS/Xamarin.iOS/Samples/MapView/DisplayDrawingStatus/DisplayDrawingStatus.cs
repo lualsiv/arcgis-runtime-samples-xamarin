@@ -71,13 +71,13 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
             _myMapView.Map = myMap;
 
             // Hook up the DrawStatusChanged event
-            _myMapView.DrawStatusChanged += MyMapView_DrawStatusChanged;
+            _myMapView.DrawStatusChanged += OnMapViewDrawStatusChanged;
 
             // Animate the activity spinner
             _activityIndicator.StartAnimating();
         }
 
-        private void MyMapView_DrawStatusChanged(object sender, DrawStatus e)
+        private void OnMapViewDrawStatusChanged(object sender, DrawStatus e)
         {
             // Make sure that the UI changes are done in the UI thread
             BeginInvokeOnMainThread(() =>
