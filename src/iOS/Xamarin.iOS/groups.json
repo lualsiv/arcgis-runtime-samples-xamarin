@@ -81,10 +81,6 @@
             {
               "SampleName":"ArcGISTiledLayerUrl",
               "Path":"Samples/Layers/ArcGISTiledLayerUrl"
-            },
-            {
-              "SampleName":"ArcGISTiledLayerLocal",
-              "Path":"Samples/Layers/ArcGISTiledLayerLocal"
             }
           ]
         },

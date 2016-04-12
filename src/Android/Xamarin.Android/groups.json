@@ -72,10 +72,6 @@
             {
               "SampleName":"ArcGISTiledLayerUrl",
               "Path":"Samples/Layers/ArcGISTiledLayerUrl"
-            },
-            {
-              "SampleName": "ArcGISTiledLayerLocalTPK",
-              "Path": "Samples/Layers/ArcGISTiledLayerLocalTPK"
             }
           ]
         },

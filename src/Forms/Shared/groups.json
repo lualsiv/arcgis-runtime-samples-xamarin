@@ -70,10 +70,6 @@
           "ShowGroup":true,
           "SampleInfos":[
             {
-              "SampleName":"ArcGISTiledLayerLocal",
-              "Path":"Samples/Layers/ArcGISTiledLayerLocal"
-            },
-            {
               "SampleName":"ArcGISTiledLayerUrl",
               "Path":"Samples/Layers/ArcGISTiledLayerUrl"
             }
