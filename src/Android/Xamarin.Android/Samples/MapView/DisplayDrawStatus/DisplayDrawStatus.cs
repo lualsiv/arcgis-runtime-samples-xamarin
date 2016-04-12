@@ -55,8 +55,8 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawStatus
                 "http://sampleserver6.arcgisonline.com/arcgis/rest/services/DamageAssessment/FeatureServer/0");
 
             //initialize a new feature layer
-            var myFeatureTable = new ServiceFeatureTable(serviceUri);
-            var myFeatureLayer = new FeatureLayer(myFeatureTable);
+            ServiceFeatureTable myFeatureTable = new ServiceFeatureTable(serviceUri);
+            FeatureLayer myFeatureLayer = new FeatureLayer(myFeatureTable);
 
             await myFeatureLayer.LoadAsync();
 
