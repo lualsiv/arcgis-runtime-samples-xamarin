@@ -12,6 +12,14 @@
 
     This sample demonstrates different ways in which you can change the viewpoint or visible area of the map.
 
+    * [Display draw status](Xamarin.Android/Samples/MapView/DisplayDrawStatus)
+
+    This sample demonstrates how to display the draw status of a Map
+
+    * [Map rotation](Xamarin.Android/Samples/MapView/MapRotation)
+
+    This sample illustrates how to rotate a map.
+
 
 - **Map**
 
@@ -22,10 +30,6 @@
     * [Open an existing map](Xamarin.Android/Samples/Map/OpenExistingMap)
 
     This sample demonstrates how to open an existing map from a portal. The sample opens with a map displayed by default. You can change the shown map by selecting a new one from the populated list.
-
-    * [Map rotation](Xamarin.Android/Samples/Map/MapRotation)
-
-    This sample illustrates how to rotate a map.
 
     * [Set Min & Max Scale](Xamarin.Android/Samples/Map/SetMinMaxScale)
 
@@ -56,10 +60,6 @@
 
     This sample demonstrates how to add an ArcGISTiledLayer as a base layer in a map. The ArcGISTiledLayer comes from an ArcGIS Server sample web service.
 
-    * [ArcGIS tiled layer (local tpk)](Xamarin.Android/Samples/Layers/ArcGISTiledLayerLocalTPK)
-
-    This code example shows adding an ArcGISTiledLayer as an operational layer in a map. The ArcGISTileLayer is located as a file on the disc of the device.
-
 
 - **Map Image Layers**
 
@@ -75,6 +75,10 @@
     * [Feature layer (feature service)](Xamarin.Android/Samples/Layers/FeatureLayerUrl)
 
     This sample demonstrates how to show a feature layer on a map using the URL to the service.
+
+    * [Feature layer query](Xamarin.Android/Samples/Data/FeatureLayerQuery)
+
+    This sample demonstrates how to query a feature layer via feature table.
 
 
 - **Feature Tables**

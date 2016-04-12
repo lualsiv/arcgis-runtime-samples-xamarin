@@ -12,6 +12,10 @@
 
     This sample demonstrates different ways in which you can change the viewpoint or visible area of the map.
 
+    * [Map rotation](Shared/Samples/MapView/MapRotation)
+
+    This sample illustrates how to rotate a map.
+
 
 - **Map**
 
@@ -48,10 +52,6 @@
 
 - **Tiled Layers**
 
-    * [ArcGIS tiled layer (local TPK)](Shared/Samples/Layers/ArcGISTiledLayerLocal)
-
-    This code example shows adding an ArcGISTiledLayer as an operational layer in a map. The ArcGISTileLayer is located as a file on the disc of the device.
-
     * [ArcGIS tiled layer (URL)](Shared/Samples/Layers/ArcGISTiledLayerUrl)
 
     This sample demonstrates how to add an ArcGISTiledLayer as a base layer in a map. The ArcGISTiledLayer comes from an ArcGIS Server sample web service.
@@ -86,6 +86,10 @@
     * [Service feature table (manual cache)](Shared/Samples/Data/ServiceFeatureTableManualCache)
 
     This sample demonstrates how to use a feature service in manual cache mode.
+
+    * [Feature layer query](Shared/Samples/Data/FeatureLayerQuery)
+
+    This sample demonstrates how to query a feature layer via feature table.
 
 ## Display Information
 
