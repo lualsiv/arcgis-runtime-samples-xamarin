@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"FeatureLayerUrl.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.FeatureLayer","P:Esri.ArcGISRuntime.Mapping.Map.OperationalLayers"
   ],
   "SampleFolder": "FeatureLayerUrl"
 }

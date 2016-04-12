@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"FeatureLayerQuery.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Data.FeatureTable","T:Esri.ArcGISRuntime.Data.FeatureQueryResult","T:Esri.ArcGISRuntime.Data.QueryParameters","M:Esri.ArcGISRuntime.Data.FeatureTable.QueryFeaturesAsync(Esri.ArcGISRuntime.Data.QueryParameters)","P:Esri.ArcGISRuntime.Data.QueryParameters.WhereClause"
   ],
   "SampleFolder": "FeatureLayerQuery"
 }

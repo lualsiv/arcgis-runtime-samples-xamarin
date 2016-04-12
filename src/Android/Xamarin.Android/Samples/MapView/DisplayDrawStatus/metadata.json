@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"DisplayDrawStatus.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.UI.DrawStatus","E:Esri.ArcGISRuntime.UI.GeoView.DrawStatusChanged"
   ],
   "SampleFolder": "DisplayDrawStatus"
 }
