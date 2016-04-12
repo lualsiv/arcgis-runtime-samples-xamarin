@@ -1,4 +1,4 @@
-//Copyright 2015 Esri.
+﻿//Copyright 2015 Esri.
 //
 //Licensed under the Apache License, Version 2.0 (the "License");
 //you may not use this file except in compliance with the License.
@@ -12,42 +12,51 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using Android.App;
-using Android.OS;
-using Android.Widget;
 using Esri.ArcGISRuntime.Data;
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
+using Foundation;
 using System;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using UIKit;
 
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
 {
-    [Activity]
-    public class FeatureLayerQuery : Activity
+    [Register("FeatureLayerQuery")]
+    public class FeatureLayerQuery : UIViewController
     {
-        // Create reference to service of US States  
-        private string _statesUrl = "http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2";
+        // Constant holding offset where the MapView control should start
+        private const int yPageOffset = 60;
+
         // Create and hold reference to the used MapView
         private MapView _myMapView = new MapView();
+
+        // Create reference to service of US States  
+        private string _statesUrl = "http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2";
+
         // Create globally available text box for easy referencing 
-        private EditText _queryTextBox;      
+        private UITextField _queryTextView;
+
         // Create globally available feature table for easy referencing 
         private ServiceFeatureTable _featureTable;
+        
         // Create globally available feature layer for easy referencing 
         private FeatureLayer _featureLayer;
-        
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
-            Title = "Feature layer  query";
 
-            // Create the UI, setup the control references and execute initialization  
-            CreateLayout(); 
+        public FeatureLayerQuery()
+        {
+            Title = "Feature layer query";
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            // Create the UI, setup the control references and execute initialization 
+            CreateLayout();
             Initialize();
         }
 
@@ -59,7 +68,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
             // Create and set initial map location
             MapPoint initialLocation = new MapPoint(
                 -11000000, 5000000, SpatialReferences.WebMercator);
-                myMap.InitialViewpoint = new Viewpoint(initialLocation, 100000000);
+            myMap.InitialViewpoint = new Viewpoint(initialLocation, 100000000);
 
             // Create feature table using a url
             _featureTable = new ServiceFeatureTable(new Uri(_statesUrl));
@@ -72,7 +81,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
 
             // Create a new renderer for the States Feature Layer
             SimpleLineSymbol lineSymbol = new SimpleLineSymbol(
-                SimpleLineSymbolStyle.Solid, Color.Black, 1); 
+                SimpleLineSymbolStyle.Solid, Color.Black, 1);
             SimpleFillSymbol fillSymbol = new SimpleFillSymbol(
                 SimpleFillSymbolStyle.Solid, Color.Yellow, lineSymbol);
 
@@ -92,16 +101,16 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
             _featureLayer.ClearSelection();
 
             // Begin query process 
-            await QueryStateFeature(_queryTextBox.Text);
+            await QueryStateFeature(_queryTextView.Text);
         }
 
         private async Task QueryStateFeature(string stateName)
         {
-            // Create dialog to display alert information
-            var alert = new AlertDialog.Builder(this);
-
             try
             {
+                // Hide keyboard
+                _queryTextView.ResignFirstResponder();
+
                 // Create a query parameters that will be used to Query the feature table  
                 QueryParameters queryParams = new QueryParameters();
 
@@ -127,43 +136,42 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
                 }
                 else
                 {
-                    alert.SetTitle("State Not Found!");
-                    alert.SetMessage("Add a valid state name.");
+                    var alert = new UIAlertView("State Not Found!", "Add a valid state name.", null, "OK", null);
                     alert.Show();
                 }
             }
             catch (Exception ex)
             {
-                alert.SetTitle("Sample Error");
-                alert.SetMessage(ex.Message);
+                var alert = new UIAlertView("Sample error", ex.ToString(), null, "OK", null);
                 alert.Show();
-            }                   
+            }
         }
 
         private void CreateLayout()
         {
-            // Create a new vertical layout for the app
-            var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
+            // Setup the visual frame for the MapView
+            _myMapView.Frame = new CoreGraphics.CGRect(
+                0, yPageOffset + 80, View.Bounds.Width, View.Bounds.Height - yPageOffset - 80);
 
-            // Create new Text box that will take the query parameter
-            _queryTextBox = new EditText(this);
+            // Create text view for query input
+            _queryTextView = new UITextField(
+                new CoreGraphics.CGRect(0, yPageOffset, View.Bounds.Width, 40));
+            _queryTextView.Placeholder = "State name";
+            _queryTextView.AdjustsFontSizeToFitWidth = true;
+            _queryTextView.BackgroundColor = UIColor.White;
 
-            // Create Button that will start the Feature Query
-            var queryButton = new Button(this);
-            queryButton.Text = "Query";
-            queryButton.Click += OnQueryClicked;
+            // Create button to invoke the query
+            var queryButton = new UIButton(
+               new CoreGraphics.CGRect(0, yPageOffset + 40, View.Bounds.Width, 40));
+            queryButton.SetTitle("Query", UIControlState.Normal);
+            queryButton.SetTitleColor(UIColor.Blue, UIControlState.Normal);
+            queryButton.BackgroundColor = UIColor.White;
 
-            // Add TextBox to the layout  
-            layout.AddView(_queryTextBox);
+            // Hook to touch event to do querying
+            queryButton.TouchUpInside += OnQueryClicked;
 
-            // Add Button to the layout  
-            layout.AddView(queryButton);
-
-            // Add the map view to the layout
-            layout.AddView(_myMapView);
-
-            // Show the layout in the app
-            SetContentView(layout);
+            // Add MapView to the page
+            View.AddSubviews(_myMapView, _queryTextView, queryButton);
         }
     }
 }
