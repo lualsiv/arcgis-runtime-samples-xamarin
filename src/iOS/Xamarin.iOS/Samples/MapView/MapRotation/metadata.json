@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"MapRotation.jpg",
   "Link":"",
-  "TypeLink": ["M:Esri.ArcGISRuntime.UI.MapView.SetViewpointRotationAsync(System.Double)"
+  "TypeLink": ["P:Esri.ArcGISRuntime.UI.MapView.MapRotation","M:Esri.ArcGISRuntime.Controls.MapView.SetViewpointRotationAsync(System.Double)"
   ],
   "SampleFolder": "MapRotation"
 }

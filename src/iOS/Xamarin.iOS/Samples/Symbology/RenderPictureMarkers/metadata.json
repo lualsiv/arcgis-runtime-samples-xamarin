@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"RenderPictureMarkers.jpg",
   "Link":"",
-  "TypeLink": [
+  "TypeLink": ["T:Esri.ArcGISRuntime.Symbology.PictureMarkerSymbol","P:Esri.ArcGISRuntime.Symbology.PictureMarkerSymbol.Height","P:Esri.ArcGISRuntime.Symbology.PictureMarkerSymbol.Width"
   ],
   "SampleFolder": "RenderPictureMarkers"
 }

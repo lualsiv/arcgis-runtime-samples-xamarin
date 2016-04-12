@@ -32,7 +32,7 @@ namespace ArcGISRuntimeXamarin.Samples.SetMapSpatialReference
 
         public SetMapSpatialReference()
         {
-            Title = "Set initial map area";
+            Title = "Set map spatial reference";
         }
 
         public override void ViewDidLoad()
