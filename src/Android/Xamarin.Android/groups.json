@@ -16,6 +16,10 @@
             {
               "SampleName":"ChangeViewpoint",
               "Path":"Samples/MapView/ChangeViewpoint"
+            },
+            {
+              "SampleName":"DisplayDrawStatus",
+              "Path":"Samples/MapView/DisplayDrawStatus"
             }
           ]
         },
@@ -53,8 +57,8 @@
               "Path":"Samples/Map/SetMapSpatialReference"
             },
             {
-              "SampleName":"AccessLoadStatus",
-              "Path":"Samples/Map/AccessLoadStatus"
+              "SampleName": "AccessLoadStatus",
+              "Path": "Samples/Map/AccessLoadStatus"
             }
           ]
         }

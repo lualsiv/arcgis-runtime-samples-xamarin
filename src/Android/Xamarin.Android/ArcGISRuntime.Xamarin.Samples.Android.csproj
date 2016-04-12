@@ -91,6 +91,7 @@
     <Compile Include="Samples\MapView\ChangeViewpoint\ChangeViewpoint.cs" />
     <Compile Include="Samples\MapView\ShowMagnifier\ShowMagnifier.cs" />
     <Compile Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.cs" />
+    <Compile Include="Samples\MapView\DisplayDrawStatus\DisplayDrawStatus.cs" />
     <Compile Include="Samples\Map\MapRotation\MapRotation.cs" />
     <Compile Include="Samples\Map\DisplayMap\DisplayMap.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMap.cs" />
@@ -146,6 +147,7 @@
     <EmbeddedResource Include="Samples\GraphicsOverlay\AddGraphicsRenderer\metadata.json" />
     <EmbeddedResource Include="Samples\Data\FeatureLayerQuery\metadata.json" />
     <EmbeddedResource Include="Samples\GraphicsOverlay\IdentifyGraphics\metadata.json" />
+    <EmbeddedResource Include="Samples\MapView\DisplayDrawStatus\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -177,6 +179,7 @@
     <Content Include="Samples\MapView\ChangeViewpoint\ChangeViewpoint.jpg" />
     <Content Include="Samples\MapView\ShowMagnifier\ShowMagnifier.jpg" />
     <Content Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.jpg" />
+    <Content Include="Samples\MapView\DisplayDrawStatus\DisplayDrawStatus.jpg" />
     <Content Include="Samples\Map\MapRotation\MapRotation.jpg" />
     <Content Include="Samples\Map\DisplayMap\DisplayMap.jpg" />
     <Content Include="Samples\Map\OpenExistingMap\OpenExistingMap.jpg" />
