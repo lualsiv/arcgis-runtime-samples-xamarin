@@ -62,6 +62,10 @@
       <DependentUpon>ArcGISTiledLayerUrl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Samples\Layers\ChangeFeatureLayerRenderer\ChangeFeatureLayerRenderer.xaml.cs">
+      <DependentUpon>ChangeFeatureLayerRenderer.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>FeatureLayerUrl.xaml</DependentUpon>
@@ -172,6 +176,7 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\ArcGISTiledLayerUrl\metadata.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)groups.json" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\ChangeFeatureLayerRenderer\metadata.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\FeatureLayerUrl\metadata.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -285,10 +290,19 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Samples\GraphicsOverlay\AddGraphicsRenderer\AddGraphicsRenderer.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Samples\GraphicsOverlay\IdentifyGraphics\IdentifyGraphics.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\ChangeFeatureLayerRenderer\ChangeFeatureLayerRenderer.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="$(MSBuildThisFileDirectory)Samples\Symbology\RenderSimpleMarkers\RenderSimpleMarkers.jpg" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\PictureMarkerSymbols\pin_star_blue.png" />
     <Content Include="$(MSBuildThisFileDirectory)Samples\Symbology\RenderPictureMarkers\RenderPictureMarkers.jpg" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Symbology\RenderUniqueValues\metadata.json" />
     <Content Include="$(MSBuildThisFileDirectory)Samples\Symbology\RenderUniqueValues\RenderUniqueValues.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Samples\Layers\ChangeFeatureLayerRenderer\ChangeFeatureLayerRenderer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

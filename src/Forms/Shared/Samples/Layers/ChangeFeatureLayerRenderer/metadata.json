@@ -1,0 +1,15 @@
+{
+  "Name": "Change Renderer",
+  "SampleName": "ChangeFeatureLayerRenderer",
+  "Description": "This sample demonstrates how to change renderer for a feature layer. It also shows how to reset the renderer back to the default.",
+  "Instructions": "",
+  "Type": 0,
+  "RequiresOnlineConnection":true,
+  "RequiresOfflineData":false,
+  "RequiresLocalServer":false,
+  "Image":"ChangeFeatureLayerRenderer.jpg",
+  "Link":"",
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.FeatureLayer","P:Esri.ArcGISRuntime.Mapping.Map.OperationalLayers"
+  ],
+  "SampleFolder": "ChangeFeatureLayerRenderer"
+}

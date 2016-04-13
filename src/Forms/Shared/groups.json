@@ -108,6 +108,10 @@
             {
               "SampleName": "FeatureLayerUrl",
               "Path": "Samples/Layers/FeatureLayerUrl"
+            },
+             {
+              "SampleName": "ChangeFeatureLayerRenderer",
+              "Path": "Samples/Layers/ChangeFeatureLayerRenderer"
             }
           ]
         },
