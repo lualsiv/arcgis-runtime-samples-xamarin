@@ -1,0 +1,15 @@
+{
+  "Name": "Feature Layer Selection",
+  "SampleName": "FeatureLayerSelection",
+  "Description": "This sample demonstrates how to select features in a feature layer by tapping a mapview.",
+  "Instructions": "",
+  "Type": 0,
+  "RequiresOnlineConnection":true,
+  "RequiresOfflineData":false,
+  "RequiresLocalServer":false,
+  "Image":"FeatureLayerSelection.jpg",
+  "Link":"",
+  "TypeLink": ["M:Esri.ArcGISRuntime.Mapping.Basemap.CreateTopographic","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateStreets","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateImagery","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateOceans"
+  ],
+  "SampleFolder": "FeatureLayerSelection"
+}
