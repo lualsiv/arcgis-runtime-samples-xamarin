@@ -80,6 +80,10 @@
 
     This sample demonstrates how to query a feature layer via feature table.
 
+    * [Change feature layer renderer](Xamarin.Android/Samples/Layers/ChangeFeatureLayerRenderer)
+
+    This sample demonstrates how to change renderer for a feature layer. It also shows how to reset the renderer back to the default.
+
 
 - **Feature Tables**
 

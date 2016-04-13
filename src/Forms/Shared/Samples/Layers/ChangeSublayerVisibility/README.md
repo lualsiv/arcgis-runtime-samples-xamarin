@@ -1,8 +1,8 @@
-#ArcGIS map image layer (URL)
+#Change sublayer visibility
 
-This sample demonstrates how to add an ArcGISMapImageLayer as a base layer in a map. The ArcGISMapImageLayer comes from an ArcGIS Server sample web service.
+This sample demonstrates how to show or hide sublayers of a map image layer.
 
-<img src="ArcGISMapImageLayerUrl.jpg" width="350"/>
+<img src="ChangeSublayerVisibility.jpg" width="350"/>
 
 ### Instructions
 

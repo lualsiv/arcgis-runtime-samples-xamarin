@@ -16,6 +16,10 @@
 
     This sample illustrates how to rotate a map.
 
+    * [Display drawing status](Shared/Samples/MapView/DisplayDrawingStatus)
+
+    This sample demonstrates how to use the DrawStatus value of the MapView to notify user that the MapView is drawing.
+
 
 - **Map**
 
@@ -62,6 +66,10 @@
     * [ArcGIS map image layer (URL)](Shared/Samples/Layers/ArcGISMapImageLayerUrl)
 
     This sample demonstrates how to add an ArcGISMapImageLayer as a base layer in a map. The ArcGISMapImageLayer comes from an ArcGIS Server sample web service.
+
+    * [Change sublayer visibility](Shared/Samples/Layers/ChangeSublayerVisibility)
+
+    This sample demonstrates how to show or hide sublayers of a map image layer.
 
 ## Features
 
