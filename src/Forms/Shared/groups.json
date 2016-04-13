@@ -85,8 +85,12 @@
           "ShowGroup":true,
           "SampleInfos":[
             {
-              "SampleName":"ArcGISMapImageLayerUrl",
-              "Path":"Samples/Layers/ArcGISMapImageLayerUrl"
+              "SampleName": "ArcGISMapImageLayerUrl",
+              "Path": "Samples/Layers/ArcGISMapImageLayerUrl"
+            },
+            {
+              "SampleName":"ChangeSublayerVisibility",
+              "Path":"Samples/Layers/ChangeSublayerVisibility"
             }
           ]
         }
