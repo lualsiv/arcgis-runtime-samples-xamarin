@@ -57,8 +57,12 @@
               "Path":"Samples/Map/SetInitialMapArea"
             },
             {
-              "SampleName":"SetMapSpatialReference",
-              "Path":"Samples/Map/SetMapSpatialReference"
+              "SampleName": "SetMapSpatialReference",
+              "Path": "Samples/Map/SetMapSpatialReference"
+            },
+              {
+              "SampleName":"ChangeBasemap",
+              "Path":"Samples/Map/ChangeBasemap"
             }
           ]
         }
