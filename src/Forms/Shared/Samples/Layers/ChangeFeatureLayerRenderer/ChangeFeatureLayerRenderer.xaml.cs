@@ -34,7 +34,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
         public ChangeFeatureLayerRenderer ()
 		{
 			InitializeComponent ();
-            Title = "Change Renderer";
+            Title = "Change feature layer renderer";
             //setup the control references and execute initialization 
             Initialize();
         }

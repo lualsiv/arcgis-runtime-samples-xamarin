@@ -35,7 +35,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerDefinitionExpression
 
         public FeatureLayerDefinitionExpression()
         {
-            this.Title = "Definition Expression";
+            this.Title = "Feature layer definition expression";
         }
 
         public override void ViewDidLoad()
