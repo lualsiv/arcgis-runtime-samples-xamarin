@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"FeatureLayerSelection.jpg",
   "Link":"",
-  "TypeLink": ["M:Esri.ArcGISRuntime.Mapping.Basemap.CreateTopographic","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateStreets","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateImagery","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateOceans"
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.SelectionMode","T:Esri.ArcGISRuntime.Data.QueryParameters","P:Esri.ArcGISRuntime.Mapping.FeatureLayer.SelectionColor","P:Esri.ArcGISRuntime.Mapping.FeatureLayer.SelectionWidth","M:Esri.ArcGISRuntime.Mapping.FeatureLayer.SelectFeaturesAsync(Esri.ArcGISRuntime.Data.QueryParameters,Esri.ArcGISRuntime.Mapping.SelectionMode)"
   ],
   "SampleFolder": "FeatureLayerSelection"
 }

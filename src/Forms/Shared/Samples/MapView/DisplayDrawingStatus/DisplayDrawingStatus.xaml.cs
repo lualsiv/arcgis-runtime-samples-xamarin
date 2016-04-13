@@ -26,7 +26,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
         {
             InitializeComponent();
 
-            Title = "Display draw status";
+            Title = "Display drawing status";
             // Create the UI, setup the control references and execute initialization 
             Initialize();
         }
