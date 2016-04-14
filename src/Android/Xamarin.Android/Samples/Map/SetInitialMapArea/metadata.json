@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"SetInitialMapArea.jpg",
   "Link":"",
-  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.Viewpoint","P:Esri.ArcGISRuntime.Mapping.Map.InitialViewpoint"
+  "TypeLink": ["P:Esri.ArcGISRuntime.Mapping.Map.InitialViewpoint"
   ],
   "SampleFolder": "SetInitialMapArea"
 }

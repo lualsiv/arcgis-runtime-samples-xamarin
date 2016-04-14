@@ -9,7 +9,7 @@
   "RequiresLocalServer":false,
   "Image":"ChangeBasemap.jpg",
   "Link":"",
-  "TypeLink": ["P:Esri.ArcGISRuntime.Mapping.Map.Basemap","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateTopographic","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateStreets","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateImagery","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateOceans"
+  "TypeLink": ["M:Esri.ArcGISRuntime.Mapping.Basemap.CreateTopographic","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateStreets","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateImagery","M:Esri.ArcGISRuntime.Mapping.Basemap.CreateOceans"
   ],
  "SampleFolder":  "ChangeBasemap"
 }
