@@ -1,16 +1,11 @@
-// Copyright 2015 Esri.
+// Copyright 2016 Esri.
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
 //
-//   http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 
+// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
+// language governing permissions and limitations under the License.
 
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
@@ -74,6 +69,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
             // Create the UI, setup the control references and execute initialization 
             CreateLayout();
             Initialize();
@@ -106,7 +102,8 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                 {
                     // Set Viewpoint so that it is centered on the London coordinates defined above
                     await _myMapView.SetViewpointCenterAsync(LondonCoords);
-                    // Set the Viewpoint scale to match the specified scale 
+            
+					// Set the Viewpoint scale to match the specified scale 
                     await _myMapView.SetViewpointScaleAsync(LondonScale);
                 }));
             actionSheetAlert.AddAction(UIAlertAction.Create(titles[2], UIAlertActionStyle.Default, 
@@ -115,9 +112,11 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                     // Navigate to full extent of the first baselayer before animating to specified geometry
                     await _myMapView.SetViewpointAsync(
                         new Viewpoint(_myMapView.Map.Basemap.BaseLayers.First().FullExtent));
-                    // Create a new Viewpoint using the specified geometry
+                    
+					// Create a new Viewpoint using the specified geometry
                     var viewpoint = new Viewpoint(EdinburghEnvelope);
-                    // Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
+                    
+					// Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
                     await _myMapView.SetViewpointAsync(viewpoint, TimeSpan.FromSeconds(5));
                 }));
             PresentViewController(actionSheetAlert, true, null);
