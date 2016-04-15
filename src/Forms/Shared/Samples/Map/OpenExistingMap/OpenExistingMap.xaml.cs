@@ -36,7 +36,7 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
         {
             InitializeComponent ();
 
-            Title = "Show an existing map";
+            Title = "Open an existing map";
 
             // Create the UI, setup the control references and execute initialization 
             Initialize();
