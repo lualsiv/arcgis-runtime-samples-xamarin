@@ -10,10 +10,10 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime.UI;
+using Esri.ArcGISRuntime.Data;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
-using Esri.ArcGISRuntime.Data;
+using Esri.ArcGISRuntime.UI;
 using System;
 
 namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
