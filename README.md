@@ -16,14 +16,14 @@ See Table of Contents under different platforms
   * [Xamarin.Android](https://developers.arcgis.com/xamarin/quartz/android/guide/system-requirements.htm)
   * [Xamarin.iOS](https://developers.arcgis.com/xamarin/quartz/ios/guide/system-requirements.htm)
   * [Xamarin.Forms](https://developers.arcgis.com/xamarin/quartz/forms/guide/system-requirements.htm) 
-  * The [ArcGIS Runtime SDK for Xamarin](https://developers.arcgis.com/xamarin/quartz/) is referenced using a NuGet package that can be downloaded from [Early adopter website](earlyadopter.esri.com)
+  * The [ArcGIS Runtime SDK for Xamarin](https://developers.arcgis.com/xamarin/quartz/) is referenced using a NuGet package that can be downloaded from [Early adopter website](https://earlyadopter.esri.com/)
 
 3. In Visual Studio or Xamarin Studio, open the solution for the Android, iOS or Forms samples:   
   * Xamarin.Android: src\Android\ArcGISRuntime.Xamarin.Samples.Android.sln
 	   - Clean, build, and run the application.
   * Xamarin.iOS: src\iOS\ArcGISRuntime.Xamarin.Samples.iOS.sln
 	   - Clean, build, and run the application.
-  * Xamarin.Forms: src\Forms/ArcGISRuntime.Xamarin.Samples.Forms.sln
+  * Xamarin.Forms: src\Forms\ArcGISRuntime.Xamarin.Samples.Forms.sln
 	   - Clean, build, and run the application.
 
 ## Resources
