@@ -7,37 +7,35 @@
 // "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
 // language governing permissions and limitations under the License.
 
-using Esri.ArcGISRuntime;
-using Esri.ArcGISRuntime.Data;
-using Esri.ArcGISRuntime.Geometry;
+using Android.App;
+using Android.OS;
+using Android.Widget;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.UI;
-using Foundation;
 using System;
+using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Data;
+using Esri.ArcGISRuntime.Symbology;
 using System.Drawing;
-using UIKit;
 
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
 {
-    [Register("FeatureLayerSelection")]
-    public class FeatureLayerSelection : UIViewController
+    [Activity]
+    public class FeatureLayerSelection : Activity
     {
         // Create and hold reference to the used MapView
-        private MapView _myMapView;
+        private MapView _myMapView = new MapView();
 
         // Create and hold reference to the feature layer
         private FeatureLayer _featureLayer;
 
-        public FeatureLayerSelection()
+        protected override void OnCreate(Bundle bundle)
         {
-            Title = "Feature layer Selection";
-        }
+            base.OnCreate(bundle);
 
-        public override void ViewDidLoad()
-        {
-            base.ViewDidLoad();
-           
-			// Create the UI, setup the control references and execute initialization 
+            Title = "Feature layer selection";
+
+            // Create the UI, setup the control references and execute initialization 
             CreateLayout();
             Initialize();
         }
@@ -49,7 +47,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
 
             // Create envelope to be used as a target extent for map's initial viewpoint
             Envelope myEnvelope = new Envelope(
-                -1131596.019761, 3893114.069099, 3926705.982140, 7977912.461790, 
+                -1131596.019761, 3893114.069099, 3926705.982140, 7977912.461790,
                 SpatialReferences.WebMercator);
 
             // Set the initial viewpoint for map
@@ -79,7 +77,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
             await _featureLayer.LoadAsync();
 
             // Check for the load status. If the layer is loaded then add it to map
-            if (_featureLayer.LoadStatus == LoadStatus.Loaded)
+            if (_featureLayer.LoadStatus == Esri.ArcGISRuntime.LoadStatus.Loaded)
             {
                 // Add the feature layer to the map
                 myMap.OperationalLayers.Add(_featureLayer);
@@ -98,13 +96,13 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
             double mapTolerance = tolerance * _myMapView.UnitsPerPixel;
 
             // Define the envelope around the tap location for selecting features
-            var selectionEnvelope = new Envelope(e.Location.X - mapTolerance, e.Location.Y - mapTolerance, e.Location.X + mapTolerance, 
-				e.Location.Y + mapTolerance, _myMapView.Map.SpatialReference);
+            var selectionEnvelope = new Envelope(e.Location.X - mapTolerance, e.Location.Y - mapTolerance, e.Location.X + mapTolerance,
+                e.Location.Y + mapTolerance, _myMapView.Map.SpatialReference);
 
             // Define the query parameters for selecting features
             var queryParams = new QueryParameters();
-            
-			// Set the geometry to selection envelope for selection by geometry
+
+            // Set the geometry to selection envelope for selection by geometry
             queryParams.Geometry = selectionEnvelope;
 
             // Select the features based on query parameters defined above
@@ -113,14 +111,14 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
 
         private void CreateLayout()
         {
-            // Setup the visual frame for the MapView
-            _myMapView = new MapView()
-            {
-                Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height)
-            };
+            // Create a new vertical layout for the app
+            var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
 
-            // Add MapView to the page
-            View.AddSubviews(_myMapView);
+            // Add the map view to the layout
+            layout.AddView(_myMapView);
+
+            // Show the layout in the app
+            SetContentView(layout);
         }
     }
 }

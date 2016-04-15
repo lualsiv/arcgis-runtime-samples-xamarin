@@ -51,6 +51,10 @@
 
     This sample demonstrates how you can set the spatial reference on a Map and all the operational layers would project accordingly.
 
+    * [Change basemap](Shared/Samples/Map/ChangeBasemap)
+
+    This sample demonstrates how to dynamically change the basemap displayed in a Map.
+
 ## Layers
 
 
@@ -79,6 +83,18 @@
     * [Feature layer (feature service)](Shared/Samples/Layers/FeatureLayerUrl)
 
     This sample demonstrates how to show a feature layer on a map using the URL to the service.
+
+    * [Change feature layer renderer](Shared/Samples/Layers/ChangeFeatureLayerRenderer)
+
+    This sample demonstrates how to change renderer for a feature layer. It also shows how to reset the renderer back to the default.
+
+    * [Feature layer selection](Shared/Samples/Layers/FeatureLayerSelection)
+
+    This sample demonstrates how to select features in a feature layer by tapping a MapView.
+
+    * [Feature layer definition expression](Shared/Samples/Layers/FeatureLayerDefinitionExpression)
+
+    This sample demonstrates how to apply definition expression to a feature layer for filtering features. It also shows how to reset the definition expression.
 
 
 - **Feature Tables**

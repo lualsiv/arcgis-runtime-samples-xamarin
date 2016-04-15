@@ -7,20 +7,21 @@
 // "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
 // language governing permissions and limitations under the License.
 
-using System;
-using System.Drawing;
-using CoreFoundation;
-using UIKit;
-using Foundation;
-using Esri.ArcGISRuntime.UI;
+using Android.App;
+using Android.OS;
+using Android.Widget;
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
+using System;
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Data;
+using Esri.ArcGISRuntime.Symbology;
+using System.Drawing;
 
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerDefinitionExpression
 {
-    [Register("FeatureLayerDefinitionExpression")]
-    public class FeatureLayerDefinitionExpression : UIViewController
+    [Activity]
+    public class FeatureLayerDefinitionExpression : Activity
     {
         // Create and hold reference to the used MapView
         private MapView _myMapView = new MapView();
@@ -28,14 +29,11 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerDefinitionExpression
         // Create and hold reference to the feature layer
         private FeatureLayer _featureLayer;
 
-        public FeatureLayerDefinitionExpression()
+        protected override void OnCreate(Bundle bundle)
         {
-            this.Title = "Feature layer definition expression";
-        }
+            base.OnCreate(bundle);
 
-        public override void ViewDidLoad()
-        {
-            base.ViewDidLoad();
+            Title = "Feature layer definition expression";
 
             // Create the UI, setup the control references and execute initialization 
             CreateLayout();
@@ -65,15 +63,8 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerDefinitionExpression
             // Initialize a new feature layer based on the feature table
             _featureLayer = new FeatureLayer(featureTable);
 
-            // Load the layer
-            await _featureLayer.LoadAsync();
-
-            // Check for the load status. If the layer is loaded then add it to map
-            if (_featureLayer.LoadStatus == Esri.ArcGISRuntime.LoadStatus.Loaded)
-            {
-                //Add the feature layer to the map
-                myMap.OperationalLayers.Add(_featureLayer);
-            }
+            //Add the feature layer to the map
+            myMap.OperationalLayers.Add(_featureLayer);
         }
 
         private void OnApplyExpressionClicked(object sender, EventArgs e)
@@ -90,30 +81,30 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerDefinitionExpression
 
         private void CreateLayout()
         {
-            // Setup the visual frame for the MapView
-            _myMapView = new MapView()
-            {
-                Frame = new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height)
-            };
+            // Create a new vertical layout for the app
+            var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
 
             // Create a button to reset the renderer
-            var resetButton = new UIBarButtonItem() { Title = "Reset", Style = UIBarButtonItemStyle.Plain };
-            resetButton.Clicked += OnResetButtonClicked;
+            var resetButton = new Button(this);
+            resetButton.Text = "Reset";
+            resetButton.Click += OnResetButtonClicked;
 
             // Create a button to apply new renderer
-            var expressionButton = new UIBarButtonItem() { Title = "Apply Expression", Style = UIBarButtonItemStyle.Plain };
-            expressionButton.Clicked += OnApplyExpressionClicked;
+            var overrideButton = new Button(this);
+            overrideButton.Text = "Expression";
+            overrideButton.Click += OnApplyExpressionClicked;
 
-            // Add the buttons to the toolbar
-            SetToolbarItems(new UIBarButtonItem[] {resetButton,
-                new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace, null),
-                expressionButton}, false);
+            // Add Reset Button to the layout
+            layout.AddView(resetButton);
 
-            // Show the toolbar
-            NavigationController.ToolbarHidden = false;
+            // Add Override Button to the layout
+            layout.AddView(overrideButton);
 
-            // Add MapView to the page
-            View.AddSubviews(_myMapView);
+            // Add the map view to the layout
+            layout.AddView(_myMapView);
+
+            // Show the layout in the app
+            SetContentView(layout);
         }
     }
 }

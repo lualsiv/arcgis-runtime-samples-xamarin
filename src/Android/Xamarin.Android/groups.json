@@ -120,6 +120,14 @@
             {
               "SampleName": "ChangeFeatureLayerRenderer",
               "Path": "Samples/Layers/ChangeFeatureLayerRenderer"
+            },
+            {
+              "SampleName": "FeatureLayerSelection",
+              "Path": "Samples/Layers/FeatureLayerSelection"
+            },
+            {
+              "SampleName": "FeatureLayerDefinitionExpression",
+              "Path": "Samples/Layers/FeatureLayerDefinitionExpression"
             }
           ]
         },

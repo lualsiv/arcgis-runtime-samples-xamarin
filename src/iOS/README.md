@@ -88,6 +88,14 @@
 
     This sample demonstrates how to change renderer for a feature layer. It also shows how to reset the renderer back to the default.
 
+    * [Feature layer selection](Xamarin.iOS/Samples/Layers/FeatureLayerSelection)
+
+    This sample demonstrates how to select features in a feature layer by tapping a MapView.
+
+    * [Feature layer definition expression](Xamarin.iOS/Samples/Layers/FeatureLayerDefinitionExpression)
+
+    This sample demonstrates how to apply definition expression to a feature layer for filtering features. It also shows how to reset the definition expression.
+
 
 - **Feature Tables**
 

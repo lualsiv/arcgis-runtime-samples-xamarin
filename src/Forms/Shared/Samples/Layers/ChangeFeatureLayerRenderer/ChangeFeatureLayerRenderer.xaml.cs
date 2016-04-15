@@ -12,16 +12,11 @@ using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
 {
-	public partial class ChangeFeatureLayerRenderer : ContentPage
+    public partial class ChangeFeatureLayerRenderer : ContentPage
 	{
         //Create and hold reference to the feature layer
         private FeatureLayer _featureLayer;

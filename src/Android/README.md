@@ -51,6 +51,10 @@
 
     This sample demonstrates how to access the Maps' LoadStatus. The LoadStatus will be considered loaded when the following are true: The Map has a valid SpatialReference and the Map has an been set to the MapView.
 
+    * [Change basemap](Xamarin.Android/Samples/Map/ChangeBasemap)
+
+    This sample demonstrates how to dynamically change the basemap displayed in a Map.
+
 ## Layers
 
 
@@ -66,6 +70,10 @@
     * [ArcGIS map image layer (URL)](Xamarin.Android/Samples/Layers/ArcGISMapImageLayerUrl)
 
     This sample demonstrates how to add an ArcGISMapImageLayer as a base layer in a map. The ArcGISMapImageLayer comes from an ArcGIS Server sample web service.
+
+    * [Change sublayer visibility](Xamarin.Android/Samples/Layers/ChangeSublayerVisibility)
+
+    This sample demonstrates how to show or hide sublayers of a map image layer.
 
 ## Features
 
@@ -83,6 +91,14 @@
     * [Change feature layer renderer](Xamarin.Android/Samples/Layers/ChangeFeatureLayerRenderer)
 
     This sample demonstrates how to change renderer for a feature layer. It also shows how to reset the renderer back to the default.
+
+    * [Feature layer selection](Xamarin.Android/Samples/Layers/FeatureLayerSelection)
+
+    This sample demonstrates how to select features in a feature layer by tapping a MapView.
+
+    * [Feature layer definition expression](Xamarin.Android/Samples/Layers/FeatureLayerDefinitionExpression)
+
+    This sample demonstrates how to apply definition expression to a feature layer for filtering features. It also shows how to reset the definition expression.
 
 
 - **Feature Tables**
