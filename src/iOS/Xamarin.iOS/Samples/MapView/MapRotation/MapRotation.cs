@@ -7,13 +7,11 @@
 // "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
 // language governing permissions and limitations under the License.
 
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
+using Foundation;
 using System;
 using UIKit;
-using Foundation;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime;
-using Esri.ArcGISRuntime.Geometry;
-using Esri.ArcGISRuntime.Mapping;
 
 namespace ArcGISRuntimeXamarin.Samples.MapRotation
 {
@@ -36,12 +34,12 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             MapView myMapView = new MapView();
             myMapView.Frame = new CoreGraphics.CGRect(0, yOffset, View.Bounds.Width, View.Bounds.Height - yOffset);
 
-			// Create a new Map instance with the basemap  
-			var myBasemap = Basemap.CreateStreets();
-			Map myMap = new Map(myBasemap);
+            // Create a new Map instance with the basemap  
+            var myBasemap = Basemap.CreateStreets();
+            Map myMap = new Map(myBasemap);
 
-			// Assign the Map to the MapView
-			myMapView.Map = myMap;
+            // Assign the Map to the MapView
+            myMapView.Map = myMap;
 
             // Create a label to display the MapView rotation value
             UILabel rotationLabel = new UILabel();

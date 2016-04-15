@@ -14,9 +14,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.ArcGISTiledLayerUrl
 {
     public partial class ArcGISTiledLayerUrl : ContentPage
-	{
-		public ArcGISTiledLayerUrl ()
-		{
+    {
+        public ArcGISTiledLayerUrl ()
+        {
             InitializeComponent ();
 
             Title = "ArcGIS tiled layer (URL)";

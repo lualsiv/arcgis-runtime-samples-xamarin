@@ -16,9 +16,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
 {
     public partial class RenderUniqueValues : ContentPage
-	{
-		public RenderUniqueValues()
-		{
+    {
+        public RenderUniqueValues()
+        {
             InitializeComponent ();
 
             Title = "Render unique values";

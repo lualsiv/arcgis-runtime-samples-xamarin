@@ -37,7 +37,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
         {
             base.ViewDidLoad();
            
-			// Create the UI, setup the control references and execute initialization 
+            // Create the UI, setup the control references and execute initialization 
             CreateLayout();
             Initialize();
         }
@@ -99,12 +99,12 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
 
             // Define the envelope around the tap location for selecting features
             var selectionEnvelope = new Envelope(e.Location.X - mapTolerance, e.Location.Y - mapTolerance, e.Location.X + mapTolerance, 
-				e.Location.Y + mapTolerance, _myMapView.Map.SpatialReference);
+                e.Location.Y + mapTolerance, _myMapView.Map.SpatialReference);
 
             // Define the query parameters for selecting features
             var queryParams = new QueryParameters();
             
-			// Set the geometry to selection envelope for selection by geometry
+            // Set the geometry to selection envelope for selection by geometry
             queryParams.Geometry = selectionEnvelope;
 
             // Select the features based on query parameters defined above

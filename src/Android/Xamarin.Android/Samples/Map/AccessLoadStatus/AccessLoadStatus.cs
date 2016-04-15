@@ -10,13 +10,13 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
 
 namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
 {
-    [Activity(Label = "Access load status")]
+    [Activity]
     public class AccessLoadStatus : Activity
     {
         // Create and hold reference to the used MapView

@@ -17,12 +17,12 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
 {
     public partial class IdentifyGraphics : ContentPage
-	{
+    {
         // Graphics overlay to host graphics
         private GraphicsOverlay _polygonOverlay;
 
-		public IdentifyGraphics()
-		{
+        public IdentifyGraphics()
+        {
             InitializeComponent();
 
             Title = "Identify graphics";

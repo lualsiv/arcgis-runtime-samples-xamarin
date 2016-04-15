@@ -16,11 +16,11 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableManualCache
 {
     public partial class ServiceFeatureTableManualCache : ContentPage
-	{
+    {
         private ServiceFeatureTable _incidentsFeatureTable;
         
         public ServiceFeatureTableManualCache()
-		{
+        {
             InitializeComponent ();
 
             Title = "Service feature table (manual cache)";

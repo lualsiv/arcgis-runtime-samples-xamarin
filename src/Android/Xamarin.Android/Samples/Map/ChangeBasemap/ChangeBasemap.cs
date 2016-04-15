@@ -9,17 +9,16 @@
 
 using Android.App;
 using Android.OS;
-using Android.Widget;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Mapping;
-using System;
 using Android.Views;
+using Android.Widget;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
+using System;
 using System.Linq;
-using Esri.ArcGISRuntime.Geometry;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
 {
-    [Activity(Label = "Change Basemap")]
+    [Activity]
     public class ChangeBasemap : Activity
     {
         // Create and hold reference to the used MapView
@@ -82,25 +81,25 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
             {
                 case 0:
    
-					// Set the basemap to Topographic
+                    // Set the basemap to Topographic
                     _myMapView.Map.Basemap = Basemap.CreateTopographic();
                     break;
 
-				case 1:
+                case 1:
                 
-					// Set the basemap to Streets
+                    // Set the basemap to Streets
                     _myMapView.Map.Basemap = Basemap.CreateStreets();
                     break;
 
-				case 2:
+                case 2:
                 
-					// Set the basemap to Imagery
+                    // Set the basemap to Imagery
                     _myMapView.Map.Basemap = Basemap.CreateImagery();
                     break;
 
-				case 3:
+                case 3:
                 
-					// Set the basemap to Oceans
+                    // Set the basemap to Oceans
                     _myMapView.Map.Basemap = Basemap.CreateOceans();
                     break;
             }

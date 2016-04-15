@@ -10,14 +10,14 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
 using System;
 
 namespace ArcGISRuntimeXamarin.Samples.SetMapSpatialReference
 {
-    [Activity(Label = "Set map spatial reference")]
+    [Activity]
     public class SetMapSpatialReference : Activity
     {
         // Create and hold reference to the used MapView

@@ -19,7 +19,7 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
 {
     public partial class FeatureLayerQuery : ContentPage
-	{
+    {
         // Create reference to service of US States  
         private string _statesUrl = "http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2";
 
@@ -30,7 +30,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
         private FeatureLayer _featureLayer;
 
         public FeatureLayerQuery()
-		{
+        {
             InitializeComponent ();
 
             Title = "Feature layer query";

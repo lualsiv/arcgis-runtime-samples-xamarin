@@ -10,15 +10,14 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Data;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
 using System;
-using System.Threading;
 
 namespace ArcGISRuntimeXamarin.Samples.DisplayDrawStatus
 {
-    [Activity(Label = "Display draw status")]
+    [Activity]
     public class DisplayDrawStatus : Activity
     {
         // Create and hold reference to the used MapView

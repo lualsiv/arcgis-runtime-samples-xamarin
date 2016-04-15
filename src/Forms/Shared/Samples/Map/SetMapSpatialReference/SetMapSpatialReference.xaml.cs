@@ -15,9 +15,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.SetMapSpatialReference
 {
     public partial class SetMapSpatialReference : ContentPage
-	{
-		public SetMapSpatialReference()
-		{
+    {
+        public SetMapSpatialReference()
+        {
             InitializeComponent ();
 
             Title = "Set map spatial reference";

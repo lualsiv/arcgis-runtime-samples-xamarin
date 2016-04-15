@@ -14,9 +14,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
 {
     public partial class SetMinMaxScale : ContentPage
-	{
-		public SetMinMaxScale()
-		{
+    {
+        public SetMinMaxScale()
+        {
             InitializeComponent ();
 
             Title = "Set Min & Max Scale";

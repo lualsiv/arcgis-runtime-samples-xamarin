@@ -10,12 +10,12 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using Esri.ArcGISRuntime.Data;
+using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
 using System;
-using Esri.ArcGISRuntime.Geometry;
-using Esri.ArcGISRuntime.Data;
-using Esri.ArcGISRuntime.Symbology;
 using System.Drawing;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
@@ -72,7 +72,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
             // Check for the load status. If the layer is loaded then add it to map
             if (_featureLayer.LoadStatus == Esri.ArcGISRuntime.LoadStatus.Loaded)
             {
-                //add the feature layer to the map
+                // Add the feature layer to the map
                 myMap.OperationalLayers.Add(_featureLayer);
             }
         }

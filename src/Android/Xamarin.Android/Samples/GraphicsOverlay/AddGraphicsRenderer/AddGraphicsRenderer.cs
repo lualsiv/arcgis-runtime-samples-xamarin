@@ -29,6 +29,7 @@ namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
             base.OnCreate(bundle);
 
             Title = "Add graphics (Renderer)";
+            
             // Create the UI, setup the control references and execute initialization 
             CreateLayout();
             Initialize();
@@ -57,7 +58,7 @@ namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
             // Get extent of that area
             Envelope extent = visibleArea.Extent;
    
-			// Get central point of the extent
+            // Get central point of the extent
             MapPoint centerPoint = extent.GetCenter();
 
             // Create values inside the visible extent for creating graphic

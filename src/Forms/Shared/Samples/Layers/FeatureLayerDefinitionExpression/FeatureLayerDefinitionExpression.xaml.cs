@@ -17,13 +17,13 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerDefinitionExpression
 {
     public partial class FeatureLayerDefinitionExpression : ContentPage
-	{
+    {
         //Create and hold reference to the feature layer
         private FeatureLayer _featureLayer;
 
         public FeatureLayerDefinitionExpression()
-		{
-			InitializeComponent ();
+        {
+            InitializeComponent ();
 
             Title = "Feature layer definition expression";
 

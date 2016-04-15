@@ -17,13 +17,13 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
 {
     public partial class ChangeFeatureLayerRenderer : ContentPage
-	{
+    {
         //Create and hold reference to the feature layer
         private FeatureLayer _featureLayer;
 
         public ChangeFeatureLayerRenderer ()
-		{
-			InitializeComponent ();
+        {
+            InitializeComponent ();
 
             Title = "Change feature layer renderer";
 

@@ -7,12 +7,11 @@
 // "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
 // language governing permissions and limitations under the License.
 
-using UIKit;
-using Foundation;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime;
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
+using Foundation;
+using UIKit;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
 {
@@ -70,21 +69,21 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
                         myMapView.Map.Basemap = Basemap.CreateTopographic();
                         break;
 
-					case 1:
+                    case 1:
                     
-						// Set the basemap to Streets
+                        // Set the basemap to Streets
                         myMapView.Map.Basemap = Basemap.CreateStreets();
                         break;
 
-					case 2:
+                    case 2:
                     
-						// Set the basemap to Imagery
+                        // Set the basemap to Imagery
                         myMapView.Map.Basemap = Basemap.CreateImagery();
                         break;
 
-					case 3:
+                    case 3:
                     
-						// Set the basemap to Oceans
+                        // Set the basemap to Oceans
                         myMapView.Map.Basemap = Basemap.CreateOceans();
                         break;
                 }

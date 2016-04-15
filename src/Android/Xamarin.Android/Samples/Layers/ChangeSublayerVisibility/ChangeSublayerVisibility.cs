@@ -83,7 +83,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeSublayerVisibility
                 // Set menu item to contain checkbox
                 menuItem.SetCheckable(true);
     
-				// Set default value
+                // Set default value
                 menuItem.SetChecked(_imageLayer.Sublayers[i].IsVisible);
             }
 

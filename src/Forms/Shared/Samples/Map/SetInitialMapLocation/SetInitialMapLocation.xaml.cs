@@ -13,9 +13,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.SetInitialMapLocation
 {
     public partial class SetInitialMapLocation : ContentPage
-	{
-		public SetInitialMapLocation()
-		{
+    {
+        public SetInitialMapLocation()
+        {
             InitializeComponent ();
 
             Title = "Set initial map location";

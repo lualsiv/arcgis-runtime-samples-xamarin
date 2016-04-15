@@ -9,17 +9,12 @@
 
 using Esri.ArcGISRuntime.Mapping;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
 {
-	public partial class ChangeBasemap : ContentPage
-	{
+    public partial class ChangeBasemap : ContentPage
+    {
         // String array to store titles for the viewpoints specified above.
         private string[] titles = new string[]
         {
@@ -29,8 +24,8 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeBasemap
             "Ocean"
         };
         public ChangeBasemap ()
-		{
-			InitializeComponent ();
+        {
+            InitializeComponent ();
 
             Title = "Change basemap";
 

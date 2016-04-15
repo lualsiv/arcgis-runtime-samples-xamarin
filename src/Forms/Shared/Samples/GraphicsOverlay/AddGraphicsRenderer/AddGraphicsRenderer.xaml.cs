@@ -17,9 +17,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
 {
     public partial class AddGraphicsRenderer : ContentPage
-	{
-		public AddGraphicsRenderer()
-		{
+    {
+        public AddGraphicsRenderer()
+        {
             InitializeComponent();
 
             Title = "Add graphics (Renderer)";

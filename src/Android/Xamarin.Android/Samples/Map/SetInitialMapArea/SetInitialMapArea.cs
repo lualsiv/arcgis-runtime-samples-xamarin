@@ -10,13 +10,13 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
 
 namespace ArcGISRuntimeXamarin.Samples.SetInitialMapArea
 {
-    [Activity(Label = "Set initial map area")]
+    [Activity]
     public class SetInitialMapArea : Activity
     {
         // Create and hold reference to the used MapView

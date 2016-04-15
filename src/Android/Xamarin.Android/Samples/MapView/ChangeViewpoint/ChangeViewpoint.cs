@@ -20,7 +20,7 @@ using System.Linq;
 
 namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
 {
-    [Activity(Label = "Change viewpoint")]
+    [Activity]
     public class ChangeViewpoint : Activity
     {
         // Create and hold reference to the used MapView
@@ -105,33 +105,33 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
             {
                 case "Geometry":
    
-					// Set Viewpoint using Redlands envelope defined above and a padding of 20
+                    // Set Viewpoint using Redlands envelope defined above and a padding of 20
                     await _myMapView.SetViewpointGeometryAsync(RedlandsEnvelope, 20);
                     break;
 
-				case "Center & Scale":
+                case "Center & Scale":
                 
-					// Set Viewpoint so that it is centered on the London coordinates defined above
+                    // Set Viewpoint so that it is centered on the London coordinates defined above
                     await _myMapView.SetViewpointCenterAsync(LondonCoords);
                     
-					// Set the Viewpoint scale to match the specified scale 
+                    // Set the Viewpoint scale to match the specified scale 
                     await _myMapView.SetViewpointScaleAsync(LondonScale);
                     break;
 
-				case "Animate":
+                case "Animate":
                 
-					// Navigate to full extent of the first baselayer before animating to specified geometry
+                    // Navigate to full extent of the first baselayer before animating to specified geometry
                     await _myMapView.SetViewpointAsync(
                         new Viewpoint(_myMapView.Map.Basemap.BaseLayers.First().FullExtent));
                     
-					// Create a new Viewpoint using the specified geometry
+                    // Create a new Viewpoint using the specified geometry
                     var viewpoint = new Viewpoint(EdinburghEnvelope);
                     
-					// Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
+                    // Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
                     await _myMapView.SetViewpointAsync(viewpoint, TimeSpan.FromSeconds(5));
                     break;
 
-				default:
+                default:
                     break;
             }
         }

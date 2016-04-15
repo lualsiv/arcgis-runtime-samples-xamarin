@@ -10,12 +10,12 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
 
 namespace ArcGISRuntimeXamarin.Samples.DisplayMap
 {
-    [Activity(Label = "Display a map")]
+    [Activity]
     public class DisplayMap : Activity
     {
         // Create and hold reference to the used MapView

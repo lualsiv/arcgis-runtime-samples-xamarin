@@ -15,9 +15,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerUrl
 {
     public partial class FeatureLayerUrl : ContentPage
-	{
-		public FeatureLayerUrl()
-		{
+    {
+        public FeatureLayerUrl()
+        {
             InitializeComponent ();
 
             Title = "Feature layer (feature service)";

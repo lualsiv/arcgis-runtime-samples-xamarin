@@ -10,12 +10,12 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
 
 namespace ArcGISRuntimeXamarin.Samples.ShowMagnifier
 {
-    [Activity(Label = "Show magnifier")]
+    [Activity]
     public class ShowMagnifier : Activity
     {
         // Create and hold reference to the used MapView

@@ -24,21 +24,21 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
 
         private void Initialize()
         {
-			// Create a new Map instance with the basemap  
-			Basemap myBasemap = Basemap.CreateStreets();
-			Map myMap = new Map(myBasemap);
+            // Create a new Map instance with the basemap  
+            Basemap myBasemap = Basemap.CreateStreets();
+            Map myMap = new Map(myBasemap);
 
-			// Assign the map to the MapView
-			MyMapView.Map = myMap;
-		}
+            // Assign the map to the MapView
+            MyMapView.Map = myMap;
+        }
 
-		private void MySlider_ValueChanged(object sender, ValueChangedEventArgs e)
-		{
-			// Set the MapView rotation to that of the Slider.
-			MyMapView.SetViewpointRotationAsync(e.NewValue);
+        private void MySlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            // Set the MapView rotation to that of the Slider.
+            MyMapView.SetViewpointRotationAsync(e.NewValue);
 
-			// Display the rotation value in the Label formatted nicely with degree symbol.
-			MyLabel.Text = string.Format("{0:0}°", MyMapView.MapRotation);
-		}
-	}
+            // Display the rotation value in the Label formatted nicely with degree symbol.
+            MyLabel.Text = string.Format("{0:0}°", MyMapView.MapRotation);
+        }
+    }
 }

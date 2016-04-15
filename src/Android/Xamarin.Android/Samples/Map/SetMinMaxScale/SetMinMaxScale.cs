@@ -10,13 +10,13 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
 
 namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
 {
-    [Activity(Label = "Set Min & Max Scale")]
+    [Activity]
     public class SetMinMaxScale : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -46,7 +46,7 @@ namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
                 centralPoint,
                 3000);
    
-			// Set starting viewpoint
+            // Set starting viewpoint
             myMapView.SetViewpoint(startingViewpoint);
 
             // Create main layout for the UI and add MapView into it

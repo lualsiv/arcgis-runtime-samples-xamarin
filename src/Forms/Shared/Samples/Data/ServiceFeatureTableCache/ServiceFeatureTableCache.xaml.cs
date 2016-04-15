@@ -16,9 +16,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableCache
 {
     public partial class ServiceFeatureTableCache : ContentPage
-	{
-		public ServiceFeatureTableCache()
-		{
+    {
+        public ServiceFeatureTableCache()
+        {
             InitializeComponent ();
 
             Title = "Service feature table (cache)";

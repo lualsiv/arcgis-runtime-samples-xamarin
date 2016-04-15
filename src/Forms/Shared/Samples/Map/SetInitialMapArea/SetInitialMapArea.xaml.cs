@@ -14,9 +14,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.SetInitialMapArea
 {
     public partial class SetInitialMapArea : ContentPage
-	{
-		public SetInitialMapArea()
-		{
+    {
+        public SetInitialMapArea()
+        {
             InitializeComponent ();
 
             Title = "Set initial map area";

@@ -15,7 +15,7 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
 {
     public partial class OpenExistingMap : ContentPage
-	{
+    {
         // String array to hold urls to publicly available web maps
         private string[] itemURLs = new string[]
         {
@@ -33,7 +33,7 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
         };
 
         public OpenExistingMap()
-		{
+        {
             InitializeComponent ();
 
             Title = "Show an existing map";

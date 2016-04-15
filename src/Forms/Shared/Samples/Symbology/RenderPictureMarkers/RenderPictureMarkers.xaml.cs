@@ -19,9 +19,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.RenderPictureMarkers
 {
     public partial class RenderPictureMarkers : ContentPage
-	{
-		public RenderPictureMarkers()
-		{
+    {
+        public RenderPictureMarkers()
+        {
             InitializeComponent ();
 
             Title = "Render picture markers";
@@ -64,7 +64,7 @@ namespace ArcGISRuntimeXamarin.Samples.RenderPictureMarkers
             // Create new symbol using asynchronous factory method from uri
             PictureMarkerSymbol campsiteSymbol = await PictureMarkerSymbol.CreateAsync(symbolUri);
    
-			// Optionally set the size (if not set, the size in pixels of the image will be used)
+            // Optionally set the size (if not set, the size in pixels of the image will be used)
             campsiteSymbol.Height = 18;
             campsiteSymbol.Width = 18;
 

@@ -31,13 +31,13 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
         // Create and hold reference to the used MapView
         private MapView _myMapView = new MapView();
   
-		// Create globally available text box for easy referencing 
+        // Create globally available text box for easy referencing 
         private EditText _queryTextBox;      
         
-		// Create globally available feature table for easy referencing 
+        // Create globally available feature table for easy referencing 
         private ServiceFeatureTable _featureTable;
         
-		// Create globally available feature layer for easy referencing 
+        // Create globally available feature layer for easy referencing 
         private FeatureLayer _featureLayer;
         
         protected override void OnCreate(Bundle bundle)

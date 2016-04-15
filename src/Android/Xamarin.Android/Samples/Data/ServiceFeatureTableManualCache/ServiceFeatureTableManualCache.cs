@@ -10,11 +10,11 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Data;
-using System;
 using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
+using System;
 
 namespace ArcGISRuntimeXamarin.Samples.ServiceFeatureTableManualCache
 {

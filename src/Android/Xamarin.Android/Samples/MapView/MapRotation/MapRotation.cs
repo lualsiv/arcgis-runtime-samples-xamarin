@@ -10,13 +10,12 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Esri.ArcGISRuntime;
-using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
 
 namespace ArcGISRuntimeXamarin.Samples.MapRotation
 {
-    [Activity(Label = "MapRotation")]
+    [Activity]
     public class MapRotation : Activity
     {
         // Create and hold reference to the used MapView
@@ -24,7 +23,7 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
 
         private TextView _loadStatusTextView;
 
-		protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
@@ -52,13 +51,13 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
                     // Set rotation asynchronously (no need to await the result)
                     _myMapView.SetViewpointRotationAsync(e.Progress);
 
-					// Display the MapView's rotation.
-					_loadStatusTextView.Text = string.Format("{0:0}°", _myMapView.MapRotation);
-				}
+                    // Display the MapView's rotation.
+                    _loadStatusTextView.Text = string.Format("{0:0}°", _myMapView.MapRotation);
+                }
             };
 
-			// Create a new Map instance with the basemap  
-			Basemap myBasemap = Basemap.CreateStreets();
+            // Create a new Map instance with the basemap  
+            Basemap myBasemap = Basemap.CreateStreets();
             Map myMap = new Map(myBasemap);
 
             // Create a new map view control to display the map
@@ -69,12 +68,12 @@ namespace ArcGISRuntimeXamarin.Samples.MapRotation
             // (no need to await the asynchronous call)
             _myMapView.SetViewpointRotationAsync(angleSlider.Progress);
 
-			// Add a label to display the MapView's rotation.
-			_loadStatusTextView = new TextView(this);
-			layout.AddView(_loadStatusTextView);
+            // Add a label to display the MapView's rotation.
+            _loadStatusTextView = new TextView(this);
+            layout.AddView(_loadStatusTextView);
 
-			// Add the slider and map view to the layout
-			layout.AddView(angleSlider);
+            // Add the slider and map view to the layout
+            layout.AddView(angleSlider);
             layout.AddView(_myMapView);
 
             // Apply the layout to the app

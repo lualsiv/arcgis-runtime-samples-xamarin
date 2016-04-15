@@ -60,10 +60,10 @@ namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
             // Get area that is shown in a MapView
             Polygon visibleArea = _myMapView.VisibleArea;
    
-			// Get extent of that area
+            // Get extent of that area
             Envelope extent = visibleArea.Extent;
             
-			// Get central point of the extent
+            // Get central point of the extent
             MapPoint centerPoint = extent.GetCenter();
 
             // Create values inside the visible extent for creating graphic

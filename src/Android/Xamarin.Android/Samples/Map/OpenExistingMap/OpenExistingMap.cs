@@ -9,16 +9,16 @@
 
 using Android.App;
 using Android.OS;
-using Android.Widget;
-using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Mapping;
-using System;
 using Android.Views;
+using Android.Widget;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.UI;
+using System;
 using System.Linq;
 
 namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
 {
-    [Activity(Label = "Open an existing map")]
+    [Activity]
     public class OpenExistingMap : Activity
     {
         // Create and hold reference to the used MapView

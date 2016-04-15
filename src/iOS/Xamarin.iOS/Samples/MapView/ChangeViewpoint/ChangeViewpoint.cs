@@ -103,7 +103,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                     // Set Viewpoint so that it is centered on the London coordinates defined above
                     await _myMapView.SetViewpointCenterAsync(LondonCoords);
             
-					// Set the Viewpoint scale to match the specified scale 
+                    // Set the Viewpoint scale to match the specified scale 
                     await _myMapView.SetViewpointScaleAsync(LondonScale);
                 }));
             actionSheetAlert.AddAction(UIAlertAction.Create(titles[2], UIAlertActionStyle.Default, 
@@ -113,10 +113,10 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                     await _myMapView.SetViewpointAsync(
                         new Viewpoint(_myMapView.Map.Basemap.BaseLayers.First().FullExtent));
                     
-					// Create a new Viewpoint using the specified geometry
+                    // Create a new Viewpoint using the specified geometry
                     var viewpoint = new Viewpoint(EdinburghEnvelope);
                     
-					// Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
+                    // Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
                     await _myMapView.SetViewpointAsync(viewpoint, TimeSpan.FromSeconds(5));
                 }));
             PresentViewController(actionSheetAlert, true, null);

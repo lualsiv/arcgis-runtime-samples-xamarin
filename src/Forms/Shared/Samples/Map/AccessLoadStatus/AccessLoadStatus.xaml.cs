@@ -14,9 +14,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.AccessLoadStatus
 {
     public partial class AccessLoadStatus : ContentPage
-	{
+    {
         public AccessLoadStatus()
-		{
+        {
             InitializeComponent ();
 
             Title = "Access load status";

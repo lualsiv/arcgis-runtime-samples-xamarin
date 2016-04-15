@@ -18,13 +18,13 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
 {
     public partial class FeatureLayerSelection : ContentPage
-	{
+    {
         //Create and hold reference to the feature layer
         private FeatureLayer _featureLayer;
 
         public FeatureLayerSelection()
-		{
-			InitializeComponent ();
+        {
+            InitializeComponent ();
 
             Title = "Feature layer selection";
             // Create the UI, setup the control references and execute initialization 

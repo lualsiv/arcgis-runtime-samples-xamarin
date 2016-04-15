@@ -16,9 +16,9 @@ using Xamarin.Forms;
 namespace ArcGISRuntimeXamarin.Samples.RenderSimpleMarkers
 {
     public partial class RenderSimpleMarkers : ContentPage
-	{
-		public RenderSimpleMarkers()
-		{
+    {
+        public RenderSimpleMarkers()
+        {
             InitializeComponent ();
 
             Title = "Render simple markers";
