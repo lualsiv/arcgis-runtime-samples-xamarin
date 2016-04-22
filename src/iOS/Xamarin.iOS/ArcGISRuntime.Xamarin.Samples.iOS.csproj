@@ -109,7 +109,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esri.ArcGISRuntime, Version=100.0.0.0, Culture=neutral, PublicKeyToken=29c6dd6e8553d944, processorArchitecture=MSIL">
-      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\lib\Xamarin.iOS10\Esri.ArcGISRuntime.dll</HintPath>
+      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\lib\Xamarin.iOS10\Esri.ArcGISRuntime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
@@ -379,11 +379,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <Import Project="..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets" Condition="Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" />
+  <Import Project="..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets" Condition="Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets'))" />
+    <Error Condition="!Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets'))" />
   </Target>
 </Project>
