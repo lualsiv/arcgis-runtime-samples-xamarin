@@ -41,5 +41,9 @@
 	<false/>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>MainStoryboard</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string></string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string></string>
 </dict>
 </plist>
