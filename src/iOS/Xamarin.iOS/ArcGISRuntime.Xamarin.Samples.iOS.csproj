@@ -177,7 +177,9 @@
     <EmbeddedResource Include="Samples\Layers\ArcGISMapImageLayerUrl\metadata.json" />
     <EmbeddedResource Include="Samples\Map\OpenExistingMap\metadata.json" />
     <EmbeddedResource Include="Samples\MapView\ChangeViewpoint\metadata.json" />
-    <EmbeddedResource Include="Samples\Symbology\RenderSimpleMarkers\metadata.json" />
+    <EmbeddedResource Include="Samples\Symbology\RenderSimpleMarkers\metadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Samples\MapView\DisplayDrawingStatus\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
