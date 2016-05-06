@@ -252,6 +252,9 @@
     <EmbeddedResource Include="Samples\Location\DisplayDeviceLocation\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Map\ManageBookmarks\metadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -284,6 +287,7 @@
     <Compile Include="Samples\Location\DisplayDeviceLocation\DisplayDeviceLocation.cs" />
     <Compile Include="Samples\Map\DisplayMap\DisplayMap.cs" />
     <Compile Include="Samples\MapView\MapRotation\MapRotation.cs" />
+    <Compile Include="Samples\Map\ManageBookmarks\ManageBookmarks.cs" />
     <Compile Include="Samples\Map\OpenExistingMap\OpenExistingMap.cs" />
     <Compile Include="Samples\Map\SetMapSpatialReference\SetMapSpatialReference.cs" />
     <Compile Include="Samples\Map\SetInitialMapLocation\SetInitialMapLocation.cs" />

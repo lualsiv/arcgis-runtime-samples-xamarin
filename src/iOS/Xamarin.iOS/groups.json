@@ -64,6 +64,10 @@
               "SampleName": "AccessLoadStatus",
               "Path": "Samples/Map/AccessLoadStatus"
             },
+            {
+              "SampleName": "ManageBookmarks",
+              "Path": "Samples/Map/ManageBookmarks"
+            },
               {
               "SampleName":"TakeScreenshot",
               "Path":"Samples/Map/TakeScreenshot"
