@@ -63,6 +63,10 @@
             {
               "SampleName": "AccessLoadStatus",
               "Path": "Samples/Map/AccessLoadStatus"
+            },
+              {
+              "SampleName":"TakeScreenshot",
+              "Path":"Samples/Map/TakeScreenshot"
             }
            
           ]
