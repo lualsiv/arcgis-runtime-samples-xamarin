@@ -91,6 +91,7 @@
     <Compile Include="Samples\Data\FeatureLayerQuery\FeatureLayerQuery.cs" />
     <Compile Include="Samples\Layers\ChangeFeatureLayerRenderer\ChangeFeatureLayerRenderer.cs" />
     <Compile Include="Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.cs" />
+    <Compile Include="Samples\Location\DisplayDeviceLocation\DisplayDeviceLocation.cs" />
     <Compile Include="Samples\MapView\ChangeViewpoint\ChangeViewpoint.cs" />
     <Compile Include="Samples\MapView\ShowMagnifier\ShowMagnifier.cs" />
     <Compile Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.cs" />
@@ -154,6 +155,7 @@
     <EmbeddedResource Include="Samples\Layers\ChangeSublayerVisibility\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\FeatureLayerSelection\metadata.json" />
     <EmbeddedResource Include="Samples\Layers\FeatureLayerDefinitionExpression\metadata.json" />
+    <EmbeddedResource Include="Samples\Location\DisplayDeviceLocation\metadata.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -183,6 +185,7 @@
     <Content Include="Samples\Data\FeatureLayerQuery\FeatureLayerQuery.jpg" />
     <Content Include="Samples\Layers\FeatureLayerUrl\FeatureLayerUrl.jpg" />
     <Content Include="Samples\Layers\ChangeFeatureLayerRenderer\ChangeFeatureLayerRenderer.jpg" />
+    <Content Include="Samples\Location\DisplayDeviceLocation\DisplayDeviceLocation.jpg" />
     <Content Include="Samples\MapView\ChangeViewpoint\ChangeViewpoint.jpg" />
     <Content Include="Samples\MapView\ShowMagnifier\ShowMagnifier.jpg" />
     <Content Include="Samples\Map\AccessLoadStatus\AccessLoadStatus.jpg" />
