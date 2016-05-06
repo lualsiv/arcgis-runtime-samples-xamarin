@@ -1,4 +1,13 @@
-﻿using System;
+﻿// Copyright 2016 Esri.
+//
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 
+// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
+// language governing permissions and limitations under the License.
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,7 +17,8 @@ using ArcGISRuntimeXamarin.Models;
 using Android.App;
 
 namespace ArcGISRuntimeXamarin.Managers
-{   /// <summary>
+{   
+    /// <summary>
     /// Single instance class to manage samples.
     /// </summary>
     public class SampleManager
@@ -16,7 +26,7 @@ namespace ArcGISRuntimeXamarin.Managers
         private Assembly _samplesAssembly;
         private SampleStructureMap _sampleStructureMap;
 
-        Activity context;
+        Activity _context;
 
         #region Constructor and unique instance management
 
@@ -37,17 +47,9 @@ namespace ArcGISRuntimeXamarin.Managers
             // file using context.Assets.Open. Otherwise this functionality is only
             // available on an Activity.
 
-            this.context = context;
+            this._context = context;
 
             await CreateAllAsync();
-
-
-            // TODO - Need to implement
-            // Used for Removing samples
-            // string filename = Path.GetFileName(GetType().Assembly.Location);
-            // _samplesAssembly = Assembly.Load(filename);
-
-            // RemoveEmptySamples(); 
         }
 
         #endregion // Constructor and unique instance management
@@ -113,36 +115,22 @@ namespace ArcGISRuntimeXamarin.Managers
         }
 
         /// <summary>
-        /// Creates a new control from sample.
-        /// </summary>
-        /// <param name="sampleModel">Sample that is transformed into a control</param>
-        /// <returns>Sample as a control.</returns>
-        //public Activity SampleToControl(SampleModel sampleModel)
-        //{
-        //	var fullTypeAsString = string.Format("{0}.{1}", sampleModel.SampleNamespace,
-        //		sampleModel.GetSampleName());
-        //	var sampleType = _samplesAssembly.GetType(fullTypeAsString);
-        //	var item = Activator.CreateInstance(sampleType);
-        //	return (UIViewController)item;
-        //}
-
-        /// <summary>
         /// Returns a Stream based on the individual sample metadata.json file. 
         /// </summary>
         /// <param name="path">String path to the metadata file.</param>
         /// <returns>Metadata.json stream</returns>
         public Stream GetMetadataManifest(string path)
         {
-            var metadataPath = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json");
+            var metadataPath = GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json");
 
             return metadataPath;
         }
 
         public byte[] GetMetadataManifestAsBytes(string path)
         {
-            using (var stream = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json"))
+            using (var stream = GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json"))
             {
-                using (var textStream = new System.IO.StreamReader(stream))
+                using (var textStream = new StreamReader(stream))
                 {
                     var metadataString = textStream.ReadToEnd();
                     return System.Text.Encoding.UTF8.GetBytes(metadataString);
@@ -157,7 +145,7 @@ namespace ArcGISRuntimeXamarin.Managers
             // You can no longer check to see if groups.json exists on disk here. You have to 
             // open it and verify that it isn't null. 
 
-            Stream groupsJson = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin.groups.json");
+            Stream groupsJson = GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin.groups.json");
             try
             {
                 await Task.Run(() =>
@@ -181,43 +169,6 @@ namespace ArcGISRuntimeXamarin.Managers
             {
                 throw; //TODO
             }
-        }
-
-        /// <summary>
-        /// Remove samples that doesn't have a type registered i.e. cannot be shown.
-        /// </summary>
-        private void RemoveEmptySamples()
-        {
-            _sampleStructureMap.Featured.RemoveAll(x => !DoesSampleTypeExists(x.Sample));
-
-            // Remove samples that are empty ie. doesn't have code files
-            foreach (var category in _sampleStructureMap.Categories)
-            {
-                foreach (var subCategory in category.SubCategories)
-                {
-                    var notFoundSamples = subCategory.Samples.Where(x => !DoesSampleTypeExists(x)).ToList();
-                    foreach (var sampleToRemove in notFoundSamples)
-                    {
-                        subCategory.Samples.Remove(sampleToRemove);
-                        // subCategory.SampleNames.Remove(sampleToRemove.SampleName);
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Check if the sample has a type registered.
-        /// </summary>
-        /// <param name="sampleModel">SampleModel that is checked.</param>
-        /// <returns>Returns true if the type if found. False otherwise.</returns>
-        private bool DoesSampleTypeExists(SampleModel sampleModel)
-        {
-            var fullTypeAsString = string.Format("{0}.{1}", sampleModel.SampleNamespace,
-               sampleModel.GetSampleName());
-            var sampleType = _samplesAssembly.GetType(fullTypeAsString);
-            if (sampleType == null)
-                return false;
-            return true;
         }
     }
 }

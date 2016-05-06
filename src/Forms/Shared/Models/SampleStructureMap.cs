@@ -1,24 +1,18 @@
-﻿//Copyright 2015 Esri.
+﻿// Copyright 2016 Esri.
 //
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
 //
-//http://www.apache.org/licenses/LICENSE-2.0
-//
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
+// Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 
+// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
+// language governing permissions and limitations under the License.
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
-using System.Text;
 
 namespace ArcGISRuntimeXamarin.Models
 {
@@ -26,7 +20,7 @@ namespace ArcGISRuntimeXamarin.Models
 	/// <see cref="SampleStructureMap "/> is a main level model for samples structure.
 	/// </summary>
 	/// <remarks>
-	/// This class is constructed using <see cref="Create(string)"/> factory from the json.
+	/// This class is constructed using <see cref="Create(Stream)"/> factory from the json.
 	/// </remarks>
 	[DataContract]
 	public class SampleStructureMap
@@ -49,33 +43,6 @@ namespace ArcGISRuntimeXamarin.Models
 		/// </summary>
 		[IgnoreDataMember]
 		public List<SampleModel> Samples { get; set; }
-
-
-		/// <summary>
-		/// Gets sample by it's name.
-		/// </summary>
-		/// <param name="sampleName">The name of the sample.</param>
-		/// <returns>Return <see cref="SampleModel"/> for the sample if found. Null if sample not found.</returns>
-		//public SampleModel GetSampleByName(string sampleName)
-		//{
-		//    List<SampleModel> sampleList = new List<SampleModel>();
-
-		//    foreach (var category in Categories)
-		//    {
-		//        foreach (var subCategory in category.SubCategories)
-		//        {
-		//            // Changed to use the SampleInfo class, but that means you have to manually create a list of the SampleModel items.
-		//            foreach (var item in subCategory.SampleInfo)
-		//            {
-		//               // sampleList.Add(item.Sample);
-		//            }
-		//            var result = sampleList.FirstOrDefault(x => x.SampleName == sampleName);
-		//            if (result != null)
-		//                return result;
-		//        }
-		//    }
-		//    return null;
-		//}
 
 		#region Factory methods
 		/// <summary>
@@ -116,11 +83,6 @@ namespace ArcGISRuntimeXamarin.Models
 			}
 
 			#region CreateSamples
-			//TODO: This part basically works, but needs some review, particularly once we add
-			// Tutorials and Workflows and such. 
-
-			// Create all samples and add them to the groups since they are not part of
-			// main configuration file
 
 			List<string> pathList = new List<string>();
 			foreach (var category in structureMap.Categories)
@@ -137,7 +99,7 @@ namespace ArcGISRuntimeXamarin.Models
 				}
 			}
 
-			SampleModel sampleModel = new SampleModel();
+			var sampleModel = new SampleModel();
 			foreach (var samplePath in pathList)
 			{
 				sampleModel = SampleModel.Create(samplePath);
@@ -145,16 +107,12 @@ namespace ArcGISRuntimeXamarin.Models
 					structureMap.Samples.Add(sampleModel);
 			}
 
-			var addedSamples = new List<SampleModel>();
 			foreach (var category in structureMap.Categories)
 			{
 				foreach (var subCategory in category.SubCategories)
 				{
 					if (subCategory.Samples == null)
 						subCategory.Samples = new List<SampleModel>();
-
-					//if (subCategory.SampleNames == null)
-					//    subCategory.SampleNames = new List<string>();
 
 					foreach (var sampleName in subCategory.SampleInfos)
 					{
@@ -163,102 +121,12 @@ namespace ArcGISRuntimeXamarin.Models
 						if (sample == null) continue;
 
 						subCategory.Samples.Add(sample);
-						addedSamples.Add(sample);
 					}
 				}
 			}
 
 			#endregion
-			// Create all samples
-			//foreach (var sampleGroupFolder in sampleGroupFolders) // ie. Samples\Layers
-			//{
-			//    // This creates samples from all folders and adds them to the samples list
-			//    // This means that sample is created even if it's not defined in the groups list
-			//    var sampleFolders = sampleGroupFolder.GetDirectories();
-			//    foreach (var sampleFolder in sampleFolders)  // ie. Samples\Layers\ArcGISTiledLayerFromUrl
-			//    {
-			//        var sampleModel = SampleModel.Create(
-			//            Path.Combine(sampleFolder.FullName, "metadata.json"));
-
-			//        if (sampleModel != null)
-			//            structureMap.Samples.Add(sampleModel);
-			//    }
-			//}
-
-			//// Create all tutorials
-			//if (tutorialsDirectory.Exists)
-			//    foreach (var sampleFolder in tutorialsDirectory.GetDirectories()) // ie. Tutorials\AddMapToApp
-			//    {
-			//        var sampleModel = SampleModel.Create(
-			//            Path.Combine(sampleFolder.FullName, "metadata.json"));
-
-			//        if (sampleModel != null)
-			//            structureMap.Samples.Add(sampleModel);
-			//    }
-
-			//// Create all workflows
-			//if (workflowDirectory.Exists)
-			//    foreach (var sampleFolder in workflowDirectory.GetDirectories()) // ie. Workflows\SearchFeatures
-			//    {
-			//        var sampleModel = SampleModel.Create(
-			//            Path.Combine(sampleFolder.FullName, "metadata.json"));
-
-			//        if (sampleModel != null)
-			//            structureMap.Samples.Add(sampleModel);
-			//    }
-
-			//// Set samples to the sub-categories
-			//var addedSamples = new List<SampleModel>();
-			//foreach (var cateory in structureMap.Categories)
-			//{
-			//    foreach (var subCategory in cateory.SubCategories)
-			//    {
-			//        if (subCategory.Samples == null)
-			//            subCategory.Samples = new List<SampleModel>();
-
-			//        if (subCategory.SampleNames == null)
-			//            subCategory.SampleNames = new List<string>();
-
-			//        foreach (var sampleName in subCategory.SampleNames)
-			//        {
-			//            var sample = structureMap.Samples.FirstOrDefault(x => x.SampleName == sampleName);
-
-			//            if (sample == null) continue;
-
-			//            subCategory.Samples.Add(sample);
-			//            addedSamples.Add(sample);
-			//        }
-			//    }
-			//}
-
-			//// Add samples that are not defined to the end of the groups
-			//var notAddedSamples = structureMap.Samples.Where(x => !addedSamples.Contains(x)).ToList();
-			//foreach (var sampleModel in notAddedSamples)
-			//{
-			//    var category = structureMap.Categories.FirstOrDefault(x => x.CategoryName == sampleModel.Category);
-			//    if (category == null)
-			//        continue;
-
-			//    var subCategory = category.SubCategories.FirstOrDefault(x => x.SubCategoryName == sampleModel.SubCategory);
-			//    if (subCategory != null)
-			//    {
-			//        subCategory.SampleNames.Add(sampleModel.SampleName);
-			//        subCategory.Samples.Add(sampleModel);
-			//    }
-			//}
-
-			//if (structureMap.Featured == null)
-			//    structureMap.Featured = new List<FeaturedModel>();
-
-			//// Set all sample models to the featured models
-			//foreach (var featured in structureMap.Featured)
-			//{
-			//    var sample = structureMap.Samples.FirstOrDefault(x => x.SampleName == featured.SampleName);
-			//    if (sample != null)
-			//        featured.Sample = sample;
-			//}
-			//#endregion
-
+			
 			return structureMap;
 		}
 		#endregion
