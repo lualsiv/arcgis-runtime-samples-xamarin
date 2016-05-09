@@ -22,8 +22,12 @@
               "Path":"Samples/MapView/DisplayDrawingStatus"
             },
             {
-              "SampleName":"MapRotation",
-              "Path":"Samples/MapView/MapRotation"
+              "SampleName": "MapRotation",
+              "Path": "Samples/MapView/MapRotation"
+            },
+              {
+              "SampleName":"DisplayLayerViewState",
+              "Path":"Samples/MapView/DisplayLayerViewState"
             }
           ]
         },
