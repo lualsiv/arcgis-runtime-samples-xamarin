@@ -8,30 +8,37 @@
 // language governing permissions and limitations under the License.
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+// Define compile attribute, read more about it from 
+// https://developer.xamarin.com/guides/xamarin-forms/user-interface/xaml-basics/xamlc/
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ArcGISRuntimeXamarin
 {
-	public class App : Application
-	{
-		public App ()
-		{
-			// The root page of your application
-			MainPage = new NavigationPage(new CategoryListPage() { Title = "ArcGIS Runtime SDK for Xamarin Forms" });
-		}
+    public class App : Application
+    {
+        public App ()
+        {
+            // The root page of your application
+            MainPage = new NavigationPage(new CategoryListPage
+            {
+                Title = "ArcGIS Runtime SDK for Xamarin Forms"
+            });
+        }
 
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
-		}
+        protected override void OnStart ()
+        {
+            // Handle when your app starts
+        }
 
-		protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
+        protected override void OnSleep ()
+        {
+            // Handle when your app sleeps
+        }
 
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
-	}
+        protected override void OnResume ()
+        {
+            // Handle when your app resumes
+        }
+    }
 }
