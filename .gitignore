@@ -199,3 +199,9 @@ FakesAssemblies/
 #iOS library binaries that come from NuGet
 *-arm.a
 *-sim.a
+/src/._.DS_Store
+/src/.DS_Store
+/._.DS_Store
+/.DS_Store
+/src/Forms/._.DS_Store
+/src/Forms/.DS_Store

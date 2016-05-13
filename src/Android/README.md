@@ -143,6 +143,15 @@
 
     This sample demonstrate how to use a unique value renderer to style different features in a feature layer with different symbols. Features do not have a symbol property for you to set, renderers should be used to define the symbol for features in feature layers. The unique value renderer allows for separate symbols to be used for features that have specific attribute values in a defined field.
 
+## Location
+
+
+- **Display Location**
+
+    * [Display Device Location](Xamarin.Android/Samples/Location/DisplayDeviceLocation)
+
+    This sample demonstrates how you can enable location services and switch between different types of auto pan modes.
+
 
 
 [](Esri Tags: ArcGIS Runtime SDK .NET WinRT WinStore WPF WinPhone C# C-Sharp DotNet XAML MVVM)

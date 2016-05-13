@@ -20,6 +20,10 @@
 
     This sample illustrates how to rotate a map.
 
+    * [Display Layer View State](Xamarin.iOS/Samples/MapView/DisplayLayerViewState)
+
+    This sample demonstrates how to get view status for layers in a map.
+
 
 - **Map**
 
@@ -54,6 +58,14 @@
     * [Access load status](Xamarin.iOS/Samples/Map/AccessLoadStatus)
 
     This sample demonstrates how to access the Maps' LoadStatus. The LoadStatus will be considered loaded when the following are true: The Map has a valid SpatialReference and the Map has an been set to the MapView.
+
+    * [Manage bookmarks](Xamarin.iOS/Samples/Map/ManageBookmarks)
+
+    This samples demonstrates how to access and add bookmarks to a map
+
+    * [Take Screenshot](Xamarin.iOS/Samples/Map/TakeScreenshot)
+
+    This sample demonstrates how you can take screenshot of a map. The app has a Screenshot button in the bottom toolbar you can tap to take screenshot of the visible area of the map. You can pan or zoom to a specific location and tap on the button, which also shows you the preview of the image produced. You can tap on the Close Preview button to close image preview.
 
 ## Layers
 
@@ -142,6 +154,15 @@
     * [Unique value renderer](Xamarin.iOS/Samples/Symbology/RenderUniqueValues)
 
     This sample demonstrate how to use a unique value renderer to style different features in a feature layer with different symbols. Features do not have a symbol property for you to set, renderers should be used to define the symbol for features in feature layers. The unique value renderer allows for separate symbols to be used for features that have specific attribute values in a defined field.
+
+## Location
+
+
+- **Display Location**
+
+    * [Display Device Location](Xamarin.iOS/Samples/Location/DisplayDeviceLocation)
+
+    This sample demonstrates how you can enable location services and switch between different types of auto pan modes.
 
 
 
