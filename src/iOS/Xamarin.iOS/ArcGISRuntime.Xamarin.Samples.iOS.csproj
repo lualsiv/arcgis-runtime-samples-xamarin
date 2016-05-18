@@ -112,7 +112,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esri.ArcGISRuntime, Version=100.0.0.0, Culture=neutral, PublicKeyToken=29c6dd6e8553d944, processorArchitecture=MSIL">
-      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\lib\Xamarin.iOS10\Esri.ArcGISRuntime.dll</HintPath>
+      <HintPath>..\packages\Esri.ArcGISRuntime.Xamarin.iOS.100.0.0.1339-beta\lib\Xamarin.iOS10\Esri.ArcGISRuntime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
@@ -230,7 +230,6 @@
     <EmbeddedResource Include="Samples\Layers\ChangeFeatureLayerRenderer\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <EmbeddedResource Include="Samples\GraphicsOverlay\AddGraphicsRenderer\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -253,11 +252,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Samples\MapView\DisplayLayerViewState\metadata.json">
-    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Samples\Map\ManageBookmarks\metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -412,11 +412,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <Import Project="..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets" Condition="Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" />
+  <Import Project="..\packages\Esri.ArcGISRuntime.Xamarin.iOS.100.0.0.1339-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.iOS.targets" Condition="Exists('..\packages\Esri.ArcGISRuntime.Xamarin.iOS.100.0.0.1339-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.iOS.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Esri.ArcGISRuntime.Xamarin.100.0.0.1287-preview\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.targets'))" />
+    <Error Condition="!Exists('..\packages\Esri.ArcGISRuntime.Xamarin.iOS.100.0.0.1339-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.iOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Esri.ArcGISRuntime.Xamarin.iOS.100.0.0.1339-beta\build\Xamarin.iOS10\Esri.ArcGISRuntime.Xamarin.iOS.targets'))" />
   </Target>
 </Project>

@@ -7,12 +7,13 @@
 // "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
 // language governing permissions and limitations under the License.
 
-using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
-using System.Collections.Generic;
+using Esri.ArcGISRuntime.Geometry;
 using Xamarin.Forms;
+using System.Collections.Generic;
+using GeoViewInputEventArgs = Esri.ArcGISRuntime.Xamarin.Forms.GeoViewInputEventArgs;
 
 namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
 {
@@ -75,7 +76,7 @@ namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
             MyMapView.GraphicsOverlays.Add(_polygonOverlay);
         }
 
-        private async void OnMapViewTapped(object sender, Esri.ArcGISRuntime.Xamarin.Forms.UI.GeoViewInputEventArgs e)
+        private async void OnMapViewTapped(object sender, GeoViewInputEventArgs e)
         {
             var tolerance = 10d; // Use larger tolerance for touch
             var maximumResults = 1; // Only return one graphic  

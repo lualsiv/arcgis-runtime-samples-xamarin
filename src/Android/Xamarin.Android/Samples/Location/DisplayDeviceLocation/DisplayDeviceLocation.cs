@@ -104,8 +104,8 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
                     break;
 
                 case 1:
-                    // Starts location display with auto pan mode set to Default
-                    _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Default;
+                    // Starts location display with auto pan mode set to Re-center
+                    _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
 
                     //TODO Remove this IsStarted check https://github.com/Esri/arcgis-runtime-samples-xamarin/issues/182
                     if (!_myMapView.LocationDisplay.IsStarted)

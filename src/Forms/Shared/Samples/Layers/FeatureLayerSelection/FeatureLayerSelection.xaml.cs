@@ -11,7 +11,7 @@ using Esri.ArcGISRuntime;
 using Esri.ArcGISRuntime.Data;
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
-using Esri.ArcGISRuntime.Xamarin.Forms.UI;
+using Esri.ArcGISRuntime.Xamarin.Forms;
 using System;
 using Xamarin.Forms;
 

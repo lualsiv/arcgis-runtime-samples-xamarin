@@ -8,15 +8,11 @@
 // language governing permissions and limitations under the License.
 
 using System;
-using System.Drawing;
-
-using CoreFoundation;
 using UIKit;
 using Foundation;
 using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Geometry;
-using CoreLocation;
 using Esri.ArcGISRuntime.Location;
 
 namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
@@ -29,7 +25,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
 
         public DisplayDeviceLocation()
         {
-            this.Title = "Display Device Location";
+            Title = "Display Device Location";
         }
 
         public override void ViewDidLoad()
@@ -64,8 +60,8 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
         {
             try
             {
-                    UIAlertController actionSheetAlert = UIAlertController.Create(
-             "Select device location option", "", UIAlertControllerStyle.ActionSheet);
+                UIAlertController actionSheetAlert = UIAlertController.Create(
+                    "Select device location option", "", UIAlertControllerStyle.ActionSheet);
 
                     // Add actions to ActionSheet. Selecting an option displays different option for auto pan modes.
                     actionSheetAlert.AddAction(UIAlertAction.Create("On", UIAlertActionStyle.Default, (action) =>
@@ -78,7 +74,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
                     actionSheetAlert.AddAction(UIAlertAction.Create("Re-center", UIAlertActionStyle.Default, (action) =>
                     {
                         // Starts location display with auto pan mode set to Default
-                        _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Default;
+                        _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
                         _myMapView.LocationDisplay.Start();
                     }));
                     actionSheetAlert.AddAction(UIAlertAction.Create("Navigation", UIAlertActionStyle.Default, (action) =>
