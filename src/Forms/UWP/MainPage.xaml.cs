@@ -33,7 +33,7 @@ namespace ArcGISRuntimeXamarin.UWP
         {
             var x = Xamarin.Forms.Application.Current.MainPage.Navigation.NavigationStack;
             // If we are on Samples page remove it from the stack.
-            if (x.Count == 2)
+            if (x.Count == 3)
             {
                 Xamarin.Forms.Application.Current.MainPage.Navigation.PopAsync();
             }
