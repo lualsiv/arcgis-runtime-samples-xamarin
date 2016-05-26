@@ -16,6 +16,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+#if WINDOWS_UWP
+using Color = Windows.UI.Colors;
+#else
+using Color = System.Drawing.Color;
+#endif
+
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
 {
     public partial class FeatureLayerQuery : ContentPage
@@ -59,9 +65,9 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
 
             // Create a new renderer for the States Feature Layer
             SimpleLineSymbol lineSymbol = new SimpleLineSymbol(
-                SimpleLineSymbolStyle.Solid, System.Drawing.Color.Black, 1);
+                SimpleLineSymbolStyle.Solid, Color.Black, 1);
             SimpleFillSymbol fillSymbol = new SimpleFillSymbol(
-                SimpleFillSymbolStyle.Solid, System.Drawing.Color.Yellow, lineSymbol);
+                SimpleFillSymbolStyle.Solid, Color.Yellow, lineSymbol);
 
             // Set States feature layer renderer
             _featureLayer.Renderer = new SimpleRenderer(fillSymbol);

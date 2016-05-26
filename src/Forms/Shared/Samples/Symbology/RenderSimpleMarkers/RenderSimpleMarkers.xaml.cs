@@ -13,6 +13,12 @@ using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
 using Xamarin.Forms;
 
+#if WINDOWS_UWP
+using Color = Windows.UI.Colors;
+#else
+using Color = System.Drawing.Color;
+#endif
+
 namespace ArcGISRuntimeXamarin.Samples.RenderSimpleMarkers
 {
     public partial class RenderSimpleMarkers : ContentPage
@@ -51,7 +57,7 @@ namespace ArcGISRuntimeXamarin.Samples.RenderSimpleMarkers
             // Create a simple marker symbol
             SimpleMarkerSymbol simpleSymbol = new SimpleMarkerSymbol()
             {
-                Color = System.Drawing.Color.Red,
+                Color = Color.Red,
                 Size = 10,
                 Style = SimpleMarkerSymbolStyle.Circle
             };

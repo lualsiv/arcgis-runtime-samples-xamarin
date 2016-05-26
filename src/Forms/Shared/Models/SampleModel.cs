@@ -198,7 +198,7 @@ namespace ArcGISRuntimeXamarin.Models
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Logger.WriteLine(ex.Message);
             }
             return sampleModel;
         }

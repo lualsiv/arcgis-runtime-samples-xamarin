@@ -79,7 +79,7 @@ namespace ArcGISRuntimeXamarin.Models
 			}
 			catch (System.Exception ex)
 			{
-				Console.WriteLine(ex.Message);
+				Logger.WriteLine(ex.Message);
 			}
 
 			#region CreateSamples

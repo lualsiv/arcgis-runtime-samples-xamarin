@@ -66,7 +66,10 @@ namespace ArcGISRuntimeXamarin
         await Navigation.PushAsync((ContentPage)Activator.CreateInstance(t));
       }
       catch (Exception ex)
-      { }
+      {
+         Logger.WriteLine(string.Format("Exception occured on OnItemTapped. Exception = ", ex)); 
+         
+      }
     }
   }
 }
