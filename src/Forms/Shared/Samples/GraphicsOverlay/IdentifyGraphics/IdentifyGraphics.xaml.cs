@@ -16,9 +16,9 @@ using Xamarin.Forms;
 using System.Collections.Generic;
 
 #if WINDOWS_UWP
-using Color = Windows.UI.Colors;
+using Colors = Windows.UI.Colors;
 #else
-using Color = System.Drawing.Color;
+using Colors = System.Drawing.Color;
 #endif
 
 namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
@@ -68,7 +68,7 @@ namespace ArcGISRuntimeXamarin.Samples.IdentifyGraphics
             // Create symbol for the polygon
             SimpleFillSymbol polygonSymbol = new SimpleFillSymbol(
                 SimpleFillSymbolStyle.Solid,
-               Color.Yellow, 
+               Colors.Yellow, 
                 null);
 
             // Create new graphic

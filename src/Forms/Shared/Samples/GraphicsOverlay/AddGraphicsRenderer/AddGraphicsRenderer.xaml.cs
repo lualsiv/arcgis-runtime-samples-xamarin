@@ -15,9 +15,9 @@ using System;
 using Xamarin.Forms;
 
 #if WINDOWS_UWP
-using Color = Windows.UI.Colors;
+using Colors = Windows.UI.Colors;
 #else
-using Color = System.Drawing.Color;
+using Colors = System.Drawing.Color;
 #endif
 
 namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
@@ -85,7 +85,7 @@ namespace ArcGISRuntimeXamarin.Samples.AddGraphicsRenderer
             // Create symbol for points
             SimpleMarkerSymbol pointSymbol = new SimpleMarkerSymbol()
             {
-                Color = Color.Yellow,
+                Color = Colors.Yellow,
                 Size = 30,
                 Style = SimpleMarkerSymbolStyle.Square,
             };

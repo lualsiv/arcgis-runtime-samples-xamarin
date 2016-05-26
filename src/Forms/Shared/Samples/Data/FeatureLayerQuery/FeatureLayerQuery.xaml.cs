@@ -17,9 +17,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 #if WINDOWS_UWP
-using Color = Windows.UI.Colors;
+using Colors = Windows.UI.Colors;
 #else
-using Color = System.Drawing.Color;
+using Colors = System.Drawing.Color;
 #endif
 
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
@@ -65,9 +65,9 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerQuery
 
             // Create a new renderer for the States Feature Layer
             SimpleLineSymbol lineSymbol = new SimpleLineSymbol(
-                SimpleLineSymbolStyle.Solid, Color.Black, 1);
+                SimpleLineSymbolStyle.Solid, Colors.Black, 1);
             SimpleFillSymbol fillSymbol = new SimpleFillSymbol(
-                SimpleFillSymbolStyle.Solid, Color.Yellow, lineSymbol);
+                SimpleFillSymbolStyle.Solid, Colors.Yellow, lineSymbol);
 
             // Set States feature layer renderer
             _featureLayer.Renderer = new SimpleRenderer(fillSymbol);
