@@ -111,28 +111,22 @@ namespace ArcGISRuntimeXamarin.Managers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Logger.WriteLine(ex.Message);
             }
             return categories;
         }
 
-        /// <summary>
-        /// Creates a new control from sample.
-        /// </summary>
-        /// <param name="sampleModel">Sample that is transformed into a control</param>
-        /// <returns>Sample as a control.</returns>
-        //public Activity SampleToControl(SampleModel sampleModel)
-        //{
-        //	var fullTypeAsString = string.Format("{0}.{1}", sampleModel.SampleNamespace,
-        //		sampleModel.GetSampleName());
-        //	var sampleType = _samplesAssembly.GetType(fullTypeAsString);
-        //	var item = Activator.CreateInstance(sampleType);
-        //	return (UIViewController)item;
-        //}
-
         public Stream GetMetadataManifest(string path)
         {
-            var metadataPath = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json");
+            Assembly currentAssembly = null;
+#if WINDOWS_UWP
+            // Get current assembly that contains the image
+            currentAssembly = GetType().GetTypeInfo().Assembly;
+#else
+            // Get current assembly that contains the image
+            currentAssembly = Assembly.GetExecutingAssembly();
+#endif
+            var metadataPath = currentAssembly.GetManifestResourceStream("ArcGISRuntimeXamarin." + path + ".metadata.json");
 
             return metadataPath;
         }
@@ -143,9 +137,18 @@ namespace ArcGISRuntimeXamarin.Managers
         /// </summary>
         private async Task CreateAllAsync()
         {
+            Assembly currentAssembly = null;
+#if WINDOWS_UWP
+            // Get current assembly that contains the image
+            currentAssembly = GetType().GetTypeInfo().Assembly;
+#else
+            // Get current assembly that contains the image
+            currentAssembly = Assembly.GetExecutingAssembly();
+#endif
+
             // You can no longer check to see if groups.json exists on disk here. You have to 
             // open it and verify that it isn't null.           
-            Stream groupsJson = this.GetType().Assembly.GetManifestResourceStream("ArcGISRuntimeXamarin.groups.json");
+            Stream groupsJson = currentAssembly.GetManifestResourceStream("ArcGISRuntimeXamarin.groups.json");
             try
             {
                 await Task.Run(() =>

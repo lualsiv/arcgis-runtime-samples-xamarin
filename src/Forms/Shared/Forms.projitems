@@ -14,6 +14,7 @@
       <DependentUpon>CategoryListPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Logger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\SampleManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\TreeItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CategoryModel.cs" />
@@ -339,5 +340,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
   </ItemGroup>
 </Project>

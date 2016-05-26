@@ -14,6 +14,12 @@ using Esri.ArcGISRuntime.Symbology;
 using System;
 using Xamarin.Forms;
 
+#if WINDOWS_UWP
+using Colors = Windows.UI.Colors;
+#else
+using Colors = System.Drawing.Color;
+#endif
+
 namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
 {
     public partial class ChangeFeatureLayerRenderer : ContentPage
@@ -73,7 +79,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeFeatureLayerRenderer
             // Create a symbol to be used in the renderer
             SimpleLineSymbol symbol = new SimpleLineSymbol()
             {
-                Color = System.Drawing.Color.Blue,
+                Color = Colors.Blue,
                 Width = 2,
                 Style = SimpleLineSymbolStyle.Solid
             };

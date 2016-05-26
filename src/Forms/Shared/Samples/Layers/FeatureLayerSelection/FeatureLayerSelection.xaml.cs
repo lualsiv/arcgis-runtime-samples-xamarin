@@ -15,6 +15,12 @@ using Esri.ArcGISRuntime.Xamarin.Forms;
 using System;
 using Xamarin.Forms;
 
+#if WINDOWS_UWP
+using Colors = Windows.UI.Colors;
+#else
+using Colors = System.Drawing.Color;
+#endif
+
 namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
 {
     public partial class FeatureLayerSelection : ContentPage
@@ -58,7 +64,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerSelection
             _featureLayer = new FeatureLayer(featureTable);
 
             // Set the selection color for feature layer
-            _featureLayer.SelectionColor = System.Drawing.Color.Cyan;
+            _featureLayer.SelectionColor = Colors.Cyan;
 
             // Set the selection width
             _featureLayer.SelectionWidth = 3;

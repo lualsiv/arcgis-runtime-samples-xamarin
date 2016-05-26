@@ -13,6 +13,12 @@ using Esri.ArcGISRuntime.Symbology;
 using System;
 using Xamarin.Forms;
 
+#if WINDOWS_UWP
+using Colors = Windows.UI.Colors;
+#else
+using Colors = System.Drawing.Color;
+#endif
+
 namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
 {
     public partial class RenderUniqueValues : ContentPage
@@ -50,15 +56,15 @@ namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
 
             // Define a line symbol to use for the region fill symbols
             SimpleLineSymbol stateOutlineSymbol = new SimpleLineSymbol(
-                SimpleLineSymbolStyle.Solid, System.Drawing.Color.White, 0.7);
+                SimpleLineSymbolStyle.Solid, Colors.White, 0.7);
 
             // Define distinct fill symbols for a few regions (use the same outline symbol)
             SimpleFillSymbol pacificFillSymbol = new SimpleFillSymbol(
-                SimpleFillSymbolStyle.Solid, System.Drawing.Color.Blue, stateOutlineSymbol);
+                SimpleFillSymbolStyle.Solid, Colors.Blue, stateOutlineSymbol);
             SimpleFillSymbol mountainFillSymbol = new SimpleFillSymbol(
-                SimpleFillSymbolStyle.Solid, System.Drawing.Color.LawnGreen, stateOutlineSymbol);
+                SimpleFillSymbolStyle.Solid, Colors.LawnGreen, stateOutlineSymbol);
             SimpleFillSymbol westSouthCentralFillSymbol = new SimpleFillSymbol(
-                SimpleFillSymbolStyle.Solid, System.Drawing.Color.SandyBrown, stateOutlineSymbol);
+                SimpleFillSymbolStyle.Solid, Colors.SandyBrown, stateOutlineSymbol);
 
             // Add values to the renderer: define the label, description, symbol, and attribute value for each
             regionRenderer.UniqueValues.Add(
@@ -70,7 +76,7 @@ namespace ArcGISRuntimeXamarin.Samples.RenderUniqueValues
 
             // Set the default region fill symbol (transparent with no outline) for regions not explicitly defined in the renderer
             var defaultFillSymbol = new SimpleFillSymbol(
-                SimpleFillSymbolStyle.Null, System.Drawing.Color.Transparent, null);
+                SimpleFillSymbolStyle.Null, Colors.Transparent, null);
             regionRenderer.DefaultSymbol = defaultFillSymbol;
             regionRenderer.DefaultLabel = "Other";
 

@@ -20,10 +20,12 @@ namespace ArcGISRuntimeXamarin
         public App ()
         {
             // The root page of your application
-            MainPage = new NavigationPage(new CategoryListPage
+            var navigationPage = new NavigationPage(new CategoryListPage
             {
                 Title = "ArcGIS Runtime SDK for Xamarin Forms"
             });
+
+            MainPage = navigationPage;
         }
 
         protected override void OnStart ()
