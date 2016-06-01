@@ -205,3 +205,6 @@ FakesAssemblies/
 /.DS_Store
 /src/Forms/._.DS_Store
 /src/Forms/.DS_Store
+
+# UWP lock and other files
+*.lock.*
