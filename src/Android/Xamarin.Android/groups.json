@@ -14,8 +14,8 @@
               "Path":"Samples/MapView/ChangeViewpoint"
             },
             {
-              "SampleName": "DisplayDrawStatus",
-              "Path": "Samples/MapView/DisplayDrawStatus"
+              "SampleName": "DisplayDrawingStatus",
+              "Path": "Samples/MapView/DisplayDrawingStatus"
             },
             {
               "SampleName":"MapRotation",

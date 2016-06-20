@@ -18,7 +18,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerDefinitionExpression
 {
     public partial class FeatureLayerDefinitionExpression : ContentPage
     {
-        //Create and hold reference to the feature layer
+        // Create and hold reference to the feature layer
         private FeatureLayer _featureLayer;
 
         public FeatureLayerDefinitionExpression()
@@ -27,7 +27,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerDefinitionExpression
 
             Title = "Feature layer definition expression";
 
-            //setup the control references and execute initialization 
+            // Setup the control references and execute initialization 
             Initialize();
         }
 
@@ -56,7 +56,7 @@ namespace ArcGISRuntimeXamarin.Samples.FeatureLayerDefinitionExpression
             // Initialize a new feature layer based on the feature table
             _featureLayer = new FeatureLayer(featureTable);
 
-            //Add the feature layer to the map
+            // Add the feature layer to the map
             myMap.OperationalLayers.Add(_featureLayer);
 
             // TODO: https://github.com/Esri/arcgis-runtime-samples-xamarin/issues/96
