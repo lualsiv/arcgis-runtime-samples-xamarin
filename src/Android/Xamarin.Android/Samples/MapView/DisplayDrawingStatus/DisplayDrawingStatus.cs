@@ -15,10 +15,10 @@ using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.UI;
 using System;
 
-namespace ArcGISRuntimeXamarin.Samples.DisplayDrawStatus
+namespace ArcGISRuntimeXamarin.Samples.DisplayDrawingStatus
 {
     [Activity]
-    public class DisplayDrawStatus : Activity
+    public class DisplayDrawingStatus : Activity
     {
         // Create and hold reference to the used MapView
         private MapView _myMapView = new MapView();
@@ -30,7 +30,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawStatus
         {
             base.OnCreate(bundle);
 
-            Title = "Display draw status";
+            Title = "Display drawing status";
 
             // Create the UI, setup the control references and execute initialization 
             CreateLayout();
@@ -57,7 +57,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawStatus
             myMap.OperationalLayers.Add(myFeatureLayer);
 
             // Provide used Map to the MapView
-            _myMapView.Map = myMap;               
+            _myMapView.Map = myMap;
         }
 
         private void OnDrawStatusChanged(object sender, DrawStatus e)
@@ -80,7 +80,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawStatus
         {
             // Create a new vertical layout for the app
             var layout = new LinearLayout(this) { Orientation = Orientation.Vertical };
-            
+
             // Add the map view to the layout
             layout.AddView(_myMapView);
 
@@ -89,6 +89,6 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDrawStatus
 
             // Show the layout in the app
             SetContentView(layout);
-        }     
+        }
     }
 }

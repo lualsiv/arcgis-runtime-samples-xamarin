@@ -1,8 +1,8 @@
-#Display draw status
+#Display drawing status
 
-This sample demonstrates how to display the draw status of a Map
+This sample illustrates how to display the draw status of a map.
 
-<img src="DisplayDrawStatus.jpg" width="350"/>
+<img src="DisplayDrawingStaus.jpg" width="350"/>
 
 ### Instructions
 
