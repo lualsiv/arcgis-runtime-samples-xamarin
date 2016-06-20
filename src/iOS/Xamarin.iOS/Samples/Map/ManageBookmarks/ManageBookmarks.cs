@@ -93,11 +93,11 @@ namespace ArcGISRuntimeXamarin.Samples.ManageBookmarks
         private void OnAddBookmarksButtonClicked(object sender, EventArgs e)
         {
             //Create Alert for bookmark name
-            var textInputAlertController = UIAlertController.Create("Provide the bookmark name", string.Empty, UIAlertControllerStyle.Alert);
+            var textInputAlertController = UIAlertController.Create("Provide the bookmark name", 
+                string.Empty, UIAlertControllerStyle.Alert);
             
             //Add Text Input
-            textInputAlertController.AddTextField(textField => {
-            });
+            textInputAlertController.AddTextField(textField => { });
 
             //Add Actions
             var cancelAction = UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null);
@@ -134,19 +134,20 @@ namespace ArcGISRuntimeXamarin.Samples.ManageBookmarks
         private void OnShowBookmarksButtonClicked(object sender, EventArgs e)
         {
             // Create a new Alert Controller
-            UIAlertController actionSheetAlert = UIAlertController.Create("Bookmarks", string.Empty, UIAlertControllerStyle.ActionSheet);
+            UIAlertController actionAlert = UIAlertController.Create("Bookmarks", string.Empty,
+                UIAlertControllerStyle.Alert);
 
             // Add Bookmarks as Actions
             foreach(Bookmark myBookmark in _myMapView.Map.Bookmarks)
             {
-                actionSheetAlert.AddAction(UIAlertAction.Create(myBookmark.Name, UIAlertActionStyle.Default, 
+                actionAlert.AddAction(UIAlertAction.Create(myBookmark.Name, UIAlertActionStyle.Default, 
                     (action) =>{
                         _myMapView.SetViewpoint(myBookmark.Viewpoint);
                     }));
             }
 
             // Display the alert
-            PresentViewController(actionSheetAlert, true, null);
+            PresentViewController(actionAlert, true, null);
         }
 
         private void CreateLayout()

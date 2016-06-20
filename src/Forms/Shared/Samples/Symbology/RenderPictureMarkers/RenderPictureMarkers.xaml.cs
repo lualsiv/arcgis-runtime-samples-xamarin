@@ -80,8 +80,15 @@ namespace ArcGISRuntimeXamarin.Samples.RenderPictureMarkers
 
         private async Task CreatePictureMarkerSymbolFromResources(GraphicsOverlay overlay)
         {
+            Assembly currentAssembly = null;
+#if WINDOWS_UWP
             // Get current assembly that contains the image
-            var currentAssembly = Assembly.GetExecutingAssembly();
+            currentAssembly = GetType().GetTypeInfo().Assembly;
+#else
+            // Get current assembly that contains the image
+            currentAssembly = Assembly.GetExecutingAssembly();
+#endif
+
 
             // Get image as a stream from the resources
             // Picture is defined as EmbeddedResource and DoNotCopy

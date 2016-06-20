@@ -10,10 +10,6 @@
           "ShowGroup":true,
           "SampleInfos":[
             {
-              "SampleName":"ShowMagnifier",
-              "Path":"Samples/MapView/ShowMagnifier"
-            },
-            {
               "SampleName": "ChangeViewpoint",
               "Path": "Samples/MapView/ChangeViewpoint"
             },
@@ -24,6 +20,14 @@
             {
               "SampleName": "DisplayDrawingStatus",
               "Path": "Samples/MapView/DisplayDrawingStatus"
+            },
+             {
+              "SampleName": "DisplayLayerViewState",
+              "Path": "Samples/MapView/DisplayLayerViewState"
+            },
+             {
+              "SampleName":"TakeScreenshot",
+              "Path":"Samples/MapView/TakeScreenshot"
             }
           ]
         },
@@ -153,14 +157,14 @@
       ]
     },
     {
-      "Name":"Display Information",
-      "CategoryName":"DisplayInformation",
-      "SubCategories":[
+      "Name": "Display Information",
+      "CategoryName": "DisplayInformation",
+      "SubCategories": [
         {
-          "Name":"Graphics Overlays",
-          "SubCategoryName":"GraphicsOverlay",
-          "ShowGroup":true,
-          "SampleInfos":[
+          "Name": "Graphics Overlays",
+          "SubCategoryName": "GraphicsOverlay",
+          "ShowGroup": true,
+          "SampleInfos": [
             {
               "SampleName": "AddGraphicsRenderer",
               "Path": "Samples/GraphicsOverlay/AddGraphicsRenderer"
@@ -172,10 +176,10 @@
           ]
         },
         {
-          "Name":"Symbology",
-          "SubCategoryName":"Symbology",
-          "ShowGroup":true,
-          "SampleInfos":[
+          "Name": "Symbology",
+          "SubCategoryName": "Symbology",
+          "ShowGroup": true,
+          "SampleInfos": [
             {
               "SampleName": "RenderSimpleMarkers",
               "Path": "Samples/Symbology/RenderSimpleMarkers"
@@ -187,6 +191,23 @@
             {
               "SampleName": "RenderUniqueValues",
               "Path": "Samples/Symbology/RenderUniqueValues"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Location",
+      "CategoryName": "Location",
+      "SubCategories": [
+        {
+          "Name": "Display Location",
+          "SubCategoryName": "DisplayLocation",
+          "ShowGroup": true,
+          "SampleInfos": [
+            {
+              "SampleName": "DisplayDeviceLocation",
+              "Path": "Samples/Location/DisplayDeviceLocation"
             }
           ]
         }

@@ -65,11 +65,11 @@ namespace ArcGISRuntimeXamarin.Samples.OpenExistingMap
 
         private void OnMapsButtonTouch(object sender, EventArgs e)
         {
-            // Initialize an UIAlertController with a title and style of an ActionSheet
+            // Initialize an UIAlertController with a title and style of an alert
             UIAlertController actionSheetAlert = UIAlertController.Create(
-                "Select a map to open", "", UIAlertControllerStyle.ActionSheet);
+                "Select a map to open", "", UIAlertControllerStyle.Alert);
 
-            // Add actions to ActionSheet. Selecting an option re-initializes the Map 
+            // Add actions to alert. Selecting an option re-initializes the Map 
             // with selected webmap url and assigns it to MapView.
             actionSheetAlert.AddAction(UIAlertAction.Create(titles[0], UIAlertActionStyle.Default, (action) =>
             {

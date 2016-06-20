@@ -11,7 +11,6 @@ using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Location;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.UI;
@@ -50,12 +49,6 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
         {
             // Create new Map with basemap
             Map myMap = new Map(Basemap.CreateImagery());
-
-            // Create a mappoint the map should zoom to
-            MapPoint mapPoint = new MapPoint(-13630484, 4545415, SpatialReferences.WebMercator);
-
-            // Set the initial viewpoint for map
-            myMap.InitialViewpoint = new Viewpoint(mapPoint, 90000);
 
             // Provide used Map to the MapView
             _myMapView.Map = myMap;
@@ -104,8 +97,8 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
                     break;
 
                 case 1:
-                    // Starts location display with auto pan mode set to Default
-                    _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Default;
+                    // Starts location display with auto pan mode set to Re-center
+                    _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
 
                     //TODO Remove this IsStarted check https://github.com/Esri/arcgis-runtime-samples-xamarin/issues/182
                     if (!_myMapView.LocationDisplay.IsStarted)
@@ -129,7 +122,6 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
                     if (!_myMapView.LocationDisplay.IsStarted)
                         _myMapView.LocationDisplay.Start();
                     break;
-
             }
         }
 

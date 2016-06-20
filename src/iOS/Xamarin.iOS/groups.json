@@ -10,10 +10,6 @@
           "ShowGroup":true,
           "SampleInfos":[
             {
-              "SampleName":"ShowMagnifier",
-              "Path":"Samples/MapView/ShowMagnifier"
-            },
-            {
               "SampleName": "ChangeViewpoint",
               "Path": "Samples/MapView/ChangeViewpoint"
             },
@@ -25,9 +21,13 @@
               "SampleName": "MapRotation",
               "Path": "Samples/MapView/MapRotation"
             },
+            {
+              "SampleName": "DisplayLayerViewState",
+              "Path": "Samples/MapView/DisplayLayerViewState"
+            },
               {
-              "SampleName":"DisplayLayerViewState",
-              "Path":"Samples/MapView/DisplayLayerViewState"
+              "SampleName":"TakeScreenshot",
+              "Path":"Samples/MapView/TakeScreenshot"
             }
           ]
         },
@@ -71,12 +71,7 @@
             {
               "SampleName": "ManageBookmarks",
               "Path": "Samples/Map/ManageBookmarks"
-            },
-              {
-              "SampleName":"TakeScreenshot",
-              "Path":"Samples/Map/TakeScreenshot"
             }
-           
           ]
         }
       ]

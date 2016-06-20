@@ -86,18 +86,18 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
 
         private void OnViewpointsButtonTouch(object sender, EventArgs e)
         {
-            // Initialize an UIAlertController with a title and style of an ActionSheet
-            UIAlertController actionSheetAlert = UIAlertController.Create(
-                "Select viewpoint", "", UIAlertControllerStyle.ActionSheet);
+            // Initialize an UIAlertController
+            UIAlertController viewpointAlert = UIAlertController.Create(
+                "Select viewpoint", "", UIAlertControllerStyle.Alert);
 
-            // Add actions to ActionSheet. Selecting an option set the new viewpoint
-            actionSheetAlert.AddAction(UIAlertAction.Create(titles[0], UIAlertActionStyle.Default, 
+            // Add actions to alert. Selecting an option set the new viewpoint
+            viewpointAlert.AddAction(UIAlertAction.Create(titles[0], UIAlertActionStyle.Default, 
                 async (action) =>
                 {
                     // Set Viewpoint using Redlands envelope defined above and a padding of 20
                     await _myMapView.SetViewpointGeometryAsync(RedlandsEnvelope, 20);
                 }));
-            actionSheetAlert.AddAction(UIAlertAction.Create(titles[1], UIAlertActionStyle.Default, 
+            viewpointAlert.AddAction(UIAlertAction.Create(titles[1], UIAlertActionStyle.Default, 
                 async (action) =>
                 {
                     // Set Viewpoint so that it is centered on the London coordinates defined above
@@ -106,7 +106,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                     // Set the Viewpoint scale to match the specified scale 
                     await _myMapView.SetViewpointScaleAsync(LondonScale);
                 }));
-            actionSheetAlert.AddAction(UIAlertAction.Create(titles[2], UIAlertActionStyle.Default, 
+            viewpointAlert.AddAction(UIAlertAction.Create(titles[2], UIAlertActionStyle.Default, 
                 async (action) =>
                 {
                     // Navigate to full extent of the first baselayer before animating to specified geometry
@@ -119,7 +119,7 @@ namespace ArcGISRuntimeXamarin.Samples.ChangeViewpoint
                     // Set Viewpoint of MapView to the Viewpoint created above and animate to it using a timespan of 5 seconds
                     await _myMapView.SetViewpointAsync(viewpoint, TimeSpan.FromSeconds(5));
                 }));
-            PresentViewController(actionSheetAlert, true, null);
+            PresentViewController(viewpointAlert, true, null);
         }
 
         private void CreateLayout()

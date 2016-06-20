@@ -32,7 +32,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayLayerViewState
 
         public DisplayLayerViewState()
         {
-            this.Title = "Display Layer View State";
+            Title = "Display Layer View State";
         }
 
         public override void ViewDidLoad()
@@ -58,7 +58,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayLayerViewState
             myMap.OperationalLayers.Add(tiledLayer);
 
             // Create the uri for the ArcGISMapImage layer
-            Uri imageLayerUri = new Uri("http://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer");
+            var imageLayerUri = new Uri("http://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer");
 
             // Create ArcGISMapImage layer using a url
             ArcGISMapImageLayer imageLayer = new ArcGISMapImageLayer(imageLayerUri);
@@ -72,7 +72,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayLayerViewState
             myMap.OperationalLayers.Add(imageLayer);
 
             //Create Uri for feature layer
-            Uri featureLayerUri = new Uri("http://sampleserver6.arcgisonline.com/arcgis/rest/services/Recreation/FeatureServer/0");
+            var featureLayerUri = new Uri("http://sampleserver6.arcgisonline.com/arcgis/rest/services/Recreation/FeatureServer/0");
 
             //Create a feature layer using url
             FeatureLayer myFeatureLayer = new FeatureLayer(featureLayerUri);
@@ -103,14 +103,13 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayLayerViewState
             _myMapView.Map = myMap;
         }
 
-        private void OnLayerViewStateChanged(object sender, LayerViewState e)
+        private void OnLayerViewStateChanged(object sender, LayerViewStateChangedEventArgs e)
         {
-            // State changed event is sent by a layer. In the list, find the layer which sends this event. If it exists then update the status
-            Layer myLayer = sender as Layer;
-
-            var model = _layerStatusModels.Where(l => l.LayerName == myLayer.Name).FirstOrDefault();
+            // State changed event is sent by a layer. In the list, find the layer which sends this event. 
+            // If it exists then update the status
+            var model = _layerStatusModels.FirstOrDefault(l => l.LayerName == e.Layer.Name);
             if (model != null)
-                model.LayerViewStatus = e.Status.ToString();
+                model.LayerViewStatus = e.LayerViewState.Status.ToString();
 
             // Update the table
             _tableView.ReloadData();
@@ -121,7 +120,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayLayerViewState
             nfloat height = 80;
 
             //set up UIStackView for laying out controls
-            UIStackView stackView = new UIStackView(new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height));
+            var stackView = new UIStackView(new CoreGraphics.CGRect(0, 0, View.Bounds.Width, View.Bounds.Height));
             stackView.Axis = UILayoutConstraintAxis.Vertical;
             stackView.Alignment = UIStackViewAlignment.Fill;
             stackView.Distribution = UIStackViewDistribution.FillProportionally;
@@ -173,7 +172,7 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayLayerViewState
         /// </summary>
         public override nint RowsInSection(UITableView tableview, nint section)
         {
-            return _layers!=null?_layers.Count:0;
+            return _layers != null?_layers.Count:0;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -211,5 +210,4 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayLayerViewState
             LayerViewStatus = layerStatus;
         }
     }
-
 }

@@ -8,11 +8,7 @@
 // language governing permissions and limitations under the License.
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-// Define compile attribute, read more about it from 
-// https://developer.xamarin.com/guides/xamarin-forms/user-interface/xaml-basics/xamlc/
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ArcGISRuntimeXamarin
 {
     public class App : Application
@@ -20,10 +16,12 @@ namespace ArcGISRuntimeXamarin
         public App ()
         {
             // The root page of your application
-            MainPage = new NavigationPage(new CategoryListPage
+            var navigationPage = new NavigationPage(new CategoryListPage
             {
                 Title = "ArcGIS Runtime SDK for Xamarin Forms"
             });
+
+            MainPage = navigationPage;
         }
 
         protected override void OnStart ()

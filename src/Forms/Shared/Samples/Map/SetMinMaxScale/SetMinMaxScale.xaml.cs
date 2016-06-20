@@ -20,7 +20,13 @@ namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
             InitializeComponent ();
 
             Title = "Set Min & Max Scale";
+            
+            // Create the UI, setup the control references and execute initialization 
+            Initialize();
+        }
 
+        private void Initialize()
+        {
             // Create new Map with Streets basemap 
             Map myMap = new Map(Basemap.CreateStreets());
 
@@ -30,8 +36,6 @@ namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
             myMap.MinScale = 8000;
             myMap.MaxScale = 2000;
 
-            MyMapView.Map = myMap;
-
             // Create central point where map is centered
             MapPoint centralPoint = new MapPoint(-355453, 7548720, SpatialReferences.WebMercator);
 
@@ -39,9 +43,11 @@ namespace ArcGISRuntimeXamarin.Samples.SetMinMaxScale
             Viewpoint startingViewpoint = new Viewpoint(
                 centralPoint,
                 3000);
-
             // Set starting viewpoint
-            MyMapView.SetViewpoint(startingViewpoint);
+            myMap.InitialViewpoint = startingViewpoint;
+
+            // Set map to mapview
+            MyMapView.Map = myMap;
         }
     }
 }

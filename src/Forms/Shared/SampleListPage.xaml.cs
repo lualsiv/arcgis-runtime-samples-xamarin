@@ -7,33 +7,34 @@
 // "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
 // language governing permissions and limitations under the License.
 
+using ArcGISRuntimeXamarin.Managers;
+using ArcGISRuntimeXamarin.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ArcGISRuntimeXamarin.Models;
 using Xamarin.Forms;
-using ArcGISRuntimeXamarin.Managers;
 
 namespace ArcGISRuntimeXamarin
 {
-  public partial class SampleListPage : ContentPage
+    public partial class SampleListPage : ContentPage
   {
-    string _categoryName;
-    List<SampleModel> _listSampleItems;
+    private string _categoryName;
+    private List<SampleModel> _listSampleItems;
+
     public SampleListPage(string name)
     {
-      this._categoryName = name;
+      _categoryName = name;
       Initialize();
 
       InitializeComponent();
 
-      Title = this._categoryName;
+      Title = _categoryName;
     }
 
     void Initialize()
     {
       var sampleCategories = SampleManager.Current.GetSamplesAsTree();
-      var category = sampleCategories.FirstOrDefault(x => x.Name == this._categoryName) as TreeItem;
+      var category = sampleCategories.FirstOrDefault(x => x.Name == _categoryName) as TreeItem;
 
       List<object> listSubCategories = new List<object>();
       for (int i = 0; i < category.Items.Count; i++)
@@ -66,7 +67,9 @@ namespace ArcGISRuntimeXamarin
         await Navigation.PushAsync((ContentPage)Activator.CreateInstance(t));
       }
       catch (Exception ex)
-      { }
+      {
+         Logger.WriteLine(string.Format("Exception occured on OnItemTapped. Exception = ", ex)); 
+      }
     }
   }
 }

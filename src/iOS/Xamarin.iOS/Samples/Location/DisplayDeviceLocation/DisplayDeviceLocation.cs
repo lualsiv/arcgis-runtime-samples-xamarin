@@ -8,15 +8,11 @@
 // language governing permissions and limitations under the License.
 
 using System;
-using System.Drawing;
-
-using CoreFoundation;
 using UIKit;
 using Foundation;
 using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Geometry;
-using CoreLocation;
 using Esri.ArcGISRuntime.Location;
 
 namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
@@ -29,12 +25,13 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
 
         public DisplayDeviceLocation()
         {
-            this.Title = "Display Device Location";
+            Title = "Display Device Location";
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
             // Create the UI, setup the control references and execute initialization 
             CreateLayout();
             Initialize();
@@ -45,56 +42,63 @@ namespace ArcGISRuntimeXamarin.Samples.DisplayDeviceLocation
             // Create new Map with basemap
             Map myMap = new Map(Basemap.CreateImagery());
 
-            // Create a mappoint the map should zoom to
-            MapPoint mapPoint = new MapPoint(-13630484, 4545415, SpatialReferences.WebMercator);
-
-            // Set the initial viewpoint for map
-            myMap.InitialViewpoint = new Viewpoint(mapPoint, 90000);
-
             // Provide used Map to the MapView
             _myMapView.Map = myMap;
         }
 
         private void OnStopButtonClicked(object sender, EventArgs e)
         {
-            _myMapView.LocationDisplay.Stop();
+            //TODO Remove this IsStarted check https://github.com/Esri/arcgis-runtime-samples-xamarin/issues/182
+            if (_myMapView.LocationDisplay.IsStarted)
+                _myMapView.LocationDisplay.Stop();
         }
 
         private void OnStartButtonClicked(object sender, EventArgs e)
         {
             try
             {
-                    UIAlertController actionSheetAlert = UIAlertController.Create(
-             "Select device location option", "", UIAlertControllerStyle.ActionSheet);
+                UIAlertController actionAlert = UIAlertController.Create(
+                    "Select device location option", "", UIAlertControllerStyle.Alert);
 
-                    // Add actions to ActionSheet. Selecting an option displays different option for auto pan modes.
-                    actionSheetAlert.AddAction(UIAlertAction.Create("On", UIAlertActionStyle.Default, (action) =>
+                    // Add actions to alert. Selecting an option displays different option for auto pan modes.
+                    actionAlert.AddAction(UIAlertAction.Create("On", UIAlertActionStyle.Default, (action) =>
                     {
                         // Starts location display with auto pan mode set to Off
                         _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Off;
-                        _myMapView.LocationDisplay.Start();
-
+                        
+                        //TODO Remove this IsStarted check https://github.com/Esri/arcgis-runtime-samples-xamarin/issues/182
+                        if (!_myMapView.LocationDisplay.IsStarted)
+                            _myMapView.LocationDisplay.Start();
                     }));
-                    actionSheetAlert.AddAction(UIAlertAction.Create("Re-center", UIAlertActionStyle.Default, (action) =>
+                    actionAlert.AddAction(UIAlertAction.Create("Re-center", UIAlertActionStyle.Default, (action) =>
                     {
                         // Starts location display with auto pan mode set to Default
-                        _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Default;
-                        _myMapView.LocationDisplay.Start();
+                        _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
+
+                        //TODO Remove this IsStarted check https://github.com/Esri/arcgis-runtime-samples-xamarin/issues/182
+                        if (!_myMapView.LocationDisplay.IsStarted)
+                            _myMapView.LocationDisplay.Start();
                     }));
-                    actionSheetAlert.AddAction(UIAlertAction.Create("Navigation", UIAlertActionStyle.Default, (action) =>
+                    actionAlert.AddAction(UIAlertAction.Create("Navigation", UIAlertActionStyle.Default, (action) =>
                     {
                         // Starts location display with auto pan mode set to Navigation
                         _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Navigation;
-                        _myMapView.LocationDisplay.Start();
+
+                        //TODO Remove this IsStarted check https://github.com/Esri/arcgis-runtime-samples-xamarin/issues/182
+                        if (!_myMapView.LocationDisplay.IsStarted)
+                            _myMapView.LocationDisplay.Start();
                     }));
-                    actionSheetAlert.AddAction(UIAlertAction.Create("Compass", UIAlertActionStyle.Default, (action) =>
+                    actionAlert.AddAction(UIAlertAction.Create("Compass", UIAlertActionStyle.Default, (action) =>
                     {
                         // Starts location display with auto pan mode set to Compass Navigation
                         _myMapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.CompassNavigation;
-                         _myMapView.LocationDisplay.Start();
+
+                        //TODO Remove this IsStarted check https://github.com/Esri/arcgis-runtime-samples-xamarin/issues/182
+                        if (!_myMapView.LocationDisplay.IsStarted)
+                            _myMapView.LocationDisplay.Start();
                     }));
-                //present action sheet
-                PresentViewController(actionSheetAlert, true, null);                                    
+                //present alert
+                PresentViewController(actionAlert, true, null);                                    
             }
             catch (Exception ex)
             {
