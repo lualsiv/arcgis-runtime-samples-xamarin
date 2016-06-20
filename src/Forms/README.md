@@ -4,10 +4,6 @@
 
 - **MapView**
 
-    * [Show magnifier](Shared/Samples/MapView/ShowMagnifier)
-
-    This sample demonstrates how you can tap and hold on a map to get the magnifier. You can also pan while tapping and holding to move the magnifier across the map.
-
     * [Change viewpoint](Shared/Samples/MapView/ChangeViewpoint)
 
     This sample demonstrates different ways in which you can change the viewpoint or visible area of the map.
@@ -19,6 +15,14 @@
     * [Display drawing status](Shared/Samples/MapView/DisplayDrawingStatus)
 
     This sample demonstrates how to use the DrawStatus value of the MapView to notify user that the MapView is drawing.
+
+    * [Display layer view state](Shared/Samples/MapView/DisplayLayerViewState)
+
+    This sample demonstrates how to get view status for layers in a map.
+
+    * [Take Screenshot](Shared/Samples/MapView/TakeScreenshot)
+
+    This sample demonstrates how you can take screenshot of a map. Click 'capture' button to take a screenshot of the visible area of the map. Created image is shown in the sample after creation.
 
 
 - **Map**
@@ -142,6 +146,15 @@
     * [Render unique values](Shared/Samples/Symbology/RenderUniqueValues)
 
     This sample demonstrate how to use a unique value renderer to style different features in a feature layer with different symbols. Features do not have a symbol property for you to set, renderers should be used to define the symbol for features in feature layers. The unique value renderer allows for separate symbols to be used for features that have specific attribute values in a defined field.
+
+## Location
+
+
+- **Display Location**
+
+    * [Display device location](Shared/Samples/Location/DisplayDeviceLocation)
+
+    This sample demonstrates how you can enable location services and switch between different types of auto pan modes.
 
 
 

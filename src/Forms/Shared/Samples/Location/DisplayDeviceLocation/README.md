@@ -1,8 +1,8 @@
-#Open an existing map
+#Display device location
 
-This sample demonstrates how to open an existing map from a portal. The sample opens with a map displayed by default. You can change the shown map by selecting a new one from the populated list.
+This sample demonstrates how you can enable location services and switch between different types of auto pan modes.
 
-<img src="OpenExistingMap.jpg" width="350"/>
+<img src="DisplayDeviceLocation.jpg" width="350"/>
 
 ### Instructions
 

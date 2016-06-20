@@ -4,10 +4,6 @@
 
 - **MapView**
 
-    * [Show magnifier](Xamarin.iOS/Samples/MapView/ShowMagnifier)
-
-    This sample demonstrates how you can tap and hold on a map to get the magnifier. You can also pan while tapping and holding to move the magnifier across the map.
-
     * [Change viewpoint](Xamarin.iOS/Samples/MapView/ChangeViewpoint)
 
     This sample demonstrates different ways in which you can change the viewpoint or visible area of the map.
@@ -20,9 +16,13 @@
 
     This sample illustrates how to rotate a map.
 
-    * [Display Layer View State](Xamarin.iOS/Samples/MapView/DisplayLayerViewState)
+    * [Display layer view state](Xamarin.iOS/Samples/MapView/DisplayLayerViewState)
 
     This sample demonstrates how to get view status for layers in a map.
+
+    * [Take Screenshot](Xamarin.iOS/Samples/MapView/TakeScreenshot)
+
+    This sample demonstrates how you can take screenshot of a map. The app has a Screenshot button in the bottom toolbar you can tap to take screenshot of the visible area of the map. You can pan or zoom to a specific location and tap on the button, which also shows you the preview of the image produced. You can tap on the Close Preview button to close image preview.
 
 
 - **Map**
@@ -62,10 +62,6 @@
     * [Manage bookmarks](Xamarin.iOS/Samples/Map/ManageBookmarks)
 
     This samples demonstrates how to access and add bookmarks to a map
-
-    * [Take Screenshot](Xamarin.iOS/Samples/Map/TakeScreenshot)
-
-    This sample demonstrates how you can take screenshot of a map. The app has a Screenshot button in the bottom toolbar you can tap to take screenshot of the visible area of the map. You can pan or zoom to a specific location and tap on the button, which also shows you the preview of the image produced. You can tap on the Close Preview button to close image preview.
 
 ## Layers
 

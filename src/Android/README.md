@@ -4,10 +4,6 @@
 
 - **MapView**
 
-    * [Show magnifier](Xamarin.Android/Samples/MapView/ShowMagnifier)
-
-    This sample demonstrates how you can tap and hold on a map to get the magnifier. You can also pan while tapping and holding to move the magnifier across the map.
-
     * [Change viewpoint](Xamarin.Android/Samples/MapView/ChangeViewpoint)
 
     This sample demonstrates different ways in which you can change the viewpoint or visible area of the map.

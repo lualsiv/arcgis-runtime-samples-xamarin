@@ -1,8 +1,8 @@
-#Display drawing status
+#Display layer view state
 
-This sample demonstrates how to use the DrawStatus value of the MapView to notify user that the MapView is drawing.
+This sample demonstrates how to get view status for layers in a map.
 
-<img src="DisplayDrawingStatus.jpg" width="350"/>
+<img src="DisplayLayerViewState.jpg" width="350"/>
 
 ### Instructions
 
