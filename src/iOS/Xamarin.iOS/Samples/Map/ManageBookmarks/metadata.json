@@ -9,6 +9,6 @@
   "RequiresLocalServer":false,
   "Image":"ManageBookmarks.jpg",
   "Link":"",
-  "TypeLink": [],
+  "TypeLink": ["T:Esri.ArcGISRuntime.Mapping.Bookmark","T:Esri.ArcGISRuntime.Mapping.BookmarkCollection","P:Esri.ArcGISRuntime.Mapping.Map.Bookmarks"],
   "SampleFolder": "ManageBookmarks"
 }
