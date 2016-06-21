@@ -1,15 +1,15 @@
 {
   "Name": "Map rotation",
   "SampleName": "MapRotation",
-  "Description": "This sample illustrates how to rotate a map.",
-  "Instructions": "",
+  "Description": "This sample demonstrates how to rotate a map.",
+  "Instructions": "Use the available slider to dictate the number of degrees the map is rotated",
   "Type": 0,
   "RequiresOnlineConnection":true,
   "RequiresOfflineData":false,
   "RequiresLocalServer":false,
   "Image":"MapRotation.jpg",
   "Link":"",
-  "TypeLink": ["P:Esri.ArcGISRuntime.UI.MapView.MapRotation","M:Esri.ArcGISRuntime.Controls.MapView.SetViewpointRotationAsync(System.Double)"
+  "TypeLink": ["T:Esri.ArcGISRuntime.UI.MapView","M:Esri.ArcGISRuntime.Xamarin.Forms.MapView.SetViewpointRotationAsync(System.Double)"
   ],
   "SampleFolder": "MapRotation"
 }
