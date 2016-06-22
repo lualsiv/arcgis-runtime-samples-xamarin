@@ -27,7 +27,7 @@ namespace ArcGISRuntimeXamarin.Samples.TakeScreenshot
         private void Initialize()
         {
             // Create a new Map instance with the basemap  
-            Basemap myBasemap = Basemap.CreateStreets();
+            Basemap myBasemap = Basemap.CreateImagery();
             Map myMap = new Map(myBasemap);
 
             // Assign the map to the MapView
