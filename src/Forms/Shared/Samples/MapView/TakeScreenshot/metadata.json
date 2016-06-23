@@ -9,6 +9,6 @@
   "RequiresLocalServer":false,
   "Image":"TakeScreenshot.jpg",
   "Link":"",
-  "TypeLink": ["M:Esri.ArcGISRuntime.UI.GeoView.ExportImageAsync"],
+  "TypeLink": ["M:Esri.ArcGISRuntime.Xamarin.Forms.GeoView.ExportImageAsync"],
   "SampleFolder": "TakeScreenshot"
 }
