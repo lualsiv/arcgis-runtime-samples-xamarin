@@ -45,7 +45,7 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISVectorTiledLayerUrl
         {
             base.OnCreate(bundle);
 
-            Title = "Change basemap";
+            Title = "ArcGIS vector tiled Layer";
 
             // Create the UI, setup the control references and execute initialization 
             CreateLayout();
@@ -106,6 +106,12 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISVectorTiledLayerUrl
                     _vectorTiledLayerUrl = _navigationUrl;
                     break;
             }
+
+            // Create new ArcGISVectorTiled layer with the selected service Url 
+            _vectorTiledLayer = new ArcGISVectorTiledLayer(new Uri(_vectorTiledLayerUrl));
+
+            // Create a new map with a basemap that was selected. Assign this to the mapview's map 
+            _myMapView.Map = new Map(new Basemap(_vectorTiledLayer));
         }
 
  
