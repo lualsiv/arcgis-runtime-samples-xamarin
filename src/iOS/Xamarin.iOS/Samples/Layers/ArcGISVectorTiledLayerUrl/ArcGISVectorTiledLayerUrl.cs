@@ -11,6 +11,7 @@ using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.UI;
 using Foundation;
+using System;
 using UIKit;
 
 namespace ArcGISRuntimeXamarin.Samples.ArcGISVectorTiledLayerUrl
@@ -29,14 +30,6 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISVectorTiledLayerUrl
         private string _vectorTiledLayerUrl;
         private ArcGISVectorTiledLayer _vectorTiledLayer;
 
-        // String array to store some vector layer names.
-        private string[] _vectorLayerNames = new string[]
-        {
-            "Topo",
-            "Streets",
-            "Night",
-            "Navigation"
-        };
     public ArcGISVectorTiledLayerUrl()
         {
             Title = "ArcGIS vector tiled layer (URL)";
@@ -93,17 +86,17 @@ namespace ArcGISRuntimeXamarin.Samples.ArcGISVectorTiledLayerUrl
 
                     case 1:
 
-                        _vectorTiledLayerUrl = _topographicUrl;
+                        _vectorTiledLayerUrl = _streetUrl;
                         break;
 
                     case 2:
 
-                        _vectorTiledLayerUrl = _topographicUrl;
+                        _vectorTiledLayerUrl = _nightUrl;
                         break;
 
                     case 3:
 
-                        _vectorTiledLayerUrl = _topographicUrl;
+                        _vectorTiledLayerUrl = _navigationUrl;
                         break;
                 }
 
